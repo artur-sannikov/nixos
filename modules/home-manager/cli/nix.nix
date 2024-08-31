@@ -1,9 +1,8 @@
 { pkgs, ... }:
 {
   home.packages = with pkgs; [
-    ansible
-    ansible-lint
-    pandoc
-    screen
+    cachix
+    nixfmt-rfc-style
+    nixd
   ];
 }

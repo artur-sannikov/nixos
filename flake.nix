@@ -42,7 +42,7 @@
             inherit inputs;
           };
           modules = [
-            ./configuration.nix
+            ./hosts/vm-ty/configuration.nix
             inputs.disko.nixosModules.disko
 
             # make home-manager as a module of nixos
@@ -52,7 +52,7 @@
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
 
-              home-manager.users."${username}" = import ./home.nix;
+              home-manager.users."${username}" = import .hosts/vm-ty/home.nix;
 
               # Optionally, use home-manager.extraSpecialArgs to pass arguments to home.nix
               home-manager.extraSpecialArgs = {
