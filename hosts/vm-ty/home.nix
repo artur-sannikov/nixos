@@ -35,7 +35,8 @@
     ../../modules/home-manager/cli/R.nix
     ../../modules/home-manager/cli/starship.nix
     ../../modules/home-manager/cli/zsh.nix
-    ../../modules/home-manager/gui
+    ../../modules/home-manager/gui/vscodium.nix
+    ../../modules/home-manager/gui/librewolf.nix
   ];
 
   programs.home-manager.enable = true;
