@@ -40,7 +40,7 @@
           }
         ];
       };
-        ty = home-manager.lib.homeManagerConfiguration {
+        homeConfigurations."ty" = home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
           modules = [
             ./hosts/ty.nix
