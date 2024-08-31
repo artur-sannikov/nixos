@@ -15,6 +15,7 @@
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
     ./disko.nix
+    ../modules/system/virtualization/libvirtd.nix
   ];
 
   # Use the systemd-boot EFI boot loader.
