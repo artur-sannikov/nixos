@@ -1,9 +1,12 @@
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
+let
+  vscode_extensions = inputs.nix-vscode-extensions.extensions.${pkgs.system}.vscode-marketplace;
+in
 {
   programs.vscode = {
     enable = true;
     package = pkgs.vscodium;
-    extensions = with pkgs.vscode-marketplace; [
+    extensions = with vscode_extensions; [
       jnoortheen.nix-ide
       mkhl.direnv
       ms-python.python
