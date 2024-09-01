@@ -77,6 +77,7 @@
         };
       };
       homeConfigurations."ty" = home-manager.lib.homeManagerConfiguration {
+        inherit pkgs;
         extraSpecialArgs = {
           flake-inputs = inputs;
           inherit pkgs-unstable;
