@@ -22,5 +22,6 @@
     ./browsers/firefox.nix
     ./browsers/librewolf.nix
     ./vscodium.nix
+    ./syncthing.nix
   ];
 }
