@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, nixpkgs-unstable, ... }:
 {
   home = {
     username = "artur";
@@ -35,7 +35,7 @@
     ../../modules/home-manager/cli/R.nix
     ../../modules/home-manager/cli/starship.nix
     ../../modules/home-manager/cli/zsh.nix
-    ../../modules/home-manager/gui/vscodium.nix
+    ../../modules/home-manager/gui/work.nix
   ];
 
   programs.home-manager.enable = true;

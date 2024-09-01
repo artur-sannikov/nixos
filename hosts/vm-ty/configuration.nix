@@ -5,7 +5,7 @@
 {
   config,
   lib,
-  pkgs,
+  nixpkgs-unstable,
   inputs,
   ...
 }:

@@ -1,11 +1,12 @@
-{ pkgs, inputs, ... }:
+{ pkgs-unstable, inputs, ... }:
 let
-  vscode_extensions = inputs.nix-vscode-extensions.extensions.${pkgs.system}.vscode-marketplace;
+  vscode_extensions =
+    inputs.nix-vscode-extensions.extensions.${pkgs-unstable.system}.vscode-marketplace;
 in
 {
   programs.vscode = {
     enable = true;
-    package = pkgs.vscodium;
+    package = pkgs-unstable.vscodium;
     extensions = with vscode_extensions; [
       jnoortheen.nix-ide
       mkhl.direnv

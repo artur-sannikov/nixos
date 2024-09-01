@@ -1,8 +1,8 @@
-{ pkgs, ... }:
+{ pkgs-stable, ... }:
 {
   programs.firefox = {
     enable = true;
-    package = pkgs.firefox-wayland;
+    package = pkgs-stable.firefox-wayland;
     profiles.default-release.settings = {
       "browser.toolbars.bookmarks.visibility" = "always";
       "privacy.clearOnShutdown.history" = true;
