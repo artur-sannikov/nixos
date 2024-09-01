@@ -7,11 +7,11 @@
 {
   home.packages =
     (with pkgs; [
-      # betterbird
+      betterbird
       obsidian
-      # vlc
-      # qbittorrent
-      # mattermost-desktop
+      vlc
+      qbittorrent
+      mattermost-desktop
       # protonvpn-gui
       # freetube
       # libreoffice-qt6-fresh
