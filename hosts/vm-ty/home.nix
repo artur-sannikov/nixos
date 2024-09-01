@@ -1,4 +1,8 @@
-{ config, pkgs, ... }:
+{
+  config,
+  flake-inputs,
+  ...
+}:
 {
   home = {
     username = "artur";
@@ -35,33 +39,28 @@
     ../../modules/home-manager/cli/R.nix
     ../../modules/home-manager/cli/starship.nix
     ../../modules/home-manager/cli/zsh.nix
-    ../../modules/home-manager/gui
+    ../../modules/home-manager/gui/personal.nix
+    flake-inputs.flatpaks.homeManagerModules.nix-flatpak
   ];
 
   programs.home-manager.enable = true;
   # Set environment variables
   home.sessionVariables = {
     EDITOR = "nano";
-    LC_TIME = "fi_FI.utf8";
   };
 
   # Flatpak
-  #   services = {
-  #     flatpak = {
-  #       enable = true;
-  #       update.onActivation = true;
-  #       packages = [
-  #         "org.videolan.VLC"
-  #         "org.zotero.Zotero"
-  #         "org.kde.okular"
-  #         "org.inkscape.Inkscape"
-  #         "org.libreoffice.LibreOffice"
-  #         {
-  #           appId = "us.zoom.Zoom";
-  #           origin = "flathub";
-  #           commit = "b9505f108b5f9acb2bbad83ac66f97b42bc6a75b9c28ed7b75dec1040e013305";
-  #         } # Screen sharing is broken on Plasma on newer versions
-  #       ];
-  #     };
-  #   };
+  services = {
+    flatpak = {
+      enable = true;
+      update.onActivation = true;
+      packages = [
+        {
+          appId = "us.zoom.Zoom";
+          origin = "flathub";
+          commit = "b9505f108b5f9acb2bbad83ac66f97b42bc6a75b9c28ed7b75dec1040e013305";
+        } # Screen sharing is broken on Plasma on newer versions
+      ];
+    };
+  };
 }
