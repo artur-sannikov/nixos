@@ -1,8 +1,8 @@
-{ pkgs-stable, ... }:
+{ pkgs, ... }:
 {
   programs.librewolf = {
     enable = true;
-    package = pkgs-stable.librewolf-wayland;
+    package = pkgs.librewolf-wayland;
     settings = {
       "browser.toolbars.bookmarks.visibility" = "always";
       "privacy.clearOnShutdown.history" = true;

@@ -40,7 +40,7 @@
           allowUnfree = true;
         };
       };
-      pkgs-stable = import nixpkgs-stable {
+      pkgs = import nixpkgs-stable {
         inherit system;
         config = {
           allowUnfree = true;
@@ -55,7 +55,7 @@
           inherit system;
           specialArgs = {
             inherit inputs;
-            inherit pkgs-stable;
+            inherit pkgs;
             inherit pkgs-unstable;
           };
           modules = [
@@ -65,6 +65,7 @@
             # so that home-manager configuration will be deployed automatically when executing `nixos-rebuild switch`
             home-manager.nixosModules.home-manager
             {
+              inherit pkgs;
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
 
@@ -73,7 +74,6 @@
               # Optionally, use home-manager.extraSpecialArgs to pass arguments to home.nix
               home-manager.extraSpecialArgs = {
                 flake-inputs = inputs;
-                inherit pkgs-stable;
                 inherit pkgs-unstable;
               };
             }
@@ -81,8 +81,10 @@
         };
       };
       homeConfigurations."ty" = home-manager.lib.homeManagerConfiguration {
-        inherit pkgs-stable;
-        inherit pkgs-unstable;
+        inherit pkgs;
+        extraSpecialArgs = {
+          inherit pkgs-unstable;
+        };
         modules = [
           ./hosts/ty/home.nix
           flatpaks.homeManagerModules.nix-flatpak
