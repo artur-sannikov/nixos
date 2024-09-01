@@ -6,7 +6,6 @@
   config,
   lib,
   nixpkgs-unstable,
-  flake-inputs,
   ...
 }:
 

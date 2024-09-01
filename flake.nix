@@ -26,7 +26,6 @@
       nixpkgs-unstable,
       nixpkgs-stable,
       home-manager,
-      # flatpaks,
       nix-vscode-extensions,
       ...
     }:
@@ -47,8 +46,6 @@
         };
       };
     in
-    # pkgs-stable = nixpkgs-stable.legacyPackages.${system};
-    # pkgs-unstable = nixpkgs-unstable.legacyPackages.${system};
     {
       nixosConfigurations = {
         vm-ty = lib.nixosSystem {
@@ -65,7 +62,6 @@
             # so that home-manager configuration will be deployed automatically when executing `nixos-rebuild switch`
             home-manager.nixosModules.home-manager
             {
-              inherit pkgs;
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
 
@@ -81,14 +77,12 @@
         };
       };
       homeConfigurations."ty" = home-manager.lib.homeManagerConfiguration {
-        inherit pkgs;
         extraSpecialArgs = {
           flake-inputs = inputs;
           inherit pkgs-unstable;
         };
         modules = [
           ./hosts/ty/home.nix
-          # flatpaks.homeManagerModules.nix-flatpak
           {
             nixpkgs.overlays = [
               nix-vscode-extensions.overlays.default
