@@ -15,6 +15,8 @@
     ./hardware-configuration.nix
     ./disko.nix
     ../../modules/system/virtualization/libvirtd.nix
+    ../../modules/system/virtualization/bottles.nix
+    ../../modules/system/gaming.nix
   ];
 
   # Use the systemd-boot EFI boot loader.
