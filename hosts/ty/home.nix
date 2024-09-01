@@ -57,6 +57,7 @@
       enable = true;
       update.onActivation = true;
       packages = [
+        "io.gitlab.librewolf-community"
         {
           appId = "us.zoom.Zoom";
           origin = "flathub";
