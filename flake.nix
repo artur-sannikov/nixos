@@ -12,7 +12,7 @@
       inputs.nixpkgs.follows = "nixpkgs-stable";
     };
     # Declarative Nix Flatpaks
-    nix-flatpak.url = "github:gmodena/nix-flatpak";
+    flatpaks.url = "github:gmodena/nix-flatpak/main";
 
     # VS Code extensions
     nix-vscode-extensions = {
@@ -26,7 +26,7 @@
       nixpkgs-unstable,
       nixpkgs-stable,
       home-manager,
-      nix-flatpak,
+      flatpaks,
       nix-vscode-extensions,
       ...
     }:
@@ -85,7 +85,7 @@
         inherit pkgs-unstable;
         modules = [
           ./hosts/ty/home.nix
-          nix-flatpak.homeManagerModules.nix-flatpak
+          flatpaks.homeManagerModules.nix-flatpak
           {
             nixpkgs.overlays = [
               nix-vscode-extensions.overlays.default
