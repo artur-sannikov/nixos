@@ -1,5 +1,7 @@
 {
   config,
+  lib,
+  pkgs,
   flake-inputs,
   ...
 }:
@@ -40,16 +42,6 @@
     ../../modules/home-manager/cli/starship.nix
     ../../modules/home-manager/cli/zsh.nix
     ../../modules/home-manager/gui/personal.nix
-    flake-inputs.flatpaks.homeManagerModules.nix-flatpak
-  ];
-
-  services.flatpak.packages = [
-    {
-      appId = "com.brave.Browser";
-      origin = "flathub";
-    }
-    "im.riot.Riot"
-    "com.logseq.Logseq"
   ];
 
   programs.home-manager.enable = true;

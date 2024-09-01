@@ -117,6 +117,21 @@
 
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
+  # Flatpak
+  services = {
+    flatpak = {
+      enable = true;
+      update.onActivation = true;
+      packages = [
+        "io.gitlab.librewolf-community"
+        {
+          appId = "us.zoom.Zoom";
+          origin = "flathub";
+          commit = "b9505f108b5f9acb2bbad83ac66f97b42bc6a75b9c28ed7b75dec1040e013305";
+        } # Screen sharing is broken on Plasma on newer versions
+      ];
+    };
+  };
   services.spice-vdagentd.enable = true;
 
   # Open ports in the firewall.
