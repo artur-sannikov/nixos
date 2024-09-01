@@ -26,7 +26,7 @@
       nixpkgs-unstable,
       nixpkgs-stable,
       home-manager,
-      flatpaks,
+      # flatpaks,
       nix-vscode-extensions,
       ...
     }:
@@ -36,15 +36,15 @@
       lib = nixpkgs-stable.lib;
       pkgs-unstable = import nixpkgs-unstable {
         inherit system;
-        config = {
-          allowUnfree = true;
-        };
+        # config = {
+        #   allowUnfree = true;
+        # };
       };
       pkgs = import nixpkgs-stable {
         inherit system;
-        config = {
-          allowUnfree = true;
-        };
+        # config = {
+        #   allowUnfree = true;
+        # };
       };
     in
     # pkgs-stable = nixpkgs-stable.legacyPackages.${system};
@@ -84,10 +84,11 @@
         inherit pkgs;
         extraSpecialArgs = {
           inherit pkgs-unstable;
+          flake-inputs = inputs;
         };
         modules = [
           ./hosts/ty/home.nix
-          flatpaks.homeManagerModules.nix-flatpak
+          # flatpaks.homeManagerModules.nix-flatpak
           {
             nixpkgs.overlays = [
               nix-vscode-extensions.overlays.default
