@@ -1,7 +1,7 @@
-{ pkgs-unstable, inputs, ... }:
+{ pkgs-unstable, flake-inputs, ... }:
 let
   vscode_extensions =
-    inputs.nix-vscode-extensions.extensions.${pkgs-unstable.system}.vscode-marketplace;
+    flake-inputs.nix-vscode-extensions.extensions.${pkgs-unstable.system}.vscode-marketplace;
 in
 {
   programs.vscode = {

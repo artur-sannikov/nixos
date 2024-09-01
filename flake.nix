@@ -55,13 +55,12 @@
           inherit system;
           specialArgs = {
             inherit inputs;
-            # inherit pkgs-stable;
+            inherit pkgs-stable;
             inherit pkgs-unstable;
           };
           modules = [
             ./hosts/vm-ty/configuration.nix
             inputs.disko.nixosModules.disko
-
             # make home-manager as a module of nixos
             # so that home-manager configuration will be deployed automatically when executing `nixos-rebuild switch`
             home-manager.nixosModules.home-manager
@@ -73,7 +72,7 @@
 
               # Optionally, use home-manager.extraSpecialArgs to pass arguments to home.nix
               home-manager.extraSpecialArgs = {
-                inherit inputs;
+                flake-inputs = inputs;
                 inherit pkgs-stable;
                 inherit pkgs-unstable;
               };

@@ -8,7 +8,6 @@
       vlc
       qbittorrent
       mattermost-desktop
-      zoom
       protonvpn-gui
       freetube
       libreoffice-qt6-fresh
@@ -24,4 +23,17 @@
     ./vscodium.nix
     ./syncthing.nix
   ];
+  # Flatapks
+  services.flatpak = {
+    enable = true;
+    update.onActivation = true;
+    packages = [
+      "it.mijorus.gearlever"
+      {
+        appId = "us.zoom.Zoom";
+        origin = "flathub";
+        commit = "b9505f108b5f9acb2bbad83ac66f97b42bc6a75b9c28ed7b75dec1040e013305";
+      } # Screen sharing is broken on Plasma on newer versions
+    ];
+  };
 }

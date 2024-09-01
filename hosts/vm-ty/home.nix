@@ -1,4 +1,8 @@
-{ config, nixpkgs-unstable, ... }:
+{
+  config,
+  flake-inputs,
+  ...
+}:
 {
   home = {
     username = "artur";
@@ -36,6 +40,7 @@
     ../../modules/home-manager/cli/starship.nix
     ../../modules/home-manager/cli/zsh.nix
     ../../modules/home-manager/gui/personal.nix
+    flake-inputs.nix-flatpak.homeManagerModules.nix-flatpak
   ];
 
   programs.home-manager.enable = true;
