@@ -4,16 +4,15 @@
   home.packages =
     (with pkgs-stable; [
       betterbird
-      # obsidian
-      # logseq
-      # vlc
-      # qbittorrent
-      # mattermost-desktop
-      # zoom
-      # protonvpn-gui
-      # freetube
-      # libreoffice-qt6-fresh
-      # onlyoffice-bin
+      obsidian
+      vlc
+      qbittorrent
+      mattermost-desktop
+      zoom
+      protonvpn-gui
+      freetube
+      libreoffice-qt6-fresh
+      onlyoffice-bin
     ])
     ++ (with pkgs-unstable; [
       zotero
