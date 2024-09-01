@@ -50,6 +50,7 @@
         vm-ty = lib.nixosSystem {
           inherit system;
           specialArgs = {
+            inherit username;
             inherit pkgs;
             inherit pkgs-unstable;
           };
