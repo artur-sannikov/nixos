@@ -36,15 +36,15 @@
       lib = nixpkgs-stable.lib;
       pkgs-unstable = import nixpkgs-unstable {
         inherit system;
-        # config = {
-        #   allowUnfree = true;
-        # };
+        config = {
+          allowUnfree = true;
+        };
       };
       pkgs = import nixpkgs-stable {
         inherit system;
-        # config = {
-        #   allowUnfree = true;
-        # };
+        config = {
+          allowUnfree = true;
+        };
       };
     in
     # pkgs-stable = nixpkgs-stable.legacyPackages.${system};
@@ -83,8 +83,8 @@
       homeConfigurations."ty" = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
         extraSpecialArgs = {
-          inherit pkgs-unstable;
           flake-inputs = inputs;
+          inherit pkgs-unstable;
         };
         modules = [
           ./hosts/ty/home.nix

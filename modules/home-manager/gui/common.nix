@@ -1,22 +1,21 @@
 # GUI apps without special settings
 {
-  pkgs-stable,
+  pkgs,
   pkgs-unstable,
-  flake-inputs,
   ...
 }:
 {
   home.packages =
-    (with pkgs-stable; [
-      betterbird
+    (with pkgs; [
+      # betterbird
       obsidian
-      vlc
-      qbittorrent
-      mattermost-desktop
-      protonvpn-gui
-      freetube
-      libreoffice-qt6-fresh
-      onlyoffice-bin
+      # vlc
+      # qbittorrent
+      # mattermost-desktop
+      # protonvpn-gui
+      # freetube
+      # libreoffice-qt6-fresh
+      # onlyoffice-bin
     ])
     ++ (with pkgs-unstable; [
       zotero
