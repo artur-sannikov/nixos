@@ -35,7 +35,6 @@
     ../../modules/home-manager/cli/R.nix
     ../../modules/home-manager/cli/starship.nix
     ../../modules/home-manager/cli/zsh.nix
-    ../../modules/home-manager/gui
   ];
 
   programs.home-manager.enable = true;
