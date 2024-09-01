@@ -12,7 +12,7 @@
       inputs.nixpkgs.follows = "nixpkgs-stable";
     };
     # Declarative Nix Flatpaks
-    flatpaks.url = "github:gmodena/nix-flatpak/main";
+    flatpaks.url = "github:gmodena/nix-flatpak";
 
     # VS Code extensions
     nix-vscode-extensions = {
@@ -27,6 +27,7 @@
       nixpkgs-stable,
       home-manager,
       nix-vscode-extensions,
+      flatpaks,
       ...
     }:
     let
@@ -35,9 +36,7 @@
       lib = nixpkgs-stable.lib;
       pkgs-unstable = import nixpkgs-unstable {
         inherit system;
-        config = {
-          allowUnfree = true;
-        };
+        config.allowUnfree = true;
       };
       pkgs = import nixpkgs-stable {
         inherit system;
@@ -51,21 +50,22 @@
         vm-ty = lib.nixosSystem {
           inherit system;
           specialArgs = {
-            inherit inputs;
             inherit pkgs;
             inherit pkgs-unstable;
           };
           modules = [
             ./hosts/vm-ty/configuration.nix
             inputs.disko.nixosModules.disko
+            # inputs.flatpaks.nixosModules.nix-flatpak
             # make home-manager as a module of nixos
             # so that home-manager configuration will be deployed automatically when executing `nixos-rebuild switch`
             home-manager.nixosModules.home-manager
             {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
-
-              home-manager.users."${username}" = import ./hosts/vm-ty/home.nix;
+              home-manager.users."${username}".imports = [
+                ./hosts/vm-ty/home.nix
+              ];
 
               # Optionally, use home-manager.extraSpecialArgs to pass arguments to home.nix
               home-manager.extraSpecialArgs = {

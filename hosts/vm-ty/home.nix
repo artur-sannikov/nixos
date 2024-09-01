@@ -43,24 +43,18 @@
     flake-inputs.flatpaks.homeManagerModules.nix-flatpak
   ];
 
+  services.flatpak.packages = [
+    {
+      appId = "com.brave.Browser";
+      origin = "flathub";
+    }
+    "im.riot.Riot"
+    "com.logseq.Logseq"
+  ];
+
   programs.home-manager.enable = true;
   # Set environment variables
   home.sessionVariables = {
     EDITOR = "nano";
-  };
-
-  # Flatpak
-  services = {
-    flatpak = {
-      enable = true;
-      update.onActivation = true;
-      packages = [
-        {
-          appId = "us.zoom.Zoom";
-          origin = "flathub";
-          commit = "b9505f108b5f9acb2bbad83ac66f97b42bc6a75b9c28ed7b75dec1040e013305";
-        } # Screen sharing is broken on Plasma on newer versions
-      ];
-    };
   };
 }
