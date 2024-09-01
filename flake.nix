@@ -26,7 +26,6 @@
       nixpkgs-unstable,
       nixpkgs-stable,
       home-manager,
-      # flatpaks,
       nix-vscode-extensions,
       ...
     }:
@@ -47,8 +46,6 @@
         };
       };
     in
-    # pkgs-stable = nixpkgs-stable.legacyPackages.${system};
-    # pkgs-unstable = nixpkgs-unstable.legacyPackages.${system};
     {
       nixosConfigurations = {
         vm-ty = lib.nixosSystem {
@@ -88,7 +85,6 @@
         };
         modules = [
           ./hosts/ty/home.nix
-          # flatpaks.homeManagerModules.nix-flatpak
           {
             nixpkgs.overlays = [
               nix-vscode-extensions.overlays.default
