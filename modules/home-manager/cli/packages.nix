@@ -3,6 +3,7 @@
   home.packages = with pkgs-unstable; [
     ansible
     ansible-lint
+    quarto
     pandoc
     screen
   ];
