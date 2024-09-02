@@ -1,7 +1,7 @@
 { pkgs-unstable, ... }:
 {
   home.packages = with pkgs-unstable; [
-    ffmpeg
+    ffmpeg-full
     mediainfo
     sox
   ];
