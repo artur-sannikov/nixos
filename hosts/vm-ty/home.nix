@@ -44,6 +44,9 @@
     ../../modules/home-manager/gui/personal.nix
   ];
 
+  # Enable zsh
+  zsh.enable = true;
+
   programs.home-manager.enable = true;
   # Set environment variables
   home.sessionVariables = {
