@@ -15,8 +15,10 @@
       inkscape
       # protonvpn-gui
       # freetube
-      # libreoffice-qt6-fresh
-      # onlyoffice-bin
+      libreoffice-qt6-fresh
+      hunspell
+      hunspellDicts.en_GB-large
+      onlyoffice-bin
     ])
     ++ (with pkgs-unstable; [
       zotero
