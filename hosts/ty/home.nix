@@ -1,6 +1,4 @@
 {
-  nixpkgs-unstable,
-  lib,
   flake-inputs,
   username,
   ...
@@ -19,18 +17,6 @@
     stateVersion = "24.05";
   };
 
-  # The home.packages option allows you to install Nix packages into your
-  # environment.
-  # home.packages = with pkgs; [
-  #   mat2
-  #   devbox
-  #   gnumake
-  #   quarto
-  #   nixfmt-rfc-style
-  #   qt6.qtwayland
-  #   kdePackages.kate
-  # ];
-
   # Import modules
   imports = [
     ../../modules/home-manager/cli/bash.nix
@@ -44,6 +30,9 @@
     ../../modules/home-manager/gui/work.nix
     flake-inputs.flatpaks.homeManagerModules.nix-flatpak
   ];
+
+  # Enable zsh
+  zsh.enable = true;
 
   programs.home-manager.enable = true;
   # Set environment variables
