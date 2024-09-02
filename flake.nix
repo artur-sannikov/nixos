@@ -81,6 +81,7 @@
         inherit pkgs;
         extraSpecialArgs = {
           flake-inputs = inputs;
+          inherit username;
           inherit pkgs-unstable;
         };
         modules = [

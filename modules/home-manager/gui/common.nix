@@ -12,6 +12,7 @@
       vlc
       qbittorrent
       mattermost-desktop
+      inkscape
       # protonvpn-gui
       # freetube
       # libreoffice-qt6-fresh
