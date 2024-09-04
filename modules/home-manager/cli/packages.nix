@@ -4,8 +4,9 @@
     ansible
     ansible-lint
     distrobox
+    gnumake
+    texlive.combined.scheme-medium
+    texstudio
     quarto
-    pandoc
-    screen
   ];
 }
