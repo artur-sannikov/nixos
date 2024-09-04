@@ -13,15 +13,14 @@
       qbittorrent
       mattermost-desktop
       inkscape
-      # protonvpn-gui
-      # freetube
+      protonvpn-gui
+      freetube
       libreoffice-qt6-fresh
       hunspell
       hunspellDicts.en_GB-large
       onlyoffice-bin
     ])
     ++ (with pkgs-unstable; [
-      # betterbird
       zotero
     ]);
   # GUI apps with special settings
