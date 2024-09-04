@@ -28,6 +28,7 @@
   boot.loader.grub.enable = true;
   boot.loader.grub.efiSupport = true;
   boot.loader.grub.efiInstallAsRemovable = true;
+  boot.loader.grub.device = "nodev";
 
   networking.hostName = "asus"; # Define your hostname.
   # Pick only one of the below networking options.
