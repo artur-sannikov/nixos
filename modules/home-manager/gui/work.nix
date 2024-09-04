@@ -2,6 +2,7 @@
 {
   imports = [
     ./common.nix
+    ./thunderbird.nix
   ];
   # Work apps
   home.packages = with pkgs; [

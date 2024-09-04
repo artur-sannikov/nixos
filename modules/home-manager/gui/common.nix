@@ -8,7 +8,6 @@
 
   home.packages =
     (with pkgs; [
-      betterbird
       obsidian
       vlc
       qbittorrent
@@ -22,6 +21,7 @@
       onlyoffice-bin
     ])
     ++ (with pkgs-unstable; [
+      # betterbird
       zotero
     ]);
   # GUI apps with special settings
