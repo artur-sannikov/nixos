@@ -6,5 +6,6 @@
     distrobox
     gnumake
     quarto
+    screen
   ];
 }
