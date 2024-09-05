@@ -20,6 +20,8 @@
     ../../modules/system/virtualization/podman.nix
     ../../modules/system/gaming.nix
     ../../modules/system/tailscale.nix
+    # System-wide packages
+    ../../modules/system/packages.nix
   ];
 
   # Use the systemd-boot EFI boot loader.
