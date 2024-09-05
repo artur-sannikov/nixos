@@ -16,6 +16,26 @@ in
       redhat.vscode-yaml
       reditorsupport.r
     ];
+    keybindings = [
+      # Insert assignment operator if code is R
+      {
+        key = "alt+-";
+        command = "type";
+        when = "editorLangId == r && editorTextFocus || editorLangId == quarto && editorTextFocus || editorLangId == rmd && editorTextFocus";
+        args = {
+          text = " <- ";
+        };
+      }
+      # Insert new R code chunk
+      {
+        key = "ctrl+alt+i";
+        command = "type";
+        when = "editorLangId == r && editorTextFocus || editorLangId == quarto && editorTextFocus || editorLangId == rmd && editorTextFocus";
+        args = {
+          text = "```{r}\n\n```\n";
+        };
+      }
+    ];
     userSettings = {
       # Font settings
       "editor.fontFamily" = "'Iosevka Medium Extended', monospace";
