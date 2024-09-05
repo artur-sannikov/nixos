@@ -1,5 +1,5 @@
 { pkgs, ... }:
-# Install systemd-wide packages
+# Install system-wide packages
 {
   environment.systemPackages = with pkgs; [
     git
