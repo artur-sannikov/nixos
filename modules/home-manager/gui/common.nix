@@ -19,6 +19,7 @@
       hunspell
       hunspellDicts.en_GB-large
       onlyoffice-bin
+      okular
     ])
     ++ (with pkgs-unstable; [
       zotero
