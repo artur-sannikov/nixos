@@ -29,5 +29,7 @@
     ./browsers/librewolf.nix
     ./vscodium.nix
     ./syncthing.nix
+    ./thunderbird.nix
+    ./fonts.nix
   ];
 }
