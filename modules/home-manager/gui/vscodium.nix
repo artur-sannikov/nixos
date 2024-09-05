@@ -18,7 +18,7 @@ in
     ];
     userSettings = {
       # Font settings
-      "editor.fontFamily" = "'Iosevka Fixed Extended', monospace";
+      "editor.fontFamily" = "'Iosevka Medium Extended', monospace";
       "editor.fontLigatures" = true;
       "editor.fontSize" = 14;
       # Enable smooth scrolling
