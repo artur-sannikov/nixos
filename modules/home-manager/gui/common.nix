@@ -20,6 +20,8 @@
       hunspellDicts.en_GB-large
       onlyoffice-bin
       okular
+      texlive.combined.scheme-medium
+      texstudio
     ])
     ++ (with pkgs-unstable; [
       zotero
