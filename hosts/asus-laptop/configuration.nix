@@ -8,9 +8,9 @@
   nixpkgs-unstable,
   username,
   pkgs,
+  flake-inputs,
   ...
 }:
-
 {
   imports = [
     # Include the results of the hardware scan.
@@ -121,6 +121,19 @@
   #   enable = true;
   #   enableSSHSupport = true;
   # };
+
+  system.autoUpgrade = {
+    enable = true;
+    flake = flake-inputs.self.outPath;
+    flags = [
+      "--update-input"
+      "nixpkgs"
+      "--no-write-lock-file"
+      "-L" # print build logs
+    ];
+    dates = "16:00";
+    randomizedDelaySec = "45min";
+  };
 
   # Flatpak
   services = {

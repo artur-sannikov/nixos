@@ -85,6 +85,7 @@
         asus-laptop = lib.nixosSystem {
           inherit system;
           specialArgs = {
+            flake-inputs = inputs;
             inherit username;
             inherit pkgs;
             inherit pkgs-unstable;
