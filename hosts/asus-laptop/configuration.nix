@@ -181,6 +181,15 @@
         "_netdev"
       ];
     };
+    # "/mnt/my_passport" = {
+    #   device = "/dev/disk/by-uuid/FE3F-ED84";
+    #   fsType = "exfat";
+    #   options = [
+    #     "uuid=1000"
+    #     "nofail"
+    #     "noauto"
+    #   ];
+    # };
   };
 
   # Open ports in the firewall.
