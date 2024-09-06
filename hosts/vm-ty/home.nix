@@ -33,6 +33,7 @@
 
   # Import modules
   imports = [
+    ../../modules/home-manager/cli/default.nix
     ../../modules/home-manager/cli/bash.nix
     ../../modules/home-manager/cli/direnv.nix
     ../../modules/home-manager/cli/git.nix
@@ -40,7 +41,6 @@
     ../../modules/home-manager/cli/packages.nix
     ../../modules/home-manager/cli/R.nix
     ../../modules/home-manager/cli/starship.nix
-    ../../modules/home-manager/cli/zsh.nix
     ../../modules/home-manager/gui/personal.nix
   ];
 
