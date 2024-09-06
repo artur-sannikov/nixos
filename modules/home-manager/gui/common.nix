@@ -22,6 +22,7 @@
       okular
       texlive.combined.scheme-medium
       texstudio
+      haruna
     ])
     ++ (with pkgs-unstable; [
       zotero
