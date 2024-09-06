@@ -19,6 +19,11 @@ in
         Type = "simple";
         ExecStart = "${duplicacy-web}/duplicacy-web -background";
         Restart = "on-failure";
+
+        # Hardening
+        LockPersonality = true;
+        NoNewPrivileges = true;
+        MemoryDenyWriteExecute = true;
       };
       Install = {
         WantedBy = [ "default.target" ];
