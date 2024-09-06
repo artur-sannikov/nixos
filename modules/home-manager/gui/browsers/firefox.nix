@@ -38,6 +38,14 @@
         Snippets = false;
       };
 
+      # https://mozilla.github.io/policy-templates/#dnsoverhttps
+      DNSOverHTTPS = {
+        Enabled = true;
+        ProviderURL = "https://base.dns.mullvad.net/dns-query";
+        Locked = true;
+        FallBack = true;
+      };
+
       Preferences = {
         browser.warnOnQuitShortcut = true;
 
