@@ -7,6 +7,7 @@
   lib,
   nixpkgs-unstable,
   username,
+  pkgs,
   ...
 }:
 
@@ -84,6 +85,9 @@
     enable = true;
     driSupport = true;
     driSupport32Bit = true;
+    extraPackages = with pkgs; [
+      intel-media-driver
+    ];
   };
 
   # Enable touchpad support (enabled default in most desktopManager).
@@ -146,7 +150,7 @@
       enable = true;
       settings = {
 
-        # For all options see https://linrunner.de/tlp/settings/processor.html
+        # For all options see https://linrunner.de/tlp/settings/processor html
         CPU_SCALING_GOVERNOR_ON_AC = "performance";
         CPU_SCALING_GOVERNOR_ON_BAT = "powersave";
         CPU_ENERGY_PERF_POLICY_ON_BAT = "balance_power";
