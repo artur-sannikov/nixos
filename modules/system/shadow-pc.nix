@@ -11,5 +11,6 @@
   ];
   programs.shadow-client = {
     channel = "prod";
+    forceDriver = "iHD";
   };
 }

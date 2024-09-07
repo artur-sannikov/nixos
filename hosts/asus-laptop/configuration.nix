@@ -30,10 +30,17 @@
   # Use the systemd-boot EFI boot loader.
   #  boot.loader.systemd-boot.enable = true;
   #  boot.loader.efi.canTouchEfiVariables = true;
-  boot.loader.grub.enable = true;
-  boot.loader.grub.efiSupport = true;
-  boot.loader.grub.efiInstallAsRemovable = true;
-  boot.loader.grub.device = "nodev";
+  boot = {
+    loader = {
+      grub = {
+        enable = true;
+        efiSupport = true;
+        efiInstallAsRemovable = true;
+        device = "nodev";
+      };
+    };
+    kernelModules = [ "uinput" ];
+  };
 
   networking.hostName = "asus"; # Define your hostname.
   # Pick only one of the below networking options.
@@ -95,6 +102,9 @@
       driSupport32Bit = true;
       extraPackages = with pkgs; [
         intel-media-driver
+        vaapiIntel
+        vaapiVdpau
+        libvdpau-va-gl
       ];
     };
     bluetooth = {
@@ -113,6 +123,7 @@
       "wheel"
       "input"
       "networkmanager"
+      "shadow-input"
     ];
   };
 
@@ -202,6 +213,11 @@
         USB_EXCLUDE_BTUSB = 1;
       };
     };
+
+    # For Shadow PC
+    udev.extraRules = ''
+      KERNEL=="uinput", MODE="0660", GROUP="shadow-input"
+    '';
   };
 
   # Mount NFS
