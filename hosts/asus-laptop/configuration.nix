@@ -116,7 +116,11 @@
   environment.sessionVariables = {
     # Enable Wayland for supported apps
     NIXOS_OZONE_WL = "1";
+    # Fix Steam UI scaling on HiDPI monitors
+    # STEAM_FORCE_DESKTOPUI_SCALING = 2;
   };
+
+  gaming.enable = true;
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
