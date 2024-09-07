@@ -31,6 +31,7 @@
   imports = [
     ./browsers/firefox.nix
     ./browsers/librewolf.nix
+    ./browsers/brave.nix
     ./vscodium.nix
     ./syncthing.nix
     ./thunderbird.nix

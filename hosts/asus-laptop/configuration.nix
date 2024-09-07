@@ -75,7 +75,15 @@
   # Enable sound.
   # hardware.pulseaudio.enable = true;
   # OR
-  security.rtkit.enable = true;
+  security = {
+    rtkit.enable = true;
+    apparmor = {
+      enable = true;
+      killUnconfinedConfinables = true;
+      packages = [ pkgs.apparmor-profiles ];
+    };
+  };
+
   services.pipewire = {
     enable = true;
     pulse.enable = true;
