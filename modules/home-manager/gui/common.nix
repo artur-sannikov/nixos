@@ -33,7 +33,7 @@
     ./browsers/librewolf.nix
     ./browsers/brave.nix
     ./vscodium.nix
-    ./syncthing.nix
+    # ./syncthing.nix
     ./thunderbird.nix
     ./fonts.nix
   ];

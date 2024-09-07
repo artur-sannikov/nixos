@@ -23,6 +23,8 @@
     ../../modules/system/tailscale.nix
     # System-wide packages
     ../../modules/system/packages.nix
+    # Syncthing
+    ../../modules/system/syncthing.nix
   ];
 
   # Use the systemd-boot EFI boot loader.
