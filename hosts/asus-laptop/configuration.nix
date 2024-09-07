@@ -25,6 +25,8 @@
     ../../modules/system/packages.nix
     # Syncthing
     ../../modules/system/syncthing.nix
+    # Mesh VPN
+    ../../modules/system/zerotier.nix
   ];
 
   # Use the systemd-boot EFI boot loader.
@@ -123,7 +125,6 @@
       "wheel"
       "input"
       "networkmanager"
-      "shadow-input"
     ];
   };
 
@@ -216,7 +217,7 @@
 
     # For Shadow PC
     udev.extraRules = ''
-      KERNEL=="uinput", MODE="0660", GROUP="shadow-input"
+      KERNEL=="uinput", MODE="0660", GROUP="input"
     '';
   };
 
