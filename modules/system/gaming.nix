@@ -11,15 +11,12 @@ let
 in
 {
   options.gaming = {
-    enable = mkOption {
-      type = types.bool;
-      default = false;
-      description = "Enable gaming mode";
-    };
-    fixDPI = mkOption {
-      type = types.bool;
-      default = false;
-      description = "Fix UI scaling on HiDPI monitors";
+    enable = lib.mkEnableOption "gaming";
+
+    SteamUIScaling = mkOption {
+      type = types.str;
+      default = "1";
+      description = "Steam UI scaling factor";
     };
   };
   config = mkIf cfg.enable {
@@ -27,7 +24,7 @@ in
       steam = {
         package = pkgs.steam.override {
           extraProfile = ''
-            export STEAM_FORCE_DESKTOPUI_SCALING=2;
+            export STEAM_FORCE_DESKTOPUI_SCALING=${cfg.SteamUIScaling};
           '';
         };
         enable = true;

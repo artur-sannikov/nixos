@@ -120,7 +120,10 @@
     # STEAM_FORCE_DESKTOPUI_SCALING = 2;
   };
 
-  gaming.enable = true;
+  gaming = {
+    enable = true;
+    SteamUIScaling = "2"; # Fix Steam UI on High DPI monitors
+  };
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
