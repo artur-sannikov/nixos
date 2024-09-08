@@ -1,3 +1,4 @@
+{ pkgs-unstable, ... }:
 {
   programs = {
     appimage = {
@@ -5,4 +6,8 @@
       binfmt = true;
     };
   };
+  environment.systemPackages = with pkgs-unstable; [
+    appimage-run
+    libappimage
+  ];
 }

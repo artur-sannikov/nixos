@@ -190,7 +190,24 @@
         "home-manager": "home-manager",
         "nix-vscode-extensions": "nix-vscode-extensions",
         "nixpkgs-stable": "nixpkgs-stable",
-        "nixpkgs-unstable": "nixpkgs-unstable"
+        "nixpkgs-unstable": "nixpkgs-unstable",
+        "shadow-nix": "shadow-nix"
+      }
+    },
+    "shadow-nix": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1725604009,
+        "narHash": "sha256-bTlb/sx7DjBxq6UhBlfJi4MixDMQQBSqgolGnCY0BFc=",
+        "owner": "tsandrini",
+        "repo": "shadow-nix",
+        "rev": "5c818acba408850b9f04d761ee14922acb7ebef2",
+        "type": "github"
+      },
+      "original": {
+        "owner": "tsandrini",
+        "repo": "shadow-nix",
+        "type": "github"
       }
     },
     "systems": {

@@ -25,6 +25,12 @@
       url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
       inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
+
+    # Shadow PC on NixOS
+    shadow-nix = {
+      url = "github:tsandrini/shadow-nix";
+      flake = false;
+    };
   };
 
   outputs =
