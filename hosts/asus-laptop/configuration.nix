@@ -27,7 +27,11 @@
     ../../modules/system/syncthing.nix
     # Mesh VPN
     ../../modules/system/zerotier.nix
+
+    ../../modules/system/ssh.nix
   ];
+
+  sshAgent.enable = true;
 
   # Use the systemd-boot EFI boot loader.
   #  boot.loader.systemd-boot.enable = true;
