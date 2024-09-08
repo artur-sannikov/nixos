@@ -12,6 +12,7 @@
       protonmail-bridge-gui
       telegram-desktop
       signal-desktop
+      moonlight-qt
     ])
 
     ++
