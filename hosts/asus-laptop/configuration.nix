@@ -41,7 +41,7 @@
         device = "nodev";
       };
     };
-    kernelModules = [ "uinput" ];
+    # kernelModules = [ "uinput" ];
   };
 
   networking.hostName = "asus"; # Define your hostname.
@@ -214,11 +214,6 @@
         USB_EXCLUDE_BTUSB = 1;
       };
     };
-
-    # For Shadow PC
-    udev.extraRules = ''
-      KERNEL=="uinput", MODE="0660", GROUP="input"
-    '';
   };
 
   # Mount NFS
