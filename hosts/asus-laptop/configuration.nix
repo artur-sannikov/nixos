@@ -77,9 +77,12 @@
   # };
 
   # Enable KDE Plasma 6.
-  # services.xserver.enable = true;
-  services.displayManager.sddm.enable = true;
-  services.displayManager.sddm.wayland.enable = true;
+  services.xserver.enable = true;
+  services.displayManager.sddm = {
+    enable = true;
+    wayland.enable = true;
+  };
+
   services.desktopManager.plasma6.enable = true;
 
   # Configure keymap in X11
