@@ -1,4 +1,4 @@
-{ pkgs-unstable, ... }:
+{ pkgs, pkgs-unstable, ... }:
 
 {
   imports = [
@@ -11,5 +11,8 @@
     protonmail-bridge-gui
     telegram-desktop
     signal-desktop
+    moonlight-qt
+    rustdesk-flutter
   ];
+
 }
