@@ -24,8 +24,8 @@ in
         };
         history = {
           path = "$HOME/.histfile";
-          save = 10000;
-          size = 10000;
+          save = 1000;
+          size = 1000;
           expireDuplicatesFirst = true;
           ignoreDups = true;
           ignoreSpace = true;
