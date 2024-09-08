@@ -10,7 +10,6 @@ let
   cfg = config.gaming;
 in
 {
-  imports = [ ./shadow-nix.nix ];
   options.gaming = {
     enable = lib.mkEnableOption "gaming";
 

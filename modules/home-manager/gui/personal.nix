@@ -3,6 +3,7 @@
 {
   imports = [
     ./common.nix
+    ./shadow-nix.nix
   ];
   # Personal apps
   home.packages = with pkgs-unstable; [
@@ -14,5 +15,4 @@
     moonlight-qt
     rustdesk-flutter
   ];
-
 }
