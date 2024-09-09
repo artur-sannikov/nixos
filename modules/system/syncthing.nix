@@ -2,7 +2,6 @@
 {
   services.syncthing = {
     user = username;
-    group = "users";
     enable = true;
     configDir = "/home/${username}/.config/syncthing";
     # Not declarative as of now
