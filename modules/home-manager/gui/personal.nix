@@ -14,5 +14,6 @@
     signal-desktop
     moonlight-qt
     rustdesk-flutter
+    tor-browser
   ];
 }
