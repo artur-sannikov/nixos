@@ -25,8 +25,6 @@
     ../../modules/system/packages.nix
     # Syncthing
     ../../modules/system/syncthing.nix
-    # Mesh VPN
-    ../../modules/system/zerotier.nix
     # SSH Agent
     ../../modules/system/ssh.nix
 
