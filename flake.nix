@@ -50,8 +50,13 @@
         inherit system;
         config.allowUnfree = true;
       };
+      overlays = [
+        # Nix VSCode extensions overlay
+        # https://github.com/nix-community/nix-vscode-extensions
+        nix-vscode-extensions.overlays.default
+      ];
       pkgs = import nixpkgs {
-        inherit system;
+        inherit system overlays;
         config = {
           allowUnfree = true;
         };
