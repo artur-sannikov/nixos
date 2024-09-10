@@ -32,6 +32,7 @@
       flake = false;
     };
 
+    # Generate Podman Quadlet files
     podlet.url = "github:artur-sannikov/podlet/devel";
   };
 
