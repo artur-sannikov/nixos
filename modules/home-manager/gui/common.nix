@@ -25,6 +25,7 @@
       haruna
     ])
     ++ (with pkgs-unstable; [
+      typstwriter
       zotero
     ]);
   # GUI apps with special settings
