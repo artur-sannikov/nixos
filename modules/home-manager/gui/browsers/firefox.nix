@@ -71,6 +71,7 @@
           "privacy.clearOnShutdown.cookies" = true;
           "privacy.clearOnShutdown.downloads" = true;
           "privacy.clearOnShutdown.openWindows" = true;
+          "privacy.clearOnShutdown.offlineApps" = true;
         };
       };
     };
