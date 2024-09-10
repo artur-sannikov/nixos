@@ -3,13 +3,13 @@
 
   inputs = {
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
-    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-24.05";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-24.05";
     disko.url = "github:nix-community/disko";
     disko.inputs.nixpkgs.follows = "nixpkgs-unstable";
     # home-manager, used for managing user configuration
     home-manager = {
       url = "github:nix-community/home-manager/release-24.05";
-      inputs.nixpkgs.follows = "nixpkgs-stable";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
     # Declarative Nix Flatpaks
     flatpaks.url = "github:gmodena/nix-flatpak";
@@ -39,7 +39,7 @@
   outputs =
     inputs@{
       nixpkgs-unstable,
-      nixpkgs-stable,
+      nixpkgs,
       home-manager,
       nix-vscode-extensions,
       flatpaks,
@@ -48,12 +48,12 @@
     let
       system = "x86_64-linux";
       username = "artur";
-      lib = nixpkgs-stable.lib;
+      lib = nixpkgs.lib;
       pkgs-unstable = import nixpkgs-unstable {
         inherit system;
         config.allowUnfree = true;
       };
-      pkgs = import nixpkgs-stable {
+      pkgs = import nixpkgs {
         inherit system;
         config = {
           allowUnfree = true;
@@ -133,7 +133,7 @@
           ./hosts/ty/home.nix
           {
             nixpkgs.overlays = [
-              nix-vscode-extensions.overlays.default
+              inputs.nix-vscode-extensions.overlays.default
             ];
           }
         ];

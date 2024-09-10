@@ -8,14 +8,14 @@ in
     enable = true;
     package = pkgs-unstable.vscodium;
     extensions = with vscode_extensions; [
-      jnoortheen.nix-ide
-      mkhl.direnv
-      ms-python.python
-      quarto.quarto
-      redhat.ansible
-      redhat.vscode-yaml
-      reditorsupport.r
-    ];
+    jnoortheen.nix-ide
+    #  mkhl.direnv
+    #  ms-python.python
+    #  quarto.quarto
+    #  redhat.ansible
+    #  redhat.vscode-yaml
+    #  reditorsupport.r
+         ];
     keybindings = [
       # Insert assignment operator if code is R
       {
