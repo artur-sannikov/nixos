@@ -31,6 +31,8 @@
       url = "github:tsandrini/shadow-nix";
       flake = false;
     };
+
+    podlet.url = "github:artur-sannikov/podlet/devel";
   };
 
   outputs =

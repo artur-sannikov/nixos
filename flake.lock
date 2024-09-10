@@ -203,16 +203,16 @@
         "nixpkgs": "nixpkgs"
       },
       "locked": {
-        "lastModified": 1725956877,
-        "narHash": "sha256-QCueLbYSyRAt9NrXOkwEtgH9sggfbLCQLpp57NUctJY=",
+        "lastModified": 1725957748,
+        "narHash": "sha256-D7GbgsubJ4fM6gQ451xMD4UhN/g0bZfyDmvPnhPOYmE=",
         "owner": "artur-sannikov",
         "repo": "podlet",
-        "rev": "9ea1bb1815d9a4ad45667148fb6b7e76f2e755df",
+        "rev": "449d7d1101965c0aea7750d9f93e8a18ffd5b980",
         "type": "github"
       },
       "original": {
         "owner": "artur-sannikov",
-        "ref": "main",
+        "ref": "devel",
         "repo": "podlet",
         "type": "github"
       }

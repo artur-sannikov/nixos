@@ -1,4 +1,4 @@
-{ pkgs-unstable, ... }:
+{ pkgs-unstable, flake-inputs, ... }:
 {
   home.packages = with pkgs-unstable; [
     ansible
@@ -7,5 +7,6 @@
     gnumake
     quarto
     screen
+    flake-inputs.podlet.packages."${pkgs-unstable.system}".podlet
   ];
 }
