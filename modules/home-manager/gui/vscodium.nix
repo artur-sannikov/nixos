@@ -1,21 +1,22 @@
-{ pkgs-unstable, flake-inputs, ... }:
-let
-  vscode_extensions =
-    flake-inputs.nix-vscode-extensions.extensions.${pkgs-unstable.system}.vscode-marketplace;
-in
+{
+  pkgs-unstable,
+  pkgs,
+  flake-inputs,
+  ...
+}:
 {
   programs.vscode = {
     enable = true;
     package = pkgs-unstable.vscodium;
-    extensions = with vscode_extensions; [
-    jnoortheen.nix-ide
-    #  mkhl.direnv
-    #  ms-python.python
-    #  quarto.quarto
-    #  redhat.ansible
-    #  redhat.vscode-yaml
-    #  reditorsupport.r
-         ];
+    extensions = with pkgs.vscode-marketplace; [
+      jnoortheen.nix-ide
+      mkhl.direnv
+      ms-python.python
+      quarto.quarto
+      redhat.ansible
+      redhat.vscode-yaml
+      reditorsupport.r
+    ];
     keybindings = [
       # Insert assignment operator if code is R
       {

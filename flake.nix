@@ -15,10 +15,7 @@
     flatpaks.url = "github:gmodena/nix-flatpak";
 
     # VS Code extensions
-    nix-vscode-extensions = {
-      url = "github:nix-community/nix-vscode-extensions";
-      inputs.nixpkgs.follows = "nixpkgs-unstable";
-    };
+    nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
 
     # Firefox extensions
     firefox-extensions = {
@@ -133,7 +130,7 @@
           ./hosts/ty/home.nix
           {
             nixpkgs.overlays = [
-              inputs.nix-vscode-extensions.overlays.default
+              nix-vscode-extensions.overlays.default
             ];
           }
         ];
