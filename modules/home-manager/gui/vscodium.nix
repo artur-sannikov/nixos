@@ -12,6 +12,7 @@
       jnoortheen.nix-ide
       mkhl.direnv
       ms-python.python
+      myriad-dreamin.tinymist
       quarto.quarto
       redhat.ansible
       redhat.vscode-yaml
