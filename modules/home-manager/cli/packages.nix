@@ -6,6 +6,7 @@
     distrobox
     gnumake
     quarto
+    typst
     screen
     flake-inputs.podlet.packages."${pkgs-unstable.system}".podlet
   ];
