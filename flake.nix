@@ -56,15 +56,16 @@
       system = "x86_64-linux";
       username = "artur";
       lib = nixpkgs.lib;
-      pkgs-unstable = import nixpkgs-unstable {
-        inherit system;
-        config.allowUnfree = true;
-      };
       overlays = [
         # Nix VSCode extensions overlay
         # https://github.com/nix-community/nix-vscode-extensions
         nix-vscode-extensions.overlays.default
+        catppuccin-vsc.overlays.default
       ];
+      pkgs-unstable = import nixpkgs-unstable {
+        inherit system overlays;
+        config.allowUnfree = true;
+      };
       pkgs = import nixpkgs {
         inherit system overlays;
         config = {
