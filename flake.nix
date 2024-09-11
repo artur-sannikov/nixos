@@ -141,16 +141,11 @@
           flake-inputs = inputs;
           inherit username;
           inherit pkgs-unstable;
+          inherit overlays;
         };
         modules = [
           ./hosts/ty/home.nix
           catppuccin.homeManagerModules.catppuccin
-          {
-            nixpkgs.overlays = [
-              nix-vscode-extensions.overlays.default
-              catppuccin-vsc.overlays.default
-            ];
-          }
         ];
       };
     };
