@@ -34,6 +34,13 @@
   # Enable zsh
   zsh.enable = true;
 
+  # Enable Catppuccin theme globally
+  catppuccin = {
+    enable = true;
+    flavor = "macchiato";
+    accent = "blue";
+  };
+
   programs.home-manager.enable = true;
   # Set environment variables
   home.sessionVariables = {
