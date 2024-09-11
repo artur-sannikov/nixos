@@ -11,6 +11,7 @@
     extensions =
       with pkgs.vscode-marketplace;
       [
+        catppuccin.catppuccin-vsc-icons
         jnoortheen.nix-ide
         mkhl.direnv
         ms-python.python
@@ -79,7 +80,7 @@
         "*.bu" = "yaml";
         "main.yml" = "ansible";
       };
-      git.autofetch = true;
+      "git.autofetch" = true;
       # Set default shell to zsh
       "terminal.integrated.defaultProfile.linux" = "zsh";
       # Remove traling whitespace on save
@@ -88,11 +89,9 @@
       "redhat.telemetry.enabled" = false;
       # Apply Catppuccin theme
       "workbench.colorTheme" = "Catppuccin Mocha";
-      "catppuccin" = {
-        "accentColor" = "green";
-        "italicKeywords" = false;
-        "boldKeywords" = false;
-      };
+      "catppuccin.accentColor" = "green";
+      "catppuccin.italicKeywords" = false;
+      "catpuccin.boldKeywords" = false;
     };
   };
 }
