@@ -23,6 +23,7 @@
       texlive.combined.scheme-medium
       texstudio
       haruna
+      zoom-us
     ])
     ++ (with pkgs-unstable; [
       zotero
