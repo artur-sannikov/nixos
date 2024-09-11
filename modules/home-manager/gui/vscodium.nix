@@ -79,6 +79,7 @@
         "*.bu" = "yaml";
         "main.yml" = "ansible";
       };
+      git.autofetch = true;
       # Set default shell to zsh
       "terminal.integrated.defaultProfile.linux" = "zsh";
       # Remove traling whitespace on save
