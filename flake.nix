@@ -31,6 +31,10 @@
 
     # Generate Podman Quadlet files
     podlet.url = "github:artur-sannikov/podlet/devel";
+
+    # Catpuccin theme for VSCodium
+    # https://github.com/catppuccin/vscode
+    catppuccin-vsc.url = "https://flakehub.com/f/catppuccin/vscode/*.tar.gz";
   };
 
   outputs =
@@ -39,6 +43,7 @@
       nixpkgs,
       home-manager,
       nix-vscode-extensions,
+      catppuccin-vsc,
       flatpaks,
       ...
     }:
@@ -136,6 +141,7 @@
           {
             nixpkgs.overlays = [
               nix-vscode-extensions.overlays.default
+              catppuccin-vsc.overlays.default
             ];
           }
         ];

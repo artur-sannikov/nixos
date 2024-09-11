@@ -8,16 +8,33 @@
   programs.vscode = {
     enable = true;
     package = pkgs-unstable.vscodium;
-    extensions = with pkgs.vscode-marketplace; [
-      jnoortheen.nix-ide
-      mkhl.direnv
-      ms-python.python
-      myriad-dreamin.tinymist
-      quarto.quarto
-      redhat.ansible
-      redhat.vscode-yaml
-      reditorsupport.r
-    ];
+    extensions =
+      with pkgs.vscode-marketplace;
+      [
+        jnoortheen.nix-ide
+        mkhl.direnv
+        ms-python.python
+        myriad-dreamin.tinymist
+        quarto.quarto
+        redhat.ansible
+        redhat.vscode-yaml
+        reditorsupport.r
+      ]
+      ++ [
+        (pkgs.catppuccin-vsc.override {
+          # These settings are not applied
+          # They are default
+          accent = "mauve";
+          boldKeywords = true;
+          italicComments = false;
+          italicKeywords = false;
+          extraBordersEnabled = false;
+          workbenchMode = "default";
+          bracketMode = "rainbow";
+          colorOverrides = { };
+          customUIColors = { };
+        })
+      ];
     keybindings = [
       # Insert assignment operator if code is R
       {
@@ -68,6 +85,13 @@
       "files.trimTrailingWhitespace" = true;
       # Disable RedHat telemetry
       "redhat.telemetry.enabled" = false;
+      # Apply Catppuccin theme
+      "workbench.colorTheme" = "Catppuccin Mocha";
+      "catppuccin" = {
+        "accentColor" = "green";
+        "italicKeywords" = false;
+        "boldKeywords" = false;
+      };
     };
   };
 }
