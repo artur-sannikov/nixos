@@ -89,9 +89,10 @@
       "redhat.telemetry.enabled" = false;
       # Apply Catppuccin theme
       "workbench.colorTheme" = "Catppuccin Mocha";
+      "workbench.iconTheme" = "catppuccin-macchiato";
       "catppuccin.accentColor" = "green";
       "catppuccin.italicKeywords" = false;
-      "catpuccin.boldKeywords" = false;
+      "catppuccin.boldKeywords" = false;
     };
   };
 }
