@@ -90,7 +90,7 @@
       # Apply Catppuccin theme
       "workbench.colorTheme" = "Catppuccin Mocha";
       "workbench.iconTheme" = "catppuccin-macchiato";
-      "catppuccin.accentColor" = "green";
+      "catppuccin.accentColor" = "blue";
       "catppuccin.italicKeywords" = false;
       "catppuccin.boldKeywords" = false;
     };
