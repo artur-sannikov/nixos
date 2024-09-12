@@ -23,9 +23,7 @@
       ]
       ++ [
         (pkgs.catppuccin-vsc.override {
-          # These settings are not applied
-          # They are default
-          accent = "mauve";
+          accent = "blue";
           boldKeywords = true;
           italicComments = false;
           italicKeywords = false;
