@@ -8,23 +8,23 @@
 
   home.packages =
     (with pkgs; [
-      obsidian
       feishin
-      strawberry-qt6
-      vlc
-      qbittorrent
-      mattermost-desktop
-      inkscape
-      protonvpn-gui
       freetube
-      libreoffice-qt6-fresh
+      haruna
       hunspell
       hunspellDicts.en_GB-large
-      onlyoffice-bin
+      inkscape
+      libreoffice-qt6-fresh
+      mattermost-desktop
+      obsidian
       okular
+      onlyoffice-bin
+      protonvpn-gui
+      qbittorrent
+      strawberry-qt6
       texlive.combined.scheme-medium
       texstudio
-      haruna
+      vlc
       zoom-us
     ])
     ++ (with pkgs-unstable; [
