@@ -32,6 +32,9 @@
     # Generate Podman Quadlet files
     podlet.url = "github:artur-sannikov/podlet/devel";
 
+    # https://github.com/danth/stylix
+    stylix.url = "github:danth/stylix";
+
     # Catppuccin theme
     # https://github.com/catppuccin/nix
     catppuccin.url = "github:catppuccin/nix";
@@ -47,6 +50,7 @@
       nixpkgs,
       home-manager,
       nix-vscode-extensions,
+      stylix,
       catppuccin,
       catppuccin-vsc,
       flatpaks,
@@ -146,6 +150,7 @@
         modules = [
           ./hosts/ty/home.nix
           catppuccin.homeManagerModules.catppuccin
+          stylix.homeManagerModules.stylix
         ];
       };
     };
