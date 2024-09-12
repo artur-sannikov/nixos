@@ -1,8 +1,6 @@
 {
   pkgs-unstable,
   pkgs,
-  lib,
-  flake-inputs,
   ...
 }:
 {
