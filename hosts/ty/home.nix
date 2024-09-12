@@ -49,17 +49,4 @@
     EDITOR = "nano";
     LC_TIME = "fi_FI.utf8";
   };
-
-  # Stylix
-  stylix = {
-    enable = true;
-    base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
-    fonts = {
-      sizes.applications = 10;
-    };
-    image = ./scarlet_tree.png;
-    targets = {
-      vscode.enable = false;
-    };
-  };
 }
