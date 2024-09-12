@@ -12,6 +12,7 @@
       vlc
       qbittorrent
       mattermost-desktop
+      gearlever
       inkscape
       protonvpn-gui
       freetube
