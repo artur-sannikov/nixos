@@ -9,6 +9,8 @@
   home.packages =
     (with pkgs; [
       obsidian
+      feishin
+      strawberry-qt6
       vlc
       qbittorrent
       mattermost-desktop
