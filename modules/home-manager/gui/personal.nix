@@ -15,5 +15,6 @@
     moonlight-qt
     rustdesk-flutter
     tor-browser
+    veracrypt
   ];
 }
