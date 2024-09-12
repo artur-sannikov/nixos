@@ -12,7 +12,6 @@
       vlc
       qbittorrent
       mattermost-desktop
-      gearlever
       inkscape
       protonvpn-gui
       freetube
@@ -27,6 +26,7 @@
       zoom-us
     ])
     ++ (with pkgs-unstable; [
+      gearlever
       zotero
     ]);
   # GUI apps with special settings
