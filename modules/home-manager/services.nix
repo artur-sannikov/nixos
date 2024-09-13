@@ -24,6 +24,7 @@ in
         LockPersonality = true;
         NoNewPrivileges = true;
         MemoryDenyWriteExecute = true;
+        PrivateDevices = true;
       };
       Install = {
         WantedBy = [ "default.target" ];
