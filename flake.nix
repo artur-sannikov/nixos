@@ -48,8 +48,8 @@
     inputs@{
       nixpkgs-unstable,
       nixpkgs,
+      disko,
       home-manager,
-      nix-vscode-extensions,
       stylix,
       catppuccin,
       catppuccin-vsc,
@@ -85,8 +85,8 @@
           };
           modules = [
             ./hosts/vm-ty/configuration.nix
-            inputs.disko.nixosModules.disko
-            inputs.flatpaks.nixosModules.nix-flatpak
+            disko.nixosModules.disko
+            flatpaks.nixosModules.nix-flatpak
             # make home-manager as a module of nixos
             # so that home-manager configuration will be deployed automatically when executing `nixos-rebuild switch`
             home-manager.nixosModules.home-manager
@@ -115,11 +115,12 @@
           };
           modules = [
             ./hosts/asus-laptop/configuration.nix
-            inputs.disko.nixosModules.disko
-            inputs.flatpaks.nixosModules.nix-flatpak
+            disko.nixosModules.disko
+            flatpaks.nixosModules.nix-flatpak
             # make home-manager as a module of nixos
             # so that home-manager configuration will be deployed automatically when executing `nixos-rebuild switch`
             home-manager.nixosModules.home-manager
+            stylix.nixosModules.stylix
             {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;

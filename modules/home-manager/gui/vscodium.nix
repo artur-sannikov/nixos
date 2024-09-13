@@ -1,5 +1,6 @@
 {
   pkgs,
+  lib,
   flake-inputs,
   ...
 }:
@@ -56,7 +57,7 @@
         };
       }
     ];
-    userSettings = {
+    userSettings = lib.mkDefault {
       # Font settings
       "editor.fontFamily" = "'Iosevka Medium Extended', monospace";
       "editor.fontLigatures" = true;
