@@ -17,7 +17,7 @@ pkgs.stdenv.mkDerivation rec {
   '';
 
   meta = {
-    homepage =  "https://duplicacy.com";
+    homepage = "https://duplicacy.com";
     description = "A new generation cloud backup tool";
     platforms = lib.platforms.linux;
     license = lib.licenses.unfreeRedistributable;
