@@ -1,25 +1,28 @@
 {
-  pkgs-unstable,
   pkgs,
+  flake-inputs,
   ...
 }:
 {
   programs.vscode = {
     enable = true;
-    package = pkgs-unstable.vscodium;
+    package = pkgs.vscodium;
+    mutableExtensionsDir = false;
     extensions =
-      with pkgs.vscode-marketplace;
+      with pkgs.vscode-extensions;
       [
         catppuccin.catppuccin-vsc-icons
         jnoortheen.nix-ide
         mkhl.direnv
         ms-python.python
         myriad-dreamin.tinymist
-        quarto.quarto
         redhat.ansible
         redhat.vscode-yaml
         reditorsupport.r
       ]
+      ++ (with flake-inputs.nix-vscode-extensions.extensions.${pkgs.system}.vscode-marketplace; [
+        quarto.quarto
+      ])
       ++ [
         (pkgs.catppuccin-vsc.override {
           accent = "blue";
@@ -87,9 +90,6 @@
       # Apply Catppuccin theme
       "workbench.colorTheme" = "Catppuccin Mocha";
       "workbench.iconTheme" = "catppuccin-macchiato";
-      "catppuccin.accentColor" = "blue";
-      "catppuccin.italicKeywords" = false;
-      "catppuccin.boldKeywords" = false;
     };
   };
 }

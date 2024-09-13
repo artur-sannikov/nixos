@@ -61,9 +61,6 @@
       username = "artur";
       lib = nixpkgs.lib;
       overlays = [
-        # Nix VSCode extensions overlay
-        # https://github.com/nix-community/nix-vscode-extensions
-        nix-vscode-extensions.overlays.default
         catppuccin-vsc.overlays.default
       ];
       pkgs-unstable = import nixpkgs-unstable {
