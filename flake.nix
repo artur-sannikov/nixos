@@ -15,7 +15,10 @@
     flatpaks.url = "github:gmodena/nix-flatpak";
 
     # VS Code extensions
-    nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
+    nix-vscode-extensions = {
+      url = "github:nix-community/nix-vscode-extensions";
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
+    };
 
     # Firefox extensions
     firefox-extensions = {
@@ -93,9 +96,11 @@
             {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
-              home-manager.users."${username}".imports = [
-                ./hosts/vm-ty/home.nix
-              ];
+              home-manager.users."${username}" = {
+                imports = [
+                  ./hosts/vm-ty/home.nix
+                ];
+              };
 
               # Optionally, use home-manager.extraSpecialArgs to pass arguments to home.nix
               home-manager.extraSpecialArgs = {

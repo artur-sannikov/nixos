@@ -1,13 +1,17 @@
 {
   pkgs,
+  pkgs-unstable,
   lib,
   flake-inputs,
   ...
 }:
 {
+  stylix.targets = {
+    vscode.enable = false;
+  };
   programs.vscode = {
     enable = true;
-    package = pkgs.vscodium;
+    package = pkgs-unstable.vscodium;
     mutableExtensionsDir = false;
     extensions =
       with pkgs.vscode-extensions;
