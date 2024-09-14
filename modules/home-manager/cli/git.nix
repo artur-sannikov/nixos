@@ -19,9 +19,7 @@
             insteadOf = "https://github.com/";
           };
         };
-        user.signingKey = "/home/artur/.ssh/git-sign.pub";
         commit.gpgsign = "true";
-        gpg.format = "ssh";
       };
       ignores = [
         ".DS_Store"
