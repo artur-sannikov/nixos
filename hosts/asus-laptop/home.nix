@@ -42,6 +42,7 @@
     ../../modules/home-manager/cli/R.nix
     ../../modules/home-manager/cli/starship.nix
     ../../modules/home-manager/cli/yt-dlp.nix
+    ../../modules/home-manager/cli/beets.nix
     ../../modules/home-manager/gui/personal.nix
     # Systemd services
     ../../modules/home-manager/services.nix
