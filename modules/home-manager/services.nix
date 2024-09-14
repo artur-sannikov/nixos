@@ -21,7 +21,6 @@ in
         Restart = "on-failure";
 
         # Hardening
-        DynamicUser = true;
         LockPersonality = true;
         NoNewPrivileges = true;
         MemoryDenyWriteExecute = true;
