@@ -18,6 +18,7 @@
       [
         catppuccin.catppuccin-vsc-icons
         jnoortheen.nix-ide
+        matthewpi.caddyfile-support
         mkhl.direnv
         ms-python.python
         myriad-dreamin.tinymist
