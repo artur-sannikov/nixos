@@ -1,3 +1,4 @@
+{ pkgs, ... }:
 {
   programs = {
     git = {
@@ -30,4 +31,8 @@
       ];
     };
   };
+  home.packages = with pkgs; [
+    # Rewrite git history
+    git-filter-repo
+  ];
 }
