@@ -137,6 +137,7 @@
               home-manager.extraSpecialArgs = {
                 flake-inputs = inputs;
                 inherit pkgs-unstable;
+                inherit username;
               };
             }
           ];

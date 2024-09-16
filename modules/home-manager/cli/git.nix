@@ -21,7 +21,7 @@
         };
         commit.gpgsign = "true";
         gpg.format = "ssh";
-        user.signingkey = /home/${username}/git-sign.pub;
+        user.signingkey = "/home/${username}/.ssh/git-sign.pub";
       };
       ignores = [
         ".DS_Store"
