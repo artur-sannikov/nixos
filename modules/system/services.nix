@@ -50,5 +50,12 @@
     fwupd = {
       enable = true;
     };
+    samba = {
+      enable = true;
+      securityType = "user";
+      extraConfig = ''
+        workgroup = utu
+      '';
+    };
   };
 }
