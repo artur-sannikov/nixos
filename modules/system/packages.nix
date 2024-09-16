@@ -7,6 +7,7 @@
     git
     glxinfo
     libva-utils
+    python312
     nano
     pciutils
     vim

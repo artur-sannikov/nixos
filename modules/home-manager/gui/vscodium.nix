@@ -1,25 +1,34 @@
 {
-  pkgs-unstable,
   pkgs,
+  pkgs-unstable,
+  lib,
+  flake-inputs,
   ...
 }:
 {
+  stylix.targets = {
+    vscode.enable = false;
+  };
   programs.vscode = {
     enable = true;
     package = pkgs-unstable.vscodium;
+    mutableExtensionsDir = false;
     extensions =
-      with pkgs.vscode-marketplace;
+      with pkgs.vscode-extensions;
       [
         catppuccin.catppuccin-vsc-icons
         jnoortheen.nix-ide
+        matthewpi.caddyfile-support
         mkhl.direnv
         ms-python.python
         myriad-dreamin.tinymist
-        quarto.quarto
         redhat.ansible
         redhat.vscode-yaml
         reditorsupport.r
       ]
+      ++ (with flake-inputs.nix-vscode-extensions.extensions.${pkgs.system}.vscode-marketplace; [
+        quarto.quarto
+      ])
       ++ [
         (pkgs.catppuccin-vsc.override {
           accent = "blue";
@@ -53,7 +62,7 @@
         };
       }
     ];
-    userSettings = {
+    userSettings = lib.mkDefault {
       # Font settings
       "editor.fontFamily" = "'Iosevka Medium Extended', monospace";
       "editor.fontLigatures" = true;
@@ -87,9 +96,6 @@
       # Apply Catppuccin theme
       "workbench.colorTheme" = "Catppuccin Mocha";
       "workbench.iconTheme" = "catppuccin-macchiato";
-      "catppuccin.accentColor" = "blue";
-      "catppuccin.italicKeywords" = false;
-      "catppuccin.boldKeywords" = false;
     };
   };
 }

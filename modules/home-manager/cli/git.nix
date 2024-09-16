@@ -1,3 +1,4 @@
+{ pkgs, ... }:
 {
   programs = {
     git = {
@@ -18,9 +19,7 @@
             insteadOf = "https://github.com/";
           };
         };
-        user.signingKey = "/home/artur/.ssh/git-sign.pub";
         commit.gpgsign = "true";
-        gpg.format = "ssh";
       };
       ignores = [
         ".DS_Store"
@@ -30,4 +29,8 @@
       ];
     };
   };
+  home.packages = with pkgs; [
+    # Rewrite git history
+    git-filter-repo
+  ];
 }

@@ -15,7 +15,10 @@
     flatpaks.url = "github:gmodena/nix-flatpak";
 
     # VS Code extensions
-    nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
+    nix-vscode-extensions = {
+      url = "github:nix-community/nix-vscode-extensions";
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
+    };
 
     # Firefox extensions
     firefox-extensions = {
@@ -48,8 +51,8 @@
     inputs@{
       nixpkgs-unstable,
       nixpkgs,
+      disko,
       home-manager,
-      nix-vscode-extensions,
       stylix,
       catppuccin,
       catppuccin-vsc,
@@ -61,9 +64,6 @@
       username = "artur";
       lib = nixpkgs.lib;
       overlays = [
-        # Nix VSCode extensions overlay
-        # https://github.com/nix-community/nix-vscode-extensions
-        nix-vscode-extensions.overlays.default
         catppuccin-vsc.overlays.default
       ];
       pkgs-unstable = import nixpkgs-unstable {
@@ -88,17 +88,19 @@
           };
           modules = [
             ./hosts/vm-ty/configuration.nix
-            inputs.disko.nixosModules.disko
-            inputs.flatpaks.nixosModules.nix-flatpak
+            disko.nixosModules.disko
+            flatpaks.nixosModules.nix-flatpak
             # make home-manager as a module of nixos
             # so that home-manager configuration will be deployed automatically when executing `nixos-rebuild switch`
             home-manager.nixosModules.home-manager
             {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
-              home-manager.users."${username}".imports = [
-                ./hosts/vm-ty/home.nix
-              ];
+              home-manager.users."${username}" = {
+                imports = [
+                  ./hosts/vm-ty/home.nix
+                ];
+              };
 
               # Optionally, use home-manager.extraSpecialArgs to pass arguments to home.nix
               home-manager.extraSpecialArgs = {
@@ -118,8 +120,8 @@
           };
           modules = [
             ./hosts/asus-laptop/configuration.nix
-            inputs.disko.nixosModules.disko
-            inputs.flatpaks.nixosModules.nix-flatpak
+            disko.nixosModules.disko
+            flatpaks.nixosModules.nix-flatpak
             # make home-manager as a module of nixos
             # so that home-manager configuration will be deployed automatically when executing `nixos-rebuild switch`
             home-manager.nixosModules.home-manager
