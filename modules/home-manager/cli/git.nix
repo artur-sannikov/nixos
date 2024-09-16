@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, username, ... }:
 {
   programs = {
     git = {
@@ -20,6 +20,8 @@
           };
         };
         commit.gpgsign = "true";
+        gpg.format = "ssh";
+        user.signingkey = /home/${username}/git-sign.pub;
       };
       ignores = [
         ".DS_Store"
