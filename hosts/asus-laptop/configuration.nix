@@ -49,10 +49,11 @@
     # kernelModules = [ "uinput" ];
   };
 
-  networking.hostName = "asus"; # Define your hostname.
-  # Pick only one of the below networking options.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-  networking.networkmanager.enable = true; # Easiest to use and most distros use this by default.
+  networking = {
+    hostName = "asus";
+    networkmanager.enable = true;
+    wg-quick.interfaces.wg0.configFile = "/etc/nixos/files/wireguard/wg0.conf";
+  };
 
   # Enable Flakes
   nix.settings.experimental-features = [
