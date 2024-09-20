@@ -54,7 +54,7 @@
   networking = {
     hostName = "asus";
     networkmanager.enable = true;
-    wg-quick.interfaces.wg0.configFile = "/etc/nixos/files/wireguard/wg0.conf";
+    # wg-quick.interfaces.wg0.configFile = "/etc/nixos/files/wireguard/wg0.conf";
   };
 
   # Enable Flakes
