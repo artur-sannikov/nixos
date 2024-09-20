@@ -30,6 +30,8 @@
 
     ../../modules/system/appimage.nix
     ../../modules/system/services.nix
+
+    ../../modules/system/tmux.nix
   ];
 
   sshAgent.enable = true;
