@@ -44,6 +44,7 @@
     ../../modules/home-manager/cli/yt-dlp.nix
     ../../modules/home-manager/cli/beets.nix
     ../../modules/home-manager/cli/gnupg.nix
+    ../../modules/home-manager/cli/tmux.nix
     ../../modules/home-manager/gui/personal.nix
     # Systemd services
     ../../modules/home-manager/services.nix

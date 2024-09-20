@@ -9,6 +9,7 @@
     quarto
     typst
     screen
+    tmux
     wl-clipboard-rs
     flake-inputs.podlet.packages."${pkgs-unstable.system}".podlet
   ];
