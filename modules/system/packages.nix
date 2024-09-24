@@ -4,12 +4,14 @@
   environment.systemPackages = with pkgs; [
     aha
     clinfo
+    dig
     git
     glxinfo
     libva-utils
-    python312
     nano
+    nmap
     pciutils
+    python312
     vim
     vulkan-tools
     wayland-utils
