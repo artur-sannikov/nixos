@@ -3,8 +3,7 @@
     (
       fetchGit {
         url = "https://github.com/anthonyroussel/shadow-nix";
-        rev = "caae642e4ac8051fa7b751e78492ebd22e7b2153";
-        ref = "refs/tags/v1.5.0";
+        rev = "2063ca3633f1630bd49a24b5eef49f0d747910c5";
       }
       + "/import/home-manager.nix"
     )
