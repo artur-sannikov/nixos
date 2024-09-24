@@ -1,6 +1,7 @@
 { pkgs-unstable, flake-inputs, ... }:
 {
   home.packages = with pkgs-unstable; [
+    age
     ansible
     ansible-lint
     caddy
@@ -9,7 +10,6 @@
     quarto
     typst
     screen
-    tmux
     wl-clipboard-rs
     flake-inputs.podlet.packages."${pkgs-unstable.system}".podlet
   ];
