@@ -28,7 +28,8 @@
 
     # Shadow PC on NixOS
     # shadow-nix = {
-    #   url = "github:tsandrini/shadow-nix";
+    #   # url = "github:tsandrini/shadow-nix";
+    #   url = "github:anthonyroussel/shadow-nix";
     #   flake = false;
     # };
 
