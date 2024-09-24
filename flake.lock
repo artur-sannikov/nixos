@@ -498,24 +498,7 @@
         "nixpkgs": "nixpkgs_2",
         "nixpkgs-unstable": "nixpkgs-unstable",
         "podlet": "podlet",
-        "shadow-nix": "shadow-nix",
         "stylix": "stylix"
-      }
-    },
-    "shadow-nix": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1725604009,
-        "narHash": "sha256-bTlb/sx7DjBxq6UhBlfJi4MixDMQQBSqgolGnCY0BFc=",
-        "owner": "tsandrini",
-        "repo": "shadow-nix",
-        "rev": "5c818acba408850b9f04d761ee14922acb7ebef2",
-        "type": "github"
-      },
-      "original": {
-        "owner": "tsandrini",
-        "repo": "shadow-nix",
-        "type": "github"
       }
     },
     "stylix": {

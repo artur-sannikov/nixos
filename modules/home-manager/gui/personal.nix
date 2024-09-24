@@ -3,7 +3,7 @@
 {
   imports = [
     ./common.nix
-    ./shadow-nix.nix
+    # ./shadow-nix.nix
   ];
   # Personal apps
   home.packages = with pkgs-unstable; [
