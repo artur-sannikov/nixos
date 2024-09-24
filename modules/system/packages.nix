@@ -10,6 +10,7 @@
     libva-utils
     nano
     nmap
+    quickemu
     pciutils
     python312
     vim
