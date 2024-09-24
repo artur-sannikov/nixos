@@ -200,6 +200,12 @@
     };
   };
 
+  stylix = {
+    enable = true;
+    image = ./scarlet_tree.png;
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
+  };
+
   # Open ports in the firewall.
   networking.firewall.allowedTCPPorts = [ 22000 ]; # Syncthing port
   # networking.firewall.allowedUDPPorts = [ ... ];
