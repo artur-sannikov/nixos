@@ -10,6 +10,7 @@
     quarto
     typst
     screen
+    sops
     wl-clipboard-rs
     flake-inputs.podlet.packages."${pkgs-unstable.system}".podlet
   ];
