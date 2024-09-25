@@ -29,19 +29,19 @@
       ++ (with flake-inputs.nix-vscode-extensions.extensions.${pkgs.system}.vscode-marketplace; [
         quarto.quarto
       ])
-          ++ [
-            (pkgs.catppuccin-vsc.override {
-              accent = "blue";
-              boldKeywords = true;
-              italicComments = false;
-              italicKeywords = false;
-              extraBordersEnabled = false;
-              workbenchMode = "default";
-              bracketMode = "rainbow";
-              colorOverrides = { };
-              customUIColors = { };
-            })
-          ];
+      ++ [
+        (pkgs.catppuccin-vsc.override {
+          accent = "blue";
+          boldKeywords = true;
+          italicComments = false;
+          italicKeywords = false;
+          extraBordersEnabled = false;
+          workbenchMode = "default";
+          bracketMode = "rainbow";
+          colorOverrides = { };
+          customUIColors = { };
+        })
+      ];
     keybindings = [
       # Insert assignment operator if code is R
       {
@@ -69,6 +69,11 @@
       "editor.fontSize" = 14;
       # Enable smooth scrolling
       "editor.smoothScrolling" = true;
+
+      # Recommendation from https://github.com/catppuccin/vscode
+      "editor.semanticHighlighting.enabled" = true;
+      "terminal.integrated.minimumContrastRatio" = 1;
+      "window.titleBarStyle" = "custom";
       # Format on save
       "editor.formatOnSave" = true;
       # nix configuration
