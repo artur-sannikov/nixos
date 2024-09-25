@@ -38,7 +38,7 @@
 
     # Catppuccin theme for VSCodium
     # https://github.com/catppuccin/vscode
-    catppuccin-vsc.url = "https://flakehub.com/f/catppuccin/vscode/*.tar.gz";
+    #     catppuccin-vsc.url = "https://flakehub.com/f/catppuccin/vscode/*.tar.gz";
   };
 
   outputs =
@@ -49,7 +49,7 @@
       home-manager,
       stylix,
       catppuccin,
-      catppuccin-vsc,
+      #       catppuccin-vsc,
       flatpaks,
       ...
     }:
@@ -58,7 +58,7 @@
       username = "artur";
       lib = nixpkgs.lib;
       overlays = [
-        catppuccin-vsc.overlays.default
+        #         catppuccin-vsc.overlays.default
       ];
       pkgs-unstable = import nixpkgs-unstable {
         inherit system overlays;
