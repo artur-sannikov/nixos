@@ -79,11 +79,11 @@
 
   security = {
     rtkit.enable = true;
-    # apparmor = {
-    #   enable = true;
-    #   killUnconfinedConfinables = true;
-    #   packages = [ pkgs.apparmor-profiles ];
-    # };
+    apparmor = {
+      enable = true;
+      killUnconfinedConfinables = true;
+      packages = [ pkgs.apparmor-profiles ];
+    };
   };
 
   hardware = {
