@@ -64,8 +64,6 @@
   # Enable zsh
   zsh.enable = true;
 
-  stylix.enable = true;
-
   programs.home-manager.enable = true;
   # Set environment variables
   home.sessionVariables = {
