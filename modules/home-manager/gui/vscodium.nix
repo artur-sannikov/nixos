@@ -28,20 +28,20 @@
       ]
       ++ (with flake-inputs.nix-vscode-extensions.extensions.${pkgs.system}.vscode-marketplace; [
         quarto.quarto
-      ]);
-#       ++ [
-#         (pkgs.catppuccin-vsc.override {
-#           accent = "blue";
-#           boldKeywords = true;
-#           italicComments = false;
-#           italicKeywords = false;
-#           extraBordersEnabled = false;
-#           workbenchMode = "default";
-#           bracketMode = "rainbow";
-#           colorOverrides = { };
-#           customUIColors = { };
-#         })
-#       ];
+      ])
+          ++ [
+            (pkgs.catppuccin-vsc.override {
+              accent = "blue";
+              boldKeywords = true;
+              italicComments = false;
+              italicKeywords = false;
+              extraBordersEnabled = false;
+              workbenchMode = "default";
+              bracketMode = "rainbow";
+              colorOverrides = { };
+              customUIColors = { };
+            })
+          ];
     keybindings = [
       # Insert assignment operator if code is R
       {
