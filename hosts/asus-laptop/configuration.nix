@@ -54,7 +54,7 @@
   networking = {
     hostName = "asus";
     networkmanager.enable = true;
-    # wg-quick.interfaces.wg0.configFile = "/etc/nixos/files/wireguard/wg0.conf";
+    firewall.allowedTCPPorts = [ 22000 ]; # Syncthing port
   };
 
   # Enable Flakes
@@ -211,7 +211,6 @@
   };
 
   # Open ports in the firewall.
-  networking.firewall.allowedTCPPorts = [ 22000 ]; # Syncthing port
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
