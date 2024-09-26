@@ -50,6 +50,8 @@
 
     # Alacritty is supported on non-NixOS systems with caveats
     ../../modules/home-manager/gui/alacritty.nix
+
+    ../../modules/home-manager/cli/tmux.nix
   ];
 
   # Enable zsh
