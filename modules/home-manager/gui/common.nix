@@ -38,6 +38,6 @@
     ./browsers/brave.nix
     ./vscodium.nix
     ./thunderbird.nix
-    ./fonts.nix
+    # ./fonts.nix
   ];
 }
