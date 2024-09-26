@@ -168,12 +168,14 @@
       package = pkgs.capitaine-cursors-themed;
       name = "Capitaine Cursors (Nord)";
     };
-  };
-
-  stylix.fonts = {
-    monospace = {
-      package = pkgs.iosevka;
-      name = "Iosevka Medium Extended";
+    fonts = {
+      monospace = {
+        package = pkgs.iosevka;
+        name = "Iosevka Medium Extended";
+      };
+    };
+    opacity = {
+      terminal = 0.92;
     };
   };
 

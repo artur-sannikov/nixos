@@ -7,6 +7,9 @@
         shell = {
           program = "${pkgs.zsh}/bin/zsh";
         };
+        window = {
+          startup_mode = "Maximized";
+        };
       };
     };
   };
