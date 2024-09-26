@@ -1,5 +1,4 @@
 files/
 .sops.yaml
 secrets.yaml
-ATNA40YN04_Asus_Zenbook14XOLED.icm
-
+hosts/asus-laptop/ATNA40YN04_Asus_Zenbook14XOLED.icm
