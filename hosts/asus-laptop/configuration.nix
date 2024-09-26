@@ -173,7 +173,7 @@
       };
     };
     opacity = {
-      terminal = 0.92;
+      terminal = 0.95;
     };
   };
 
