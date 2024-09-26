@@ -47,6 +47,9 @@
     ../../modules/home-manager/gui/personal.nix
     # Systemd services
     ../../modules/home-manager/services.nix
+
+    # Alacritty is supported on non-NixOS systems with caveats
+    ../../modules/home-manager/gui/alacritty.nix
   ];
 
   # Enable zsh
