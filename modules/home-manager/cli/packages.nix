@@ -6,7 +6,6 @@
     ansible-lint
     caddy
     distrobox
-    fastfetch
     gnumake
     quarto
     typst
