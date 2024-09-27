@@ -8,6 +8,7 @@
     distrobox
     gnumake
     quarto
+    python312Packages.radian
     typst
     screen
     sops
