@@ -45,6 +45,7 @@
     ../../modules/home-manager/cli/beets.nix
     ../../modules/home-manager/cli/gnupg.nix
     ../../modules/home-manager/cli/btop.nix
+    ../../modules/home-manager/cli/fastfetch.nix
     ../../modules/home-manager/gui/personal.nix
     # Systemd services
     ../../modules/home-manager/services.nix
