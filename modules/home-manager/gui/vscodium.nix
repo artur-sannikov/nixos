@@ -101,6 +101,8 @@
       # Apply Catppuccin theme
       "workbench.colorTheme" = "Catppuccin Mocha";
       "workbench.iconTheme" = "catppuccin-macchiato";
+
+      "window.newWindowDimensions" = "maximized";
     };
   };
 }
