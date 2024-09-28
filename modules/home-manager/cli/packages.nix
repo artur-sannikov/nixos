@@ -12,6 +12,7 @@
     typst
     screen
     sops
+    ssh-audit
     wl-clipboard-rs
     flake-inputs.podlet.packages."${pkgs-unstable.system}".podlet
   ];
