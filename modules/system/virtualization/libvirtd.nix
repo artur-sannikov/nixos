@@ -16,4 +16,5 @@
       ovmf.enable = true;
     };
   };
+  environment.systemPackages = [ pkgs.virt-viewer ];
 }
