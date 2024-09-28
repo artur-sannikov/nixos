@@ -103,6 +103,10 @@
       "workbench.iconTheme" = "catppuccin-macchiato";
 
       "window.newWindowDimensions" = "maximized";
+
+      # radian settings
+      "r.bracketedPaste" = true;
+      "r.rterm.linux" = "${pkgs-unstable.python312Packages.radian}/bin/radian";
     };
   };
 }
