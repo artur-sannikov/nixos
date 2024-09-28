@@ -19,6 +19,7 @@
     ../../modules/system/virtualization/libvirtd.nix
     ../../modules/system/virtualization/bottles.nix
     ../../modules/system/virtualization/podman.nix
+    ../../modules/system/virtualization/waydroid.nix
     ../../modules/system/gaming.nix
     ../../modules/system/tailscale.nix
     # System-wide packages
