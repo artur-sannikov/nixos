@@ -1,10 +1,7 @@
-{ config, pkgs, ... }:
 {
-  config = {
-    virtualisation = {
-      podman = {
-        enable = true;
-      };
+  virtualisation = {
+    podman = {
+      enable = true;
     };
   };
 }
