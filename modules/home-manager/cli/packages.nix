@@ -8,6 +8,7 @@
     distrobox
     gnumake
     quarto
+    kdePackages.kcalc
     python312Packages.radian
     typst
     screen
