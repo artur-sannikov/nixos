@@ -8,6 +8,7 @@
     distrobox
     gnumake
     quarto
+    quickemu
     kdePackages.kcalc
     python312Packages.radian
     typst
