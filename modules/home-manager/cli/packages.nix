@@ -8,10 +8,13 @@
     distrobox
     gnumake
     quarto
+    quickemu
+    kdePackages.kcalc
     python312Packages.radian
     typst
     screen
     sops
+    ssh-audit
     wl-clipboard-rs
     flake-inputs.podlet.packages."${pkgs-unstable.system}".podlet
   ];
