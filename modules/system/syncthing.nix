@@ -13,11 +13,10 @@
         theme = "dark";
       };
       options = {
-        # Use Tailscale instead of relays
-        natEnabled = false;
-        relaysEnabled = false;
-        globalAnnounceEnabled = false;
-        localAnnounceEnabled = false;
+        natEnabled = true;
+        relaysEnabled = true;
+        globalAnnounceEnabled = true;
+        localAnnounceEnabled = true;
         urAccepted = -1;
       };
     };
