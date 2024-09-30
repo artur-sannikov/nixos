@@ -63,7 +63,7 @@
 
   services = {
     # Enable KDE Plasma 6.
-    xserver.enable = true;
+    xserver.enable = false;
     displayManager.sddm = {
       enable = true;
       wayland.enable = true;
