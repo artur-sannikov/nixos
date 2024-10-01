@@ -10,7 +10,9 @@
     quarto
     quickemu
     kdePackages.kcalc
+    kubectl
     python312Packages.radian
+    talosctl
     typst
     screen
     sops
