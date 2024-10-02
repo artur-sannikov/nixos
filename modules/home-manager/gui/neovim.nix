@@ -1,5 +1,12 @@
+{ pkgs, ... }:
 {
   programs = {
-    neovim.enable = true;
+    neovim = {
+      enable = true;
+      plugins = with pkgs.vimPlugins; [
+        fzf-vim
+        direnv-vim
+      ];
+    };
   };
 }
