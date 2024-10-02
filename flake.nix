@@ -41,6 +41,11 @@
     # Catppuccin theme for VSCodium
     # https://github.com/catppuccin/vscode
     catppuccin-vsc.url = "https://flakehub.com/f/catppuccin/vscode/*.tar.gz";
+
+    nixvim = {
+      url = "github:nix-community/nixvim";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -53,6 +58,7 @@
       catppuccin,
       catppuccin-vsc,
       flatpaks,
+      nixvim,
       ...
     }:
     let
