@@ -141,6 +141,9 @@
                 inherit pkgs-unstable;
                 inherit username;
               };
+              modules = [
+                nixvim.homeManagerModules.nixvim
+              ];
             }
           ];
         };
@@ -157,6 +160,7 @@
           ./hosts/ty/home.nix
           catppuccin.homeManagerModules.catppuccin
           stylix.homeManagerModules.stylix
+          nixvim.homeManagerModules.nixvim
         ];
       };
     };
