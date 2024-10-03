@@ -1,12 +1,21 @@
 { pkgs, ... }:
 {
   programs = {
-    neovim = {
+    nixvim = {
       enable = true;
-      plugins = with pkgs.vimPlugins; [
-        fzf-vim
-        direnv-vim
-      ];
+      plugins = {
+        direnv = {
+          enable = true;
+        };
+        lsp = {
+          enable = true;
+          servers = {
+            r-language-server = {
+              enable = true;
+            };
+          };
+        };
+      };
     };
   };
 }
