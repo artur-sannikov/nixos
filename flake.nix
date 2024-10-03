@@ -129,21 +129,23 @@
             home-manager.nixosModules.home-manager
             stylix.nixosModules.stylix
             {
-              home-manager.useGlobalPkgs = true;
-              home-manager.useUserPackages = true;
-              home-manager.users."${username}".imports = [
-                ./hosts/asus-laptop/home.nix
-              ];
+              home-manager = {
+                useGlobalPkgs = true;
+                manager.useUserPackages = true;
+                users."${username}".imports = [
+                  ./hosts/asus-laptop/home.nix
+                ];
 
-              # Optionally, use home-manager.extraSpecialArgs to pass arguments to home.nix
-              home-manager.extraSpecialArgs = {
-                flake-inputs = inputs;
-                inherit pkgs-unstable;
-                inherit username;
+                # Optionally, use home-manager.extraSpecialArgs to pass arguments to home.nix
+                extraSpecialArgs = {
+                  flake-inputs = inputs;
+                  inherit pkgs-unstable;
+                  inherit username;
+                };
+                modules = [
+                  nixvim.homeManagerModules.nixvim
+                ];
               };
-              modules = [
-                nixvim.homeManagerModules.nixvim
-              ];
             }
           ];
         };
