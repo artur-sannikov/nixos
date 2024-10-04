@@ -14,6 +14,8 @@
       TranslateEnabled = true;
       RequestedLocales = "en-GB,fi,ru,it";
 
+      SanitizeOnShutdown = true;
+
       UserMessaging = {
         ExtensionRecommendations = false;
         FeatureRecommendations = false;
