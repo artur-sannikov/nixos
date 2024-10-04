@@ -1,6 +1,5 @@
 {
   pkgs,
-  pkgs-unstable,
   lib,
   flake-inputs,
   ...
@@ -11,7 +10,7 @@
   };
   programs.vscode = {
     enable = true;
-    package = pkgs-unstable.vscodium;
+    package = pkgs.vscodium;
     mutableExtensionsDir = false;
     extensions =
       with pkgs.vscode-extensions;
@@ -106,7 +105,7 @@
 
       # radian settings
       "r.bracketedPaste" = true;
-      "r.rterm.linux" = "${pkgs-unstable.python312Packages.radian}/bin/radian";
+      "r.rterm.linux" = "${pkgs.python312Packages.radian}/bin/radian";
     };
   };
 }

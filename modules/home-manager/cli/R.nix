@@ -1,5 +1,5 @@
-{ pkgs-unstable, ... }:
-with pkgs-unstable;
+{ pkgs, ... }:
+with pkgs;
 let
   R-with-packages = rWrapper.override {
     packages = with rPackages; [
