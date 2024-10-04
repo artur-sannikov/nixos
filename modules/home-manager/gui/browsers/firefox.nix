@@ -20,7 +20,7 @@
         ExtensionRecommendations = false;
         FeatureRecommendations = false;
         UrlbarInterventions = false;
-        SkipOnboarding = false;
+        SkipOnboarding = true;
         MoreFromMozilla = false;
       };
 
