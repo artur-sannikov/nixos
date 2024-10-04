@@ -55,6 +55,7 @@
 
         # Privacy
         browser.sessionstore.privacy_level = 2;
+        privacy.clearOnShutdown.openWindows = true;
       };
     };
 
@@ -76,13 +77,6 @@
           force = true;
           default = "DuckDuckGo";
           privateDefault = "DuckDuckGo";
-        };
-        settings = {
-          "privacy.clearOnShutdown.history" = true;
-          "privacy.clearOnShutdown.cookies" = true;
-          "privacy.clearOnShutdown.downloads" = true;
-          "privacy.clearOnShutdown.openWindows" = true;
-          "privacy.clearOnShutdown.offlineApps" = true;
         };
       };
     };
