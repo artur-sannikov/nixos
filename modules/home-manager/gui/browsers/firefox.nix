@@ -12,6 +12,7 @@
 
       DisplayBookmarksToolbar = "always";
       TranslateEnabled = true;
+      RequestedLocales = "en-GB,fi,ru,it";
 
       UserMessaging = {
         ExtensionRecommendations = false;
@@ -52,8 +53,15 @@
         # Privacy
         browser.sessionstore.privacy_level = 2;
       };
-
     };
+
+    languagePacks = [
+      "en-GB"
+      "ru"
+      "fi"
+      "it"
+    ];
+
     profiles = {
       default-release = {
         extensions = with flake-inputs.firefox-extensions.packages.${pkgs.system}; [
