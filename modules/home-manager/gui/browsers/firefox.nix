@@ -22,6 +22,7 @@
         UrlbarInterventions = false;
         SkipOnboarding = true;
         MoreFromMozilla = false;
+        Locked = true;
       };
 
       EnableTrackingProtection = {
