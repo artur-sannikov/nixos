@@ -1,6 +1,6 @@
-{ pkgs-unstable, flake-inputs, ... }:
+{ pkgs, flake-inputs, ... }:
 {
-  home.packages = with pkgs-unstable; [
+  home.packages = with pkgs; [
     age
     ansible
     ansible-lint
@@ -18,6 +18,6 @@
     sops
     ssh-audit
     wl-clipboard-rs
-    flake-inputs.podlet.packages."${pkgs-unstable.system}".podlet
+    flake-inputs.podlet.packages."${pkgs.system}".podlet
   ];
 }

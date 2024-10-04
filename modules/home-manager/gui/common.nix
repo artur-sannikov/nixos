@@ -1,13 +1,13 @@
 # GUI apps without special settings
 {
+  pkgs-stable,
   pkgs,
-  pkgs-unstable,
   ...
 }:
 {
 
   home.packages =
-    (with pkgs; [
+    (with pkgs-stable; [
       feishin
       freetube
       haruna
@@ -27,7 +27,7 @@
       vlc
       zoom-us
     ])
-    ++ (with pkgs-unstable; [
+    ++ (with pkgs; [
       gearlever
       zotero
     ]);

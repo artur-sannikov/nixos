@@ -2,13 +2,14 @@
   description = "NixOS configuration";
 
   inputs = {
-    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-24.05";
+    nixpkgs-stable.url = "github:nixos/nixpkgs/release-24.05";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     disko.url = "github:nix-community/disko";
-    disko.inputs.nixpkgs.follows = "nixpkgs-unstable";
+    disko.inputs.nixpkgs.follows = "nixpkgs";
     # home-manager, used for managing user configuration
     home-manager = {
-      url = "github:nix-community/home-manager/release-24.05";
+      # url = "github:nix-community/home-manager";
+      url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     # Declarative Nix Flatpaks
@@ -17,13 +18,13 @@
     # VS Code extensions
     nix-vscode-extensions = {
       url = "github:nix-community/nix-vscode-extensions";
-      inputs.nixpkgs.follows = "nixpkgs-unstable";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     # Firefox extensions
     firefox-extensions = {
       url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
-      inputs.nixpkgs.follows = "nixpkgs-unstable";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     # Generate Podman Quadlet files
@@ -44,13 +45,13 @@
 
     nixvim = {
       url = "github:nix-community/nixvim/nixos-24.05";
-      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.nixpkgs.follows = "nixpkgs-stable";
     };
   };
 
   outputs =
     inputs@{
-      nixpkgs-unstable,
+      nixpkgs-stable,
       nixpkgs,
       disko,
       home-manager,
@@ -68,11 +69,11 @@
       overlays = [
         catppuccin-vsc.overlays.default
       ];
-      pkgs-unstable = import nixpkgs-unstable {
+      pkgs-unstable = import nixpkgs {
         inherit system overlays;
         config.allowUnfree = true;
       };
-      pkgs = import nixpkgs {
+      pkgs-stable = import nixpkgs-stable {
         inherit system overlays;
         config = {
           allowUnfree = true;
@@ -85,7 +86,7 @@
           inherit system;
           specialArgs = {
             inherit username;
-            inherit pkgs;
+            inherit pkgs-stable;
             inherit pkgs-unstable;
           };
           modules = [
@@ -117,7 +118,7 @@
           specialArgs = {
             flake-inputs = inputs;
             inherit username;
-            inherit pkgs;
+            inherit pkgs-stable;
             inherit pkgs-unstable;
           };
           modules = [
@@ -151,11 +152,11 @@
         };
       };
       homeConfigurations."ty" = home-manager.lib.homeManagerConfiguration {
-        inherit pkgs;
+        pkgs = pkgs-unstable;
         extraSpecialArgs = {
           flake-inputs = inputs;
           inherit username;
-          inherit pkgs-unstable;
+          inherit pkgs-stable;
           inherit overlays;
         };
         modules = [
