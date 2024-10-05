@@ -9,6 +9,8 @@
     gnumake
     quarto
     python312Packages.radian
+    kubectl
+    talosctl
     typst
     screen
     sops
