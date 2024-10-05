@@ -4,7 +4,6 @@
     tmux = {
       enable = true;
       shell = "${pkgs.zsh}/bin/zsh";
-      shortcut = "f";
     };
   };
 }

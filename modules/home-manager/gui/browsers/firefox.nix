@@ -12,17 +12,13 @@
 
       DisplayBookmarksToolbar = "always";
       TranslateEnabled = true;
-      RequestedLocales = "en-GB,fi,ru,it";
-
-      SanitizeOnShutdown = true;
 
       UserMessaging = {
         ExtensionRecommendations = false;
         FeatureRecommendations = false;
         UrlbarInterventions = false;
-        SkipOnboarding = true;
+        SkipOnboarding = false;
         MoreFromMozilla = false;
-        Locked = true;
       };
 
       EnableTrackingProtection = {
@@ -55,17 +51,9 @@
 
         # Privacy
         browser.sessionstore.privacy_level = 2;
-        privacy.clearOnShutdown.openWindows = true;
       };
+
     };
-
-    languagePacks = [
-      "en-GB"
-      "ru"
-      "fi"
-      "it"
-    ];
-
     profiles = {
       default-release = {
         extensions = with flake-inputs.firefox-extensions.packages.${pkgs.system}; [
@@ -77,6 +65,13 @@
           force = true;
           default = "DuckDuckGo";
           privateDefault = "DuckDuckGo";
+        };
+        settings = {
+          "privacy.clearOnShutdown.history" = true;
+          "privacy.clearOnShutdown.cookies" = true;
+          "privacy.clearOnShutdown.downloads" = true;
+          "privacy.clearOnShutdown.openWindows" = true;
+          "privacy.clearOnShutdown.offlineApps" = true;
         };
       };
     };

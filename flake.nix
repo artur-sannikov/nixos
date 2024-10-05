@@ -2,14 +2,13 @@
   description = "NixOS configuration";
 
   inputs = {
-    nixpkgs-stable.url = "github:nixos/nixpkgs/release-24.05";
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-24.05";
     disko.url = "github:nix-community/disko";
-    disko.inputs.nixpkgs.follows = "nixpkgs";
+    disko.inputs.nixpkgs.follows = "nixpkgs-unstable";
     # home-manager, used for managing user configuration
     home-manager = {
-      # url = "github:nix-community/home-manager";
-      url = "github:nix-community/home-manager";
+      url = "github:nix-community/home-manager/release-24.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     # Declarative Nix Flatpaks
@@ -18,13 +17,13 @@
     # VS Code extensions
     nix-vscode-extensions = {
       url = "github:nix-community/nix-vscode-extensions";
-      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
 
     # Firefox extensions
     firefox-extensions = {
       url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
-      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
 
     # Generate Podman Quadlet files
@@ -42,16 +41,11 @@
     # Catppuccin theme for VSCodium
     # https://github.com/catppuccin/vscode
     catppuccin-vsc.url = "https://flakehub.com/f/catppuccin/vscode/*.tar.gz";
-
-    nixvim = {
-      url = "github:nix-community/nixvim/nixos-24.05";
-      inputs.nixpkgs.follows = "nixpkgs-stable";
-    };
   };
 
   outputs =
     inputs@{
-      nixpkgs-stable,
+      nixpkgs-unstable,
       nixpkgs,
       disko,
       home-manager,
@@ -59,7 +53,6 @@
       catppuccin,
       catppuccin-vsc,
       flatpaks,
-      nixvim,
       ...
     }:
     let
@@ -69,11 +62,11 @@
       overlays = [
         catppuccin-vsc.overlays.default
       ];
-      pkgs-unstable = import nixpkgs {
+      pkgs-unstable = import nixpkgs-unstable {
         inherit system overlays;
         config.allowUnfree = true;
       };
-      pkgs-stable = import nixpkgs-stable {
+      pkgs = import nixpkgs {
         inherit system overlays;
         config = {
           allowUnfree = true;
@@ -86,7 +79,7 @@
           inherit system;
           specialArgs = {
             inherit username;
-            inherit pkgs-stable;
+            inherit pkgs;
             inherit pkgs-unstable;
           };
           modules = [
@@ -118,7 +111,7 @@
           specialArgs = {
             flake-inputs = inputs;
             inherit username;
-            inherit pkgs-stable;
+            inherit pkgs;
             inherit pkgs-unstable;
           };
           modules = [
@@ -130,40 +123,34 @@
             home-manager.nixosModules.home-manager
             stylix.nixosModules.stylix
             {
-              home-manager = {
-                useGlobalPkgs = true;
-                manager.useUserPackages = true;
-                users."${username}".imports = [
-                  ./hosts/asus-laptop/home.nix
-                ];
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.users."${username}".imports = [
+                ./hosts/asus-laptop/home.nix
+              ];
 
-                # Optionally, use home-manager.extraSpecialArgs to pass arguments to home.nix
-                extraSpecialArgs = {
-                  flake-inputs = inputs;
-                  inherit pkgs-unstable;
-                  inherit username;
-                };
-                modules = [
-                  nixvim.homeManagerModules.nixvim
-                ];
+              # Optionally, use home-manager.extraSpecialArgs to pass arguments to home.nix
+              home-manager.extraSpecialArgs = {
+                flake-inputs = inputs;
+                inherit pkgs-unstable;
+                inherit username;
               };
             }
           ];
         };
       };
       homeConfigurations."ty" = home-manager.lib.homeManagerConfiguration {
-        pkgs = pkgs-unstable;
+        inherit pkgs;
         extraSpecialArgs = {
           flake-inputs = inputs;
           inherit username;
-          inherit pkgs-stable;
+          inherit pkgs-unstable;
           inherit overlays;
         };
         modules = [
           ./hosts/ty/home.nix
           catppuccin.homeManagerModules.catppuccin
           stylix.homeManagerModules.stylix
-          nixvim.homeManagerModules.nixvim
         ];
       };
     };

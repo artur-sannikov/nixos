@@ -1,5 +1,6 @@
 {
   pkgs,
+  pkgs-unstable,
   lib,
   flake-inputs,
   ...
@@ -10,7 +11,7 @@
   };
   programs.vscode = {
     enable = true;
-    package = pkgs.vscodium;
+    package = pkgs-unstable.vscodium;
     mutableExtensionsDir = false;
     extensions =
       with pkgs.vscode-extensions;
@@ -102,10 +103,6 @@
       "workbench.iconTheme" = "catppuccin-macchiato";
 
       "window.newWindowDimensions" = "maximized";
-
-      # radian settings
-      "r.bracketedPaste" = true;
-      "r.rterm.linux" = "${pkgs.python312Packages.radian}/bin/radian";
     };
   };
 }
