@@ -1,13 +1,13 @@
 # GUI apps without special settings
 {
-  pkgs-stable,
   pkgs,
+  pkgs-unstable,
   ...
 }:
 {
 
   home.packages =
-    (with pkgs-stable; [
+    (with pkgs; [
       feishin
       freetube
       haruna
@@ -27,7 +27,7 @@
       vlc
       zoom-us
     ])
-    ++ (with pkgs; [
+    ++ (with pkgs-unstable; [
       gearlever
       zotero
     ]);
@@ -38,6 +38,6 @@
     ./browsers/brave.nix
     ./vscodium.nix
     ./thunderbird.nix
-    ./neovim.nix
+    # ./fonts.nix
   ];
 }
