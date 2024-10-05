@@ -1,11 +1,4 @@
 {
-  config,
-  lib,
-  pkgs,
-  flake-inputs,
-  ...
-}:
-{
   home = {
     username = "artur";
     homeDirectory = "/home/artur";
