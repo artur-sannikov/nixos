@@ -49,6 +49,10 @@
     firewall.allowedTCPPorts = [ 22000 ]; # Syncthing port
   };
 
+  # Disable service because it fails frequently at rebuild
+  # https://discourse.nixos.org/t/nixos-rebuild-switch-upgrade-networkmanager-wait-online-service-failure/30746/2
+  systemd.services.NetworkManager-wait-online.enable = false;
+
   # Enable Flakes
   nix.settings.experimental-features = [
     "nix-command"
