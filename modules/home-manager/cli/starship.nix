@@ -21,6 +21,12 @@
         read_only = "🔒";
         truncate_to_repo = false;
       };
+      time = {
+        time_format = "%T";
+        format = "🕙 $time($style) ";
+        style = "bright-white";
+        disabled = false;
+      };
     };
   };
 }
