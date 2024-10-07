@@ -31,6 +31,7 @@
     ../../modules/home-manager/cli/tmux.nix
     ../../modules/home-manager/cli/btop.nix
     ../../modules/home-manager/gui/work.nix
+    ../../modules/home-manager/cli/fastfetch.nix
     flake-inputs.flatpaks.homeManagerModules.nix-flatpak
   ];
 
