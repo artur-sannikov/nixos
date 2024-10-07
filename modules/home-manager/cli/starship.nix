@@ -7,7 +7,7 @@
     settings = {
       add_newline = false;
       format = "$username$directory$git_branch$git_state$git_status";
-      right_format = "$cmd_duration";
+      right_format = "$cmd_duration$time";
       username = {
         disabled = false;
         show_always = true;
@@ -22,7 +22,7 @@
         truncate_to_repo = false;
       };
       time = {
-        time_format = "%T";
+        time_format = "%R";
         format = "🕙 $time($style) ";
         style = "bright-white";
         disabled = false;
