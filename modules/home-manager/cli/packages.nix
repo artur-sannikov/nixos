@@ -13,6 +13,7 @@
     talosctl
     typst
     screen
+    mat2
     sops
     wl-clipboard-rs
     flake-inputs.podlet.packages."${pkgs-unstable.system}".podlet
