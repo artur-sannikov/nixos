@@ -7,6 +7,8 @@
       prefix = "C-f";
       extraConfig = ''
         bind-key r source-file ~/.config/tmux/tmux.conf \; display-message "tmux.conf reloaded."
+
+        set -g mouse on
       '';
     };
   };
