@@ -14,6 +14,7 @@
     signal-desktop
     moonlight-qt
     rustdesk-flutter
+    kdePackages.kdeconnect-kde
     tor-browser
     veracrypt
   ];
