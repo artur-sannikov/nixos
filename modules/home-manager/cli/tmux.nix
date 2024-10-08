@@ -16,6 +16,14 @@
         bind -n M-Right select-pane -R
         bind -n M-Up select-pane -U
         bind -n M-Down select-pane -D
+
+        # Split windows
+        bind-key v split-window -h
+        bind-key h split-window -v
+
+        # Switch windows
+        bind -n S-Left previous-window
+        bind -n S-Right next-window
       '';
     };
   };
