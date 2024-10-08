@@ -46,7 +46,25 @@
   networking = {
     hostName = "asus";
     networkmanager.enable = true;
-    firewall.allowedTCPPorts = [ 22000 ]; # Syncthing port
+    firewall = {
+      allowedTCPPorts = [
+        # Syncthing port
+        22000
+      ];
+      allowedTCPPortRanges = [
+        {
+          # KDE connect Ports
+          from = 1714;
+          to = 1764;
+        }
+      ];
+      allowedUDPPortRanges = [
+        {
+          from = 1714;
+          to = 1764;
+        }
+      ];
+    };
   };
 
   # Disable service because it fails frequently at rebuild

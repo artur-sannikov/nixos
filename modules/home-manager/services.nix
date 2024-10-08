@@ -51,4 +51,7 @@ in
       };
     };
   };
+
+  # KDE Connect
+  services.kdeconnect.enable = true;
 }
