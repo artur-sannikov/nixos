@@ -16,6 +16,7 @@
     vim
     vulkan-tools
     wayland-utils
+    wireguard-tools
     wget
   ];
 
