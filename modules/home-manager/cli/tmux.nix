@@ -18,8 +18,8 @@
         bind -n M-Down select-pane -D
 
         # Split windows
-        bind-key v split-window -h
-        bind-key h split-window -v
+        bind-key v split-window -h -c "#{pane_current_path}"
+        bind-key h split-window -v -c "#{pane_current_path}"
 
         # Switch windows
         bind -n S-Left previous-window
