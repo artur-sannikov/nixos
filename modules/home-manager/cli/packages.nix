@@ -4,6 +4,7 @@
     age
     ansible
     ansible-lint
+    beets-unstable
     caddy
     distrobox
     gnumake

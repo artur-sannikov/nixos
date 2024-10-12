@@ -1,5 +1,0 @@
-{
-  programs.beets = {
-    enable = true;
-  };
-}
