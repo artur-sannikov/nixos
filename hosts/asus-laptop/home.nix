@@ -35,7 +35,6 @@
     ../../modules/home-manager/cli/R.nix
     ../../modules/home-manager/cli/starship.nix
     ../../modules/home-manager/cli/yt-dlp.nix
-    ../../modules/home-manager/cli/beets.nix
     ../../modules/home-manager/cli/gnupg.nix
     ../../modules/home-manager/cli/btop.nix
     ../../modules/home-manager/cli/fastfetch.nix
