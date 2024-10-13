@@ -15,6 +15,7 @@
     moonlight-qt
     rustdesk-flutter
     tor-browser
+    kdePackages.konversation
     veracrypt
   ];
 }
