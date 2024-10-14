@@ -24,6 +24,10 @@
         # Switch windows
         bind -n S-Left previous-window
         bind -n S-Right next-window
+
+        # Reorder windows
+        bind-key -n C-S-Left swap-window -t -1
+        bind-key -n C-S-Right swap-window -t +1
       '';
     };
   };
