@@ -42,7 +42,6 @@ in
         RestrictRealtime = true;
         RestrictSUIDSGID = true;
         SystemCallArchitectures = "native";
-        SystemCallFilter = "~@clock @cpu-emulation @privileged @module @raw-io @reboot @mount @obsolete @swap @debug";
         SocketBindDeny = "any";
         SocketBindAllow = "tcp:3875"; # only listen on port 3875
       };
