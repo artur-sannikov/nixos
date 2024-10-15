@@ -2,6 +2,7 @@
 {
   home.packages = with pkgs-unstable; [
     ffmpeg-full
+    flac
     mediainfo
     sox
   ];
