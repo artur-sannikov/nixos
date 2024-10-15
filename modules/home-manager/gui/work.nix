@@ -9,5 +9,6 @@
     slack
     teams-for-linux
     openconnect
+    quickemu
   ];
 }
