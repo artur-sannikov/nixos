@@ -27,6 +27,7 @@
   # Import modules
   imports = [
     ../../modules/home-manager/cli/default.nix
+    ../../modules/home-manager/cli/media.nix
     ../../modules/home-manager/cli/bash.nix
     ../../modules/home-manager/cli/direnv.nix
     ../../modules/home-manager/cli/git.nix
