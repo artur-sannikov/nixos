@@ -27,6 +27,7 @@
 
     ../../modules/system/appimage.nix
     ../../modules/system/services.nix
+    ../../modules/system/keyboard.nix
   ];
 
   sshAgent.enable = true;
@@ -119,6 +120,7 @@
       enable = true;
       powerOnBoot = true;
     };
+    keyboard.qmk.enable = true;
   };
 
   users.users.${username} = {
