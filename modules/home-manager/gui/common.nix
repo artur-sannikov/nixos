@@ -18,7 +18,6 @@
       mattermost-desktop
       obsidian
       okular
-      onlyoffice-bin
       protonvpn-gui
       qbittorrent
       strawberry-qt6
@@ -29,6 +28,7 @@
     ])
     ++ (with pkgs-unstable; [
       gearlever
+      onlyoffice-desktopeditors
       zotero
     ]);
   # GUI apps with special settings
