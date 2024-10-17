@@ -31,6 +31,11 @@
 
         # Enable copy-to-clipboard on Wayland
         set -s copy-command 'wl-copy'
+
+        # Status bar customization
+        set -g status-justify centre
+        set -g status-left "";
+        set -g status-right '#[fg=#D9E0EE]%H:%M %d/%m/%y'
       '';
     };
   };
