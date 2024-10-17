@@ -28,6 +28,9 @@
         # Reorder windows
         bind-key -n C-S-Left swap-window -t -1
         bind-key -n C-S-Right swap-window -t +1
+
+        # Enable copy-to-clipboard on Wayland
+        set -s copy-command 'wl-copy'
       '';
     };
   };
