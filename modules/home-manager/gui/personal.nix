@@ -16,6 +16,7 @@
     rustdesk-flutter
     tor-browser
     kdePackages.konversation
+    kdePackages.kcalc
     veracrypt
   ];
 }
