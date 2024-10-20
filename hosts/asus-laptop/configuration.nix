@@ -136,6 +136,9 @@
   environment.sessionVariables = {
     # Enable Wayland for supported apps
     NIXOS_OZONE_WL = "1";
+
+    # Default configuration directory
+    XDG_CONFIG_HOME = "$HOME/.config";
   };
 
   gaming = {
