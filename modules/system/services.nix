@@ -57,5 +57,8 @@
         workgroup = utu
       '';
     };
+    ntpd-rs = {
+      enable = true;
+    };
   };
 }
