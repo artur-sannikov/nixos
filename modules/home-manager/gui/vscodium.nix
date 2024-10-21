@@ -104,6 +104,9 @@
       "workbench.iconTheme" = "catppuccin-macchiato";
 
       "window.newWindowDimensions" = "maximized";
+
+      # Dev containers backend
+      "dev.containers.dockerPath" = "podman";
     };
   };
 }
