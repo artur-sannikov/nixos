@@ -33,7 +33,6 @@
     ../../modules/home-manager/cli/git.nix
     ../../modules/home-manager/cli/nix.nix
     ../../modules/home-manager/cli/packages.nix
-    ../../modules/home-manager/cli/R.nix
     ../../modules/home-manager/cli/starship.nix
     ../../modules/home-manager/cli/yt-dlp.nix
     ../../modules/home-manager/cli/gnupg.nix
