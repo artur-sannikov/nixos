@@ -50,4 +50,8 @@
     EDITOR = "nano";
     LC_TIME = "fi_FI.utf8";
   };
+
+  services = {
+    lorri.enable = true;
+  };
 }
