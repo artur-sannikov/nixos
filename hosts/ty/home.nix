@@ -26,7 +26,6 @@
     ../../modules/home-manager/cli/git.nix
     ../../modules/home-manager/cli/nix.nix
     ../../modules/home-manager/cli/packages.nix
-    ../../modules/home-manager/cli/R.nix
     ../../modules/home-manager/cli/starship.nix
     ../../modules/home-manager/cli/tmux.nix
     ../../modules/home-manager/cli/btop.nix
