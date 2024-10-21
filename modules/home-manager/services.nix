@@ -51,6 +51,8 @@ in
     };
   };
 
-  # KDE Connect
-  services.kdeconnect.enable = true;
+  services = {
+    kdeconnect.enable = true;
+    lorri.enable = true;
+  };
 }
