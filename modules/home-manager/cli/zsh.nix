@@ -50,6 +50,7 @@ in
         oh-my-zsh = {
           enable = true;
           plugins = [
+            "direnv"
             "git"
             "toolbox"
             "z"
