@@ -33,6 +33,9 @@ in
         shellAliases = {
           "l." = "ls -ldh .";
           "l" = "ls -lh";
+
+          # Integration with direnv
+          "tmux" = "direnv exec / tmux";
         };
         initExtra = ''
             # Disable underline
