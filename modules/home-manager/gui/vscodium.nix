@@ -16,6 +16,7 @@
     extensions =
       with pkgs.vscode-extensions;
       [
+        davidanson.vscode-markdownlint
         catppuccin.catppuccin-vsc-icons
         jnoortheen.nix-ide
         matthewpi.caddyfile-support
