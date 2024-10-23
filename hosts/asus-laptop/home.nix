@@ -34,7 +34,6 @@
     ../../modules/home-manager/cli/nix.nix
     ../../modules/home-manager/cli/packages.nix
     ../../modules/home-manager/cli/starship.nix
-    ../../modules/home-manager/cli/yt-dlp.nix
     ../../modules/home-manager/cli/gnupg.nix
     ../../modules/home-manager/cli/btop.nix
     ../../modules/home-manager/cli/fastfetch.nix
@@ -50,6 +49,9 @@
 
   # Enable zsh
   zsh.enable = true;
+
+  # Enable yt-dlp
+  yt-dlp.enable = true;
 
   programs.home-manager.enable = true;
   # Set environment variables
