@@ -21,6 +21,9 @@ in
     programs = {
       yt-dlp = {
         enable = true;
+        settings = {
+          embed-metadata = true;
+        };
       };
     };
     home.packages = [ pkgs-unstable.aria2 ];
