@@ -30,6 +30,9 @@
         ".envrc"
         "result"
       ];
+      lfs = {
+        enable = true;
+      };
     };
     gh = {
       enable = true;
