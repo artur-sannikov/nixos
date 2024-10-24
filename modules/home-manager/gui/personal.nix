@@ -10,6 +10,7 @@
     with pkgs-unstable;
     [
       audacity
+      element-desktop
       protonmail-bridge-gui
       telegram-desktop
       signal-desktop
