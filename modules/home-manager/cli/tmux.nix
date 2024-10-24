@@ -36,6 +36,9 @@
         set -g status-justify centre
         set -g status-left "";
         set -g status-right '#[fg=#D9E0EE]%H:%M %d/%m/%y'
+
+        # Synchronize panes
+        bind-key y set-window-option synchronize-panes\; display-message "synchronize mode toggled."
       '';
     };
   };
