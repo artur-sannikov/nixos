@@ -37,6 +37,9 @@ in
           # Integration with direnv
           "tmux" = "direnv exec / tmux";
         };
+        sessionVariables = {
+          LC_ALL = "en_US.UTF-8";
+        };
         initExtra = ''
             # Disable underline
             # See https://github.com/zsh-users/zsh-syntax-highlighting/issues/573
