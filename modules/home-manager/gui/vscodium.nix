@@ -31,6 +31,9 @@
       ++ (with flake-inputs.nix-vscode-extensions.extensions.${pkgs.system}.vscode-marketplace; [
         quarto.quarto
       ])
+      ++ (with flake-inputs.nix-vscode-extensions.extensions.${pkgs.system}.open-vsx; [
+        jeanp413.open-remote-ssh
+      ])
       ++ [
         (pkgs.catppuccin-vsc.override {
           accent = "blue";
