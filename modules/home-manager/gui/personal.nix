@@ -11,7 +11,6 @@
     [
       audacity
       element-desktop
-      protonmail-bridge-gui
       telegram-desktop
       signal-desktop
       moonlight-qt
@@ -23,5 +22,8 @@
       kdePackages.kcalc
       veracrypt
     ]
-    ++ (with pkgs; [ calibre ]);
+    ++ (with pkgs; [
+      calibre
+      protonmail-bridge-gui
+    ]);
 }
