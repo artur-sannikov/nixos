@@ -29,6 +29,7 @@
         reditorsupport.r
       ]
       ++ (with flake-inputs.nix-vscode-extensions.extensions.${pkgs.system}.vscode-marketplace; [
+        ipierre1.ansible-vault-vscode
         quarto.quarto
       ])
       ++ (with flake-inputs.nix-vscode-extensions.extensions.${pkgs.system}.open-vsx; [
