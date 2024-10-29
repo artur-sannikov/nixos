@@ -7,5 +7,9 @@
       { id = "cjpalhdlnbpafiamejdnhcphjbkeiagm"; } # uBlock Origin
       { id = "nngceckbapebfimnlniiiahkandclblb"; } # Bitwarden
     ];
+    commandLineArgs = [
+      "--enable-features=UseOzonePlatform"
+      "--ozone-platform=wayland"
+    ];
   };
 }
