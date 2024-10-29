@@ -32,6 +32,8 @@
     ../../modules/home-manager/gui/work.nix
     ../../modules/home-manager/cli/fastfetch.nix
     flake-inputs.flatpaks.homeManagerModules.nix-flatpak
+
+    ../../modules/home-manager/desktop_entries.nix
   ];
 
   # Enable zsh
