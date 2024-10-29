@@ -45,6 +45,8 @@
     ../../modules/home-manager/gui/alacritty.nix
 
     ../../modules/home-manager/cli/tmux.nix
+
+    ../../modules/home-manager/desktop_entries.nix
   ];
 
   # Enable zsh
