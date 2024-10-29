@@ -5,6 +5,7 @@
     aha
     clinfo
     dig
+    dmidecode
     git
     glxinfo
     libva-utils
