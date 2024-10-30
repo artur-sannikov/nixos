@@ -14,7 +14,6 @@
       telegram-desktop
       signal-desktop
       moonlight-qt
-      flacon
       picard
       rustdesk-flutter
       tor-browser
@@ -24,6 +23,7 @@
     ]
     ++ (with pkgs; [
       calibre
+      flacon
       protonmail-bridge-gui
     ]);
 }
