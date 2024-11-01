@@ -9,7 +9,6 @@
   home.packages =
     (with pkgs; [
       feishin
-      freetube
       haruna
       hunspell
       hunspellDicts.en_GB-large
@@ -27,6 +26,7 @@
       zoom-us
     ])
     ++ (with pkgs-unstable; [
+      freetube
       gearlever
       onlyoffice-desktopeditors
       zotero
