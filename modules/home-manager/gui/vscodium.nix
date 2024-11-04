@@ -18,6 +18,7 @@
       [
         davidanson.vscode-markdownlint
         catppuccin.catppuccin-vsc-icons
+        ecmel.vscode-html-css
         jnoortheen.nix-ide
         matthewpi.caddyfile-support
         mkhl.direnv
