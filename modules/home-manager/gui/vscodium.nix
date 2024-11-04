@@ -27,6 +27,7 @@
         redhat.ansible
         redhat.vscode-yaml
         reditorsupport.r
+        tamasfe.even-better-toml
       ]
       ++ (with flake-inputs.nix-vscode-extensions.extensions.${pkgs.system}.vscode-marketplace; [
         ipierre1.ansible-vault-vscode
