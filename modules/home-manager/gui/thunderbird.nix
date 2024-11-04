@@ -2,7 +2,7 @@
 {
   programs.thunderbird = {
     enable = true;
-    package = pkgs-unstable.betterbird;
+    package = pkgs-unstable.thunderbird;
     profiles = {
       work = {
         isDefault = true;
