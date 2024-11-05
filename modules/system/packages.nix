@@ -9,16 +9,17 @@
     git
     glxinfo
     libva-utils
+    lm_sensors
     nano
     nmap
-    quickemu
     pciutils
     python312
+    quickemu
     vim
     vulkan-tools
     wayland-utils
-    wireguard-tools
     wget
+    wireguard-tools
   ];
 
   # Hardware hybrid decoding
