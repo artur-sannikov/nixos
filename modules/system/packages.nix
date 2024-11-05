@@ -16,6 +16,7 @@
     pciutils
     python312
     quickemu
+    stress-ng
     vim
     vulkan-tools
     wayland-utils
