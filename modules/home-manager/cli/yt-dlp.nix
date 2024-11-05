@@ -1,7 +1,7 @@
 {
   lib,
   config,
-  pkgs-unstable,
+  pkgs,
   ...
 }:
 with lib;
@@ -26,6 +26,6 @@ in
         };
       };
     };
-    home.packages = [ pkgs-unstable.aria2 ];
+    home.packages = [ pkgs.aria2 ];
   };
 }

@@ -1,13 +1,13 @@
-{ pkgs-unstable, pkgs, ... }:
+{ pkgs, pkgs-stable, ... }:
 
 {
   imports = [
     ./common.nix
-    ./shadow-pc.nix
+    # ./shadow-pc.nix
   ];
   # Personal apps
   home.packages =
-    with pkgs-unstable;
+    with pkgs;
     [
       audacity
       element-desktop
@@ -21,7 +21,7 @@
       kdePackages.kcalc
       veracrypt
     ]
-    ++ (with pkgs; [
+    ++ (with pkgs-stable; [
       calibre
       flacon
       protonmail-bridge-gui
