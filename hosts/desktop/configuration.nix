@@ -45,7 +45,7 @@
     };
 
     networking = {
-      hostName = "asus";
+      hostName = "desktop";
       networkmanager.enable = true;
       firewall = {
         allowedTCPPorts = [
@@ -77,7 +77,7 @@
     hardware = {
       graphics = {
         enable = true;
-        driSupport32Bit = true;
+        enable32Bit = true;
         extraPackages = with pkgs; [
           rocmPackages.clr.icd # OpenCL
         ];

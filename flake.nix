@@ -107,6 +107,37 @@
             }
           ];
         };
+                desktop = lib.nixosSystem {
+          inherit system;
+          specialArgs = {
+            flake-inputs = inputs;
+            inherit username;
+            inherit pkgs;
+            inherit pkgs-stable;
+          };
+          modules = [
+            ./hosts/desktop/configuration.nix
+            disko.nixosModules.disko
+            # make home-manager as a module of nixos
+            # so that home-manager configuration will be deployed automatically when executing `nixos-rebuild switch`
+            home-manager.nixosModules.home-manager
+            stylix.nixosModules.stylix
+            {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.users."${username}".imports = [
+                ./hosts/asus-laptop/home.nix
+              ];
+
+              # Optionally, use home-manager.extraSpecialArgs to pass arguments to home.nix
+              home-manager.extraSpecialArgs = {
+                flake-inputs = inputs;
+                inherit pkgs-stable;
+                inherit username;
+              };
+            }
+          ];
+        };
       };
       homeConfigurations."ty" = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
