@@ -43,6 +43,7 @@
           device = "nodev";
         };
       };
+      kernelPackages = pkgs.linuxPackages_latest;
     };
 
     networking = {
