@@ -1,13 +1,13 @@
 # GUI apps without special settings
 {
   pkgs,
-  pkgs-unstable,
+  pkgs-stable,
   ...
 }:
 {
 
   home.packages =
-    (with pkgs; [
+    (with pkgs-stable; [
       feishin
       haruna
       hunspell
@@ -18,17 +18,17 @@
       obsidian
       okular
       protonvpn-gui
-      qbittorrent
       strawberry-qt6
       texlive.combined.scheme-medium
       texstudio
       vlc
       zoom-us
     ])
-    ++ (with pkgs-unstable; [
+    ++ (with pkgs; [
       freetube
       gearlever
       onlyoffice-desktopeditors
+      qbittorrent
       zotero
     ]);
   # GUI apps with special settings

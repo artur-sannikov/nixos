@@ -1,6 +1,5 @@
 {
   pkgs,
-  pkgs-unstable,
   lib,
   flake-inputs,
   ...
@@ -11,7 +10,7 @@
   };
   programs.vscode = {
     enable = true;
-    package = pkgs-unstable.vscodium;
+    package = pkgs.vscodium;
     mutableExtensionsDir = false;
     extensions =
       with pkgs.vscode-extensions;

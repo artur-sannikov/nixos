@@ -1,8 +1,8 @@
-{ pkgs-unstable, ... }:
+{ pkgs, ... }:
 {
   programs.thunderbird = {
     enable = true;
-    package = pkgs-unstable.thunderbird;
+    package = pkgs.thunderbird;
     profiles = {
       work = {
         isDefault = true;

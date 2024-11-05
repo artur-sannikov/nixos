@@ -2,13 +2,13 @@
   description = "NixOS configuration";
 
   inputs = {
-    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-24.05";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-24.05";
     disko.url = "github:nix-community/disko";
-    disko.inputs.nixpkgs.follows = "nixpkgs-unstable";
+    disko.inputs.nixpkgs.follows = "nixpkgs";
     # home-manager, used for managing user configuration
     home-manager = {
-      url = "github:nix-community/home-manager/release-24.05";
+      url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     # Declarative Nix Flatpaks
@@ -17,13 +17,13 @@
     # VS Code extensions
     nix-vscode-extensions = {
       url = "github:nix-community/nix-vscode-extensions";
-      inputs.nixpkgs.follows = "nixpkgs-unstable";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     # Firefox extensions
     firefox-extensions = {
       url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
-      inputs.nixpkgs.follows = "nixpkgs-unstable";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     # Generate Podman Quadlet files
@@ -45,7 +45,7 @@
 
   outputs =
     inputs@{
-      nixpkgs-unstable,
+      nixpkgs-stable,
       nixpkgs,
       disko,
       home-manager,
@@ -62,11 +62,11 @@
       overlays = [
         catppuccin-vsc.overlays.default
       ];
-      pkgs-unstable = import nixpkgs-unstable {
+      pkgs = import nixpkgs {
         inherit system overlays;
         config.allowUnfree = true;
       };
-      pkgs = import nixpkgs {
+      pkgs-stable = import nixpkgs-stable {
         inherit system overlays;
         config = {
           allowUnfree = true;
@@ -81,7 +81,7 @@
             flake-inputs = inputs;
             inherit username;
             inherit pkgs;
-            inherit pkgs-unstable;
+            inherit pkgs-stable;
           };
           modules = [
             ./hosts/asus-laptop/configuration.nix
@@ -101,7 +101,7 @@
               # Optionally, use home-manager.extraSpecialArgs to pass arguments to home.nix
               home-manager.extraSpecialArgs = {
                 flake-inputs = inputs;
-                inherit pkgs-unstable;
+                inherit pkgs-stable;
                 inherit username;
               };
             }
@@ -113,7 +113,7 @@
         extraSpecialArgs = {
           flake-inputs = inputs;
           inherit username;
-          inherit pkgs-unstable;
+          inherit pkgs-stable;
           inherit overlays;
         };
         modules = [
