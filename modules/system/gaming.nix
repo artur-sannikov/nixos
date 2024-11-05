@@ -33,6 +33,10 @@ in
       gamemode = {
         enable = true;
       };
+      gamescope = {
+        enable = true;
+        capSysNice = true;
+      };
     };
 
     environment = {
