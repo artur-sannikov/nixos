@@ -14,7 +14,6 @@
       hunspellDicts.en_GB-large
       inkscape
       libreoffice-qt6-fresh
-      mattermost-desktop
       obsidian
       okular
       protonvpn-gui
@@ -25,6 +24,7 @@
       zoom-us
     ])
     ++ (with pkgs; [
+      mattermost-desktop
       freetube
       gearlever
       onlyoffice-desktopeditors
