@@ -28,6 +28,7 @@
 
     ../../modules/system/appimage.nix
     ../../modules/system/keyboard.nix
+    ../../modules/system/lact.nix
   ];
 
   config = {
