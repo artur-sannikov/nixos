@@ -75,17 +75,14 @@
     };
 
     hardware = {
-      opengl = {
+      graphics = {
         enable = true;
-        driSupport = true;
         driSupport32Bit = true;
         extraPackages = with pkgs; [
-          intel-media-driver
-          vaapiIntel
-          vaapiVdpau
-          libvdpau-va-gl
+          rocmPackages.clr.icd # OpenCL
         ];
       };
+
       bluetooth = {
         enable = true;
         powerOnBoot = true;
