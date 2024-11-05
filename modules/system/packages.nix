@@ -6,6 +6,7 @@
     clinfo
     dig
     dmidecode
+    exfat
     git
     glxinfo
     libva-utils
@@ -19,7 +20,6 @@
     vulkan-tools
     wayland-utils
     wget
-    wireguard-tools
   ];
 
   # Hardware hybrid decoding
