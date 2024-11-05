@@ -10,6 +10,7 @@
     glxinfo
     libva-utils
     lm_sensors
+    kdePackages.partitionmanager
     nano
     nmap
     pciutils
