@@ -52,10 +52,12 @@
     };
     samba = {
       enable = true;
-      securityType = "user";
-      extraConfig = ''
-        workgroup = utu
-      '';
+      settings = {
+        global = {
+          security = "user";
+          "workgroup" = "utu";
+        };
+      };
     };
     ntpd-rs = {
       enable = true;
