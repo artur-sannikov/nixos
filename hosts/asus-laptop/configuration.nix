@@ -60,7 +60,7 @@
             to = 1764;
           }
         ];
-        allowedUDPPortRanges = [
+         allowedUDPPortRanges = [
           {
             from = 1714;
             to = 1764;
