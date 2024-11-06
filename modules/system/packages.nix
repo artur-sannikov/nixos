@@ -7,8 +7,10 @@
     dig
     dmidecode
     exfat
+    exfatprogs
     git
     glxinfo
+    gparted
     libva-utils
     lm_sensors
     nano
