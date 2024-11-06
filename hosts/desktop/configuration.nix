@@ -29,6 +29,7 @@
     ../../modules/system/appimage.nix
     ../../modules/system/keyboard.nix
     ../../modules/system/lact.nix
+    ../../modules/system/openrgb.nix
   ];
 
   config = {
