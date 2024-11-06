@@ -11,6 +11,7 @@
     git
     glxinfo
     gparted
+    isoimagewriter
     libva-utils
     lm_sensors
     nano
