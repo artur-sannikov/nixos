@@ -30,6 +30,7 @@
     ../../modules/system/keyboard.nix
     ../../modules/system/lact.nix
     ../../modules/system/openrgb.nix
+    ../../modules/system/corectrl.nix
   ];
 
   config = {
