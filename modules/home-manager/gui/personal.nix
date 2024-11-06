@@ -16,6 +16,7 @@
       moonlight-qt
       picard
       rustdesk-flutter
+      protonmail-bridge-gui
       tor-browser
       kdePackages.konversation
       kdePackages.kcalc
@@ -23,7 +24,6 @@
     ]
     ++ (with pkgs-stable; [
       calibre
-      protonmail-bridge-gui
       flacon
     ]);
 }
