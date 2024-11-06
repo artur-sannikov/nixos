@@ -23,7 +23,7 @@
     ]
     ++ (with pkgs-stable; [
       calibre
-      flacon
       protonmail-bridge-gui
+      flacon
     ]);
 }
