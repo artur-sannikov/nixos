@@ -107,7 +107,7 @@
             }
           ];
         };
-                desktop = lib.nixosSystem {
+        desktop = lib.nixosSystem {
           inherit system;
           specialArgs = {
             flake-inputs = inputs;
@@ -126,7 +126,7 @@
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
               home-manager.users."${username}".imports = [
-                ./hosts/asus-laptop/home.nix
+                ./hosts/desktop/home.nix
               ];
 
               # Optionally, use home-manager.extraSpecialArgs to pass arguments to home.nix
