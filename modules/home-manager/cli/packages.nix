@@ -1,4 +1,4 @@
-{ pkgs, flake-inputs, ... }:
+{ pkgs, ... }:
 {
   home.packages = with pkgs; [
     age
@@ -8,15 +8,15 @@
     caddy
     distrobox
     gnumake
-    quarto
-    python312Packages.radian
     kubectl
+    mat2
+    podlet
+    python312Packages.radian
+    quarto
+    screen
+    sops
     talosctl
     typst
-    screen
-    mat2
-    sops
     wl-clipboard-rs
-    flake-inputs.podlet.packages."${pkgs.system}".podlet
   ];
 }
