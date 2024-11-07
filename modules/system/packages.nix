@@ -11,6 +11,7 @@
     git
     glxinfo
     gparted
+    inxi
     isoimagewriter
     libva-utils
     lm_sensors
