@@ -43,6 +43,7 @@
           efiSupport = true;
           efiInstallAsRemovable = true;
           device = "nodev";
+          useOSProber = true;
         };
       };
       kernelPackages = pkgs.linuxPackages_latest;
