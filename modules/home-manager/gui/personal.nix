@@ -17,7 +17,7 @@
       picard
       rustdesk-flutter
       protonmail-bridge-gui
-      protonmail-cli
+      protonmail-bridge
       tor-browser
       kdePackages.konversation
       kdePackages.kcalc
