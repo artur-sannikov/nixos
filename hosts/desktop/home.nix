@@ -56,10 +56,6 @@
   # Enable yt-dlp
   yt-dlp.enable = true;
 
-  services.protonmail-bridge = {
-    enable = true;
-  };
-
   programs.home-manager.enable = true;
   # Set environment variables
   home.sessionVariables = {
