@@ -38,6 +38,13 @@
     # Catppuccin theme for VSCodium
     # https://github.com/catppuccin/vscode
     catppuccin-vsc.url = "https://flakehub.com/f/catppuccin/vscode/*.tar.gz";
+
+    # Motherboard support in latest experimental
+    # Update to stable release later
+    openrgb-experimental = {
+      url = "gitlab:CalcProgrammer1/OpenRGB";
+      flake = false;
+    };
   };
 
   outputs =

@@ -402,6 +402,22 @@
         "type": "github"
       }
     },
+    "openrgb-experimental": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1731077737,
+        "narHash": "sha256-X5ue5WN7mAtNB9io1B6LP3CNdjpqgkcdyQTN5N6jVUQ=",
+        "owner": "CalcProgrammer1",
+        "repo": "OpenRGB",
+        "rev": "9e5bbc7598d3b0d8a932d775490fade43002515e",
+        "type": "gitlab"
+      },
+      "original": {
+        "owner": "CalcProgrammer1",
+        "repo": "OpenRGB",
+        "type": "gitlab"
+      }
+    },
     "root": {
       "inputs": {
         "catppuccin": "catppuccin",
@@ -413,6 +429,7 @@
         "nix-vscode-extensions": "nix-vscode-extensions",
         "nixpkgs": "nixpkgs_2",
         "nixpkgs-stable": "nixpkgs-stable",
+        "openrgb-experimental": "openrgb-experimental",
         "stylix": "stylix"
       }
     },
