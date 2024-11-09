@@ -13,6 +13,7 @@
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
     ./disko.nix
+    ../../modules/system/maintenence.nix
     ../../modules/system/virtualization/libvirtd.nix
     ../../modules/system/virtualization/bottles.nix
     ../../modules/system/virtualization/podman.nix
@@ -60,7 +61,7 @@
             to = 1764;
           }
         ];
-         allowedUDPPortRanges = [
+        allowedUDPPortRanges = [
           {
             from = 1714;
             to = 1764;
@@ -192,19 +193,6 @@
     gaming = {
       enable = true;
       SteamUIScaling = "2"; # Fix Steam UI on High DPI monitors
-    };
-
-    system.autoUpgrade = {
-      enable = true;
-      flake = flake-inputs.self.outPath;
-      flags = [
-        "--update-input"
-        "nixpkgs"
-        "--no-write-lock-file"
-        "-L" # print build logs
-      ];
-      dates = "16:00";
-      randomizedDelaySec = "45min";
     };
 
     # This option defines the first version of NixOS you have installed on this particular machine,
