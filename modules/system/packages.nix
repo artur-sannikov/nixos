@@ -18,7 +18,6 @@
     nano
     nmap
     pciutils
-    phoronix-test-suite
     python312
     quickemu
     stress-ng
