@@ -4,8 +4,8 @@
     enable = true;
     flake = flake-inputs.self.outPath;
     flags = [
-      "--update-input"
       "nixpkgs"
+      "--commit-lock-file"
       "-L" # print build logs
     ];
     dates = "18:00";
