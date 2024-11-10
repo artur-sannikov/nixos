@@ -17,6 +17,7 @@
     screen
     sops
     talosctl
+    toolbox
     typst
     wl-clipboard-rs
   ];
