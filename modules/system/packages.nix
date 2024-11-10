@@ -17,6 +17,7 @@
     lm_sensors
     nano
     nmap
+    micromamba
     pciutils
     python312
     quickemu
