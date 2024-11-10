@@ -22,7 +22,6 @@
         commit.gpgsign = "true";
         gpg.format = "ssh";
         user.signingkey = "/home/${username}/.ssh/git-sign.pub";
-        gpg.ssh.allowedSignersFile = "/home/${username}/.ssh/allowed_signers";
       };
       ignores = [
         ".DS_Store"
