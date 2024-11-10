@@ -32,6 +32,7 @@
     ../../modules/system/openrgb.nix
     ../../modules/system/corectrl.nix
     ../../modules/system/nix.nix
+    ../../modules/system/ollama.nix
   ];
 
   config = {
@@ -92,7 +93,6 @@
       bluetooth = {
         enable = true;
       };
-      keyboard.qmk.enable = true;
     };
     # Set your time zone.
     time.timeZone = "Europe/Helsinki";
