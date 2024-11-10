@@ -6,6 +6,7 @@
     ansible-lint
     beets-unstable
     caddy
+    devenv
     distrobox
     gnumake
     kubectl
