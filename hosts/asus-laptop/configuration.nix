@@ -30,6 +30,7 @@
     ../../modules/system/appimage.nix
     ../../modules/system/services.nix
     ../../modules/system/keyboard.nix
+    ../../modules/system/nix.nix
   ];
 
   config = {

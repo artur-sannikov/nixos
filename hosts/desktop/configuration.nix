@@ -32,6 +32,7 @@
     ../../modules/system/lact.nix
     ../../modules/system/openrgb.nix
     ../../modules/system/corectrl.nix
+    ../../modules/system/nix.nix
   ];
 
   config = {
