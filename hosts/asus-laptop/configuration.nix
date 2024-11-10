@@ -28,6 +28,7 @@
 
     ../../modules/system/appimage.nix
     ../../modules/system/services.nix
+    ../../modules/system/tlp.nix
     ../../modules/system/keyboard.nix
     ../../modules/system/nix.nix
   ];
@@ -91,7 +92,6 @@
         enable = true;
         powerOnBoot = true;
       };
-      keyboard.qmk.enable = true;
     };
     # Set your time zone.
     time.timeZone = "Europe/Helsinki";
