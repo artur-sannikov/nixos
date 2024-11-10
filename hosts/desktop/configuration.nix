@@ -5,7 +5,6 @@
 {
   username,
   pkgs,
-  flake-inputs,
   ...
 }:
 {
