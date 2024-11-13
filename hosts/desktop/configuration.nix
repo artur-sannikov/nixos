@@ -17,6 +17,7 @@
     ../../modules/system/virtualization/bottles.nix
     ../../modules/system/virtualization/podman.nix
     ../../modules/system/virtualization/singularity.nix
+    ../../modules/system/virtualization/containers.nix
     ../../modules/system/gaming.nix
     ../../modules/system/tailscale.nix
     # System-wide packages
@@ -33,6 +34,7 @@
     ../../modules/system/corectrl.nix
     ../../modules/system/nix.nix
     ../../modules/system/ollama.nix
+
   ];
 
   config = {
