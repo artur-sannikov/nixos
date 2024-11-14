@@ -24,6 +24,7 @@
       zoom-us
     ])
     ++ (with pkgs; [
+      anki
       mattermost-desktop
       freetube
       gearlever
