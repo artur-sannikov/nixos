@@ -15,7 +15,6 @@
       signal-desktop
       moonlight-qt
       picard
-      rustdesk-flutter
       protonmail-bridge-gui
       protonmail-bridge
       tor-browser
@@ -26,5 +25,6 @@
     ++ (with pkgs-stable; [
       calibre
       flacon
+      rustdesk-flutter
     ]);
 }
