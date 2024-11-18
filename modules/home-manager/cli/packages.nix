@@ -8,6 +8,7 @@
     caddy
     devenv
     distrobox
+    lynx
     gnumake
     kubectl
     mat2
