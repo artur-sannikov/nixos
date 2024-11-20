@@ -11,6 +11,7 @@
     git
     glxinfo
     gparted
+    koboldcpp
     inxi
     isoimagewriter
     libva-utils
