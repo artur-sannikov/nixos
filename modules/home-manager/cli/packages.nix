@@ -10,6 +10,7 @@
     distrobox
     lynx
     gnumake
+    python312Packages.huggingface-hub
     kubectl
     mat2
     podlet
