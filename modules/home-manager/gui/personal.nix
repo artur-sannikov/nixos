@@ -11,20 +11,20 @@
     [
       audacity
       element-desktop
-      telegram-desktop
-      signal-desktop
+      kdePackages.kcalc
+      kdePackages.konversation
       moonlight-qt
       picard
-      protonmail-bridge-gui
       protonmail-bridge
+      protonmail-bridge-gui
+      rustdesk-flutter
+      signal-desktop
+      telegram-desktop
       tor-browser
-      kdePackages.konversation
-      kdePackages.kcalc
       veracrypt
     ]
     ++ (with pkgs-stable; [
       calibre
       flacon
-      rustdesk-flutter
     ]);
 }
