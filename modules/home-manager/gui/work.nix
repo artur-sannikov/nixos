@@ -8,7 +8,7 @@
   home.packages = with pkgs; [
     slack
     teams-for-linux
-    eduvpn
+    eduvpn-client
     quickemu
   ];
 }
