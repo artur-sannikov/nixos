@@ -10,6 +10,7 @@
     with pkgs;
     [
       audacity
+      calibre
       element-desktop
       kdePackages.kcalc
       kdePackages.konversation
@@ -24,7 +25,6 @@
       veracrypt
     ]
     ++ (with pkgs-stable; [
-      calibre
       flacon
     ]);
 }
