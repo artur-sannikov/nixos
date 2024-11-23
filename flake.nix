@@ -142,6 +142,18 @@
             }
           ];
         };
+        homelab-services = lib.nixosSystem {
+          inherit system;
+          specialArgs = {
+            flake-inputs = inputs;
+            inherit username;
+            inherit pkgs;
+          };
+          modules = [
+            ./hosts/homelab-services/configuration.nix
+            disko.nixosModules.disko
+          ];
+        };
       };
       homeConfigurations."ty" = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;

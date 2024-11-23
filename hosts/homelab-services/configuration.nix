@@ -11,13 +11,16 @@
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
+    ./disko.nix
   ];
 
   boot = {
     loader = {
       grub = {
         enable = true;
-        efiSupport = false;
+        efiSupport = true;
+        efiInstallAsRemovable = true;
+        device = "nodev";
       };
     };
   };
