@@ -77,15 +77,15 @@
   };
 
   users.users = {
-    "${username}" = {
+    ${username} = {
       isNormalUser = true;
       extraGroups = [
         "wheel"
         "networkmanager"
       ];
     };
-    "immich" = {
-      isNormalUser = true;
+    immich = {
+      isSystemUser = true;
       group = "immich";
     };
   };
