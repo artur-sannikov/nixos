@@ -13,6 +13,7 @@
       hunspell
       hunspellDicts.en_GB-large
       inkscape
+      kdePackages.filelight
       libreoffice-qt6-fresh
       obsidian
       okular
