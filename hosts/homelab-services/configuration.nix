@@ -10,7 +10,7 @@
 {
   imports = [
     ./disko.nix
-    ./modules/system/openssh.nix
+    ../../modules/system/openssh.nix
   ];
 
   boot = {
