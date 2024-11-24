@@ -151,6 +151,7 @@
           };
           modules = [
             ./hosts/homelab-services/configuration.nix
+            ./hosts/homelab-services/hardware-configuration.nix
             disko.nixosModules.disko
           ];
         };
