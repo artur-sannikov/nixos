@@ -37,7 +37,7 @@ in
 
     environment = {
       systemPackages = with pkgs; [
-        # Monitor temperature
+        heroic
         mangohud
         protonup
         lutris
