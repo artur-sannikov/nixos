@@ -9,7 +9,6 @@
 }:
 {
   imports = [
-    # Include the results of the hardware scan.
     ./disko.nix
   ];
 
@@ -63,6 +62,7 @@
       user = "immich";
       group = "immich";
       openFirewall = true;
+      port = 3001;
       mediaLocation = "/mnt/nas/photos";
     };
   };
@@ -76,18 +76,25 @@
     };
   };
 
-  users.users = {
-    ${username} = {
-      isNormalUser = true;
-      extraGroups = [
-        "wheel"
-        "networkmanager"
-      ];
+  users = {
+    users = {
+      ${username} = {
+        isNormalUser = true;
+        extraGroups = [
+          "wheel"
+          "networkmanager"
+        ];
+        openssh.authorizedKeys.keys = [
+          " ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJMZJpTUgJSW8XTfLyURldokF828j3G8yOR45xjFQX/H "
+        ];
+        hashedPassword = "$y$j9T$V7USJgwWqoEDnUa0pMjb30$E5mDIdm9KnS9aLu61AYVYTGdcGwFHUtOR4UWCb8wWh3"; # Initlal  password to be changed after first login
+      };
+      immich = {
+        isSystemUser = true;
+        group = "immich";
+      };
     };
-    immich = {
-      isSystemUser = true;
-      group = "immich";
-    };
+    groups.immich.gid = 1002;
   };
 
   # This option defines the first version of NixOS you have installed on this particular machine,
