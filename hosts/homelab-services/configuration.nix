@@ -10,6 +10,7 @@
 {
   imports = [
     ./disko.nix
+    ./modules/system/openssh.nix
   ];
 
   boot = {
@@ -25,6 +26,9 @@
 
   networking = {
     hostName = "nix-services";
+    firewall = {
+      enable = true;
+    };
   };
 
   # Set your time zone.
@@ -51,18 +55,12 @@
   ];
 
   services = {
-    openssh = {
-      enable = true;
-      settings = {
-        PermitRootLogin = "no";
-      };
-    };
     immich = {
       enable = true;
       user = "immich";
       group = "immich";
       openFirewall = true;
-      port = 3001;
+      host = "0.0.0.0";
       mediaLocation = "/mnt/nas/photos";
     };
   };
@@ -82,10 +80,9 @@
         isNormalUser = true;
         extraGroups = [
           "wheel"
-          "networkmanager"
         ];
         openssh.authorizedKeys.keys = [
-          " ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJMZJpTUgJSW8XTfLyURldokF828j3G8yOR45xjFQX/H "
+          " ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJMZJpTUgJSW8XTfLyURldokF828j3G8yOR45xjFQX/H"
         ];
         initialHashedPassword = "$y$j9T$V7USJgwWqoEDnUa0pMjb30$E5mDIdm9KnS9aLu61AYVYTGdcGwFHUtOR4UWCb8wWh3"; # Initlal  password to be changed after first login
       };
