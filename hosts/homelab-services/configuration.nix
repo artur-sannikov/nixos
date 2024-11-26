@@ -28,6 +28,7 @@
     hostName = "nix-services";
     firewall = {
       enable = true;
+      allowedTCPPorts = [ 3000 ]; # Frgejo
     };
   };
 
@@ -63,6 +64,17 @@
       host = "0.0.0.0";
       mediaLocation = "/mnt/nas/photos";
     };
+    forgejo = {
+      enable = true;
+      user = "forgejo";
+      lfs.enable = true;
+      settings = {
+        actions = {
+          ENABLED = true;
+          DEFAULT_ACTIONS_URL = "github";
+        };
+      };
+    };
   };
 
   security = {
@@ -89,6 +101,9 @@
       immich = {
         isSystemUser = true;
         group = "immich";
+      };
+      forgejo = {
+        isSystemUser = true;
       };
     };
     groups.immich.gid = 1002;
