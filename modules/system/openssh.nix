@@ -42,11 +42,6 @@
       PermitEmptyPasswords = "no";
       PasswordAuthentication = false;
 
-      # Kerberos options
-      KerberosAuthentication = "no";
-      KerberosOrLocalPasswd = "no";
-      KerberosTicketCleanup = "yes";
-
       # Network
       TCPKeepAlive = "no";
       ClientAliveInterval = 300;
