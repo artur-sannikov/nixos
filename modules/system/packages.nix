@@ -27,6 +27,7 @@
     vulkan-tools
     wayland-utils
     wget
+    unzip
   ];
 
   # Hardware hybrid decoding
