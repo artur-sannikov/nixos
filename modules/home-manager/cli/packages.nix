@@ -9,6 +9,7 @@
     devenv
     distrobox
     gnumake
+    jdk
     kubectl
     lynx
     mat2
