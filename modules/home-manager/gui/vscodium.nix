@@ -32,6 +32,7 @@
       ++ (with flake-inputs.nix-vscode-extensions.extensions.${pkgs.system}.vscode-marketplace; [
         ipierre1.ansible-vault-vscode
         quarto.quarto
+        nextflow.nextflow
       ])
       ++ (with flake-inputs.nix-vscode-extensions.extensions.${pkgs.system}.open-vsx; [
         jeanp413.open-remote-ssh
