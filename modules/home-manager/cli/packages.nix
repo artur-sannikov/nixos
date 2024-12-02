@@ -19,6 +19,8 @@
     python312Packages.radian
     quarto
     screen
+    shellcheck
+    shfmt
     sops
     talosctl
     toolbox
