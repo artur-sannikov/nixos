@@ -15,10 +15,11 @@
     extensions =
       with pkgs.vscode-extensions;
       [
-        davidanson.vscode-markdownlint
         catppuccin.catppuccin-vsc-icons
+        davidanson.vscode-markdownlint
         ecmel.vscode-html-css
         jnoortheen.nix-ide
+        mads-hartmann.bash-ide-vscode
         matthewpi.caddyfile-support
         mkhl.direnv
         ms-python.python
@@ -31,6 +32,7 @@
       ]
       ++ (with flake-inputs.nix-vscode-extensions.extensions.${pkgs.system}.vscode-marketplace; [
         ipierre1.ansible-vault-vscode
+        nextflow.nextflow
         quarto.quarto
       ])
       ++ (with flake-inputs.nix-vscode-extensions.extensions.${pkgs.system}.open-vsx; [

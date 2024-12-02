@@ -14,11 +14,6 @@
           algorithm = "histogram";
           colorMoved = "default";
         };
-        url = {
-          "git@github.com:" = {
-            insteadOf = "https://github.com/";
-          };
-        };
         commit.gpgsign = "true";
         gpg.format = "ssh";
         user.signingkey = "/home/${username}/.ssh/git-sign.pub";

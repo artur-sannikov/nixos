@@ -39,6 +39,11 @@
     # https://github.com/catppuccin/vscode
     catppuccin-vsc.url = "https://flakehub.com/f/catppuccin/vscode/*.tar.gz";
 
+    nixvim = {
+      url = "github:nix-community/nixvim";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     # Motherboard support in latest experimental
     # Update to stable release later
     openrgb-experimental = {
@@ -57,6 +62,7 @@
       catppuccin,
       catppuccin-vsc,
       flatpaks,
+      nixvim,
       ...
     }:
     let
@@ -168,6 +174,7 @@
           ./hosts/ty/home.nix
           catppuccin.homeManagerModules.catppuccin
           stylix.homeManagerModules.stylix
+          nixvim.homeManagerModules.nixvim
         ];
       };
     };
