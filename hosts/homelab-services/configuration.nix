@@ -68,6 +68,7 @@
       enable = true;
       package = pkgs.forgejo;
       user = "forgejo";
+      group = "forgejo";
       lfs.enable = true;
       settings = {
         actions = {
@@ -95,7 +96,7 @@
           "wheel"
         ];
         openssh.authorizedKeys.keys = [
-          " ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJMZJpTUgJSW8XTfLyURldokF828j3G8yOR45xjFQX/H"
+          "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJMZJpTUgJSW8XTfLyURldokF828j3G8yOR45xjFQX/H"
         ];
         initialHashedPassword = "$y$j9T$V7USJgwWqoEDnUa0pMjb30$E5mDIdm9KnS9aLu61AYVYTGdcGwFHUtOR4UWCb8wWh3"; # Initlal  password to be changed after first login
       };
@@ -105,9 +106,13 @@
       };
       forgejo = {
         isSystemUser = true;
+        group = "forgejo";
       };
     };
-    groups.immich.gid = 1002;
+    groups = {
+      immich.gid = 1002;
+      forgejo = { };
+    };
   };
 
   # This option defines the first version of NixOS you have installed on this particular machine,
