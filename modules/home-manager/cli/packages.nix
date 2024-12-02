@@ -8,15 +8,19 @@
     caddy
     devenv
     distrobox
-    lynx
     gnumake
-    python312Packages.huggingface-hub
+    jdk
     kubectl
+    lynx
     mat2
+    nextflow
     podlet
+    python312Packages.huggingface-hub
     python312Packages.radian
     quarto
     screen
+    shellcheck
+    shfmt
     sops
     talosctl
     toolbox
