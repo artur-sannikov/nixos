@@ -101,12 +101,10 @@
       };
       forgejo = {
         isSystemUser = true;
-        group = "forgejo";
       };
     };
     groups = {
       immich.gid = 1002;
-      forgejo = { };
     };
   };
 
