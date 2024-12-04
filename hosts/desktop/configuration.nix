@@ -33,7 +33,6 @@
     ../../modules/system/openrgb.nix
     ../../modules/system/corectrl.nix
     ../../modules/system/nix.nix
-    ../../modules/system/gc.nix
     ../../modules/system/ollama.nix
   ];
 
