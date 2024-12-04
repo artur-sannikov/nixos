@@ -14,6 +14,7 @@
             enable = true;
             package = pkgs.rPackages.languageserver;
           };
+          bashls.enable = true;
         };
       };
     };
