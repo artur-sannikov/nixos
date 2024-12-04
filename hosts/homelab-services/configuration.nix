@@ -70,12 +70,6 @@
       user = "forgejo";
       group = "forgejo";
       lfs.enable = true;
-      settings = {
-        actions = {
-          ENABLED = true;
-          DEFAULT_ACTIONS_URL = "github";
-        };
-      };
     };
   };
 
