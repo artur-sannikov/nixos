@@ -39,6 +39,9 @@
 
         # Synchronize panes
         bind-key y set-window-option synchronize-panes\; display-message "synchronize mode toggled."
+
+        # Enable vim mode
+        set-window-option -g mode-keys vi
       '';
     };
   };
