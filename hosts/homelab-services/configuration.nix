@@ -11,6 +11,7 @@
   imports = [
     ./disko.nix
     ../../modules/system/openssh.nix
+    ../../modules/system/maintenence.nix
   ];
 
   boot = {

@@ -11,7 +11,6 @@
     dates = "18:00";
     randomizedDelaySec = "45min";
   };
-
   nix = {
     settings.auto-optimise-store = true;
     optimise = {
@@ -20,9 +19,7 @@
     };
     gc = {
       automatic = true;
-      dates = "weekly";
-      options = "--delete-older-than 30d";
+      options = "-d --delete-older-than 14d";
     };
-
   };
 }
