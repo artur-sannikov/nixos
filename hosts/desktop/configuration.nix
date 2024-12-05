@@ -192,6 +192,7 @@
 
       # Default configuration directory
       XDG_CONFIG_HOME = "$HOME/.config";
+      TERM = "alacritty";
     };
 
     gaming = {
