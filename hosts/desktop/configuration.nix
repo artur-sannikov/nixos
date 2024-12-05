@@ -147,7 +147,6 @@
       fwupd = {
         enable = true;
       };
-      protonmail-bridge.enable = true;
     };
 
     security = {
