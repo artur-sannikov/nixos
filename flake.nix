@@ -105,9 +105,9 @@
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
               home-manager.users."${username}".imports = [
+                nixvim.homeManagerModules.nixvim
                 ./hosts/asus-laptop/home.nix
               ];
-
               # Optionally, use home-manager.extraSpecialArgs to pass arguments to home.nix
               home-manager.extraSpecialArgs = {
                 flake-inputs = inputs;
@@ -136,6 +136,7 @@
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
               home-manager.users."${username}".imports = [
+                nixvim.homeManagerModules.nixvim
                 ./hosts/desktop/home.nix
               ];
 

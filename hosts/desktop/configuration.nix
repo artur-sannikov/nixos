@@ -33,8 +33,8 @@
     ../../modules/system/openrgb.nix
     ../../modules/system/corectrl.nix
     ../../modules/system/nix.nix
-    ../../modules/system/gc.nix
     ../../modules/system/ollama.nix
+    ../../modules/system/stylix.nix
   ];
 
   config = {
@@ -121,25 +121,6 @@
       };
     };
 
-    stylix = {
-      enable = true;
-      image = ./scarlet_tree.png;
-      base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
-      cursor = {
-        package = pkgs.capitaine-cursors-themed;
-        name = "Capitaine Cursors (Nord)";
-      };
-      fonts = {
-        monospace = {
-          package = pkgs.iosevka;
-          name = "Iosevka Medium Extended";
-        };
-      };
-      opacity = {
-        terminal = 0.95;
-      };
-    };
-
     # Disable service because it fails frequently at rebuild
     # https://discourse.nixos.org/t/nixos-rebuild-switch-upgrade-networkmanager-wait-online-service-failure/30746/2
     systemd.services.NetworkManager-wait-online.enable = false;
@@ -166,7 +147,6 @@
       fwupd = {
         enable = true;
       };
-      protonmail-bridge.enable = true;
     };
 
     security = {
@@ -193,6 +173,7 @@
 
       # Default configuration directory
       XDG_CONFIG_HOME = "$HOME/.config";
+      TERM = "alacritty";
     };
 
     gaming = {

@@ -3,7 +3,6 @@
 {
   imports = [
     ./common.nix
-    # ./shadow-pc.nix
   ];
   # Personal apps
   home.packages =
@@ -16,8 +15,7 @@
       kdePackages.konversation
       moonlight-qt
       picard
-      protonmail-bridge
-      protonmail-bridge-gui
+      protonmail-desktop
       rustdesk-flutter
       signal-desktop
       telegram-desktop
