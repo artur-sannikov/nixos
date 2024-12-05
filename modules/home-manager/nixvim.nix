@@ -27,5 +27,17 @@
       cmp-path.enable = true;
       cmp-cmdline.enable = true;
     };
+    autoCmd = [
+      {
+        command = "setfiletype json";
+        event = [
+          "BufEnter"
+          "BufWinEnter"
+        ];
+        pattern = [
+          "*.hujson"
+        ];
+      }
+    ];
   };
 }
