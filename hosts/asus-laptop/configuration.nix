@@ -31,6 +31,7 @@
     ../../modules/system/tlp.nix
     ../../modules/system/keyboard.nix
     ../../modules/system/nix.nix
+    ../../modules/system/stylix.nix
   ];
 
   config = {
@@ -117,26 +118,6 @@
           "noauto"
           "_netdev"
         ];
-      };
-    };
-
-    stylix = {
-      enable = true;
-      image = ./scarlet_tree.png;
-      stylix.targets.nixvim.enable = false;
-      base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
-      cursor = {
-        package = pkgs.capitaine-cursors-themed;
-        name = "Capitaine Cursors (Nord)";
-      };
-      fonts = {
-        monospace = {
-          package = pkgs.iosevka;
-          name = "Iosevka Medium Extended";
-        };
-      };
-      opacity = {
-        terminal = 0.95;
       };
     };
 
