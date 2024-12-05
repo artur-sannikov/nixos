@@ -34,7 +34,7 @@
     flake-inputs.flatpaks.homeManagerModules.nix-flatpak
 
     ../../modules/home-manager/desktop_entries.nix
-    ../../modules/home-manager/nixvim.nix
+    ../../modules/home-manager/cli/nixvim.nix
   ];
 
   # Enable zsh
