@@ -123,6 +123,7 @@
     stylix = {
       enable = true;
       image = ./scarlet_tree.png;
+      stylix.targets.nixvim.enable = false;
       base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
       cursor = {
         package = pkgs.capitaine-cursors-themed;

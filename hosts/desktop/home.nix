@@ -61,5 +61,6 @@
   # Set environment variables
   home.sessionVariables = {
     EDITOR = "nano";
+    # TERM = "alacritty";
   };
 }
