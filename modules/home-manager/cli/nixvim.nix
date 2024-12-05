@@ -2,8 +2,6 @@
 {
   programs.nixvim = {
     enable = true;
-
-    colorschemes.catppuccin.enable = true;
     plugins = {
       lualine.enable = true;
       lsp-format = {
@@ -26,6 +24,20 @@
       cmp-buffer.enable = true;
       cmp-path.enable = true;
       cmp-cmdline.enable = true;
+      direnv.enable = true;
+      nix.enable = true;
     };
+    autoCmd = [
+      {
+        command = "setfiletype json";
+        event = [
+          "BufEnter"
+          "BufWinEnter"
+        ];
+        pattern = [
+          "*.hujson"
+        ];
+      }
+    ];
   };
 }

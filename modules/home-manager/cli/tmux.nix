@@ -5,6 +5,7 @@
       enable = true;
       shell = "${pkgs.zsh}/bin/zsh";
       prefix = "C-f";
+      escapeTime = 10;
       extraConfig = ''
         bind-key r source-file ~/.config/tmux/tmux.conf \; display-message "tmux.conf reloaded."
 
@@ -42,6 +43,10 @@
 
         # Enable vim mode
         set-window-option -g mode-keys vi
+
+        # Fix nvim colors in tmux
+        set -g default-terminal "tmux-256color"
+        set -ag terminal-overrides ",xterm-256color:RGB"
       '';
     };
   };
