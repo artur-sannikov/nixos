@@ -24,6 +24,8 @@
       cmp-buffer.enable = true;
       cmp-path.enable = true;
       cmp-cmdline.enable = true;
+      direnv.enable = true;
+      nix.enable = true;
     };
     autoCmd = [
       {
