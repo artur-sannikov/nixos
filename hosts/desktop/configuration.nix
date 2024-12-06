@@ -91,7 +91,10 @@
       };
     };
     # Set your time zone.
-    time.timeZone = "Europe/Helsinki";
+    time = {
+      timeZone = "Europe/Helsinki";
+      hardwareClockInLocalTime = true;
+    };
 
     # Mount NFS
     fileSystems = {
