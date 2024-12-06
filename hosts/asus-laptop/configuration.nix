@@ -70,12 +70,6 @@
           }
         ];
       };
-      timeServers = [
-        "0.fi.pool.ntp.org"
-        "1.fi.pool.ntp.org"
-        "2.fi.pool.ntp.org"
-        "3.fi.pool.ntp.org"
-      ];
     };
 
     hardware = {
