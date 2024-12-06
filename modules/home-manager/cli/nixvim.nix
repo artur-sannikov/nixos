@@ -26,6 +26,25 @@
       cmp-cmdline.enable = true;
       direnv.enable = true;
       nix.enable = true;
+      web-devicons = {
+        enable = true;
+      };
+      bufferline = {
+        enable = true;
+        settings = {
+          highlights = {
+            buffer_selected = {
+              bg = "#356b37";
+            };
+            tab_selected = {
+              bg = "#356b37";
+            };
+            numbers_selected = {
+              bg = "#356b37";
+            };
+          };
+        };
+      };
     };
     autoCmd = [
       {
