@@ -98,8 +98,8 @@
 
     # Mount NFS
     fileSystems = {
-      "/mnt/nas/backup" = {
-        device = "192.168.20.5:/mnt/tank/ux5401-backup";
+      "/mnt/nas/media" = {
+        device = "192.168.20.5:/mnt/tank/media";
         fsType = "nfs";
         options = [
           "nofail"
@@ -107,10 +107,11 @@
           "_netdev"
         ];
       };
-      "/mnt/nas/media" = {
-        device = "192.168.20.5:/mnt/tank/media";
+      "/mnt/nas/backup" = {
+        device = "192.168.20.5:/mnt/tank/personal/backups/desktop";
         fsType = "nfs";
         options = [
+          "x-systemd.automount"
           "nofail"
           "noauto"
           "_netdev"
