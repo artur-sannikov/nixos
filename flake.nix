@@ -155,6 +155,7 @@
             flake-inputs = inputs;
             inherit username;
             inherit pkgs;
+            inherit pkgs-stable;
           };
           modules = [
             ./hosts/homelab-services/configuration.nix
