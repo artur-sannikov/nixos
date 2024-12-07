@@ -4,6 +4,7 @@
 
 {
   pkgs,
+  pkgs-stable,
   username,
   ...
 }:
@@ -29,6 +30,7 @@
     hostName = "nix-services";
     firewall = {
       enable = true;
+      allowedTCPPorts = [ 3000 ]; # Frgejo
     };
   };
 
@@ -56,6 +58,10 @@
   ];
 
   services = {
+    tailscale = {
+      enable = true;
+      package = pkgs-stable.tailscale;
+    };
     immich = {
       enable = true;
       user = "immich";
@@ -63,6 +69,13 @@
       openFirewall = true;
       host = "0.0.0.0";
       mediaLocation = "/mnt/nas/photos";
+    };
+    forgejo = {
+      enable = true;
+      package = pkgs.forgejo;
+      user = "forgejo";
+      group = "forgejo";
+      lfs.enable = true;
     };
   };
 
@@ -83,7 +96,7 @@
           "wheel"
         ];
         openssh.authorizedKeys.keys = [
-          " ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJMZJpTUgJSW8XTfLyURldokF828j3G8yOR45xjFQX/H"
+          "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJMZJpTUgJSW8XTfLyURldokF828j3G8yOR45xjFQX/H"
         ];
         initialHashedPassword = "$y$j9T$V7USJgwWqoEDnUa0pMjb30$E5mDIdm9KnS9aLu61AYVYTGdcGwFHUtOR4UWCb8wWh3"; # Initlal  password to be changed after first login
       };
@@ -91,8 +104,13 @@
         isSystemUser = true;
         group = "immich";
       };
+      forgejo = {
+        isSystemUser = true;
+      };
     };
-    groups.immich.gid = 1002;
+    groups = {
+      immich.gid = 1002;
+    };
   };
 
   # This option defines the first version of NixOS you have installed on this particular machine,
