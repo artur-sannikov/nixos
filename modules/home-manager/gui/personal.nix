@@ -17,12 +17,12 @@
       picard
       protonmail-desktop
       rustdesk-flutter
-      signal-desktop
       telegram-desktop
       tor-browser
       veracrypt
     ]
     ++ (with pkgs-stable; [
       flacon
+      signal-desktop
     ]);
 }
