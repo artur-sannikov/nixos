@@ -4,6 +4,7 @@
 
 {
   pkgs,
+  pkgs-stable,
   username,
   ...
 }:
@@ -57,6 +58,10 @@
   ];
 
   services = {
+    tailscale = {
+      enable = true;
+      package = pkgs-stable.tailscale;
+    };
     immich = {
       enable = true;
       user = "immich";
