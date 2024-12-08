@@ -48,6 +48,16 @@
           efiSupport = true;
           devices = [ "nodev" ];
           useOSProber = true;
+          extraEntries = ''
+            menuentry "Fedora Bazzite" {
+              insmod part_gpt
+              insmod fat
+              insmod search_fs_uuid
+              insmod chain
+              search --fs-uuid --set=root AA9C-97F8
+              chainloader /EFI/fedora/shimx64.efi
+            }
+          '';
         };
       };
       kernelPackages = pkgs.linuxPackages_latest;
@@ -83,6 +93,7 @@
         enable32Bit = true;
         extraPackages = with pkgs; [
           rocmPackages.clr.icd # OpenCL
+          gamescope
         ];
       };
 
@@ -176,7 +187,7 @@
 
     gaming = {
       enable = true;
-      SteamUIScaling = "2"; # Fix Steam UI on High DPI monitors
+      SteamUIScaling = "2";
     };
 
     # This option defines the first version of NixOS you have installed on this particular machine,
