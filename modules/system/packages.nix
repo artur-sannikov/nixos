@@ -11,23 +11,23 @@
     git
     glxinfo
     gparted
-    koboldcpp
     inxi
     isoimagewriter
+    koboldcpp
     libva-utils
     lm_sensors
+    micromamba
     nano
     nmap
-    micromamba
     pciutils
     python312
     quickemu
     stress-ng
+    unzip
     vim
     vulkan-tools
     wayland-utils
     wget
-    unzip
   ];
 
   # Hardware hybrid decoding
