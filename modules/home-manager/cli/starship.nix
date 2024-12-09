@@ -1,3 +1,4 @@
+{ lib, ... }:
 {
   # https://starship.rs/
   programs.starship = {
@@ -6,7 +7,17 @@
     enableBashIntegration = true;
     settings = {
       add_newline = false;
-      format = "$username$directory$git_branch$git_state$git_status";
+      format = lib.concatStrings [
+        "$username"
+        "$hostname"
+        "$directory"
+        "$git_branch"
+        "$git_state"
+        "$git_status"
+        "$nix_shell"
+        "$container"
+        "\n$character"
+      ];
       right_format = "$cmd_duration$time";
       username = {
         disabled = false;
@@ -20,6 +31,11 @@
       directory = {
         read_only = "🔒";
         truncate_to_repo = false;
+      };
+      nix_shell = {
+        # format = "[$symbol $name]";
+        format = "via [$symbol$state]($style) ";
+        symbol = "❄️ ";
       };
     };
   };
