@@ -173,6 +173,7 @@
         "wheel"
         "input"
         "networkmanager"
+        "podman"
       ];
     };
 
