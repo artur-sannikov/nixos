@@ -35,6 +35,7 @@
     ../../modules/system/nix.nix
     ../../modules/system/ollama.nix
     ../../modules/system/stylix.nix
+    ../../modules/system/adb.nix
   ];
 
   config = {
