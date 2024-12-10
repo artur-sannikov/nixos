@@ -22,7 +22,6 @@
         ".DS_Store"
         ".direnv/"
         ".devcontainer/"
-        ".envrc"
         "result"
       ];
       lfs = {
