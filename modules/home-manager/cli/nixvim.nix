@@ -17,6 +17,9 @@
             package = pkgs.rPackages.languageserver;
           };
           bashls.enable = true;
+          pylsp = {
+            enable = true;
+          };
         };
       };
       cmp.enable = true;
