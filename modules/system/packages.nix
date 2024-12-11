@@ -28,6 +28,7 @@
     vulkan-tools
     wayland-utils
     wget
+    wireguard-tools
   ];
 
   # Hardware hybrid decoding
