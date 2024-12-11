@@ -22,7 +22,16 @@
           };
         };
       };
-      cmp.enable = true;
+      cmp = {
+        enable = true;
+        autoEnableSources = true;
+        settings = {
+          sources = [
+            { name = "path"; }
+            { name = "nvim_lsp"; }
+          ];
+        };
+      };
       cmp-nvim-lsp.enable = true;
       cmp-buffer.enable = true;
       cmp-path.enable = true;
