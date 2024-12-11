@@ -5,10 +5,12 @@
     ansible
     ansible-lint
     beets-unstable
+    black
     caddy
     devenv
     distrobox
     gnumake
+    isort
     jdk
     kubectl
     lynx
