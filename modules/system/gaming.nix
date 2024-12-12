@@ -57,7 +57,12 @@ in
       systemPackages = with pkgs; [
         mangohud
         protonup
-        lutris
+        (lutris.override {
+          extraPkgs = pkgs: [
+            wineWowPackages.stable
+            winetricks
+          ];
+        })
         (heroic.override {
           extraPkgs = pkgs: [
             gamescope
@@ -65,7 +70,6 @@ in
             gamescope-wsi
           ];
         })
-
       ];
       sessionVariables = {
         STEAM_EXTRA_COMPAT_TOOLS_PATHS = "/home/${username}/.steam/root/compatibilitytools.d";
