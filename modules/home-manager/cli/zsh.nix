@@ -61,6 +61,7 @@ in
             "toolbox"
             "z"
             "podman"
+            "tmux"
           ];
         };
       };
