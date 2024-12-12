@@ -14,6 +14,9 @@
         extraOptions = [
           "--network=host"
         ];
+        labels = {
+          "io.containers.autoupdate" = "registry";
+        };
         volumes = [
           "/home/${username}/podman/sillytavern/config:/home/node/app/config"
           "/home/${username}/podman/sillytavern/data:/home/node/app/data"
