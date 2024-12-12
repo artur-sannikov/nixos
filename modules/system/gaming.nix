@@ -3,6 +3,7 @@
   username,
   config,
   lib,
+  flake-inputs,
   ...
 }:
 with lib;
@@ -57,6 +58,7 @@ in
       systemPackages = with pkgs; [
         mangohud
         protonup
+        flake-inputs.umu.packages.${pkgs.system}.umu
         (lutris.override {
           extraPkgs = pkgs: [
             wineWowPackages.stable
