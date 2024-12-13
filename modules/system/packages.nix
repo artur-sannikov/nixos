@@ -31,11 +31,6 @@
     wireguard-tools
   ];
 
-  # Hardware hybrid decoding
-  nixpkgs.config.packageOverrides = pkgs: {
-    vaapiIntel = pkgs.vaapiIntel.override { enableHybridCodec = true; };
-  };
-
   programs = {
     partition-manager.enable = true;
   };

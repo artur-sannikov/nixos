@@ -32,6 +32,8 @@
     ../../modules/system/keyboard.nix
     ../../modules/system/nix.nix
     ../../modules/system/stylix.nix
+    ../../modules/system/adb.nix
+    ../../modules/system/vaapi.nix
   ];
 
   config = {
