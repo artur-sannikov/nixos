@@ -1,0 +1,20 @@
+# Sync repo to the Codeberg mirror
+name: Mirror repo to Codeberg
+on:
+  push:
+    branches:
+      - "**"
+  workflow_dispatch:
+
+jobs:
+  codeberg:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - uses: yesolutions/mirror-action@master
+        with:
+          REMOTE: "https://codeberg.org/arsann/nixos.git"
+          GIT_USERNAME: arsann
+          GIT_PASSWORD: ${{ secrets.GIT_PASSWORD }}
