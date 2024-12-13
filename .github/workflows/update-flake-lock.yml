@@ -24,3 +24,8 @@ jobs:
           pr-labels: |
             dependencies
             automated
+      - name: Merge pull request
+        run: gh pr merge --auto "${{ steps.update.outputs.pull-request-number }}" --rebase
+        env:
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+        if: ${{ steps.update.outputs.pull-request-number != '' }}
