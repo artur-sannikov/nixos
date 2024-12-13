@@ -11,3 +11,7 @@ This repository contains NixOS configuration for my desktop, personal laptop, a 
 > - **Shell:** zsh
 > - **Terminal:** Alacritty
 > - **Editors:** Nixvim/VSCodium
+
+## Configuration mirrors
+
+This configuration is available on [Codeberg](https://codeberg.org/arsann/nixos) and [GitHub](https://github.com/artur-sannikov/nixos).
