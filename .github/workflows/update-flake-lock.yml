@@ -18,12 +18,8 @@ jobs:
         with:
           determinate: true
       - uses: DeterminateSystems/magic-nix-cache-action@v8
-      - uses: DeterminateSystems/update-flake-lock@v24
-        with:
-          pr-title: "chore: update flake.lock"
-          pr-labels: |
-            dependencies
-            automated
+      - id: update
+        uses: DeterminateSystems/update-flake-lock@v24
       - name: Merge pull request
         run: gh pr merge --auto "${{ steps.update.outputs.pull-request-number }}" --rebase
         env:
