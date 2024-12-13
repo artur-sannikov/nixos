@@ -15,6 +15,6 @@ jobs:
           fetch-depth: 0
       - uses: yesolutions/mirror-action@master
         with:
-          REMOTE: "ssh://git@codeberg.org/arsann/nixos.git"
-          GIT_SSH_PRIVATE_KEY: ${{ secrets.GIT_SSH_PRIVATE_KEY }}
-          GIT_SSH_KNOWN_HOSTS: ${{ secrets.GIT_SSH_KNOWN_HOSTS }}
+          REMOTE: "https://codeberg.org/arsann/nixos.git"
+          GIT_USERNAME: arsann
+          GIT_PASSWORD: ${{ secrets.GIT_PASSWORD }}
