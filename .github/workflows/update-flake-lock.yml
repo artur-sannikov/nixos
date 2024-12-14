@@ -21,7 +21,7 @@ jobs:
       - id: update
         uses: DeterminateSystems/update-flake-lock@v24
       - name: Merge pull request
-        run: gh pr melrge --auto "${{ steps.update.outputs.pull-request-number }}" --rebase
+        run: gh pr merge --auto "${{ steps.update.outputs.pull-request-number }}" --rebase
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
         if: ${{ steps.update.outputs.pull-request-number != '' }}
