@@ -4,6 +4,9 @@ on:
   push:
     branches:
       - "**"
+  pull_request_target:
+    types:
+      - closed
   workflow_dispatch:
 
 jobs:
