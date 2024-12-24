@@ -90,8 +90,6 @@
         powerOnBoot = true;
       };
     };
-    # Set your time zone.
-    time.timeZone = "Europe/Helsinki";
 
     # Mount NFS
     fileSystems = {
@@ -146,6 +144,7 @@
         nssmdns4 = true;
         openFirewall = true;
       };
+      automatic-timezoned.enable = true;
     };
 
     security = {
