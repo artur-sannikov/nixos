@@ -14,6 +14,7 @@
       kdePackages.kcalc
       kdePackages.konversation
       moonlight-qt
+      monero-gui
       picard
       protonmail-desktop
       rustdesk-flutter
