@@ -38,6 +38,7 @@
     ./browsers/firefox.nix
     ./browsers/librewolf.nix
     ./browsers/brave.nix
+    ./browsers/mullvad-browser.nix
     ./vscodium.nix
     ./thunderbird.nix
     # ./fonts.nix
