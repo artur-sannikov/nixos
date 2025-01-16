@@ -33,9 +33,12 @@
         truncate_to_repo = false;
       };
       nix_shell = {
-        # format = "[$symbol $name]";
         format = "via [$symbol$state]($style) ";
         symbol = "❄️ ";
+      };
+      python = {
+        format = "via [$symbol$pyenv_prefix($version )(\($virtualenv\) )]($style)";
+        symbol = "🐍 ";
       };
     };
   };
