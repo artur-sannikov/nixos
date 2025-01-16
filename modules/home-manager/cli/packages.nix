@@ -29,6 +29,7 @@
     talosctl
     toolbox
     typst
+    virtualenv
     wl-clipboard-rs
   ];
 }
