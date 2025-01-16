@@ -15,10 +15,12 @@
     kubectl
     lynx
     mat2
+    micromamba
     nextflow
     podlet
     python312Packages.huggingface-hub
     python312Packages.radian
+    python312Packages.pip
     quarto
     screen
     shellcheck
