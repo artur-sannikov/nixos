@@ -15,6 +15,7 @@
         "$git_state"
         "$git_status"
         "$nix_shell"
+        "$python"
         "$container"
         "\n$character"
       ];
