@@ -67,6 +67,10 @@
     networking = {
       hostName = "desktop";
       networkmanager.enable = true;
+      # interfaces.enp7s0.wakeOnLan = {
+      #   enable = true;
+      #   policy = [ "magic" ];
+      # };
       firewall = {
         allowedTCPPorts = [
           # Syncthing port
@@ -141,7 +145,7 @@
     ];
 
     services = {
-      # Enable KDE Plasma 6.
+      # Enable root Plasma 6.
       xserver.enable = false;
       displayManager.sddm = {
         enable = true;
