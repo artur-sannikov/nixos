@@ -50,6 +50,7 @@
     ../../modules/home-manager/cli/tmux.nix
 
     ../../modules/home-manager/desktop_entries.nix
+    ../../modules/home-manager/sessionVariables.nix
   ];
 
   # Enable zsh
@@ -60,7 +61,4 @@
 
   programs.home-manager.enable = true;
   # Set environment variables
-  home.sessionVariables = {
-    EDITOR = "nano";
-  };
 }
