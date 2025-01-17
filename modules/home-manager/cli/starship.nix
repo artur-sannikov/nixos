@@ -16,6 +16,7 @@
         "$git_status"
         "$nix_shell"
         "$python"
+        "$conda"
         "$container"
         "\n$character"
       ];

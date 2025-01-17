@@ -34,7 +34,6 @@ in
         shellAliases = {
           "l." = "ls -ldh .";
           "l" = "ls -lh";
-          mamba = "${pkgs.micromamba}/bin/micromamba";
           # Integration with direnv
           "tmux" = "direnv exec / tmux";
         };
