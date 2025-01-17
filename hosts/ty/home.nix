@@ -35,6 +35,8 @@
 
     ../../modules/home-manager/desktop_entries.nix
     ../../modules/home-manager/cli/nixvim.nix
+    ../../modules/home-manager/services/lorri.nix
+    ../../modules/home-manager/services/ollama.nix
   ];
 
   # Enable zsh
@@ -52,9 +54,5 @@
   home.sessionVariables = {
     EDITOR = "nano";
     LC_TIME = "fi_FI.utf8";
-  };
-
-  services = {
-    lorri.enable = true;
   };
 }

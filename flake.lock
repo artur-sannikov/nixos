@@ -185,11 +185,11 @@
       },
       "locked": {
         "dir": "pkgs/firefox-addons",
-        "lastModified": 1737028554,
-        "narHash": "sha256-6VB1uVPqyaXTTori47ESnvAlQ1nHR4XwRybBHxWpL3E=",
+        "lastModified": 1737086610,
+        "narHash": "sha256-c8b20yTbg2oaUvCVXdm2Lvh1YQN0v2Xp4lpvJaGPOCQ=",
         "owner": "rycee",
         "repo": "nur-expressions",
-        "rev": "9b53b108b417e6d3fef7743c4034df582fbd9a7e",
+        "rev": "75a6a0f78832ef7c1e5e86f0d55bf07e7d01980d",
         "type": "gitlab"
       },
       "original": {
@@ -566,11 +566,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1736883540,
-        "narHash": "sha256-dgPgoPUSg8cGAMqbhQRkww665sZtgzpWXxWjlyqhv94=",
+        "lastModified": 1737075266,
+        "narHash": "sha256-u1gk5I1an975FOAMMdS6oBKnSIsZza5ZKhaeBZAskVo=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "0dfec9deb275854a56c97c356c40ef72e3a2e632",
+        "rev": "12851ae7467bad8ef422b20806ab4d6d81e12d29",
         "type": "github"
       },
       "original": {
@@ -707,11 +707,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1736991929,
-        "narHash": "sha256-5NYV+6O0IRuaPvmn+wydBYSEkKbFF8jXDwut4G8dzAc=",
+        "lastModified": 1737078333,
+        "narHash": "sha256-EHLt9X/MFDSjff5kK4cz5kGDzWbKxlskkEuSMkOBMpk=",
         "owner": "nix-community",
         "repo": "nix-vscode-extensions",
-        "rev": "8b588e6f4abddf424702dee267d9b3159f5d1dd6",
+        "rev": "a25d421ae7c5707b5f2531e8fcc6335aa9d4138a",
         "type": "github"
       },
       "original": {
@@ -831,11 +831,11 @@
         "treefmt-nix": "treefmt-nix"
       },
       "locked": {
-        "lastModified": 1736964246,
-        "narHash": "sha256-gb3ujURRlI/D5Jc8PUDOpJr8RyrTwnDDIDtnQK4upso=",
+        "lastModified": 1737086219,
+        "narHash": "sha256-DLLvLxBP3zq2TeSSWfOlH6wqoARyv75Do9r0/slAn/w=",
         "owner": "nix-community",
         "repo": "nixvim",
-        "rev": "5b068e7f8f2b6beaa1fafe0c8b3604b63bcccc2d",
+        "rev": "30842191e030f4110d8dc12b668d4734f55f9c1f",
         "type": "github"
       },
       "original": {
@@ -893,11 +893,11 @@
     "openrgb-experimental": {
       "flake": false,
       "locked": {
-        "lastModified": 1737050378,
-        "narHash": "sha256-wGZ+tFvwH4XS522SLeApaJR/3kiYaMBL1jbezjQnmxw=",
+        "lastModified": 1737098025,
+        "narHash": "sha256-iSEbw4E2hgqwnIiPl3ckpHWLyWAvl0mNqHvduKlLDuU=",
         "owner": "CalcProgrammer1",
         "repo": "OpenRGB",
-        "rev": "f3c3a9cd44c5a89199dea56b8d100bc4eb51b23e",
+        "rev": "d45acb7c6261d104a1baba72487ca226d9b9df84",
         "type": "gitlab"
       },
       "original": {
