@@ -43,7 +43,6 @@
     # Systemd services
     ../../modules/home-manager/services/lorri.nix
     ../../modules/home-manager/services/kdeconnect.nix
-    ../../modules/home-manager/services/ollama.nix
     ../../modules/home-manager/services/duplicacy-web.nix
     ../../modules/home-manager/sessionVariables.nix
 
