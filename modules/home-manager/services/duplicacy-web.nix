@@ -50,9 +50,4 @@ in
       };
     };
   };
-
-  services = {
-    kdeconnect.enable = true;
-    lorri.enable = true;
-  };
 }
