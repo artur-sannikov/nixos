@@ -1,6 +1,7 @@
 {
   lib,
   config,
+  pkgs,
   ...
 }:
 with lib;
@@ -33,12 +34,13 @@ in
         shellAliases = {
           "l." = "ls -ldh .";
           "l" = "ls -lh";
-
+          mamba = "${pkgs.micromamba}/bin/micromamba";
           # Integration with direnv
           "tmux" = "direnv exec / tmux";
         };
         sessionVariables = {
           LC_ALL = "en_US.UTF-8";
+          MAMBA_ROOT_PREFIX = "$HOME/.micromamba"; # For micromamba
         };
         initExtra = ''
             # Disable underline
@@ -52,6 +54,8 @@ in
             function git-grep-all() {
               git grep "$1" $(git rev-list --all)
           }
+            # Hook micromamba
+            eval "$(${pkgs.micromamba}/bin/micromamba shell hook --shell zsh)"
         '';
         oh-my-zsh = {
           enable = true;
