@@ -13,7 +13,7 @@
     ./disko.nix
     ../../modules/system/openssh.nix
     ../../modules/system/maintenence.nix
-    ../../modules/system/containers/archivebox.nix
+    ../../modules/system/virtualization/containers/archivebox.nix
   ];
 
   boot = {
