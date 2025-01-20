@@ -31,7 +31,7 @@
     hostName = "nix-services";
     firewall = {
       enable = true;
-      allowedTCPPorts = [ 3000 ]; # Frgejo
+      allowedTCPPorts = [ 3000 ]; # Forgejo
     };
   };
 
