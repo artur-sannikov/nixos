@@ -13,6 +13,7 @@
     ./disko.nix
     ../../modules/system/openssh.nix
     ../../modules/system/maintenence.nix
+    # ../../modules/system/virtualization/containers/archivebox.nix
   ];
 
   boot = {
@@ -30,7 +31,7 @@
     hostName = "nix-services";
     firewall = {
       enable = true;
-      allowedTCPPorts = [ 3000 ]; # Frgejo
+      allowedTCPPorts = [ 3000 ]; # Forgejo
     };
   };
 
