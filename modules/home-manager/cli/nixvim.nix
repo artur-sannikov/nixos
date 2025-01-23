@@ -73,6 +73,11 @@
           };
         };
       };
+      neo-tree = {
+        enable = true;
+        enableDiagnostics = true;
+        enableGitStatus = true;
+      };
     };
     autoCmd = [
       {
