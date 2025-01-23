@@ -106,6 +106,8 @@
       shiftwidth = 4;
       breakindent = true;
       expandtab = true;
+      # guifont = "Iosevka :h14";
+      # termguicolors = true;
     };
   };
 }
