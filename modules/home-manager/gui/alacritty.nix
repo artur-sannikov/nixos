@@ -15,24 +15,6 @@
         window = {
           startup_mode = "Maximized";
         };
-        font = {
-          normal = {
-            family = "IosevkaTerm Nerd Font";
-            style = "Regular";
-          };
-          bold = {
-            family = "IosevkaTerm Nerd Font";
-            style = "Bold";
-          };
-          italic = {
-            family = "IosevkaTerm Nerd Font";
-            style = "Italic";
-          };
-          bold_italic = {
-            family = "IosevkaTerm Nerd Font";
-            style = "Bold Italic";
-          };
-        };
       };
     };
   };
