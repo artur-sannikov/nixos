@@ -25,7 +25,7 @@
     ])
     ++ (with pkgs; [
       anki
-      feishin
+      # feishin
       freetube
       gearlever
       mattermost-desktop
