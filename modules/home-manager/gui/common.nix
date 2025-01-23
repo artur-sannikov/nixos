@@ -8,7 +8,6 @@
 
   home.packages =
     (with pkgs-stable; [
-      feishin
       haruna
       hunspell
       hunspellDicts.en_GB-large
@@ -26,9 +25,10 @@
     ])
     ++ (with pkgs; [
       anki
-      mattermost-desktop
+      feishin
       freetube
       gearlever
+      mattermost-desktop
       onlyoffice-desktopeditors
       qbittorrent
       zotero
