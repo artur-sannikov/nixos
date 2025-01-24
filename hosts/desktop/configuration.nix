@@ -75,6 +75,7 @@
         allowedTCPPorts = [
           # Syncthing port
           22000
+          5001
         ];
         allowedTCPPortRanges = [
           {
