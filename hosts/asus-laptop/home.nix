@@ -40,7 +40,8 @@
     ../../modules/home-manager/gui/personal.nix
     ../../modules/home-manager/cli/nixvim.nix
     # Systemd services
-    ../../modules/home-manager/services.nix
+    ../../modules/home-manager/services/lorri.nix
+    ../../modules/home-manager/services/ollama.nix
 
     # Alacritty is supported on non-NixOS systems with caveats
     ../../modules/home-manager/gui/alacritty.nix
