@@ -73,6 +73,11 @@
           };
         };
       };
+      neo-tree = {
+        enable = true;
+        enableDiagnostics = true;
+        enableGitStatus = true;
+      };
     };
     autoCmd = [
       {
@@ -86,5 +91,23 @@
         ];
       }
     ];
+    keymaps = [
+      {
+        mode = "n";
+        key = "<leader>date";
+        action = '':r ! echo "date: $(date --iso)"<CR>'';
+        options = {
+          remap = true;
+        };
+      }
+    ];
+    opts = {
+      number = true;
+      shiftwidth = 4;
+      breakindent = true;
+      expandtab = true;
+      # guifont = "Iosevka :h14";
+      # termguicolors = true;
+    };
   };
 }
