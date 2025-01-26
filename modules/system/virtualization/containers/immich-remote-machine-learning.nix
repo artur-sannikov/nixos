@@ -4,8 +4,7 @@
     backend = "podman";
     containers = {
       immich-machine-learning = {
-        # image = "ghcr.io/mmich-app/immich-machine-learning:v1.124.2";
-        image = "ghcr.io/immich-pytorch-rocm:latest";
+        image = "ghcr.io/immich-app/immich-machine-learning:v1.124.2";
         ports = [
           "3003:3003"
         ];
