@@ -38,7 +38,7 @@
   ];
 
   config = {
-    # sshAgent.enable = true;
+    sshAgent.enable = true;
 
     boot = {
       loader = {
