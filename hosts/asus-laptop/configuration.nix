@@ -154,16 +154,18 @@
 
     users = {
       mutableUsers = true;
-      root.hashedPassword = "!"; # Disable root password
-      users.${username} = {
-        isNormalUser = true;
-        initialHashedPassword = "$y$j9T$OgyVucf3fEyZw2tdmBScn0$CAhZxC5H14MjZc21DAVD7XWMiEOnncNAtIP35LaMAC9"; # Initlal  password to be changed after first login
-        extraGroups = [
-          "wheel"
-          "input"
-          "networkmanager"
-        ];
+      users = {
+        ${username} = {
+          isNormalUser = true;
+          initialHashedPassword = "$y$j9T$OgyVucf3fEyZw2tdmBScn0$CAhZxC5H14MjZc21DAVD7XWMiEOnncNAtIP35LaMAC9"; # Initlal  password to be changed after first login
+          extraGroups = [
+            "wheel"
+            "input"
+            "networkmanager"
+          ];
+        };
       };
+      root.hashedPassword = "!"; # Disable root password
     };
 
     environment.sessionVariables = {
