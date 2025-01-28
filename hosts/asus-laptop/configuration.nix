@@ -164,8 +164,8 @@
             "networkmanager"
           ];
         };
+        root.hashedPassword = "!"; # Disable root password
       };
-      root.hashedPassword = "!"; # Disable root password
     };
 
     environment.sessionVariables = {
