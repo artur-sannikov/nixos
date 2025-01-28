@@ -2,7 +2,7 @@
 #  Needed to remove 'inherit pkgs lib;' from callPackage for successfull build for home-manager
 { pkgs, ... }:
 let
-  duplicacy-web = pkgs.callPackage ./gui/duplicacy-web.nix { };
+  duplicacy-web = pkgs.callPackage ../gui/duplicacy-web.nix { };
 in
 {
   home.packages = [
@@ -49,10 +49,5 @@ in
         WantedBy = [ "default.target" ];
       };
     };
-  };
-
-  services = {
-    kdeconnect.enable = true;
-    lorri.enable = true;
   };
 }

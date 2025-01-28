@@ -17,7 +17,8 @@
     ../../modules/system/virtualization/bottles.nix
     ../../modules/system/virtualization/podman.nix
     ../../modules/system/virtualization/singularity.nix
-    ../../modules/system/virtualization/containers.nix
+    ../../modules/system/virtualization/containers/sillytavern.nix
+    ../../modules/system/virtualization/containers/immich-remote-machine-learning.nix
     ../../modules/system/gaming.nix
     ../../modules/system/tailscale.nix
     # System-wide packages
@@ -67,10 +68,15 @@
     networking = {
       hostName = "desktop";
       networkmanager.enable = true;
+      # interfaces.enp7s0.wakeOnLan = {
+      #   enable = true;
+      #   policy = [ "magic" ];
+      # };
       firewall = {
         allowedTCPPorts = [
           # Syncthing port
           22000
+          5001
         ];
         allowedTCPPortRanges = [
           {
@@ -141,7 +147,7 @@
     ];
 
     services = {
-      # Enable KDE Plasma 6.
+      # Enable root Plasma 6.
       xserver.enable = false;
       displayManager.sddm = {
         enable = true;
