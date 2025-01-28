@@ -13,7 +13,15 @@
     enable = true;
     qemu = {
       runAsRoot = false;
-      ovmf.enable = true;
+      ovmf = {
+        enable = true;
+        packages = [
+          (pkgs.OVMF.override {
+            secureBoot = true;
+            tpmSupport = true;
+          }).fd
+        ];
+      };
     };
   };
   environment.systemPackages = [ pkgs.virt-viewer ];

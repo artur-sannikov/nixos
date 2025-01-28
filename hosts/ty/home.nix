@@ -31,10 +31,15 @@
     ../../modules/home-manager/cli/btop.nix
     ../../modules/home-manager/gui/work.nix
     ../../modules/home-manager/cli/fastfetch.nix
+    ../../modules/home-manager/gui/mpv.nix
     flake-inputs.flatpaks.homeManagerModules.nix-flatpak
 
-    ../../modules/home-manager/desktop_entries.nix
+    # ../../modules/home-manager/desktop_entries.nix
     ../../modules/home-manager/cli/nixvim.nix
+    ../../modules/home-manager/services/lorri.nix
+    ../../modules/home-manager/services/ollama.nix
+    ../../modules/home-manager/sessionVariables.nix
+    ../../modules/home-manager/gui/fonts.nix
   ];
 
   # Enable zsh
@@ -48,13 +53,4 @@
   };
 
   programs.home-manager.enable = true;
-  # Set environment variables
-  home.sessionVariables = {
-    EDITOR = "nano";
-    LC_TIME = "fi_FI.utf8";
-  };
-
-  services = {
-    lorri.enable = true;
-  };
 }
