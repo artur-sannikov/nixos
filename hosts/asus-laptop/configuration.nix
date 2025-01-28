@@ -164,7 +164,6 @@
             "networkmanager"
           ];
         };
-        root.hashedPassword = "!"; # Disable root password
       };
     };
 
