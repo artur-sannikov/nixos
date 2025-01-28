@@ -10,44 +10,36 @@
 {
   imports = [
     # Include the results of the hardware scan.
-    # ./hardware-configuration.nix
-    # ./disko.nix
-    # ../../modules/system/maintenence.nix
-    # ../../modules/system/virtualization/libvirtd.nix
-    # ../../modules/system/virtualization/bottles.nix
-    # ../../modules/system/virtualization/podman.nix
-    # ../../modules/system/virtualization/singularity.nix
-    # ../../modules/system/gaming.nix
-    # ../../modules/system/tailscale.nix
-    # # System-wide packages
-    # ../../modules/system/packages.nix
-    # # Syncthing
-    # ../../modules/system/syncthing.nix
-    # # SSH Agent
-    # ../../modules/system/ssh.nix
+    ./hardware-configuration.nix
+    ./disko.nix
+    ../../modules/system/maintenence.nix
+    ../../modules/system/virtualization/libvirtd.nix
+    ../../modules/system/virtualization/bottles.nix
+    ../../modules/system/virtualization/podman.nix
+    ../../modules/system/virtualization/singularity.nix
+    ../../modules/system/gaming.nix
+    ../../modules/system/tailscale.nix
+    # System-wide packages
+    ../../modules/system/packages.nix
+    # Syncthing
+    ../../modules/system/syncthing.nix
+    # SSH Agent
+    ../../modules/system/ssh.nix
 
-    # ../../modules/system/appimage.nix
-    # ../../modules/system/services.nix
-    # ../../modules/system/tlp.nix
-    # ../../modules/system/keyboard.nix
-    # ../../modules/system/nix.nix
-    # ../../modules/system/stylix.nix
-    # ../../modules/system/adb.nix
-    # ../../modules/system/vaapi.nix
+    ../../modules/system/appimage.nix
+    ../../modules/system/services.nix
+    ../../modules/system/tlp.nix
+    ../../modules/system/keyboard.nix
+    ../../modules/system/nix.nix
+    ../../modules/system/stylix.nix
+    ../../modules/system/adb.nix
+    ../../modules/system/vaapi.nix
   ];
 
   config = {
     # sshAgent.enable = true;
 
     boot = {
-      # loader = {
-      #   grub = {
-      #     enable = true;
-      #     efiSupport = true;
-      #     efiInstallAsRemovable = true;
-      #     device = "nodev";
-      #   };
-      # };
       loader = {
         systemd-boot.enable = true;
       };
@@ -95,28 +87,28 @@
     };
 
     # Mount NFS
-    # fileSystems = {
-    #   "/mnt/nas/backup" = {
-    #     device = "192.168.20.5:/mnt/tank/ux5401-backup";
-    #     fsType = "nfs";
-    #     options = [
-    #       "x-systemd.automount"
-    #       "nofail"
-    #       "noauto"
-    #       "_netdev"
-    #     ];
-    #   };
-    #   "/mnt/nas/media" = {
-    #     device = "192.168.20.5:/mnt/tank/media";
-    #     fsType = "nfs";
-    #     options = [
-    #       "x-systemd.automount"
-    #       "nofail"
-    #       "noauto"
-    #       "_netdev"
-    #     ];
-    #   };
-    # };
+    fileSystems = {
+      "/mnt/nas/backup" = {
+        device = "192.168.20.5:/mnt/tank/ux5401-backup";
+        fsType = "nfs";
+        options = [
+          "x-systemd.automount"
+          "nofail"
+          "noauto"
+          "_netdev"
+        ];
+      };
+      "/mnt/nas/media" = {
+        device = "192.168.20.5:/mnt/tank/media";
+        fsType = "nfs";
+        options = [
+          "x-systemd.automount"
+          "nofail"
+          "noauto"
+          "_netdev"
+        ];
+      };
+    };
 
     # Disable service because it fails frequently at rebuild
     # https://discourse.nixos.org/t/nixos-rebuild-switch-upgrade-networkmanager-wait-online-service-failure/30746/2
@@ -176,10 +168,10 @@
       XDG_CONFIG_HOME = "$HOME/.config";
     };
 
-    # gaming = {
-    #   enable = true;
-    #   SteamUIScaling = "2"; # Fix Steam UI on High DPI monitors
-    # };
+    gaming = {
+      enable = true;
+      SteamUIScaling = "2"; # Fix Steam UI on High DPI monitors
+    };
 
     # This option defines the first version of NixOS you have installed on this particular machine,
     # and is used to maintain compatibility with application data (e.g. databases) created on older NixOS versions.
