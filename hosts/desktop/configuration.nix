@@ -18,6 +18,7 @@
     ../../modules/system/virtualization/podman.nix
     ../../modules/system/virtualization/singularity.nix
     ../../modules/system/virtualization/containers/sillytavern.nix
+    ../../modules/system/virtualization/containers/immich-remote-machine-learning.nix
     ../../modules/system/gaming.nix
     ../../modules/system/tailscale.nix
     # System-wide packages

@@ -13,10 +13,11 @@
     enable = true;
     qemu = {
       runAsRoot = false;
+      swtpm.enable = true; # Allows libvirtd to use swtpm to create an emulated TPM
       ovmf = {
         enable = true;
         packages = [
-          (pkgs.OVMF.override {
+          (pkgs.OVMFFull.override {
             secureBoot = true;
             tpmSupport = true;
           }).fd
