@@ -11,8 +11,11 @@
     containers = {
       sillytavern = {
         image = "ghcr.io/sillytavern/sillytavern:latest";
-        extraOptions = [
-          "--network=host"
+        # extraOptions = [
+        #   "--network=host"
+        # ];
+        ports = [
+          "8000:8000"
         ];
         labels = {
           "io.containers.autoupdate" = "registry";
