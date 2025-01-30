@@ -49,6 +49,13 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    lanzaboote = {
+      url = "github:nix-community/lanzaboote/v0.4.2";
+
+      # Optional but recommended to limit the size of your system closure.
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     # Motherboard support in latest experimental
     # Update to stable release later
     openrgb-experimental = {
@@ -68,6 +75,7 @@
       catppuccin-vsc,
       flatpaks,
       nixvim,
+      lanzaboote,
       ...
     }:
     let
@@ -106,6 +114,7 @@
             # so that home-manager configuration will be deployed automatically when executing `nixos-rebuild switch`
             home-manager.nixosModules.home-manager
             stylix.nixosModules.stylix
+            lanzaboote.nixosModules.lanzaboote
             {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;

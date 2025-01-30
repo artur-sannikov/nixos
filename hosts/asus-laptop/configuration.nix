@@ -12,6 +12,7 @@
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
     ./disko.nix
+    ../../modules/system/zramswap.nix
     ../../modules/system/maintenence.nix
     ../../modules/system/virtualization/libvirtd.nix
     ../../modules/system/virtualization/bottles.nix
@@ -41,12 +42,7 @@
 
     boot = {
       loader = {
-        grub = {
-          enable = true;
-          efiSupport = true;
-          efiInstallAsRemovable = true;
-          device = "nodev";
-        };
+        systemd-boot.enable = true;
       };
     };
 
@@ -156,13 +152,19 @@
       };
     };
 
-    users.users.${username} = {
-      isNormalUser = true;
-      extraGroups = [
-        "wheel"
-        "input"
-        "networkmanager"
-      ];
+    users = {
+      mutableUsers = true;
+      users = {
+        ${username} = {
+          isNormalUser = true;
+          initialHashedPassword = "$y$j9T$OgyVucf3fEyZw2tdmBScn0$CAhZxC5H14MjZc21DAVD7XWMiEOnncNAtIP35LaMAC9"; # Initlal  password to be changed after first login
+          extraGroups = [
+            "wheel"
+            "input"
+            "networkmanager"
+          ];
+        };
+      };
     };
 
     environment.sessionVariables = {
