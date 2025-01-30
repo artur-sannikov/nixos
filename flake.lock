@@ -899,7 +899,7 @@
         "lanzaboote": "lanzaboote",
         "nix-vscode-extensions": "nix-vscode-extensions",
         "nixpkgs": "nixpkgs_3",
-        "nixpkgs-stable": "nixpkgs-stable",
+        "nixpkgs-stable": "nixpkgs-stable_2",
         "nixvim": "nixvim",
         "openrgb-experimental": "openrgb-experimental",
         "stylix": "stylix",
