@@ -546,11 +546,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1738261073,
-        "narHash": "sha256-469d7Sr5vKYEXmm5z+o+NoWFZvoTd9djv9JqDtc0AAg=",
+        "lastModified": 1738275749,
+        "narHash": "sha256-PM+cGduJ05EZ+YXulqAwUFjvfKpPmW080mcuN6R1POw=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "a5e196d61f6e564f7fdeeb4a92cef92e1785d3f5",
+        "rev": "a8159195bfaef3c64df75d3b1e6a68d49d392be9",
         "type": "github"
       },
       "original": {
@@ -685,11 +685,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1738201509,
-        "narHash": "sha256-gyKBLziqn47BqpELlorHxlQTQxBS2GFQah2KNqh8Uzg=",
+        "lastModified": 1738287944,
+        "narHash": "sha256-q8pOnhaA95ZZf+CJ4ahScSzt5pbnL7lShFuMwTwiw7I=",
         "owner": "nix-community",
         "repo": "nix-vscode-extensions",
-        "rev": "1b54a1707f1388b457792736b9903980ab26afaf",
+        "rev": "529e0a84346f34db86ea24203c0b2e975fefb4f2",
         "type": "github"
       },
       "original": {
@@ -809,11 +809,11 @@
         "treefmt-nix": "treefmt-nix"
       },
       "locked": {
-        "lastModified": 1738255431,
-        "narHash": "sha256-n0NCyg7JYGl7AcfDkYpB7RwtUGSxnX6WCqLqjaGMFU0=",
+        "lastModified": 1738272272,
+        "narHash": "sha256-zVw0JrvXJ29HnjEsNUInqi5Zw+J8QLHk2EuPN12dTXc=",
         "owner": "nix-community",
         "repo": "nixvim",
-        "rev": "e4ed227f99be42cd0ce28b6ae0c85c306ef70d40",
+        "rev": "93df574b42928d631d31fe312cadb3899eb5b1bd",
         "type": "github"
       },
       "original": {
@@ -848,11 +848,11 @@
     "openrgb-experimental": {
       "flake": false,
       "locked": {
-        "lastModified": 1738258143,
-        "narHash": "sha256-FNIimqSJ7D69DjMEnk2hxCQ/Q9F4PsaS5mjHqXawpEU=",
+        "lastModified": 1738267337,
+        "narHash": "sha256-uHSIKli6dF4VNBn8WUko8fM/TVDxrqHCQ1jtdGGOXHQ=",
         "owner": "CalcProgrammer1",
         "repo": "OpenRGB",
-        "rev": "7c46002ce01a196edb9f1bb92b9370d909a9d8e3",
+        "rev": "a199464b4b77c701bb05921c2a24ba0f5e13590e",
         "type": "gitlab"
       },
       "original": {
@@ -947,11 +947,11 @@
         "tinted-zed": "tinted-zed"
       },
       "locked": {
-        "lastModified": 1738025638,
-        "narHash": "sha256-nU3JpvIeEmcDHzQK4OTD1KXSoL/GOff6j9kuSO4X8eM=",
+        "lastModified": 1738278499,
+        "narHash": "sha256-q1SUyXSQ9znHTME53/vPLe+Ga3V1wW3X3gWfa8JsBUM=",
         "owner": "danth",
         "repo": "stylix",
-        "rev": "55418e8fc8d4696af619176a22cefcfac56ad2ef",
+        "rev": "b00c9f46ae6c27074d24d2db390f0ac5ebcc329f",
         "type": "github"
       },
       "original": {
@@ -1100,11 +1100,11 @@
       },
       "locked": {
         "dir": "packaging/nix",
-        "lastModified": 1737834175,
-        "narHash": "sha256-fhyc89qqYM3ql0k4hJVibAhXvEXOch96hnsEGB7Av3I=",
+        "lastModified": 1738289764,
+        "narHash": "sha256-xSdpuQl6QWsfT5CaZphpKUfWO7IPkqhQpa+wcnB2SdQ=",
         "ref": "refs/heads/main",
-        "rev": "4d1860eefd79d6c04e964774155dbe13be65121a",
-        "revCount": 911,
+        "rev": "dc8d1b91fbd9ce7aeba37fa6dc024905ec8a9a5c",
+        "revCount": 915,
         "submodules": true,
         "type": "git",
         "url": "https://github.com/Open-Wine-Components/umu-launcher/?dir=packaging/nix"
