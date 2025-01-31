@@ -39,6 +39,7 @@
     ../../modules/home-manager/cli/fastfetch.nix
     ../../modules/home-manager/gui/personal.nix
     ../../modules/home-manager/cli/nixvim.nix
+    ../../modules/home-manager/services/duplicacy-web.nix
     # Systemd services
     ../../modules/home-manager/services/lorri.nix
     ../../modules/home-manager/services/ollama.nix
