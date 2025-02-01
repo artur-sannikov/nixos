@@ -194,7 +194,7 @@
 
     gaming = {
       enable = true;
-      SteamUIScaling = "2";
+      SteamUIScaling = "1.5";
     };
 
     # This option defines the first version of NixOS you have installed on this particular machine,
