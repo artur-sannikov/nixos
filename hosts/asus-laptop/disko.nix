@@ -61,7 +61,7 @@
             type = "zfs_fs";
             mountpoint = "/home/${username}/Documents";
           };
-          "home//Downloads" = {
+          "home/Downloads" = {
             type = "zfs_fs";
             mountpoint = "/home/${username}/Downloads";
           };
