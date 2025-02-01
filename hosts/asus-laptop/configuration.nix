@@ -35,6 +35,7 @@
     ../../modules/system/stylix.nix
     ../../modules/system/adb.nix
     ../../modules/system/vaapi.nix
+    ../../modules/system/sancoid.nix
   ];
 
   config = {
