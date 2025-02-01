@@ -4,7 +4,7 @@
     disk = {
       main = {
         type = "disk";
-        device = "/dev/sdx";
+        device = "/dev/nvme0n1";
         content = {
           type = "gpt";
           partitions = {
@@ -57,19 +57,19 @@
             type = "zfs_fs";
             mountpoint = "/home";
           };
-          "home/${username}/Documents" = {
+          "home/Documents" = {
             type = "zfs_fs";
             mountpoint = "/home/${username}/Documents";
           };
-          "home/${username}/Downloads" = {
+          "home//Downloads" = {
             type = "zfs_fs";
             mountpoint = "/home/${username}/Downloads";
           };
-          "home/${username}/Desktop" = {
+          "home/Desktop" = {
             type = "zfs_fs";
             mountpoint = "/home/${username}/Desktop";
           };
-          "home/${username}/llms" = {
+          "home/llms" = {
             type = "zfs_fs";
             mountpoint = "/home/${username}/llms";
           };
