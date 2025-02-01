@@ -49,6 +49,7 @@
 
     networking = {
       hostName = "asus";
+      hostId = "2a2fff45";
       networkmanager.enable = true;
       firewall = {
         allowedTCPPorts = [
