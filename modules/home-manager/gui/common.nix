@@ -41,6 +41,7 @@
     ./browsers/mullvad-browser.nix
     ./vscodium.nix
     ./thunderbird.nix
+    ./mpv.nix
     # ./fonts.nix
   ];
 }
