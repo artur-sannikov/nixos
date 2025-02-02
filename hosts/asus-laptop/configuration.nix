@@ -12,6 +12,7 @@
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
     ./disko.nix
+    ../../modules/system/secureboot.nix
     ../../modules/system/zramswap.nix
     ../../modules/system/maintenence.nix
     ../../modules/system/virtualization/libvirtd.nix
