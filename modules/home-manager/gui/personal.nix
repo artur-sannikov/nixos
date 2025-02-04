@@ -10,7 +10,6 @@
     [
       audacity
       calibre
-      element-desktop
       kdePackages.kcalc
       kdePackages.konversation
       moonlight-qt

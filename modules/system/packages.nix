@@ -24,6 +24,7 @@
       pciutils
       python312
       stress-ng
+      sanoid
       unzip
       vim
       vulkan-tools
