@@ -8,6 +8,7 @@
 
   home.packages =
     (with pkgs-stable; [
+      element-desktop
       haruna
       hunspell
       hunspellDicts.en_GB-large
