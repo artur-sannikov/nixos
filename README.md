@@ -12,7 +12,7 @@ This repository contains NixOS configuration for my desktop, personal laptop, a 
 > **System Information:**
 >
 > - **Desktop Environment:** KDE Plasma 6
-> - **File system:** BTRFS
+> - **File system:** BTRFS/ZFS
 > - **Shell:** zsh
 > - **Terminal:** Alacritty
 > - **Editors:** Nixvim/VSCodium
