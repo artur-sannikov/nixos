@@ -28,7 +28,7 @@
 
     # https://github.com/danth/stylix
     stylix = {
-      url = "github:danth/stylix";
+      url = "github:danth/stylix/release-24.11";
     };
 
     # Catppuccin theme
