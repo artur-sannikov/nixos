@@ -18,21 +18,4 @@
       # };
     };
   };
-
-  # TODO
-  # Librewolf is currently half-broken (see https://codeberg.org/librewolf/issues/issues/2040)
-  # It does not respect `settings` option and resets DNS to Mozilla after every restart
-  # Also in nixpkgs the default engine is Google (see https://github.com/NixOS/nixpkgs/issues/338439)
-  home.file = {
-    ".librewolf/librewolf.overrides.cfg".source = ./librewolf.overrides.cfg;
-  };
-
-  # Set default browser to librewolf
-  xdg.mimeApps.defaultApplications = {
-    "text/html" = "librewolf.desktop";
-    "x-scheme-handler/http" = "librewolf.desktop";
-    "x-scheme-handler/https" = "librewolf.desktop";
-    "x-scheme-handler/about" = "librewolf.desktop";
-    "x-scheme-handler/unknown" = "librewolf.desktop";
-  };
 }
