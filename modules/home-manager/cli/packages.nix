@@ -23,6 +23,7 @@
       python312Packages.huggingface-hub
       python312Packages.radian
       python312Packages.pip
+      sass
       screen
       shellcheck
       shfmt
