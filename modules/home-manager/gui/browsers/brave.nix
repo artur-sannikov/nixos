@@ -1,8 +1,8 @@
-{ pkgs-stable, ... }:
+{ pkgs, ... }:
 {
   programs.chromium = {
     enable = true;
-    package = pkgs-stable.brave;
+    package = pkgs.brave;
     extensions = [
       { id = "cjpalhdlnbpafiamejdnhcphjbkeiagm"; } # uBlock Origin
       { id = "nngceckbapebfimnlniiiahkandclblb"; } # Bitwarden
