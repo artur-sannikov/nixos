@@ -9,7 +9,7 @@ jobs:
     name: update-flake-lock
     runs-on: ubuntu-latest
     permissions:
-      contents: write
+      contents: read
       id-token: write
       pull-requests: write
     steps:
