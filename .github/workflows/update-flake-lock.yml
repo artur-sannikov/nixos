@@ -17,7 +17,7 @@ jobs:
       - uses: DeterminateSystems/nix-installer-action@v16
         with:
           determinate: true
-      - uses: DeterminateSystems/magic-nix-cache-action@v9
+      - uses: DeterminateSystems/flakehub-cache-action@main
       - id: update
         uses: DeterminateSystems/update-flake-lock@v24
         # See https://github.com/reckenrode/nixos-configs/actions/runs/13582324886/workflow
