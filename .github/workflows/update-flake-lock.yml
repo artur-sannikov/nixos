@@ -25,7 +25,7 @@ jobs:
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: Update flake.lock
-          branch: main
+          branch: devel
           commit_options: "--no-verify --signoff"
           file_pattern: flake.lock
           commit_user_name: Flake Bot # defaults to "GitHub Actions"
