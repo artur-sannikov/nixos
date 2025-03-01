@@ -58,6 +58,7 @@ in
       systemPackages = with pkgs; [
         mangohud
         protonup
+        limo # Mod manager
         flake-inputs.umu.packages.${pkgs.system}.umu
         (lutris.override {
           extraPkgs = pkgs: [
