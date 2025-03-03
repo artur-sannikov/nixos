@@ -56,7 +56,7 @@
     };
     profiles = {
       default-release = {
-        extensions = with flake-inputs.firefox-extensions.packages.${pkgs.system}; [
+        extensions.packages = with flake-inputs.firefox-extensions.packages.${pkgs.system}; [
           ublock-origin
           bitwarden
           libredirect
