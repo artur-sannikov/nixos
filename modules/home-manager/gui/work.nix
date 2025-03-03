@@ -10,5 +10,6 @@
     teams-for-linux
     eduvpn-client
     quickemu
+    seafile-client
   ];
 }
