@@ -3,6 +3,7 @@
   home.packages =
     with pkgs;
     [
+      act
       age
       ansible
       ansible-lint
