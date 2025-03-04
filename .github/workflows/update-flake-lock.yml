@@ -9,7 +9,7 @@ jobs:
     name: update-flake-lock
     runs-on: ubuntu-latest
     permissions:
-      contents: write
+      contents: read
       id-token: write
       pull-requests: write
     steps:
@@ -17,11 +17,18 @@ jobs:
       - uses: DeterminateSystems/nix-installer-action@v16
         with:
           determinate: true
-      - uses: DeterminateSystems/magic-nix-cache-action@v8
+      - uses: DeterminateSystems/flakehub-cache-action@main
       - id: update
         uses: DeterminateSystems/update-flake-lock@v24
+        # See https://github.com/reckenrode/nixos-configs/actions/runs/13582324886/workflow
       - name: Merge pull request
-        run: gh pr merge --auto "${{ steps.update.outputs.pull-request-number }}" --rebase
-        env:
-          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
-        if: ${{ steps.update.outputs.pull-request-number != '' }}
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: Update flake.lock
+          branch: devel
+          commit_options: "--no-verify --signoff"
+          file_pattern: flake.lock
+          commit_user_name: Flake Bot # defaults to "GitHub Actions"
+          commit_author: Flake Bot <actions@github.com>
+          skip_dirty_check: false
+          skip_fetch: true
