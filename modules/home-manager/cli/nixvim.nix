@@ -22,6 +22,7 @@
           };
         };
       };
+      quarto.enable = true;
       conform-nvim = {
         enable = true;
         settings = {

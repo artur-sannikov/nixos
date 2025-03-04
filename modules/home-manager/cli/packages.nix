@@ -3,10 +3,10 @@
   home.packages =
     with pkgs;
     [
+      act
       age
       ansible
       ansible-lint
-      beets-unstable
       black
       caddy
       devenv
@@ -35,6 +35,7 @@
       wl-clipboard-rs
     ]
     ++ (with pkgs-stable; [
+      beets
       quarto
     ]);
 }
