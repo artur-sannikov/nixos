@@ -85,7 +85,16 @@
       ];
       pkgs = import nixpkgs {
         inherit system overlays;
-        config.allowUnfree = true;
+        config.allowUnfreePredicate =
+          pkg:
+          builtins.elem (nixpkgs.lib.getName pkg) [
+            "duplicacy-web"
+            "obsidian"
+            "steam"
+            "steam-unwrapped"
+            "veracrypt"
+            "zoom"
+          ];
       };
       pkgs-stable = import nixpkgs-stable {
         inherit system overlays;
