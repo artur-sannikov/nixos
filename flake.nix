@@ -97,9 +97,10 @@
     {
       nixosConfigurations = {
         asus-laptop = lib.nixosSystem {
-          inherit system pkgs;
+          inherit system;
           specialArgs = {
             flake-inputs = inputs;
+            inherit pkgs;
             inherit username;
             inherit pkgs-stable;
           };
