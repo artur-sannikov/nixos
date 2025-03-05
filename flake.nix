@@ -97,11 +97,10 @@
     {
       nixosConfigurations = {
         asus-laptop = lib.nixosSystem {
-          inherit system;
+          inherit system pkgs;
           specialArgs = {
             flake-inputs = inputs;
             inherit username;
-            inherit pkgs;
             inherit pkgs-stable;
           };
           modules = [
@@ -120,7 +119,6 @@
                 nixvim.homeManagerModules.nixvim
                 ./hosts/asus-laptop/home.nix
               ];
-              # Optionally, use home-manager.extraSpecialArgs to pass arguments to home.nix
               home-manager.extraSpecialArgs = {
                 flake-inputs = inputs;
                 inherit pkgs-stable;
@@ -130,11 +128,10 @@
           ];
         };
         desktop = lib.nixosSystem {
-          inherit system;
+          inherit system pkgs;
           specialArgs = {
             flake-inputs = inputs;
             inherit username;
-            inherit pkgs;
             inherit pkgs-stable;
           };
           modules = [
@@ -162,11 +159,10 @@
           ];
         };
         homelab-services = lib.nixosSystem {
-          inherit system;
+          inherit system pkgs;
           specialArgs = {
             flake-inputs = inputs;
             inherit username;
-            inherit pkgs;
             inherit pkgs-stable;
           };
           modules = [
