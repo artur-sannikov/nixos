@@ -32,6 +32,7 @@
       mattermost-desktop
       onlyoffice-desktopeditors
       qbittorrent
+      tidal-hifi
       zotero
     ]);
   # GUI apps with special settings
