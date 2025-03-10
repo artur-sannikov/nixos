@@ -24,7 +24,6 @@
           matthewpi.caddyfile-support
           mkhl.direnv
           ms-python.python
-          ms-vscode-remote.remote-containers
           myriad-dreamin.tinymist
           redhat.ansible
           redhat.vscode-yaml

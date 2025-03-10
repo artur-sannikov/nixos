@@ -85,7 +85,17 @@
       ];
       pkgs = import nixpkgs {
         inherit system overlays;
-        config.allowUnfree = true;
+        config.allowUnfreePredicate =
+          pkg:
+          builtins.elem (nixpkgs.lib.getName pkg) [
+            "duplicacy-web"
+            "obsidian"
+            "slack"
+            "steam"
+            "steam-unwrapped"
+            "veracrypt"
+            "zoom"
+          ];
       };
       pkgs-stable = import nixpkgs-stable {
         inherit system overlays;
@@ -100,8 +110,8 @@
           inherit system;
           specialArgs = {
             flake-inputs = inputs;
-            inherit username;
             inherit pkgs;
+            inherit username;
             inherit pkgs-stable;
           };
           modules = [
@@ -120,7 +130,6 @@
                 nixvim.homeManagerModules.nixvim
                 ./hosts/asus-laptop/home.nix
               ];
-              # Optionally, use home-manager.extraSpecialArgs to pass arguments to home.nix
               home-manager.extraSpecialArgs = {
                 flake-inputs = inputs;
                 inherit pkgs-stable;
@@ -130,11 +139,10 @@
           ];
         };
         desktop = lib.nixosSystem {
-          inherit system;
+          inherit system pkgs;
           specialArgs = {
             flake-inputs = inputs;
             inherit username;
-            inherit pkgs;
             inherit pkgs-stable;
           };
           modules = [
@@ -162,11 +170,10 @@
           ];
         };
         homelab-services = lib.nixosSystem {
-          inherit system;
+          inherit system pkgs;
           specialArgs = {
             flake-inputs = inputs;
             inherit username;
-            inherit pkgs;
             inherit pkgs-stable;
           };
           modules = [
