@@ -59,7 +59,7 @@ in
         mangohud
         protonup
         limo # Mod manager
-        flake-inputs.umu.packages.${pkgs.system}.umu
+        flake-inputs.umu.packages.${pkgs.system}.umu-launcher
         (lutris.override {
           extraPkgs = pkgs: [
             wineWowPackages.stable
