@@ -74,6 +74,31 @@
           "privacy.clearOnShutdown.offlineApps" = true;
         };
       };
+      tidal-hifi = {
+        isDefault = false;
+        id = 1;
+        bookmarks = [
+          {
+            name = "tidal";
+            url = "https://listen.tidal.com/";
+          }
+        ];
+        extensions.packages = with flake-inputs.firefox-extensions.packages.${pkgs.system}; [
+          ublock-origin
+        ];
+        search = {
+          force = true;
+          default = "DuckDuckGo";
+          privateDefault = "DuckDuckGo";
+        };
+        settings = {
+          "privacy.clearOnShutdown.history" = true;
+          "privacy.clearOnShutdown.cookies" = false;
+          "privacy.clearOnShutdown.downloads" = true;
+          "privacy.clearOnShutdown.openWindows" = false;
+          "privacy.clearOnShutdown.offlineApps" = true;
+        };
+      };
     };
   };
 }
