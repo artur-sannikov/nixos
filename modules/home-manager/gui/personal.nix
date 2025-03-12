@@ -15,7 +15,7 @@
       moonlight-qt
       monero-gui
       picard
-      protonmail-desktop
+      protonmail-bridge-gui
       rustdesk-flutter
       telegram-desktop
       tor-browser
