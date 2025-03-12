@@ -178,6 +178,7 @@
       extraGroups = [
         "wheel"
         "input"
+        "libvirtd"
         "networkmanager"
         "podman"
       ];
