@@ -2,7 +2,7 @@
 {
   programs.thunderbird = {
     enable = true;
-    package = pkgs.thunderbird;
+    package = pkgs.thunderbird-latest;
     profiles = {
       work = {
         isDefault = true;
