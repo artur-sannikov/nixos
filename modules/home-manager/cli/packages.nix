@@ -8,6 +8,7 @@
       ansible
       ansible-lint
       black
+      beets
       caddy
       devenv
       distrobox
@@ -36,7 +37,6 @@
       wl-clipboard-rs
     ]
     ++ (with pkgs-stable; [
-      beets
       quarto
     ]);
 }
