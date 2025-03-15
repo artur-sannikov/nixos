@@ -16,12 +16,12 @@
       monero-gui
       picard
       protonmail-bridge-gui
-      rustdesk-flutter
       telegram-desktop
       tor-browser
       veracrypt
     ]
     ++ (with pkgs-stable; [
+      rustdesk-flutter
       flacon
       signal-desktop
     ]);
