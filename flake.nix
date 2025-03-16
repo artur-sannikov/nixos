@@ -90,6 +90,7 @@
           builtins.elem (nixpkgs.lib.getName pkg) [
             "duplicacy-web"
             "obsidian"
+            "terraform"
             "slack"
             "steam"
             "steam-unwrapped"

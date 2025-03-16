@@ -31,6 +31,7 @@
       shfmt
       sops
       talosctl
+      terraform
       toolbox
       typst
       virtualenv
