@@ -26,31 +26,23 @@
 
   # Import modules
   imports = [
+    # CLI programs
     ../../modules/home-manager/cli/default.nix
-    ../../modules/home-manager/cli/media.nix
-    ../../modules/home-manager/cli/bash.nix
-    ../../modules/home-manager/cli/direnv.nix
-    ../../modules/home-manager/cli/git.nix
-    ../../modules/home-manager/cli/nix.nix
-    ../../modules/home-manager/cli/packages.nix
-    ../../modules/home-manager/cli/starship.nix
-    ../../modules/home-manager/cli/gnupg.nix
-    ../../modules/home-manager/cli/btop.nix
-    ../../modules/home-manager/cli/fastfetch.nix
+
+    # Personal GUI programs
     ../../modules/home-manager/gui/personal.nix
-    ../../modules/home-manager/cli/nixvim.nix
-    ../../modules/home-manager/services/duplicacy-web.nix
-    # Systemd services
-    ../../modules/home-manager/services/lorri.nix
-    ../../modules/home-manager/services/ollama.nix
 
     # Alacritty is supported on non-NixOS systems with caveats
     ../../modules/home-manager/gui/alacritty.nix
 
-    ../../modules/home-manager/cli/tmux.nix
-
+    # Other home-manager configuration
     ../../modules/home-manager/desktop_entries.nix
     ../../modules/home-manager/sessionVariables.nix
+
+    # Systemd services
+    ../../modules/home-manager/services/duplicacy-web.nix
+    ../../modules/home-manager/services/lorri.nix
+    ../../modules/home-manager/services/ollama.nix
   ];
 
   # Enable zsh

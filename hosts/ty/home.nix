@@ -20,18 +20,11 @@
 
   # Import modules
   imports = [
+    # CLI apps
     ../../modules/home-manager/cli/default.nix
-    ../../modules/home-manager/cli/bash.nix
-    ../../modules/home-manager/cli/direnv.nix
-    ../../modules/home-manager/cli/git.nix
-    ../../modules/home-manager/cli/nix.nix
-    ../../modules/home-manager/cli/packages.nix
-    ../../modules/home-manager/cli/starship.nix
-    ../../modules/home-manager/cli/tmux.nix
-    ../../modules/home-manager/cli/btop.nix
+
+    # Work GUI apps
     ../../modules/home-manager/gui/work.nix
-    ../../modules/home-manager/cli/fastfetch.nix
-    ../../modules/home-manager/gui/mpv.nix
     flake-inputs.flatpaks.homeManagerModules.nix-flatpak
 
     # ../../modules/home-manager/desktop_entries.nix

@@ -36,13 +36,12 @@
     ]);
   # GUI apps with special settings
   imports = [
-    ./browsers/firefox.nix # Disable firefox due to https://github.com/nix-community/home-manager/issues/6467
+    ./browsers/firefox.nix
     ./browsers/librewolf.nix
     ./browsers/brave.nix
     ./browsers/mullvad-browser.nix
     ./vscodium.nix
     ./thunderbird.nix
     ./mpv.nix
-    # ./fonts.nix
   ];
 }
