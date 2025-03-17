@@ -11,9 +11,6 @@
     containers = {
       sillytavern = {
         image = "ghcr.io/sillytavern/sillytavern:latest";
-        # extraOptions = [
-        #   "--network=host"
-        # ];
         ports = [
           "8000:8000"
         ];
