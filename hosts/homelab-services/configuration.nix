@@ -80,6 +80,10 @@
     };
   };
 
+  environment.systemPackages = with pkgs; [
+    git
+  ];
+
   security = {
     rtkit.enable = true;
     apparmor = {
