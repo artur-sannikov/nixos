@@ -26,33 +26,20 @@
 
   # Import modules
   imports = [
+    # CLI programs
     ../../modules/home-manager/cli/default.nix
-    ../../modules/home-manager/cli/media.nix
-    ../../modules/home-manager/cli/bash.nix
-    ../../modules/home-manager/cli/direnv.nix
-    ../../modules/home-manager/cli/git.nix
-    ../../modules/home-manager/cli/nix.nix
-    ../../modules/home-manager/cli/packages.nix
-    ../../modules/home-manager/cli/starship.nix
-    ../../modules/home-manager/cli/gnupg.nix
-    ../../modules/home-manager/cli/btop.nix
-    ../../modules/home-manager/cli/fastfetch.nix
-    ../../modules/home-manager/gui/personal.nix
-    ../../modules/home-manager/gui/mpv.nix
-    ../../modules/home-manager/cli/nixvim.nix
+
+    # GUI programs
+    ../../modules/home-manager/gui/common.nix
+    ../../modules/home-manager/gui/alacritty.nix
     # Systemd services
     ../../modules/home-manager/services/lorri.nix
     ../../modules/home-manager/services/kdeconnect.nix
     ../../modules/home-manager/services/duplicacy-web.nix
+
+    # Other home-manager configuration
     ../../modules/home-manager/sessionVariables.nix
-
-    # Alacritty is supported on non-NixOS systems with caveats
-    ../../modules/home-manager/gui/alacritty.nix
-
-    ../../modules/home-manager/cli/tmux.nix
-
     ../../modules/home-manager/desktop_entries.nix
-    ../../modules/home-manager/sessionVariables.nix
   ];
 
   # Enable zsh
@@ -62,5 +49,4 @@
   yt-dlp.enable = true;
 
   programs.home-manager.enable = true;
-  # Set environment variables
 }
