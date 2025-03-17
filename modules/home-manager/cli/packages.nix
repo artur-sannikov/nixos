@@ -1,4 +1,9 @@
-{ pkgs, pkgs-stable, ... }:
+{
+  pkgs,
+  pkgs-stable,
+  flake-inputs,
+  ...
+}:
 {
   home.packages =
     with pkgs;
@@ -37,6 +42,7 @@
       typst
       virtualenv
       wl-clipboard-rs
+      flake-inputs.flox.packages.${pkgs.system}.flox
     ]
     ++ (with pkgs-stable; [
       quarto
