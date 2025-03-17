@@ -18,6 +18,9 @@
         "$python"
         "$conda"
         "$container"
+        "$rlang"
+        "$quarto"
+        "$terraform"
         "\n$character"
       ];
       right_format = "$cmd_duration$time";
