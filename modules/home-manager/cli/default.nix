@@ -1,9 +1,11 @@
 {
   imports = [
     ./bash.nix
+    ./bat.nix
     ./btop.nix
     ./direnv.nix
     ./fastfetch.nix
+    ./fzf.nix
     ./git.nix
     ./gnupg.nix
     ./media.nix
