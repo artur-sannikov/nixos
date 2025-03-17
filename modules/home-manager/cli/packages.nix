@@ -10,6 +10,7 @@
       black
       beets
       caddy
+      fd
       devenv
       distrobox
       gnumake
