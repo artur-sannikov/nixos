@@ -38,6 +38,7 @@
         ++ (with flake-inputs.nix-vscode-extensions.extensions.${pkgs.system}.open-vsx; [
           jeanp413.open-remote-ssh
           hashicorp.terraform
+          posit.air-vscode
         ])
         ++ [
           (pkgs.catppuccin-vsc.override {
