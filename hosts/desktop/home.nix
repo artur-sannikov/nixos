@@ -31,7 +31,9 @@
 
     # GUI programs
     ../../modules/home-manager/gui/common.nix
+    ../../modules/home-manager/gui/personal.nix
     ../../modules/home-manager/gui/alacritty.nix
+
     # Systemd services
     ../../modules/home-manager/services/lorri.nix
     ../../modules/home-manager/services/kdeconnect.nix

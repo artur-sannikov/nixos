@@ -29,10 +29,9 @@
     # CLI programs
     ../../modules/home-manager/cli/default.nix
 
-    # Personal GUI programs
+    # GUI programs
+    ../../modules/home-manager/gui/common.nix
     ../../modules/home-manager/gui/personal.nix
-
-    # Alacritty is supported on non-NixOS systems with caveats
     ../../modules/home-manager/gui/alacritty.nix
 
     # Other home-manager configuration
