@@ -25,6 +25,7 @@
       python312
       stress-ng
       sanoid
+      ssh-audit
       unzip
       vim
       vulkan-tools
