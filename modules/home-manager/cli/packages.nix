@@ -15,6 +15,7 @@
       black
       beets
       caddy
+      cloud-utils
       fd
       devenv
       distrobox
