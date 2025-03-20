@@ -100,6 +100,7 @@
         enable32Bit = true;
         extraPackages = with pkgs; [
           rocmPackages.clr.icd # OpenCL
+          amdvlk # AMDVLK driver
         ];
       };
 
