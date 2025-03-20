@@ -119,7 +119,6 @@
         "dev.containers.dockerPath" = "podman";
 
         "editor.rulers" = [ 80 ];
-        "editor.wordWrap" = "wordWrapColumn";
       };
     };
   };
