@@ -39,6 +39,7 @@
       sops
       talosctl
       terraform
+      tesseract
       toolbox
       typst
       virtualenv
