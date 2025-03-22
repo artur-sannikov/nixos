@@ -63,8 +63,8 @@
         ];
         search = {
           force = true;
-          default = "DuckDuckGo";
-          privateDefault = "DuckDuckGo";
+          default = "ddg";
+          privateDefault = "ddg";
         };
         settings = {
           "privacy.clearOnShutdown.history" = true;
@@ -77,19 +77,22 @@
       tidal-hifi = {
         isDefault = false;
         id = 1;
-        bookmarks = [
-          {
-            name = "tidal";
-            url = "https://listen.tidal.com/";
-          }
-        ];
+        bookmarks = {
+          force = true;
+          settings = [
+            {
+              name = "tidal";
+              url = "https://listen.tidal.com/";
+            }
+          ];
+        };
         extensions.packages = with flake-inputs.firefox-extensions.packages.${pkgs.system}; [
           ublock-origin
         ];
         search = {
           force = true;
-          default = "DuckDuckGo";
-          privateDefault = "DuckDuckGo";
+          default = "ddg";
+          privateDefault = "ddg";
         };
         settings = {
           "privacy.clearOnShutdown.history" = true;
