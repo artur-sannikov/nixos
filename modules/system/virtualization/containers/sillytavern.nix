@@ -17,12 +17,6 @@ in
     };
   };
   config = mkIf cfg.enable {
-    systemd.tmpfiles.rules = [
-      "d /home/${username}/podman/sillytavern/config 0750 ${username} users -"
-      "d /home/${username}/podman/sillytavern/data 0750 ${username} users -"
-      "d /home/${username}/podman/comfy-ui/storage 0750 ${username} users -"
-    ];
-
     virtualisation.oci-containers = {
       backend = "podman";
       containers = {
