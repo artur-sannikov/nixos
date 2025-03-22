@@ -19,6 +19,7 @@
     ../../modules/system/virtualization/bottles.nix
     ../../modules/system/virtualization/podman.nix
     ../../modules/system/virtualization/singularity.nix
+    ../../modules/system/virtualization/containers/default.nix
     ../../modules/system/gaming.nix
     ../../modules/system/tailscale.nix
     # System-wide packages
@@ -182,6 +183,17 @@
     gaming = {
       enable = true;
       SteamUIScaling = "2"; # Fix Steam UI on High DPI monitors
+    };
+
+    modules = {
+      system = {
+        virtualisation = {
+          containers = {
+            immich-remote-machine-learning.enable = false;
+            sillytavern.enable = true;
+          };
+        };
+      };
     };
 
     # This option defines the first version of NixOS you have installed on this particular machine,

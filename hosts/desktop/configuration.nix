@@ -17,8 +17,8 @@
     ../../modules/system/virtualization/bottles.nix
     ../../modules/system/virtualization/podman.nix
     ../../modules/system/virtualization/singularity.nix
-    ../../modules/system/virtualization/containers/sillytavern.nix
-    ../../modules/system/virtualization/containers/immich-remote-machine-learning.nix
+    ../../modules/system/virtualization/containers/default.nix
+
     ../../modules/system/gaming.nix
     ../../modules/system/tailscale.nix
     # System-wide packages
@@ -197,6 +197,17 @@
     gaming = {
       enable = true;
       SteamUIScaling = "1.5";
+    };
+
+    modules = {
+      system = {
+        virtualisation = {
+          containers = {
+            immich-remote-machine-learning.enable = true;
+            sillytavern.enable = true;
+          };
+        };
+      };
     };
 
     # This option defines the first version of NixOS you have installed on this particular machine,
