@@ -50,7 +50,7 @@
     };
 
     networking = {
-      hostName = "asus";
+      hostName = "asus-laptop";
       hostId = "2a2fff45";
       networkmanager.enable = true;
       firewall = {
