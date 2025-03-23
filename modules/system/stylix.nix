@@ -4,6 +4,7 @@
 {
   stylix = {
     enable = true;
+    targets.grub.enable = false; # Disable because it conflicts with catppuccin (?)
     image = ./scarlet_tree.png;
     base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
     cursor = {

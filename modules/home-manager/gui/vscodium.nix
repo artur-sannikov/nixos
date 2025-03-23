@@ -36,23 +36,24 @@
           quarto.quarto
         ])
         ++ (with flake-inputs.nix-vscode-extensions.extensions.${pkgs.system}.open-vsx; [
+          catppuccin.catppuccin-vsc
           jeanp413.open-remote-ssh
           hashicorp.terraform
           posit.air-vscode
-        ])
-        ++ [
-          (pkgs.catppuccin-vsc.override {
-            accent = "blue";
-            boldKeywords = true;
-            italicComments = false;
-            italicKeywords = false;
-            extraBordersEnabled = false;
-            workbenchMode = "default";
-            bracketMode = "rainbow";
-            colorOverrides = { };
-            customUIColors = { };
-          })
-        ];
+        ]);
+      # ++ [
+      #   (pkgs.catppuccin-vsc.override {
+      #     accent = "blue";
+      #     boldKeywords = true;
+      #     italicComments = false;
+      #     italicKeywords = false;
+      #     extraBordersEnabled = false;
+      #     workbenchMode = "default";
+      #     bracketMode = "rainbow";
+      #     colorOverrides = { };
+      #     customUIColors = { };
+      #   })
+      # ];
       keybindings = [
         # Insert assignment operator if code is R
         {
@@ -109,9 +110,15 @@
         "files.trimTrailingWhitespace" = true;
         # Disable RedHat telemetry
         "redhat.telemetry.enabled" = false;
+
         # Apply Catppuccin theme
-        "workbench.colorTheme" = "Catppuccin Mocha";
+        "workbench.colorTheme" = "Catppuccin Macchiato";
         "workbench.iconTheme" = "catppuccin-macchiato";
+        # "catppuccin.accentColor" = "blue";
+        # "catppuccin.boldKeywords" = true;
+        "bracketMode" = "rainbow";
+        "italicComments" = false;
+        "italicKeywords" = false;
 
         "window.newWindowDimensions" = "maximized";
 

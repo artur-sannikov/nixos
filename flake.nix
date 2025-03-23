@@ -37,7 +37,7 @@
 
     # Catppuccin theme for VSCodium
     # https://github.com/catppuccin/vscode
-    catppuccin-vsc.url = "https://flakehub.com/f/catppuccin/vscode/*.tar.gz";
+    #catppuccin-vsc.url = "https://flakehub.com/f/catppuccin/vscode/*.tar.gz";
 
     nixvim = {
       url = "github:nix-community/nixvim";
@@ -75,7 +75,7 @@
       home-manager,
       stylix,
       catppuccin,
-      catppuccin-vsc,
+      # catppuccin-vsc,
       flatpaks,
       nixvim,
       lanzaboote,
@@ -85,11 +85,11 @@
       system = "x86_64-linux";
       username = "artur";
       lib = nixpkgs.lib;
-      overlays = [
-        catppuccin-vsc.overlays.default
-      ];
+      # overlays = [
+      #   catppuccin-vsc.overlays.default
+      # ];
       pkgs = import nixpkgs {
-        inherit system overlays;
+        inherit system;
         config.allowUnfreePredicate =
           pkg:
           builtins.elem (nixpkgs.lib.getName pkg) [
@@ -104,7 +104,7 @@
           ];
       };
       pkgs-stable = import nixpkgs-stable {
-        inherit system overlays;
+        inherit system;
         config = {
           allowUnfree = true;
         };
@@ -158,6 +158,7 @@
             # so that home-manager configuration will be deployed automatically when executing `nixos-rebuild switch`
             home-manager.nixosModules.home-manager
             stylix.nixosModules.stylix
+            catppuccin.nixosModules.catppuccin
             {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
@@ -195,7 +196,7 @@
           flake-inputs = inputs;
           inherit username;
           inherit pkgs-stable;
-          inherit overlays;
+          # inherit overlays;
         };
         modules = [
           ./hosts/ty/home.nix

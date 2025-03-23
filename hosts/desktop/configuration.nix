@@ -5,6 +5,7 @@
 {
   username,
   pkgs,
+  lib,
   ...
 }:
 {
@@ -50,6 +51,7 @@
           efiSupport = true;
           devices = [ "nodev" ];
           useOSProber = true;
+          splashImage = lib.mkForce null;
           extraEntries = ''
             menuentry "Fedora Bazzite" {
               insmod part_gpt
@@ -210,6 +212,10 @@
       };
     };
 
+    catppuccin = {
+      enable = true;
+      flavor = "mocha";
+    };
     # This option defines the first version of NixOS you have installed on this particular machine,
     # and is used to maintain compatibility with application data (e.g. databases) created on older NixOS versions.
     #
