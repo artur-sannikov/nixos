@@ -16,7 +16,6 @@
       extensions =
         with pkgs.vscode-extensions;
         [
-          catppuccin.catppuccin-vsc-icons
           davidanson.vscode-markdownlint
           ecmel.vscode-html-css
           jnoortheen.nix-ide
@@ -31,29 +30,16 @@
           tamasfe.even-better-toml
         ]
         ++ (with flake-inputs.nix-vscode-extensions.extensions.${pkgs.system}.vscode-marketplace; [
+          samrapdev.outrun
           ipierre1.ansible-vault-vscode
           nextflow.nextflow
           quarto.quarto
         ])
         ++ (with flake-inputs.nix-vscode-extensions.extensions.${pkgs.system}.open-vsx; [
-          catppuccin.catppuccin-vsc
           jeanp413.open-remote-ssh
           hashicorp.terraform
           posit.air-vscode
         ]);
-      # ++ [
-      #   (pkgs.catppuccin-vsc.override {
-      #     accent = "blue";
-      #     boldKeywords = true;
-      #     italicComments = false;
-      #     italicKeywords = false;
-      #     extraBordersEnabled = false;
-      #     workbenchMode = "default";
-      #     bracketMode = "rainbow";
-      #     colorOverrides = { };
-      #     customUIColors = { };
-      #   })
-      # ];
       keybindings = [
         # Insert assignment operator if code is R
         {
@@ -111,14 +97,7 @@
         # Disable RedHat telemetry
         "redhat.telemetry.enabled" = false;
 
-        # Apply Catppuccin theme
-        "workbench.colorTheme" = "Catppuccin Macchiato";
-        "workbench.iconTheme" = "catppuccin-macchiato";
-        # "catppuccin.accentColor" = "blue";
-        # "catppuccin.boldKeywords" = true;
-        "bracketMode" = "rainbow";
-        "italicComments" = false;
-        "italicKeywords" = false;
+        "workbench.colorTheme" = "Outrun Night";
 
         "window.newWindowDimensions" = "maximized";
 
