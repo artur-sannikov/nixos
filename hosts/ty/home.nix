@@ -41,8 +41,9 @@
   # Enable Catppuccin theme globally
   catppuccin = {
     enable = true;
-    flavor = "macchiato";
+    flavor = "mocha";
     accent = "blue";
+    vscode.enable = false;
   };
 
   programs.home-manager.enable = true;
