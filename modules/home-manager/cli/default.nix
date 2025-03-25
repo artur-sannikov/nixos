@@ -12,7 +12,6 @@
     ./nix.nix
     ./nixvim.nix
     ./packages.nix
-    ./R.nix
     ./starship.nix
     ./tmux.nix
     ./yt-dlp.nix
