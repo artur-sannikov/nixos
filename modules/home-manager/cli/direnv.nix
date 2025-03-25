@@ -1,6 +1,4 @@
-{ pkgs, ... }:
 {
-  home.packages = with pkgs; [ direnv ]; # Required by lorri
   programs = {
     direnv = {
       enable = true;
