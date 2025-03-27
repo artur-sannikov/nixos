@@ -16,6 +16,10 @@
         package = pkgs.iosevka;
         name = "Iosevka Medium Extended";
       };
+      emoji = {
+        package = pkgs.noto-fonts-emoji;
+        name = "Noto Color Emoji";
+      };
     };
     opacity = {
       terminal = 0.95;
