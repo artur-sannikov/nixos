@@ -20,7 +20,7 @@ in
       backend = "podman";
       containers = {
         immich-machine-learning = {
-          image = "ghcr.io/immich-app/immich-machine-learning:v1.129.0";
+          image = "ghcr.io/immich-app/immich-machine-learning:v1.130.1-rocm";
           ports = [
             "3003:3003"
           ];
