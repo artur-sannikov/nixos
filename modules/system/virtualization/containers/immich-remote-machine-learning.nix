@@ -27,6 +27,11 @@ in
           volumes = [
             "immich-machine-learning:/cache"
           ];
+          extraOptions = [
+            "--device=/dev/kfd"
+            "--device=/dev/dri"
+            "--group-add=video"
+          ];
         };
       };
     };
