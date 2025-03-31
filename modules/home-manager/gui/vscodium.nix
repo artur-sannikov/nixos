@@ -28,6 +28,7 @@
           redhat.vscode-yaml
           reditorsupport.r
           tamasfe.even-better-toml
+          saoudrizwan.claude-dev
         ]
         ++ (with flake-inputs.nix-vscode-extensions.extensions.${pkgs.system}.vscode-marketplace; [
           samrapdev.outrun
