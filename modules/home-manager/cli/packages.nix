@@ -47,6 +47,6 @@
       flake-inputs.flox.packages.${pkgs.system}.flox
     ]
     ++ (with pkgs-stable; [
-      quarto
+      # quarto
     ]);
 }
