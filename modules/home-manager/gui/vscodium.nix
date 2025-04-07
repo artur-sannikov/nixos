@@ -29,6 +29,7 @@
           reditorsupport.r
           tamasfe.even-better-toml
           saoudrizwan.claude-dev
+          ms-toolsai.jupyter
         ]
         ++ (with flake-inputs.nix-vscode-extensions.extensions.${pkgs.system}.vscode-marketplace; [
           samrapdev.outrun
