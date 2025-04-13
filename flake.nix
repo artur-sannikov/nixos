@@ -54,10 +54,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    flox = {
-      url = "github:flox/flox";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    # flox = {
+    #   url = "github:flox/flox";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
 
     # Motherboard support in latest experimental
     # Update to stable release later
