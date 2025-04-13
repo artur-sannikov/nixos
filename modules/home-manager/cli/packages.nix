@@ -1,7 +1,7 @@
 {
   pkgs,
   pkgs-stable,
-  flake-inputs,
+  # flake-inputs,
   ...
 }:
 {
@@ -44,7 +44,7 @@
       typst
       virtualenv
       wl-clipboard-rs
-      flake-inputs.flox.packages.${pkgs.system}.flox
+      # flake-inputs.flox.packages.${pkgs.system}.flox
     ]
     ++ (with pkgs-stable; [
       # quarto
