@@ -181,6 +181,9 @@
       XDG_CONFIG_HOME = "$HOME/.config";
     };
 
+    # Add ~/.local/bin/ to $PATH.
+    environment.localBinInPath = true;
+
     gaming = {
       enable = true;
       SteamUIScaling = "2"; # Fix Steam UI on High DPI monitors
