@@ -200,7 +200,7 @@
         };
         modules = [
           ./hosts/ty/home.nix
-          catppuccin.homeManagerModules.catppuccin
+          catppuccin.homeModules.catppuccin
           stylix.homeManagerModules.stylix
           nixvim.homeManagerModules.nixvim
         ];
