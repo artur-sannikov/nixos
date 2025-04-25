@@ -1,5 +1,6 @@
 {
   pkgs,
+  pkgs-stable,
   lib,
   flake-inputs,
   ...
@@ -31,16 +32,16 @@
           saoudrizwan.claude-dev
           ms-toolsai.jupyter
         ]
-        ++ (with flake-inputs.nix-vscode-extensions.extensions.${pkgs.system}.vscode-marketplace; [
+        ++ (with flake-inputs.nix-vscode-extensions.extensions.${pkgs-stable.system}.vscode-marketplace; [
           samrapdev.outrun
           ipierre1.ansible-vault-vscode
           nextflow.nextflow
           quarto.quarto
+          posit.air-vscode
         ])
         ++ (with flake-inputs.nix-vscode-extensions.extensions.${pkgs.system}.open-vsx; [
           jeanp413.open-remote-ssh
           hashicorp.terraform
-          posit.air-vscode
         ]);
       keybindings = [
         # Insert assignment operator if code is R
