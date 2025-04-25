@@ -59,6 +59,10 @@
   ];
 
   services = {
+    qemuGuest = {
+      enable = true;
+      package = pkgs-stable.qemu_kvm.ga;
+    };
     tailscale = {
       enable = true;
       package = pkgs-stable.tailscale;
