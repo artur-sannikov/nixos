@@ -18,6 +18,7 @@
       obsidian
       okular
       protonvpn-gui
+      rclone
       strawberry-qt6
       texlive.combined.scheme-medium
       texstudio
