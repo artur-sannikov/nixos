@@ -55,6 +55,8 @@
 
       # SOPS secrests
       "modules/core/sops/default.nix"
+
+      flake-inputs.sops-nix.nixosModules.sops
     ])
   ];
 
