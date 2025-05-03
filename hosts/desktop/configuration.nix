@@ -36,6 +36,9 @@
       # SSH Agent
       "modules/system/ssh.nix"
 
+      # Services
+      "modules/system/services.nix"
+
       # Other system-related packages
       "modules/system/gaming.nix"
       "modules/system/tailscale.nix"
@@ -175,9 +178,6 @@
       pipewire = {
         enable = true;
         pulse.enable = true;
-      };
-      fwupd = {
-        enable = true;
       };
     };
 
