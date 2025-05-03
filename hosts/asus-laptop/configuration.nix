@@ -5,40 +5,55 @@
 {
   username,
   pkgs,
+  lib,
+  config,
   ...
 }:
 {
-  imports = [
-    # Include the results of the hardware scan.
-    ./hardware-configuration.nix
-    ./disko.nix
-    ../../modules/system/secureboot.nix
-    ../../modules/system/zramswap.nix
-    ../../modules/system/maintenence.nix
-    ../../modules/system/virtualization/libvirtd.nix
-    ../../modules/system/virtualization/bottles.nix
-    ../../modules/system/virtualization/podman.nix
-    ../../modules/system/virtualization/singularity.nix
-    ../../modules/system/virtualization/containers/default.nix
-    ../../modules/system/gaming.nix
-    ../../modules/system/tailscale.nix
-    # System-wide packages
-    ../../modules/system/packages.nix
-    # Syncthing
-    ../../modules/system/syncthing.nix
-    # SSH Agent
-    ../../modules/system/ssh.nix
+  imports = lib.flatten [
+    (map lib.custom.relativeToRoot [
+      # Host-specific configuration
+      "hosts/desktop/disko.nix"
+      "hosts/desktop/hardware-configuration.nix"
 
-    ../../modules/system/appimage.nix
-    ../../modules/system/services.nix
-    ../../modules/system/mullvad.nix
-    ../../modules/system/tlp.nix
-    ../../modules/system/keyboard.nix
-    ../../modules/system/nix.nix
-    ../../modules/system/stylix.nix
-    ../../modules/system/adb.nix
-    ../../modules/system/vaapi.nix
-    ../../modules/system/sancoid.nix
+      # Maintenence
+      "modules/system/maintenence.nix"
+
+      # Secure boot
+      "modules/system/secureboot.nix"
+
+      # Zram swap
+      "modules/system/zramswap.nix"
+
+      # Virtualization
+      "modules/system/virtualization/bottles.nix"
+      "modules/system/virtualization/containers/default.nix"
+      "modules/system/virtualization/libvirtd.nix"
+      "modules/system/virtualization/podman.nix"
+      "modules/system/virtualization/singularity.nix"
+
+      # System-wide packages
+      "modules/system/packages.nix"
+
+      # Syncthing
+      "modules/system/syncthing.nix"
+
+      # SSH Agent
+      "modules/system/ssh.nix"
+
+      # Other system-related packages
+      "modules/system/adb.nix"
+      "modules/system/appimage.nix"
+      "modules/system/gaming.nix"
+      "modules/system/mullvad.nix"
+      "modules/system/nix.nix"
+      "modules/system/sancoid.nix"
+      "modules/system/stylix.nix"
+      "modules/system/tailscale.nix"
+      "modules/system/tlp.nix"
+      "modules/system/vaapi.nix"
+
+    ])
   ];
 
   config = {
@@ -158,12 +173,22 @@
       };
     };
 
+    # Secrets
+    sops = {
+      secrets = {
+        artur_passwd = {
+          neededForUsers = true;
+        };
+      };
+    };
+
+    # Users
     users = {
-      mutableUsers = true;
+      mutableUsers = false;
       users = {
         ${username} = {
           isNormalUser = true;
-          initialHashedPassword = "$y$j9T$OgyVucf3fEyZw2tdmBScn0$CAhZxC5H14MjZc21DAVD7XWMiEOnncNAtIP35LaMAC9"; # Initlal  password to be changed after first login
+          hashedPasswordFile = config.sops.secrets.artur_passwd.path;
           extraGroups = [
             "wheel"
             "input"
