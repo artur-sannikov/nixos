@@ -65,6 +65,16 @@
       url = "gitlab:CalcProgrammer1/OpenRGB";
       flake = false;
     };
+
+    sops-nix = {
+      url = "github:mic92/sops-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    nix-secrets = {
+      url = "git+ssh://git@codeberg.org/arsann/nix-secrets.git?ref=main&shallow=1";
+      flake = false;
+    };
   };
 
   outputs =
@@ -84,7 +94,10 @@
     let
       system = "x86_64-linux";
       username = "artur";
-      lib = nixpkgs.lib;
+
+      # ========== Extend lib with lib.custom ==========
+      lib = nixpkgs.lib.extend (self: super: { custom = import ./lib { inherit (nixpkgs) lib; }; });
+
       # overlays = [
       #   catppuccin-vsc.overlays.default
       # ];
@@ -135,6 +148,33 @@
               home-manager.users."${username}".imports = [
                 nixvim.homeManagerModules.nixvim
                 ./hosts/asus-laptop/home.nix
+              ];
+              home-manager.extraSpecialArgs = {
+                flake-inputs = inputs;
+                inherit pkgs-stable;
+                inherit username;
+              };
+            }
+          ];
+        };
+        test-vm = lib.nixosSystem {
+          inherit system;
+          specialArgs = {
+            flake-inputs = inputs;
+            inherit pkgs;
+            inherit username;
+            inherit pkgs-stable;
+          };
+          modules = [
+            ./hosts/test-vm/configuration.nix
+            disko.nixosModules.disko
+            home-manager.nixosModules.home-manager
+            {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.users."${username}".imports = [
+                nixvim.homeManagerModules.nixvim
+                ./hosts/test-vm/home.nix
               ];
               home-manager.extraSpecialArgs = {
                 flake-inputs = inputs;

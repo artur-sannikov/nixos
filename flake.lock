@@ -503,6 +503,24 @@
         "type": "github"
       }
     },
+    "nix-secrets": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1746277783,
+        "narHash": "sha256-Em4/Yx/rWLQr3EOJvHT5srelb66KUziYojwSOw2XZtM=",
+        "ref": "main",
+        "rev": "5138a4ecb4317bbe5b1be813415999c55aae8c6d",
+        "shallow": true,
+        "type": "git",
+        "url": "ssh://git@codeberg.org/arsann/nix-secrets.git"
+      },
+      "original": {
+        "ref": "main",
+        "shallow": true,
+        "type": "git",
+        "url": "ssh://git@codeberg.org/arsann/nix-secrets.git"
+      }
+    },
     "nix-vscode-extensions": {
       "inputs": {
         "flake-utils": "flake-utils",
@@ -700,11 +718,13 @@
         "flatpaks": "flatpaks",
         "home-manager": "home-manager",
         "lanzaboote": "lanzaboote",
+        "nix-secrets": "nix-secrets",
         "nix-vscode-extensions": "nix-vscode-extensions",
         "nixpkgs": "nixpkgs_2",
         "nixpkgs-stable": "nixpkgs-stable_2",
         "nixvim": "nixvim",
         "openrgb-experimental": "openrgb-experimental",
+        "sops-nix": "sops-nix",
         "stylix": "stylix",
         "umu": "umu"
       }
@@ -727,6 +747,26 @@
       "original": {
         "owner": "oxalica",
         "repo": "rust-overlay",
+        "type": "github"
+      }
+    },
+    "sops-nix": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1745310711,
+        "narHash": "sha256-ePyTpKEJTgX0gvgNQWd7tQYQ3glIkbqcW778RpHlqgA=",
+        "owner": "mic92",
+        "repo": "sops-nix",
+        "rev": "5e3e92b16d6fdf9923425a8d4df7496b2434f39c",
+        "type": "github"
+      },
+      "original": {
+        "owner": "mic92",
+        "repo": "sops-nix",
         "type": "github"
       }
     },
