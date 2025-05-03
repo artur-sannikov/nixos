@@ -53,6 +53,8 @@
       "modules/system/tlp.nix"
       "modules/system/vaapi.nix"
 
+      # SOPS secrests
+      "modules/core/sops/default.nix"
     ])
   ];
 
