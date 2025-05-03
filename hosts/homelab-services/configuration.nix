@@ -115,14 +115,15 @@ in
         url = forgejoRootUrl;
         tokenFile = config.sops.secrets.renovate-forgejo-runner-token.path;
         labels = [
-          "ubuntu-latest:docker://node:16-bullseye"
-          "ubuntu-22.04:docker://node:16-bullseye"
-          "ubuntu-20.04:docker://node:16-bullseye"
-          "ubuntu-18.04:docker://node:16-buster"
+          "ubuntu-latest:docker://ubuntu:latest"
+          "ubuntu-24.04:docker://ubuntu:24.04"
         ];
       };
     };
   };
+
+  # Required for Forgejo actions
+  virtualisation.podman.enable = true;
 
   environment.systemPackages = with pkgs; [
     git
