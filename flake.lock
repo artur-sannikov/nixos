@@ -504,7 +504,6 @@
       }
     },
     "nix-secrets": {
-      "flake": false,
       "locked": {
         "lastModified": 1746277783,
         "narHash": "sha256-Em4/Yx/rWLQr3EOJvHT5srelb66KUziYojwSOw2XZtM=",
