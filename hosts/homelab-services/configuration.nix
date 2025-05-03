@@ -77,6 +77,12 @@
       user = "forgejo";
       group = "forgejo";
       lfs.enable = true;
+      dump = {
+        enable = true;
+        type = "tar.gz";
+        backupDir = "/home/${username}/forgejo-backups";
+        interval = "hourly";
+      };
     };
   };
 
