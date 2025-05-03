@@ -6,38 +6,53 @@
   username,
   pkgs,
   lib,
+  flake-inputs,
+  config,
   ...
 }:
 {
-  imports = [
-    # Include the results of the hardware scan.
-    ./hardware-configuration.nix
-    ./disko.nix
-    ../../modules/system/maintenence.nix
-    ../../modules/system/virtualization/libvirtd.nix
-    ../../modules/system/virtualization/bottles.nix
-    ../../modules/system/virtualization/podman.nix
-    ../../modules/system/virtualization/singularity.nix
-    ../../modules/system/virtualization/containers/default.nix
+  imports = lib.flatten [
+    (map lib.custom.relativeToRoot [
+      # Host-specific configuration
+      "hosts/desktop/hardware-configuration.nix"
+      "hosts/desktop/disko.nix"
 
-    ../../modules/system/gaming.nix
-    ../../modules/system/tailscale.nix
-    # System-wide packages
-    ../../modules/system/packages.nix
-    # Syncthing
-    ../../modules/system/syncthing.nix
-    # SSH Agent
-    ../../modules/system/ssh.nix
+      # Maintenence
+      "modules/system/maintenence.nix"
 
-    ../../modules/system/appimage.nix
-    ../../modules/system/keyboard.nix
-    ../../modules/system/lact.nix
-    ../../modules/system/openrgb.nix
-    ../../modules/system/corectrl.nix
-    ../../modules/system/nix.nix
-    ../../modules/system/ollama.nix
-    ../../modules/system/stylix.nix
-    ../../modules/system/adb.nix
+      # Virtualization
+      "modules/system/virtualization/libvirtd.nix"
+      "modules/system/virtualization/bottles.nix"
+      "modules/system/virtualization/podman.nix"
+      "modules/system/virtualization/singularity.nix"
+      "modules/system/virtualization/containers/default.nix"
+
+      # System-wide packages
+      "modules/system/packages.nix"
+
+      # Syncthing
+      "modules/system/syncthing.nix"
+
+      # SSH Agent
+      "modules/system/ssh.nix"
+
+      # Other system-related packages
+      "modules/system/gaming.nix"
+      "modules/system/tailscale.nix"
+      "modules/system/appimage.nix"
+      "modules/system/keyboard.nix"
+      "modules/system/lact.nix"
+      "modules/system/openrgb.nix"
+      "modules/system/corectrl.nix"
+      "modules/system/nix.nix"
+      "modules/system/ollama.nix"
+      "modules/system/stylix.nix"
+      "modules/system/adb.nix"
+
+      # SOPS secrests
+      "modules/core/sops/default.nix"
+    ])
+    flake-inputs.sops-nix.nixosModules.sops
   ];
 
   config = {
@@ -175,15 +190,28 @@
       };
     };
 
-    users.users.${username} = {
-      isNormalUser = true;
-      extraGroups = [
-        "wheel"
-        "input"
-        "libvirtd"
-        "networkmanager"
-        "podman"
-      ];
+    # Secrets
+    sops = {
+      secrets = {
+        artur_passwd = {
+          neededForUsers = true;
+        };
+      };
+    };
+
+    users = {
+      mutableUsers = false;
+      users.${username} = {
+        isNormalUser = true;
+        hashedPasswordFile = config.sops.secrets.artur_passwd.path;
+        extraGroups = [
+          "wheel"
+          "input"
+          "libvirtd"
+          "networkmanager"
+          "podman"
+        ];
+      };
     };
 
     environment.sessionVariables = {
