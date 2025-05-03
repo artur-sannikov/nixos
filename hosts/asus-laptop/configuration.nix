@@ -55,9 +55,7 @@
       "modules/system/vaapi.nix"
 
       # SOPS secrests
-      "modules/core/sops/default.nix"
-
-      flake-inputs.sops-nix.nixosModules.sops
+      "modules/core/default.nix"
     ])
   ];
 
