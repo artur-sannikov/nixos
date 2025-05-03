@@ -185,19 +185,17 @@
       };
     };
 
-    # Users
     users = {
       mutableUsers = false;
-      users = {
-        ${username} = {
-          isNormalUser = true;
-          hashedPasswordFile = config.sops.secrets.artur_passwd.path;
-          extraGroups = [
-            "wheel"
-            "input"
-            "networkmanager"
-          ];
-        };
+      users.${username} = {
+        isNormalUser = true;
+        hashedPasswordFile = config.sops.secrets.artur_passwd.path;
+        extraGroups = [
+          "wheel"
+          "input"
+          "libvirtd"
+          "networkmanager"
+        ];
       };
     };
 
