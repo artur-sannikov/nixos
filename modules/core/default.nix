@@ -4,8 +4,6 @@
 }:
 {
   imports = lib.flatten [
-    (map lib.custom.relativeToRoot [
-      (lib.custom.scanPaths ./.)
-    ])
+    (lib.custom.scanPaths ./.)
   ];
 }
