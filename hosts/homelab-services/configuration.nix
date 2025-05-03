@@ -75,6 +75,7 @@ in
   };
 
   services = {
+    qemuGuest.enable = true;
     tailscale = {
       enable = true;
       package = pkgs-stable.tailscale;
