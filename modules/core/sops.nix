@@ -6,6 +6,9 @@ let
   secretspath = builtins.toString flake-inputs.nix-secrets;
 in
 {
+  imports = [
+    flake-inputs.sops-nix.nixosModules.sops
+  ];
   sops = {
     defaultSopsFile = "${secretspath}/secrets.yaml";
     age = {
