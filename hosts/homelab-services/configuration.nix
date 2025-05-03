@@ -4,6 +4,7 @@
 
 {
   config,
+  lib,
   pkgs,
   pkgs-stable,
   username,
@@ -15,11 +16,13 @@ let
   forgejoDomain = "git.${flake-inputs.nix-secrets.domain}";
 in
 {
-  imports = [
-    ./disko.nix
-    ../../modules/system/openssh.nix
-    ../../modules/system/maintenence.nix
-    # ../../modules/system/virtualization/containers/archivebox.nix
+  imports = lib.flatten [
+    (map lib.custom.relativeToRoot [
+      "hosts/homelab-services/disko.nix"
+      "modules/system/openssh.nix"
+      "modules/system/maintenence.nix"
+      "modules/core/default.nix"
+    ])
   ];
 
   boot = {
