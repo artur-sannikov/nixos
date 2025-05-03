@@ -3,6 +3,7 @@
 # https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
 
 {
+  config,
   pkgs,
   pkgs-stable,
   username,
@@ -10,7 +11,6 @@
   ...
 }:
 let
-  secretspath = builtins.toString flake-inputs.nix-secrets;
   forgejoRootUrl = "https://forgejo.${flake-inputs.nix-secrets.domain}";
   forgejoDomain = "git.${flake-inputs.nix-secrets.domain}";
 in
@@ -95,6 +95,21 @@ in
           ROOT_URL = forgejoRootUrl;
         };
         service.DISABLE_REGISTRATION = true;
+      };
+    };
+    gitea-actions-runner = {
+      package = pkgs.forgejo-actions-runner;
+      instances.default = {
+        enable = true;
+        name = "renovate";
+        url = forgejoRootUrl;
+        tokenFile = config.sops.secrets.forgejo-runner-token.path;
+        labels = [
+          "ubuntu-latest:docker://node:16-bullseye"
+          "ubuntu-22.04:docker://node:16-bullseye"
+          "ubuntu-20.04:docker://node:16-bullseye"
+          "ubuntu-18.04:docker://node:16-buster"
+        ];
       };
     };
   };
