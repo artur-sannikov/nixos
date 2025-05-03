@@ -14,8 +14,8 @@
   imports = lib.flatten [
     (map lib.custom.relativeToRoot [
       # Host-specific configuration
-      "hosts/desktop/disko.nix"
-      "hosts/desktop/hardware-configuration.nix"
+      "hosts/asus-laptop/disko.nix"
+      "hosts/asus-laptop/hardware-configuration.nix"
 
       # Maintenence
       "modules/system/maintenence.nix"
