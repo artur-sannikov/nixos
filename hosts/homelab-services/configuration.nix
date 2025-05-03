@@ -68,8 +68,10 @@ in
   ];
 
   # Secrets
-  secrets = {
-    renovate-forgejo-runner-token = { };
+  sops = {
+    secrets = {
+      renovate-forgejo-runner-token = { };
+    };
   };
 
   services = {
