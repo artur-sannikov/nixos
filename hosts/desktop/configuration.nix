@@ -14,18 +14,18 @@
   imports = lib.flatten [
     (map lib.custom.relativeToRoot [
       # Host-specific configuration
-      "hosts/desktop/hardware-configuration.nix"
       "hosts/desktop/disko.nix"
+      "hosts/desktop/hardware-configuration.nix"
 
       # Maintenence
       "modules/system/maintenence.nix"
 
       # Virtualization
-      "modules/system/virtualization/libvirtd.nix"
       "modules/system/virtualization/bottles.nix"
+      "modules/system/virtualization/containers/default.nix"
+      "modules/system/virtualization/libvirtd.nix"
       "modules/system/virtualization/podman.nix"
       "modules/system/virtualization/singularity.nix"
-      "modules/system/virtualization/containers/default.nix"
 
       # System-wide packages
       "modules/system/packages.nix"
@@ -40,22 +40,21 @@
       "modules/system/services.nix"
 
       # Other system-related packages
-      "modules/system/gaming.nix"
-      "modules/system/tailscale.nix"
+      "modules/system/adb.nix"
       "modules/system/appimage.nix"
+      "modules/system/corectrl.nix"
+      "modules/system/gaming.nix"
       "modules/system/keyboard.nix"
       "modules/system/lact.nix"
-      "modules/system/openrgb.nix"
-      "modules/system/corectrl.nix"
       "modules/system/nix.nix"
       "modules/system/ollama.nix"
+      "modules/system/openrgb.nix"
       "modules/system/stylix.nix"
-      "modules/system/adb.nix"
+      "modules/system/tailscale.nix"
 
-      # SOPS secrests
-      "modules/core/sops/default.nix"
+      # Import all core modules
+      "modules/core/default.nix"
     ])
-    flake-inputs.sops-nix.nixosModules.sops
   ];
 
   config = {
