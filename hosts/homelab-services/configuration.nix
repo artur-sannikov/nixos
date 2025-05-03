@@ -115,8 +115,7 @@ in
         url = forgejoRootUrl;
         tokenFile = config.sops.secrets.renovate-forgejo-runner-token.path;
         labels = [
-          "ubuntu-latest:docker://ubuntu:latest"
-          "ubuntu-24.04:docker://ubuntu:24.04"
+          "debian-latest:docker://node:23-bookworm"
         ];
       };
     };
