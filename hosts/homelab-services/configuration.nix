@@ -67,6 +67,11 @@ in
     "flakes"
   ];
 
+  # Secrets
+  secrets = {
+    renovate-forgejo-runner-token = { };
+  };
+
   services = {
     tailscale = {
       enable = true;
@@ -106,7 +111,7 @@ in
         enable = true;
         name = "renovate";
         url = forgejoRootUrl;
-        tokenFile = config.sops.secrets.forgejo-runner-token.path;
+        tokenFile = config.sops.secrets.renovate-forgejo-runner-token.path;
         labels = [
           "ubuntu-latest:docker://node:16-bullseye"
           "ubuntu-22.04:docker://node:16-bullseye"
