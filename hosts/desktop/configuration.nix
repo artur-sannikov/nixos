@@ -209,7 +209,6 @@
           "input"
           "libvirtd"
           "networkmanager"
-          "podman"
         ];
       };
     };
