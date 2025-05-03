@@ -6,8 +6,14 @@
   pkgs,
   pkgs-stable,
   username,
+  flake-inputs,
   ...
 }:
+let
+  secretspath = builtins.toString flake-inputs.nix-secrets;
+  forgejoRootUrl = "https://forgejo.${flake-inputs.nix-secrets.domain}";
+  forgejoDomain = "git.${flake-inputs.nix-secrets.domain}";
+in
 {
   imports = [
     ./disko.nix
@@ -82,6 +88,13 @@
         type = "tar.gz";
         backupDir = "/home/${username}/forgejo-backups";
         interval = "hourly";
+      };
+      settings = {
+        server = {
+          DOMAIN = forgejoDomain;
+          ROOT_URL = forgejoRootUrl;
+        };
+        service.DISABLE_REGISTRATION = true;
       };
     };
   };
