@@ -54,7 +54,7 @@
       "modules/system/tlp.nix"
       "modules/system/vaapi.nix"
 
-      # SOPS secrests
+      # Import all core modules
       "modules/core/default.nix"
     ])
   ];
