@@ -173,15 +173,9 @@
         wayland.enable = true;
       };
       desktopManager.plasma6.enable = true;
-      # Enable sound
-      pipewire = {
-        enable = true;
-        pulse.enable = true;
-      };
     };
 
     security = {
-      rtkit.enable = true;
       apparmor = {
         enable = true;
         killUnconfinedConfinables = true;
