@@ -73,7 +73,7 @@
 
     nix-secrets = {
       url = "git+ssh://git@codeberg.org/arsann/nix-secrets.git?ref=main&shallow=1";
-      inputs = {};
+      inputs = { };
     };
   };
 
@@ -106,6 +106,7 @@
         config.allowUnfreePredicate =
           pkg:
           builtins.elem (nixpkgs.lib.getName pkg) [
+            "castlabs-electron"
             "duplicacy-web"
             "obsidian"
             "terraform"
