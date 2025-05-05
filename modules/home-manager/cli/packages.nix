@@ -26,6 +26,7 @@
       lynx
       mat2
       micromamba
+      multiqc
       nextflow
       opentofu
       podlet
