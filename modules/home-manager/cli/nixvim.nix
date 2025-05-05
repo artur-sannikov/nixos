@@ -36,6 +36,7 @@
               "isort"
             ];
             nix = [ "nixfmt" ];
+            yaml = [ "yamlfmt" ];
           };
         };
       };
