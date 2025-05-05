@@ -41,7 +41,7 @@ in
           LC_ALL = "en_US.UTF-8";
           MAMBA_ROOT_PREFIX = "$HOME/.micromamba"; # For micromamba
         };
-        initExtra = ''
+        initContent = ''
             # Disable underline
             # See https://github.com/zsh-users/zsh-syntax-highlighting/issues/573
             (( ''${+ZSH_HIGHLIGHT_STYLES} )) || typeset -A ZSH_HIGHLIGHT_STYLES
