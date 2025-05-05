@@ -1,7 +1,6 @@
 # Artur's NixOS & Nix Home Manager configurations
 
 <p align="center">
-  <img src="https://github.com/artur-sannikov/nixos/actions/workflows/nix-flake-check.yml/badge.svg" alt="Workflow Badge" height="20"/>
   <img src="https://img.shields.io/github/license/artur-sannikov/nixos" alt="License Badge"  height="20"/>
 </p>
 
