@@ -13,4 +13,13 @@ jobs:
           install_url: https://nixos.org/nix/install
           extra_nix_config: |
             experimental-features = nix-command flakes
-      - run: nix flake check --show-trace
+      - name: Create dummy flake for private flake input
+        run: |
+          mkdir -p /tmp/dummy-flake
+          cat > /tmp/dummy-flake/flake.nix <<EOF
+          {
+            outputs = { self }: {};
+          }
+          EOF
+      - name: Run flake check
+        run: nix flake check --show-trace --override-input nix-secrets path:/tmp/dummy-flake
