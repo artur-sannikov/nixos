@@ -73,7 +73,7 @@
 
     nix-secrets = {
       url = "git+ssh://git@codeberg.org/arsann/nix-secrets.git?ref=main&shallow=1";
-      inputs = {};
+      inputs = { };
     };
   };
 
@@ -148,33 +148,6 @@
               home-manager.users."${username}".imports = [
                 nixvim.homeManagerModules.nixvim
                 ./hosts/asus-laptop/home.nix
-              ];
-              home-manager.extraSpecialArgs = {
-                flake-inputs = inputs;
-                inherit pkgs-stable;
-                inherit username;
-              };
-            }
-          ];
-        };
-        test-vm = lib.nixosSystem {
-          inherit system;
-          specialArgs = {
-            flake-inputs = inputs;
-            inherit pkgs;
-            inherit username;
-            inherit pkgs-stable;
-          };
-          modules = [
-            ./hosts/test-vm/configuration.nix
-            disko.nixosModules.disko
-            home-manager.nixosModules.home-manager
-            {
-              home-manager.useGlobalPkgs = true;
-              home-manager.useUserPackages = true;
-              home-manager.users."${username}".imports = [
-                nixvim.homeManagerModules.nixvim
-                ./hosts/test-vm/home.nix
               ];
               home-manager.extraSpecialArgs = {
                 flake-inputs = inputs;
