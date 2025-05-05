@@ -79,6 +79,14 @@
         enableDiagnostics = true;
         enableGitStatus = true;
       };
+      # smartcolumn = {
+      #   enable = true;
+
+      #   settings = {
+      #     colorcolumn = "80";
+      #     scope = "file";
+      #   };
+      # };
     };
     autoCmd = [
       {
@@ -107,8 +115,14 @@
       shiftwidth = 4;
       breakindent = true;
       expandtab = true;
+      colorcolumn = "80";
       # guifont = "Iosevka :h14";
       # termguicolors = true;
+    };
+    highlight = {
+      ColorColumn = {
+        bg = "#2e2e2e";
+      };
     };
   };
 }
