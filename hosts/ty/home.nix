@@ -43,6 +43,9 @@
     flavor = "mocha";
     accent = "blue";
     vscode.enable = false;
+
+    ### REENABLE AFTER FIX: https://github.com/catppuccin/nix/issues/552
+    mako.enable = false;
   };
 
   programs.home-manager.enable = true;
