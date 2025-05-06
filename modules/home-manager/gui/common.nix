@@ -22,7 +22,6 @@
       strawberry-qt6
       texlive.combined.scheme-medium
       texstudio
-      seafile-client
       vlc
       zoom-us
     ])
@@ -34,6 +33,7 @@
       onlyoffice-desktopeditors
       qbittorrent
       tidal-hifi
+      seafile-client
       zotero
     ]);
   # GUI apps with special settings
