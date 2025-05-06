@@ -40,20 +40,45 @@
           };
         };
       };
+
+      # Completion
       cmp = {
         enable = true;
         autoEnableSources = true;
         settings = {
           sources = [
-            { name = "path"; }
+            { name = "git"; }
             { name = "nvim_lsp"; }
+            { name = "emoji"; }
+            { name = "buffer"; }
+            {
+              name = "luasnip";
+              keywordLength = 3;
+            }
           ];
+          snippet = {
+            expand = "luasnip";
+          };
+          mapping = {
+            "<C-Tab>" = "cmp.mapping(cmp.mapping.select_next_item(), {'i', 's'})";
+            "<C-j>" = "cmp.mapping.select_next_item()";
+            "<C-k>" = "cmp.mapping.select_prev_item()";
+          };
         };
       };
       cmp-nvim-lsp.enable = true;
       cmp-buffer.enable = true;
       cmp-path.enable = true;
       cmp-cmdline.enable = true;
+
+      luasnip = {
+        enable = true;
+        settings = {
+          enable_autosnippets = true;
+          store_selection_keys = "<Tab>";
+        };
+      };
+
       direnv.enable = true;
       nix.enable = true;
       web-devicons = {
