@@ -28,14 +28,16 @@
 
     # https://github.com/danth/stylix
     stylix = {
-      url = "github:danth/stylix/release-24.11";
+      url = "github:danth/stylix";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     # Catppuccin theme
     # https://github.com/catppuccin/nix
     catppuccin = {
-      url = "github:catppuccin/nix";
-      inputs.nixpkgs.follows = "nixpkgs";
+      #url = "github:catppuccin/nix";
+      url = "github:misilelab/nix";
+      #inputs.nixpkgs.follows = "nixpkgs";
     };
 
     # Catppuccin theme for VSCodium
