@@ -80,14 +80,14 @@
         enableDiagnostics = true;
         enableGitStatus = true;
       };
-      # smartcolumn = {
-      #   enable = true;
+      smartcolumn = {
+        enable = true;
 
-      #   settings = {
-      #     colorcolumn = "80";
-      #     scope = "file";
-      #   };
-      # };
+        settings = {
+          colorcolumn = "80";
+          scope = "file";
+        };
+      };
     };
     autoCmd = [
       {

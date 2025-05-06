@@ -57,6 +57,9 @@
       "modules/system/tlp.nix"
       "modules/system/vaapi.nix"
 
+      # Fonts
+      "modules/system/fonts.nix"
+
       # Import all core modules
       "modules/core/default.nix"
     ])
