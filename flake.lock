@@ -69,7 +69,9 @@
     },
     "catppuccin": {
       "inputs": {
-        "nixpkgs": "nixpkgs"
+        "nixpkgs": [
+          "nixpkgs"
+        ]
       },
       "locked": {
         "lastModified": 1746175539,
@@ -128,11 +130,11 @@
       },
       "locked": {
         "dir": "pkgs/firefox-addons",
-        "lastModified": 1746417810,
-        "narHash": "sha256-VhghpfFdvGiDeh6HqFhQncnLx4IrtFy4VWdCQvOwccI=",
+        "lastModified": 1746504207,
+        "narHash": "sha256-HHiN2R/9edGHIDIySl7zYvwJBkrdZzQwfJedLr6t29A=",
         "owner": "rycee",
         "repo": "nur-expressions",
-        "rev": "14c779b4ff24742307127970549ac9a51de3f98a",
+        "rev": "31d3a915a1441afc3fdf98fd287be3616f416508",
         "type": "gitlab"
       },
       "original": {
@@ -528,11 +530,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1746410468,
-        "narHash": "sha256-aWnZIS+BjSr9u9b4DlMY44Q72ZqB/spwSvwgq6aprQQ=",
+        "lastModified": 1746496684,
+        "narHash": "sha256-LwlZHnH65CZQUF9xAtKan4gHvZDVFf8qYfm7EmuVEHw=",
         "owner": "nix-community",
         "repo": "nix-vscode-extensions",
-        "rev": "4b970efde8416021d954c3ad5d0470c6f5eced67",
+        "rev": "4511026b2fd29242372ea3936e2193062bf18705",
         "type": "github"
       },
       "original": {
@@ -543,15 +545,15 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1744463964,
-        "narHash": "sha256-LWqduOgLHCFxiTNYi3Uj5Lgz0SR+Xhw3kr/3Xd0GPTM=",
-        "owner": "NixOS",
+        "lastModified": 1746328495,
+        "narHash": "sha256-uKCfuDs7ZM3QpCE/jnfubTg459CnKnJG/LwqEVEdEiw=",
+        "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "2631b0b7abcea6e640ce31cd78ea58910d31e650",
+        "rev": "979daf34c8cacebcd917d540070b52a3c2b9b16e",
         "type": "github"
       },
       "original": {
-        "owner": "NixOS",
+        "owner": "nixos",
         "ref": "nixos-unstable",
         "repo": "nixpkgs",
         "type": "github"
@@ -591,22 +593,6 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1746328495,
-        "narHash": "sha256-uKCfuDs7ZM3QpCE/jnfubTg459CnKnJG/LwqEVEdEiw=",
-        "owner": "nixos",
-        "repo": "nixpkgs",
-        "rev": "979daf34c8cacebcd917d540070b52a3c2b9b16e",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nixos",
-        "ref": "nixos-unstable",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
-    "nixpkgs_3": {
-      "locked": {
         "lastModified": 1743703532,
         "narHash": "sha256-s1KLDALEeqy+ttrvqV3jx9mBZEvmthQErTVOAzbjHZs=",
         "owner": "NixOS",
@@ -630,11 +616,11 @@
         "nuschtosSearch": "nuschtosSearch"
       },
       "locked": {
-        "lastModified": 1746447915,
-        "narHash": "sha256-955/FGj6Te7a1czeUYZwhrnDYekubNT+EC7PpNw8l/w=",
+        "lastModified": 1746479605,
+        "narHash": "sha256-YZT1uhEuHx+BLCpy25g4fPxyyyRNx07iA+fVKLczr18=",
         "owner": "nix-community",
         "repo": "nixvim",
-        "rev": "4016854bccf192d6a5d7fdd5860571dfa1ece55c",
+        "rev": "64cd675ece86352c8540da765aef72eeba045cf5",
         "type": "github"
       },
       "original": {
@@ -719,7 +705,7 @@
         "lanzaboote": "lanzaboote",
         "nix-secrets": "nix-secrets",
         "nix-vscode-extensions": "nix-vscode-extensions",
-        "nixpkgs": "nixpkgs_2",
+        "nixpkgs": "nixpkgs",
         "nixpkgs-stable": "nixpkgs-stable_2",
         "nixvim": "nixvim",
         "openrgb-experimental": "openrgb-experimental",
@@ -756,11 +742,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1745310711,
-        "narHash": "sha256-ePyTpKEJTgX0gvgNQWd7tQYQ3glIkbqcW778RpHlqgA=",
+        "lastModified": 1746485181,
+        "narHash": "sha256-PxrrSFLaC7YuItShxmYbMgSuFFuwxBB+qsl9BZUnRvg=",
         "owner": "mic92",
         "repo": "sops-nix",
-        "rev": "5e3e92b16d6fdf9923425a8d4df7496b2434f39c",
+        "rev": "e93ee1d900ad264d65e9701a5c6f895683433386",
         "type": "github"
       },
       "original": {
@@ -781,7 +767,7 @@
         "git-hooks": "git-hooks",
         "gnome-shell": "gnome-shell",
         "home-manager": "home-manager_2",
-        "nixpkgs": "nixpkgs_3",
+        "nixpkgs": "nixpkgs_2",
         "systems": "systems_3",
         "tinted-foot": "tinted-foot",
         "tinted-kitty": "tinted-kitty",
