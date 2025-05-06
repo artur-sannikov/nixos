@@ -1,5 +1,6 @@
 {
   flake-inputs,
+  pkgs,
   username,
   ...
 }:
@@ -38,14 +39,17 @@
   zsh.enable = true;
 
   # Enable Catppuccin theme globally
-  catppuccin = {
-    enable = true;
-    flavor = "mocha";
-    accent = "blue";
-    vscode.enable = false;
+  #catppuccin = {
+  #  enable = true;
+  #  flavor = "mocha";
+  #  accent = "blue";
+  #  vscode.enable = false;
+  #};
 
-    ### REENABLE AFTER FIX: https://github.com/catppuccin/nix/issues/552
-    mako.enable = false;
+  stylix = {
+    enable = true;
+    image = ../../modules/system/scarlet_tree.png;
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
   };
 
   programs.home-manager.enable = true;
