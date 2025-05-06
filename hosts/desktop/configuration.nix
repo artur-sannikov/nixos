@@ -52,6 +52,9 @@
       "modules/system/stylix.nix"
       "modules/system/tailscale.nix"
 
+      # Fonts
+      "modules/system/fonts.nix"
+
       # Import all core modules
       "modules/core/default.nix"
     ])
