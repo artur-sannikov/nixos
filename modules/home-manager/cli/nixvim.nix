@@ -14,7 +14,7 @@
           lua_ls.enable = true;
           r_language_server = {
             enable = true;
-            package = pkgs.rPackages.languageserver;
+            package = null;
           };
           bashls.enable = true;
           pylsp = {
