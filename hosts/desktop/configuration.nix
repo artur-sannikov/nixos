@@ -52,6 +52,9 @@
       "modules/system/stylix.nix"
       "modules/system/tailscale.nix"
 
+      # Fonts
+      "modules/system/fonts.nix"
+
       # Import all core modules
       "modules/core/default.nix"
     ])
@@ -173,15 +176,9 @@
         wayland.enable = true;
       };
       desktopManager.plasma6.enable = true;
-      # Enable sound
-      pipewire = {
-        enable = true;
-        pulse.enable = true;
-      };
     };
 
     security = {
-      rtkit.enable = true;
       apparmor = {
         enable = true;
         killUnconfinedConfinables = true;

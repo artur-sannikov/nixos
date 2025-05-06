@@ -22,6 +22,7 @@
       strawberry-qt6
       texlive.combined.scheme-medium
       texstudio
+      seafile-client
       vlc
       zoom-us
     ])

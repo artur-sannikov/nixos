@@ -36,6 +36,7 @@
               "isort"
             ];
             nix = [ "nixfmt" ];
+            yaml = [ "yamlfmt" ];
           };
         };
       };
@@ -61,16 +62,15 @@
       bufferline = {
         enable = true;
         settings = {
-          highlights = {
-            buffer_selected = {
-              bg = "#356b37";
-            };
-            tab_selected = {
-              bg = "#356b37";
-            };
-            numbers_selected = {
-              bg = "#356b37";
-            };
+          options = {
+            offsets = [
+              {
+                filetype = "neo-tree";
+                text = "Files";
+                highlight = "Directory";
+                text_align = "left";
+              }
+            ];
           };
         };
       };
@@ -79,14 +79,14 @@
         enableDiagnostics = true;
         enableGitStatus = true;
       };
-      # smartcolumn = {
-      #   enable = true;
+      smartcolumn = {
+        enable = true;
 
-      #   settings = {
-      #     colorcolumn = "80";
-      #     scope = "file";
-      #   };
-      # };
+        settings = {
+          colorcolumn = "80";
+          scope = "file";
+        };
+      };
     };
     autoCmd = [
       {
@@ -107,6 +107,24 @@
         action = '':r ! echo "date: $(date --iso)"<CR>'';
         options = {
           remap = true;
+        };
+      }
+
+      {
+        mode = "n";
+        key = "]b";
+        action = "<cmd>BufferLineCycleNext<cr>";
+        options = {
+          desc = "Cycle to next buffer";
+        };
+      }
+
+      {
+        mode = "n";
+        key = "[b";
+        action = "<cmd>BufferLineCyclePrev<cr>";
+        options = {
+          desc = "Cycle to previous buffer";
         };
       }
     ];

@@ -42,6 +42,9 @@
       # SSH Agent
       "modules/system/ssh.nix"
 
+      # Services
+      "modules/system/audio.nix"
+
       # Other system-related packages
       "modules/system/adb.nix"
       "modules/system/appimage.nix"
@@ -53,6 +56,9 @@
       "modules/system/tailscale.nix"
       "modules/system/tlp.nix"
       "modules/system/vaapi.nix"
+
+      # Fonts
+      "modules/system/fonts.nix"
 
       # Import all core modules
       "modules/core/default.nix"
@@ -152,11 +158,6 @@
         wayland.enable = true;
       };
       desktopManager.plasma6.enable = true;
-      # Enable sound
-      pipewire = {
-        enable = true;
-        pulse.enable = true;
-      };
       printing.enable = true;
       avahi = {
         enable = true;
@@ -168,7 +169,6 @@
     };
 
     security = {
-      rtkit.enable = true;
       apparmor = {
         enable = true;
         killUnconfinedConfinables = true;
