@@ -52,7 +52,7 @@
       "modules/system/stylix.nix"
       "modules/system/tailscale.nix"
       "modules/system/tlp.nix"
-      "modules/system/vaapi.nix"
+      # "modules/system/vaapi.nix"
 
       # Fonts
       "modules/system/fonts.nix"
