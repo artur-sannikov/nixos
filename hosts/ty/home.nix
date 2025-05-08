@@ -46,11 +46,5 @@
   #  vscode.enable = false;
   #};
 
-  stylix = {
-    enable = true;
-    image = ../../modules/system/scarlet_tree.png;
-    base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
-  };
-
   programs.home-manager.enable = true;
 }
