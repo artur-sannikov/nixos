@@ -195,6 +195,35 @@
             }
           ];
         };
+        ty = lib.nixosSystem {
+          inherit system pkgs;
+          specialArgs = {
+            flake-inputs = inputs;
+            inherit username;
+            inherit pkgs-stable;
+          };
+          modules = [
+            ./hosts/ty/configuration.nix
+            home-manager.nixosModules.home-manager
+            stylix.nixosModules.stylix
+            # catppuccin.nixosModules.catppuccin
+            {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.users."${username}".imports = [
+                nixvim.homeManagerModules.nixvim
+                ./hosts/ty/home.nix
+              ];
+
+              # Optionally, use home-manager.extraSpecialArgs to pass arguments to home.nix
+              home-manager.extraSpecialArgs = {
+                flake-inputs = inputs;
+                inherit pkgs-stable;
+                inherit username;
+              };
+            }
+          ];
+        };
         homelab-services = lib.nixosSystem {
           inherit system pkgs;
           specialArgs = {
@@ -209,20 +238,20 @@
           ];
         };
       };
-      homeConfigurations."ty" = home-manager.lib.homeManagerConfiguration {
-        inherit pkgs;
-        extraSpecialArgs = {
-          flake-inputs = inputs;
-          inherit username;
-          inherit pkgs-stable;
-          # inherit overlays;
-        };
-        modules = [
-          ./hosts/ty/home.nix
-          catppuccin.homeModules.catppuccin
-          stylix.homeManagerModules.stylix
-          nixvim.homeManagerModules.nixvim
-        ];
-      };
+      # homeConfigurations."ty" = home-manager.lib.homeManagerConfiguration {
+      #   inherit pkgs;
+      #   extraSpecialArgs = {
+      #     flake-inputs = inputs;
+      #     inherit username;
+      #     inherit pkgs-stable;
+      #     # inherit overlays;
+      #   };
+      #   modules = [
+      #     ./hosts/ty/home.nix
+      #     catppuccin.homeModules.catppuccin
+      #     stylix.homeManagerModules.stylix
+      #     nixvim.homeManagerModules.nixvim
+      #   ];
+      # };
     };
 }
