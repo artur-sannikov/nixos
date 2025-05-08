@@ -10,6 +10,7 @@
     cursor = {
       package = pkgs.capitaine-cursors-themed;
       name = "Capitaine Cursors (Nord)";
+      size = 32;
     };
     opacity = {
       terminal = 0.95;
