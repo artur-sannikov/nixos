@@ -26,6 +26,7 @@
 
     # Work GUI apps
     ../../modules/home-manager/gui/work.nix
+    ../../modules/home-manager/gui/alacritty.nix
 
     # ../../modules/home-manager/desktop_entries.nix
     ../../modules/home-manager/cli/nixvim.nix
