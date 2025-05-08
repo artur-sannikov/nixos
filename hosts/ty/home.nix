@@ -32,6 +32,8 @@
     ../../modules/home-manager/services/ollama.nix
     ../../modules/home-manager/sessionVariables.nix
     ../../modules/home-manager/gui/fonts.nix
+
+    ../../modules/home-manager/services/duplicacy-web.nix
   ];
 
   # Enable zsh
