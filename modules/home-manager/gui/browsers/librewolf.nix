@@ -4,18 +4,17 @@
     enable = true;
     package = pkgs.librewolf;
     settings = {
-      # "browser.toolbars.bookmarks.visibility" = "always";
-      # "privacy.clearOnShutdown.history" = true;
-      # "privacy.clearOnShutdown.cookies" = true;
-      # "privacy.clearOnShutdown.downloads" = true;
-      # "privacy.clearOnShutdown.openWindows" = true;
+      "browser.toolbars.bookmarks.visibility" = "always";
+      "privacy.clearOnShutdown.history" = true;
+      "privacy.clearOnShutdown.cookies" = true;
+      "privacy.clearOnShutdown.downloads" = true;
+      "privacy.clearOnShutdown.openWindows" = true;
 
-      # # Enable Firefox sync
-      # "identity.fxaccounts.enabled" = true;
+      # Enable Firefox sync
+      "identity.fxaccounts.enabled" = true;
 
-      # "network.trr.mode" = 2;
-      # "network.trr.uri" = "https://base.dns.mullvad.net/dns-query";
-      # };
+      "network.trr.mode" = 2;
+      "network.trr.uri" = "https://base.dns.mullvad.net/dns-query";
     };
   };
 }
