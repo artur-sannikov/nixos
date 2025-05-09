@@ -128,6 +128,9 @@
       # TODO: Move to separate module
       automatic-timezoned.enable = true;
       geoclue2.geoProviderUrl = "https://api.beacondb.net/v1/geolocate";
+
+      # Enable resolvectl for VPN (wg-quick)
+      resolved.enable = true;
     };
 
     security = {
