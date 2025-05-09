@@ -38,6 +38,9 @@
         Snippets = false;
       };
 
+      # Disable password save offer
+      OfferToSaveLogins = false;
+
       # https://mozilla.github.io/policy-templates/#dnsoverhttps
       DNSOverHTTPS = {
         Enabled = true;
