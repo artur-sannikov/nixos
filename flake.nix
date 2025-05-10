@@ -36,8 +36,8 @@
     # https://github.com/catppuccin/nix
     catppuccin = {
       #url = "github:catppuccin/nix";
-      url = "github:misilelab/nix";
-      #inputs.nixpkgs.follows = "nixpkgs";
+      url = "github:catppuccin/nix";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     # Catppuccin theme for VSCodium
