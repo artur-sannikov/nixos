@@ -45,6 +45,7 @@
       virtualenv
       wl-clipboard-rs
       yamlfmt
+      yamllint
       # flake-inputs.flox.packages.${pkgs.system}.flox
     ]
     ++ (with pkgs-stable; [
