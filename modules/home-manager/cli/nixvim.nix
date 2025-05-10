@@ -26,6 +26,8 @@
         };
       };
       quarto.enable = true;
+
+      # Formatters
       conform-nvim = {
         enable = true;
         settings = {
@@ -41,6 +43,17 @@
             nix = [ "nixfmt" ];
             yaml = [ "yamlfmt" ];
           };
+        };
+      };
+
+      lint = {
+        enable = true;
+        lintersByFt = {
+          ansible = [
+            "ansible_lint"
+            "yaml"
+          ];
+          yaml = [ "yamllint" ];
         };
       };
 
