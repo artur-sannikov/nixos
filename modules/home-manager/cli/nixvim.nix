@@ -20,6 +20,9 @@
           pylsp = {
             enable = true;
           };
+          ansible = {
+            enable = true;
+          };
         };
       };
       quarto.enable = true;
