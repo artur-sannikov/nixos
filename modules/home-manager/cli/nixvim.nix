@@ -20,7 +20,7 @@
           pylsp = {
             enable = true;
           };
-          ansible = {
+          ansiblels = {
             enable = true;
           };
         };
