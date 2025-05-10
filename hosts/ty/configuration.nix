@@ -19,7 +19,7 @@
       "modules/system/maintenence.nix"
 
       # Secure boot
-      # "modules/system/secureboot.nix"
+      "modules/system/secureboot.nix"
 
       # Zram swap
       "modules/system/zramswap.nix"

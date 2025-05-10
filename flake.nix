@@ -206,7 +206,8 @@
             ./hosts/ty/configuration.nix
             home-manager.nixosModules.home-manager
             stylix.nixosModules.stylix
-            # catppuccin.nixosModules.catppuccin
+            lanzaboote.nixosModules.lanzaboote
+
             {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
