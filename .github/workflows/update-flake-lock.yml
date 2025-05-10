@@ -15,7 +15,13 @@ jobs:
         uses: DeterminateSystems/nix-installer-action@v17
       - name: Prepare inputs to update
         id: inputs
-        run: "INPUTS=$(nix flake metadata --json | \\\njq -r '.locks.nodes.root.inputs | to_entries | \\ \nmap(select(.key != \"nix-secrets\")) | .[].key' | \\\nxargs)\necho \"inputs=$INPUTS\" >> $GITHUB_OUTPUT\n"
+        run: |
+          INPUTS=$(nix flake metadata --json | \
+            jq -r '.locks.nodes.root.inputs | to_entries | map(select(.key != "nix-secrets")) | .[].key' | \
+            xargs)
+          echo "inputs=$INPUTS" >> $GITHUB_OUTPUT
+
+          echo "Selected inputs: $INPUTS"
       - name: Update flake.lock file
         uses: DeterminateSystems/update-flake-lock@v24
         with:
