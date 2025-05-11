@@ -64,28 +64,11 @@
   config = {
     sshAgent.enable = true;
 
-    boot = {
-      loader = {
-        efi.canTouchEfiVariables = true;
-        grub = {
-          enable = true;
-          efiSupport = true;
-          devices = [ "nodev" ];
-          useOSProber = true;
-          splashImage = lib.mkForce null;
-          extraEntries = ''
-            menuentry "Fedora Bazzite" {
-              insmod part_gpt
-              insmod fat
-              insmod search_fs_uuid
-              insmod chain
-              search --fs-uuid --set=root AA9C-97F8
-              chainloader /EFI/fedora/shimx64.efi
-            }
-          '';
-        };
+    boot.loader = {
+      efi.canTouchEfiVariables = true;
+      systemd-boot = {
+        enable = true;
       };
-      kernelPackages = pkgs.linuxPackages_latest;
     };
 
     networking = {
