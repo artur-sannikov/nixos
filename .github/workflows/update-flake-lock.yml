@@ -16,10 +16,10 @@ jobs:
       - name: Prepare inputs to update
         id: inputs
         run: |
-          INPUTS=$(nix flake metadata --json | \
+          INPUTS="$(nix flake metadata --json | \
             jq -r '.locks.nodes.root.inputs | to_entries | map(select(.key != "nix-secrets")) | .[].key' | \
-            xargs)
-          echo "inputs=$INPUTS" >> $GITHUB_OUTPUT
+            xargs)"
+          echo "inputs=$INPUTS" >> "$GITHUB_OUTPUT"
 
           echo "Selected inputs: $INPUTS"
       - name: Update flake.lock file
