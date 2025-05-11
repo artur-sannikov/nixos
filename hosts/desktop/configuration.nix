@@ -68,6 +68,12 @@
       efi.canTouchEfiVariables = true;
       systemd-boot = {
         enable = true;
+        windows = {
+          "win11" = {
+            title = "Windows 11";
+            efiDeviceHandle = "FS1";
+          };
+        };
       };
     };
 
