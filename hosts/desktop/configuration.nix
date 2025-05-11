@@ -26,6 +26,7 @@
       "modules/system/virtualization/libvirtd.nix"
       "modules/system/virtualization/podman.nix"
       "modules/system/virtualization/singularity.nix"
+      "modules/system/virtualization/docker.nix"
 
       # System-wide packages
       "modules/system/packages.nix"
