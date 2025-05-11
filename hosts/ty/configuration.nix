@@ -108,6 +108,18 @@
       };
     };
 
+    fileSystems = {
+      "/mnt/nas/backup" = {
+        device = "192.168.20.5:/mnt/tank/personal/backups/ty";
+        fsType = "nfs";
+        options = [
+          "x-systemd.automount"
+          "nofail"
+          "noauto"
+          "_netdev"
+        ];
+      };
+    };
     # Disable service because it fails frequently at rebuild
     # https://discourse.nixos.org/t/nixos-rebuild-switch-upgrade-networkmanager-wait-online-service-failure/30746/2
     systemd.services.NetworkManager-wait-online.enable = false;
