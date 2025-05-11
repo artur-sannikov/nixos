@@ -151,19 +151,19 @@
     };
 
     # Secrets
-    # sops = {
-    #   secrets = {
-    #     work_passwd = {
-    #       neededForUsers = true;
-    #     };
-    #   };
-    # };
+    sops = {
+      secrets = {
+        work_passwd = {
+          neededForUsers = true;
+        };
+      };
+    };
 
     users = {
       mutableUsers = true;
       users.${username} = {
         isNormalUser = true;
-        # hashedPasswordFile = config.sops.secrets.artur_passwd.path;
+        hashedPasswordFile = config.sops.secrets.work_passwd.path;
         extraGroups = [
           "wheel"
           "input"
