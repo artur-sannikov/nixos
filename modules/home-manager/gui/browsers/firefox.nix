@@ -60,33 +60,19 @@
         FallBack = true;
       };
 
-      Preferences = {
-        # Warn on closing wit CTRL+Q
-        "browser.warnOnQuitShortcut" = {
-          Value = true;
-          Status = "locked";
-        };
-        # Warn when closing multiple tabs
-        "browser.tabs.warnOnClose" = {
-          Value = true;
-          Status = "locked";
-        };
-        # Privacy
-        "browser.sessionstore.privacy_level" = {
-          Value = 2;
-          Status = "locked";
-        };
-        "privacy.resistFingerprinting" = {
-          Value = true;
-          Status = "locked";
-        };
-        "privacy.firstparty.isolate" = {
-          Value = true;
-          Status = "locked";
-        };
-      };
-
+      Preferences =
+        builtins.mapAttrs
+          (name: value: {
+            Value = value;
+            Status = "locked";
+          })
+          {
+            "browser.warnOnQuitShortcut" = true;
+            "browser.tabs.warnOnClose" = true;
+            "browser.sessionstore.privacy_level" = 2;
+          };
     };
+
     profiles = {
       default-release = {
         extensions.packages = with flake-inputs.firefox-extensions.packages.${pkgs.system}; [
