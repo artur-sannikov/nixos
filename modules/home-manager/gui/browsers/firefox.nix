@@ -33,6 +33,7 @@
 
       EnableTrackingProtection = {
         Value = true;
+        Locked = true;
         Cryptomining = true;
         Fingerprinting = true;
         EmailTracking = true;
@@ -73,6 +74,14 @@
         # Privacy
         "browser.sessionstore.privacy_level" = {
           Value = 2;
+          Status = "locked";
+        };
+        "privacy.resistFingerprinting" = {
+          Value = true;
+          Status = "locked";
+        };
+        "privacy.firstparty.isolate" = {
+          Value = true;
           Status = "locked";
         };
       };
