@@ -14,6 +14,10 @@ in
 {
   programs.firefox = {
     enable = true;
+    languagePacks = [
+      "en-US"
+      "fi"
+    ];
     # https://mozilla.github.io/policy-templates/
     policies = {
       DontCheckDefaultBrowser = true;
