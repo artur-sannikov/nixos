@@ -1,8 +1,19 @@
 { pkgs, flake-inputs, ... }:
+let
+  firefoxProfileSettings = {
+    "privacy.clearOnShutdown.history" = true;
+    "privacy.clearOnShutdown.cookies" = true;
+    "privacy.clearOnShutdown.downloads" = true;
+    "privacy.clearOnShutdown.openWindows" = true;
+    "privacy.clearOnShutdown.offlineApps" = true;
+    "privacy.resistFingerprinting" = true;
+    "privacy.firsttparty.isolate" = true;
+    "geo.enabled" = false;
+  };
+in
 {
   programs.firefox = {
     enable = true;
-    package = pkgs.firefox-wayland;
     # https://mozilla.github.io/policy-templates/
     policies = {
       DontCheckDefaultBrowser = true;
@@ -79,19 +90,14 @@
           ublock-origin
           bitwarden
           libredirect
+          darkreader
         ];
         search = {
           force = true;
           default = "ddg";
           privateDefault = "ddg";
         };
-        settings = {
-          "privacy.clearOnShutdown.history" = true;
-          "privacy.clearOnShutdown.cookies" = true;
-          "privacy.clearOnShutdown.downloads" = true;
-          "privacy.clearOnShutdown.openWindows" = true;
-          "privacy.clearOnShutdown.offlineApps" = true;
-        };
+        settings = firefoxProfileSettings;
       };
       tidal-hifi = {
         isDefault = false;
@@ -114,13 +120,7 @@
           default = "ddg";
           privateDefault = "ddg";
         };
-        settings = {
-          "privacy.clearOnShutdown.history" = true;
-          "privacy.clearOnShutdown.cookies" = false;
-          "privacy.clearOnShutdown.downloads" = true;
-          "privacy.clearOnShutdown.openWindows" = false;
-          "privacy.clearOnShutdown.offlineApps" = true;
-        };
+        settings = firefoxProfileSettings;
       };
     };
   };
