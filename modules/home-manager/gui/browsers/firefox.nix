@@ -10,6 +10,16 @@
       DisableFirefoxStudies = true;
       DisablePocket = true;
 
+      # https://mozilla.github.io/policy-templates/#sanitizeonshutdown-all
+      # Delete all data on shutdown
+      SanitizeOnShutdown = true;
+
+      # https://mozilla.github.io/policy-templates/#httpsonlymode
+      HttpsOnlyMode = "force_enabled";
+
+      # https://mozilla.github.io/policy-templates/#disableformhistory
+      DisableFormHistory = true;
+
       DisplayBookmarksToolbar = "always";
       TranslateEnabled = true;
 
@@ -50,10 +60,21 @@
       };
 
       Preferences = {
-        browser.warnOnQuitShortcut = true;
-
+        # Warn on closing wit CTRL+Q
+        "browser.warnOnQuitShortcut" = {
+          Value = true;
+          Status = "locked";
+        };
+        # Warn when closing multiple tabs
+        "browser.tabs.warnOnClose" = {
+          Value = true;
+          Status = "locked";
+        };
         # Privacy
-        browser.sessionstore.privacy_level = 2;
+        "browser.sessionstore.privacy_level" = {
+          Value = 2;
+          Status = "locked";
+        };
       };
 
     };
@@ -91,6 +112,7 @@
         };
         extensions.packages = with flake-inputs.firefox-extensions.packages.${pkgs.system}; [
           ublock-origin
+          bitwarden
         ];
         search = {
           force = true;
