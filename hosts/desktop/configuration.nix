@@ -166,6 +166,11 @@
         wayland.enable = true;
       };
       desktopManager.plasma6.enable = true;
+
+      # Logitech
+      solaar = {
+        enable = true;
+      };
     };
 
     security = {

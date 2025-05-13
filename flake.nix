@@ -59,6 +59,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    solaar = {
+      url = "https://flakehub.com/f/Svenum/Solaar-Flake/*.tar.gz"; # For latest stable version
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     # flox = {
     #   url = "github:flox/flox";
     #   inputs.nixpkgs.follows = "nixpkgs";
@@ -94,6 +99,7 @@
       flatpaks,
       nixvim,
       lanzaboote,
+      solaar,
       ...
     }:
     let
@@ -177,6 +183,7 @@
             # so that home-manager configuration will be deployed automatically when executing `nixos-rebuild switch`
             home-manager.nixosModules.home-manager
             stylix.nixosModules.stylix
+            solaar.nixosModules.default
             catppuccin.nixosModules.catppuccin
             {
               home-manager.useGlobalPkgs = true;
