@@ -27,6 +27,7 @@
       stress-ng
       sanoid
       ssh-audit
+      usbutils
       unzip
       vim
       vulkan-tools
