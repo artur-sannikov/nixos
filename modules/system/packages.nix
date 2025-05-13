@@ -25,8 +25,10 @@
       pciutils
       python312
       stress-ng
+      samba
       sanoid
       ssh-audit
+      system-config-printer
       usbutils
       unzip
       vim
