@@ -52,7 +52,7 @@
       "modules/system/gaming.nix"
       "modules/system/mullvad.nix"
       "modules/system/nix.nix"
-      "modules/system/sancoid.nix"
+      "modules/system/sanoid.nix"
       "modules/system/stylix.nix"
       "modules/system/tailscale.nix"
       "modules/system/tlp.nix"
