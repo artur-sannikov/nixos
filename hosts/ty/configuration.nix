@@ -24,6 +24,9 @@
       # Zram swap
       "modules/system/zramswap.nix"
 
+      # System services
+      "modules/system/services.nix"
+
       # Virtualization
       "modules/system/virtualization/bottles.nix"
       "modules/system/virtualization/containers/default.nix"
