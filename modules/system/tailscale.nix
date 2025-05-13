@@ -4,6 +4,7 @@
     tailscale = {
       enable = true;
       package = pkgs.tailscale;
+      useRoutingFeatures = "client";
     };
   };
 }
