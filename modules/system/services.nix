@@ -12,7 +12,7 @@
         };
       };
     };
-    ntpd-rs = {
+    chrony = {
       enable = true;
     };
   };
