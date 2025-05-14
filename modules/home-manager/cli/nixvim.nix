@@ -129,6 +129,15 @@
         };
       };
     };
+
+    # Extra plugins
+    extraPlugins = with pkgs.vimPlugins; [
+      no-neck-pain-nvim
+    ];
+
+    # Extra configuration
+
+    extraConfigLua = builtins.readFile ./no-neck-pain.lua;
     autoCmd = [
       {
         command = "setfiletype json";
