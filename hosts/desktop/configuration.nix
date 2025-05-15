@@ -52,6 +52,7 @@
       "modules/system/openrgb.nix"
       "modules/system/stylix.nix"
       "modules/system/tailscale.nix"
+      "modules/system/ratbagd.nix"
 
       # Fonts
       "modules/system/fonts.nix"
