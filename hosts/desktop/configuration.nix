@@ -125,7 +125,6 @@
     # Set your time zone.
     time = {
       timeZone = "Europe/Helsinki";
-      hardwareClockInLocalTime = true;
     };
 
     # Mount NFS
