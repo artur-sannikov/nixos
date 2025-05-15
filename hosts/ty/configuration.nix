@@ -154,8 +154,6 @@
 
       # Enable resolvectl for VPN (wg-quick)
       resolved.enable = true;
-
-      solaar.enable = true;
     };
 
     security = {
