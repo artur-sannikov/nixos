@@ -1,8 +1,5 @@
 {
   services = {
-    fwupd = {
-      enable = true;
-    };
     samba = {
       enable = true;
       settings = {
@@ -11,9 +8,6 @@
           "workgroup" = "utu";
         };
       };
-    };
-    chrony = {
-      enable = true;
     };
   };
 }
