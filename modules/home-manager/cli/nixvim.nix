@@ -25,7 +25,33 @@
           };
         };
       };
-      quarto.enable = true;
+
+      quarto = {
+        enable = true;
+        settings = {
+          codeRunner = {
+            default_method = "molten";
+            enabled = true;
+          };
+          lspFeatures = {
+            enabled = true;
+            diagnostics = {
+              enabled = true;
+              triggers = [
+                "BufWritePost"
+              ];
+            };
+            chunks = "curly";
+            languages = [
+              "r"
+              "python"
+            ];
+            completion = {
+              enabled = true;
+            };
+          };
+        };
+      };
 
       # Formatters
       conform-nvim = {
