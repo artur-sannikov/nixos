@@ -161,6 +161,7 @@
             ./hosts/desktop/configuration.nix
             disko.nixosModules.disko
             home-manager.nixosModules.home-manager
+            lanzaboote.nixosModules.lanzaboote
             stylix.nixosModules.stylix
             solaar.nixosModules.default
             {

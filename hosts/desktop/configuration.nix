@@ -20,6 +20,9 @@
       # Maintenence
       "modules/system/maintenence.nix"
 
+      # Secure boot
+      "modules/system/secureboot.nix"
+
       # Virtualization
       "modules/system/virtualization/bottles.nix"
       "modules/system/virtualization/containers/default.nix"
