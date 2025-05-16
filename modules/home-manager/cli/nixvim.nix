@@ -203,6 +203,15 @@
           desc = "Cycle to previous buffer";
         };
       }
+
+      {
+        mode = "i";
+        key = "jj";
+        action = "<Esc>";
+        options = {
+          desc = "Exit insert mode";
+        };
+      }
     ];
     opts = {
       number = true;
