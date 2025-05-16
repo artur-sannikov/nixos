@@ -90,6 +90,7 @@ in
 
     profiles = {
       default-release = {
+        isDefault = true;
         extensions.packages = with flake-inputs.firefox-extensions.packages.${pkgs.system}; [
           ublock-origin
           bitwarden
@@ -128,4 +129,7 @@ in
       };
     };
   };
+  stylix.targets.firefox.profileNames = [
+    "default-release"
+  ];
 }
