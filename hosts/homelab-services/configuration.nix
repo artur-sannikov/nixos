@@ -70,7 +70,7 @@ in
   # Secrets
   sops = {
     secrets = {
-      renovate-forgejo-runner-token = { };
+      forgejo-runner-token = { };
     };
   };
 
