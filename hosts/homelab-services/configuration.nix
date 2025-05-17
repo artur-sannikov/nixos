@@ -19,7 +19,7 @@ in
   imports = lib.flatten [
     (map lib.custom.relativeToRoot [
       "hosts/homelab-services/disko.nix"
-      "modules/system/openssh.nix"
+      "modules/system/services/openssh.nix"
       "modules/system/maintenence.nix"
       "modules/core/default.nix"
     ])
