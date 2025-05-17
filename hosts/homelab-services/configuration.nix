@@ -114,7 +114,7 @@ in
         enable = true;
         name = "renovate";
         url = forgejoRootUrl;
-        tokenFile = config.sops.secrets.renovate-forgejo-runner-token.path;
+        tokenFile = config.sops.secrets.forgejo-runner-token.path;
         labels = [
           "debian-latest:docker://node:23-bookworm"
         ];
