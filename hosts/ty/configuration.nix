@@ -32,6 +32,7 @@
       "modules/system/services/mullvad.nix"
       "modules/system/services/tailscale.nix"
       "modules/system/services/tlp.nix"
+      "modules/system/services/samba.nix"
 
       # Virtualization
       "modules/system/virtualization/bottles.nix"
