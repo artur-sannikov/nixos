@@ -25,7 +25,33 @@
           };
         };
       };
-      quarto.enable = true;
+
+      quarto = {
+        enable = true;
+        settings = {
+          codeRunner = {
+            default_method = "molten";
+            enabled = true;
+          };
+          lspFeatures = {
+            enabled = true;
+            diagnostics = {
+              enabled = true;
+              triggers = [
+                "BufWritePost"
+              ];
+            };
+            chunks = "curly";
+            languages = [
+              "r"
+              "python"
+            ];
+            completion = {
+              enabled = true;
+            };
+          };
+        };
+      };
 
       # Formatters
       conform-nvim = {
@@ -175,6 +201,15 @@
         action = "<cmd>BufferLineCyclePrev<cr>";
         options = {
           desc = "Cycle to previous buffer";
+        };
+      }
+
+      {
+        mode = "i";
+        key = "jj";
+        action = "<Esc>";
+        options = {
+          desc = "Exit insert mode";
         };
       }
     ];

@@ -25,7 +25,14 @@
       "modules/system/zramswap.nix"
 
       # System services
-      "modules/system/services.nix"
+      "modules/system/services/syncthing.nix"
+      # SSH Agent
+      "modules/system/services/ssh.nix"
+      "modules/system/services/audio.nix"
+      "modules/system/services/mullvad.nix"
+      "modules/system/services/tailscale.nix"
+      "modules/system/services/tlp.nix"
+      "modules/system/services/samba.nix"
 
       # Virtualization
       "modules/system/virtualization/bottles.nix"
@@ -38,24 +45,13 @@
       # System-wide packages
       "modules/system/packages.nix"
 
-      # Syncthing
-      "modules/system/syncthing.nix"
-
-      # SSH Agent
-      "modules/system/ssh.nix"
-
-      # Services
-      "modules/system/audio.nix"
-
       # Other system-related packages
       "modules/system/adb.nix"
       "modules/system/appimage.nix"
-      "modules/system/mullvad.nix"
       "modules/system/nix.nix"
+
+      # Ricing
       "modules/system/stylix.nix"
-      "modules/system/tailscale.nix"
-      "modules/system/tlp.nix"
-      # "modules/system/vaapi.nix"
 
       # Fonts
       "modules/system/fonts.nix"
@@ -154,8 +150,6 @@
 
       # Enable resolvectl for VPN (wg-quick)
       resolved.enable = true;
-
-      solaar.enable = true;
     };
 
     security = {
