@@ -14,9 +14,9 @@
       hunspellDicts.en_GB-large
       inkscape
       kdePackages.filelight
+      kdePackages.okular
       libreoffice-qt6-fresh
       obsidian
-      okular
       protonvpn-gui
       rclone
       strawberry-qt6
