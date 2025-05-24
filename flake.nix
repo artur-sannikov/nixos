@@ -32,18 +32,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # Catppuccin theme
-    # https://github.com/catppuccin/nix
-    catppuccin = {
-      #url = "github:catppuccin/nix";
-      url = "github:catppuccin/nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    # Catppuccin theme for VSCodium
-    # https://github.com/catppuccin/vscode
-    #catppuccin-vsc.url = "https://flakehub.com/f/catppuccin/vscode/*.tar.gz";
-
     nixvim = {
       url = "github:nix-community/nixvim";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -94,8 +82,6 @@
       disko,
       home-manager,
       stylix,
-      catppuccin,
-      # catppuccin-vsc,
       flatpaks,
       nixvim,
       lanzaboote,
@@ -109,9 +95,6 @@
       # ========== Extend lib with lib.custom ==========
       lib = nixpkgs.lib.extend (self: super: { custom = import ./lib { inherit (nixpkgs) lib; }; });
 
-      # overlays = [
-      #   catppuccin-vsc.overlays.default
-      # ];
       pkgs = import nixpkgs {
         inherit system;
         config.allowUnfreePredicate =
@@ -149,8 +132,6 @@
             ./hosts/asus-laptop/configuration.nix
             disko.nixosModules.disko
             flatpaks.nixosModules.nix-flatpak
-            # make home-manager as a module of nixos
-            # so that home-manager configuration will be deployed automatically when executing `nixos-rebuild switch`
             home-manager.nixosModules.home-manager
             stylix.nixosModules.stylix
             lanzaboote.nixosModules.lanzaboote
@@ -179,12 +160,10 @@
           modules = [
             ./hosts/desktop/configuration.nix
             disko.nixosModules.disko
-            # make home-manager as a module of nixos
-            # so that home-manager configuration will be deployed automatically when executing `nixos-rebuild switch`
             home-manager.nixosModules.home-manager
+            lanzaboote.nixosModules.lanzaboote
             stylix.nixosModules.stylix
             solaar.nixosModules.default
-            catppuccin.nixosModules.catppuccin
             {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
@@ -223,7 +202,6 @@
                 ./hosts/ty/home.nix
               ];
 
-              # Optionally, use home-manager.extraSpecialArgs to pass arguments to home.nix
               home-manager.extraSpecialArgs = {
                 flake-inputs = inputs;
                 inherit pkgs-stable;
@@ -246,20 +224,5 @@
           ];
         };
       };
-      # homeConfigurations."ty" = home-manager.lib.homeManagerConfiguration {
-      #   inherit pkgs;
-      #   extraSpecialArgs = {
-      #     flake-inputs = inputs;
-      #     inherit username;
-      #     inherit pkgs-stable;
-      #     # inherit overlays;
-      #   };
-      #   modules = [
-      #     ./hosts/ty/home.nix
-      #     catppuccin.homeModules.catppuccin
-      #     stylix.homeManagerModules.stylix
-      #     nixvim.homeManagerModules.nixvim
-      #   ];
-      # };
     };
 }

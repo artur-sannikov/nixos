@@ -61,6 +61,7 @@ in
           plugins = [
             "direnv"
             "git"
+            "fzf"
             "toolbox"
             "z"
             "podman"

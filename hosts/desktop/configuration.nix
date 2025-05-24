@@ -20,6 +20,9 @@
       # Maintenence
       "modules/system/maintenence.nix"
 
+      # Secure boot
+      "modules/system/secureboot.nix"
+
       # Virtualization
       "modules/system/virtualization/bottles.nix"
       "modules/system/virtualization/containers/default.nix"
@@ -32,26 +35,29 @@
       "modules/system/packages.nix"
 
       # Syncthing
-      "modules/system/syncthing.nix"
+      "modules/system/services/syncthing.nix"
 
       # SSH Agent
-      "modules/system/ssh.nix"
+      "modules/system/services/ssh.nix"
 
       # Services
-      "modules/system/services.nix"
+      "modules/system/services/audio.nix"
+      "modules/system/services/chrony.nix"
+      "modules/system/services/fwupd.nix"
+      "modules/system/services/keyboard.nix"
+      "modules/system/services/ollama.nix"
+      "modules/system/services/ratbagd.nix"
+      "modules/system/services/tailscale.nix"
+      "modules/system/services/lact.nix"
+      "modules/system/services/openrgb.nix"
 
       # Other system-related packages
       "modules/system/adb.nix"
       "modules/system/appimage.nix"
       "modules/system/corectrl.nix"
       "modules/system/gaming.nix"
-      "modules/system/keyboard.nix"
-      "modules/system/lact.nix"
       "modules/system/nix.nix"
-      "modules/system/ollama.nix"
-      "modules/system/openrgb.nix"
       "modules/system/stylix.nix"
-      "modules/system/tailscale.nix"
 
       # Fonts
       "modules/system/fonts.nix"
@@ -64,14 +70,17 @@
   config = {
     sshAgent.enable = true;
 
-    boot.loader = {
-      efi.canTouchEfiVariables = true;
-      systemd-boot = {
-        enable = true;
-        windows = {
-          "win11" = {
-            title = "Windows 11";
-            efiDeviceHandle = "FS1";
+    boot = {
+      kernelPackages = pkgs.linuxPackages_latest;
+      loader = {
+        efi.canTouchEfiVariables = true;
+        systemd-boot = {
+          enable = true;
+          windows = {
+            "win11" = {
+              title = "Windows 11";
+              efiDeviceHandle = "FS1";
+            };
           };
         };
       };
@@ -122,7 +131,6 @@
     # Set your time zone.
     time = {
       timeZone = "Europe/Helsinki";
-      hardwareClockInLocalTime = true;
     };
 
     # Mount NFS
@@ -227,11 +235,6 @@
           };
         };
       };
-    };
-
-    catppuccin = {
-      enable = true;
-      flavor = "mocha";
     };
     # This option defines the first version of NixOS you have installed on this particular machine,
     # and is used to maintain compatibility with application data (e.g. databases) created on older NixOS versions.

@@ -38,24 +38,24 @@
       "modules/system/packages.nix"
 
       # Syncthing
-      "modules/system/syncthing.nix"
+      "modules/system/services/syncthing.nix"
 
       # SSH Agent
-      "modules/system/ssh.nix"
+      "modules/system/services/ssh.nix"
 
       # Services
-      "modules/system/audio.nix"
+      "modules/system/services/audio.nix"
+      "modules/system/services/mullvad.nix"
+      "modules/system/services/sanoid.nix"
+      "modules/system/services/tailscale.nix"
+      "modules/system/services/tlp.nix"
 
       # Other system-related packages
       "modules/system/adb.nix"
       "modules/system/appimage.nix"
       "modules/system/gaming.nix"
-      "modules/system/mullvad.nix"
       "modules/system/nix.nix"
-      "modules/system/sanoid.nix"
       "modules/system/stylix.nix"
-      "modules/system/tailscale.nix"
-      "modules/system/tlp.nix"
       "modules/system/vaapi.nix"
 
       # Fonts

@@ -19,7 +19,7 @@ in
   imports = lib.flatten [
     (map lib.custom.relativeToRoot [
       "hosts/homelab-services/disko.nix"
-      "modules/system/openssh.nix"
+      "modules/system/services/openssh.nix"
       "modules/system/maintenence.nix"
       "modules/core/default.nix"
     ])
@@ -70,7 +70,7 @@ in
   # Secrets
   sops = {
     secrets = {
-      renovate-forgejo-runner-token = { };
+      forgejo-runner-token = { };
     };
   };
 
@@ -114,7 +114,7 @@ in
         enable = true;
         name = "renovate";
         url = forgejoRootUrl;
-        tokenFile = config.sops.secrets.renovate-forgejo-runner-token.path;
+        tokenFile = config.sops.secrets.forgejo-runner-token.path;
         labels = [
           "debian-latest:docker://node:23-bookworm"
         ];
