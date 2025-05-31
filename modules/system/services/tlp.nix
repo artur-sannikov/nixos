@@ -28,7 +28,7 @@
         CPU_BOOST_ON_BAT = 0;
 
         # For all options see https://linrunner.de/tlp/settings/battery.html
-        START_CHARGE_THRESH_BAT0 = 40;
+        START_CHARGE_THRESH_BAT0 = 50;
         STOP_CHARGE_THRESH_BAT0 = 80;
 
         # Exclude Bluetooth devices from autosuspend
