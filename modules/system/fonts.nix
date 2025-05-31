@@ -1,7 +1,8 @@
 { pkgs, ... }:
 {
-  fonts.packages = [
-    pkgs.nerd-fonts.iosevka
-    pkgs.source-code-pro
+  fonts.packages = with pkgs; [
+    nerd-fonts.iosevka
+    source-code-pro
+    open-sans
   ];
 }

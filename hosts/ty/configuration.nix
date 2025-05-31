@@ -117,6 +117,17 @@
           "_netdev"
         ];
       };
+      "/mnt/my-passport-newton" = {
+        device = "/dev/disk/by-uuid/eb48c10f-643b-4c05-8b40-2341664535c2";
+        fsType = "btrfs";
+        options = [
+          "nofail"
+          "noauto"
+          "_netdev"
+          "user"
+        ];
+      };
+
     };
     # Disable service because it fails frequently at rebuild
     # https://discourse.nixos.org/t/nixos-rebuild-switch-upgrade-networkmanager-wait-online-service-failure/30746/2
