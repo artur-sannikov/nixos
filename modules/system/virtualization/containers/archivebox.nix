@@ -40,7 +40,8 @@ in
             SAVE_ARCHIVE_DOT_ORG = "True";
           };
           volumes = [
-            "/mnt/nas/archivebox:/data:rw"
+            "/home/${username}/docker/appdata/archivebox/data:/data"
+            "/mnt/nas/archivebox:/data/archive"
           ];
         };
       };
