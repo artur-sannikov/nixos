@@ -23,11 +23,11 @@ in
       backend = "docker";
       containers = {
         archivebox = {
-          image = "archivebox/archivebox:latest";
+          image = "docker.io/archivebox/archivebox:latest";
           ports = [
             "8000:8000"
           ];
-          extraOptions = [ "--security-opt no-new-privileges" ];
+          extraOptions = [ "--security-opt=no-new-privileges" ];
           environment = {
             ALLOWED_HOSTS = "*";
             CSRF_TRUSTED_ORIGINS = archiveboxUrl;
