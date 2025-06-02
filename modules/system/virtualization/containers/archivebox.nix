@@ -40,7 +40,7 @@ in
             SAVE_ARCHIVE_DOT_ORG = "True";
           };
           volumes = [
-            "/mnt/nas/archive:/data:rw"
+            "/mnt/nas/archivebox:/data:rw"
           ];
         };
       };
