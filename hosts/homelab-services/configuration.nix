@@ -14,6 +14,7 @@
 let
   forgejoRootUrl = "https://forgejo.${flake-inputs.nix-secrets.domain}";
   forgejoDomain = "git.${flake-inputs.nix-secrets.domain}";
+  archiveboxUrl = "https://archive.${flake-inputs.nix-secrets.domain}";
 in
 {
   imports = lib.flatten [
@@ -22,6 +23,7 @@ in
       "modules/system/services/openssh.nix"
       "modules/system/maintenence.nix"
       "modules/system/virtualization/docker.nix"
+      "modules/system/virtualization/containers/default.nix"
       "modules/core/default.nix"
     ])
   ];
@@ -137,6 +139,17 @@ in
   virtualisation = {
     podman = {
       enable = true;
+    };
+  };
+
+  # Enable Archivebox container
+  modules = {
+    system = {
+      virtualisation = {
+        containers = {
+          archivebox.enable = true;
+        };
+      };
     };
   };
 
