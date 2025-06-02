@@ -172,9 +172,14 @@ in
       forgejo = {
         isSystemUser = true;
       };
+      archivebox = {
+        isSystemUser = true;
+        group = "archivebox";
+      };
     };
     groups = {
       immich.gid = 1002;
+      archivebox.gid = 1004;
     };
   };
 
