@@ -60,6 +60,16 @@ in
         "_netdev"
       ];
     };
+    "/mnt/nas/archivebox" = {
+      device = "192.168.20.5:/mnt/tank/personal/archive";
+      fsType = "nfs";
+      options = [
+        "x-systemd.automount"
+        "nofail"
+        "noauto"
+        "_netdev"
+      ];
+    };
   };
 
   # Enable Flakes
