@@ -21,6 +21,7 @@ in
       "hosts/homelab-services/disko.nix"
       "modules/system/services/openssh.nix"
       "modules/system/maintenence.nix"
+      "modules/system/virtualization/docker.nix"
       "modules/core/default.nix"
     ])
   ];
@@ -123,7 +124,11 @@ in
   };
 
   # Required for Forgejo actions
-  virtualisation.podman.enable = true;
+  virtualisation = {
+    podman = {
+      enable = true;
+    };
+  };
 
   environment.systemPackages = with pkgs; [
     git
