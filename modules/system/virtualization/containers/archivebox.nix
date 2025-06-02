@@ -2,11 +2,13 @@
   config,
   lib,
   username,
+  flake-inputs,
   ...
 }:
 with lib;
 let
   cfg = config.modules.system.virtualisation.containers.archivebox;
+  archiveboxUrl = "https://archive.${flake-inputs.nix-secrets.domain}";
 in
 {
   options.modules.system.virtualisation.containers.archivebox = {
@@ -30,12 +32,12 @@ in
             ALLOWED_HOSTS = "*";
             CSRF_TRUSTED_ORIGINS = archiveboxUrl;
             PGID = "1004";
-            PUBLIC_INDEX = False;
-            PUBLIC_SNAPSHOTS = False;
-            PUBLIC_ADD_VIEW = False;
-            MEDIA_MAX_SIZE = 750 m;
-            TIMEOUT = 300;
-            SAVE_ARCHIVE_DOT_ORG = True;
+            PUBLIC_INDEX = "False";
+            PUBLIC_SNAPSHOTS = "False";
+            PUBLIC_ADD_VIEW = "False";
+            MEDIA_MAX_SIZE = "750m";
+            TIMEOUT = "300";
+            SAVE_ARCHIVE_DOT_ORG = "True";
           };
           volumes = [
             "/mnt/nas/archive:/data:rw"

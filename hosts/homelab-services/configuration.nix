@@ -14,7 +14,6 @@
 let
   forgejoRootUrl = "https://forgejo.${flake-inputs.nix-secrets.domain}";
   forgejoDomain = "git.${flake-inputs.nix-secrets.domain}";
-  archiveboxUrl = "https://archive.${flake-inputs.nix-secrets.domain}";
 in
 {
   imports = lib.flatten [
