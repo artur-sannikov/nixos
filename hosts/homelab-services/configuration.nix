@@ -176,6 +176,7 @@ in
       };
       archivebox = {
         isSystemUser = true;
+        uid = 1002;
         group = "archivebox";
       };
     };
