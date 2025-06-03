@@ -21,6 +21,8 @@ in
       "hosts/homelab-services/disko.nix"
       "modules/system/services/openssh.nix"
       "modules/system/maintenence.nix"
+      "modules/system/virtualization/docker.nix"
+      "modules/system/virtualization/containers/default.nix"
       "modules/core/default.nix"
     ])
   ];
@@ -51,6 +53,16 @@ in
   fileSystems = {
     "/mnt/nas/photos" = {
       device = "192.168.20.5:/mnt/tank/personal/photos";
+      fsType = "nfs";
+      options = [
+        "x-systemd.automount"
+        "nofail"
+        "noauto"
+        "_netdev"
+      ];
+    };
+    "/mnt/nas/archivebox" = {
+      device = "192.168.20.5:/mnt/tank/personal/archivebox";
       fsType = "nfs";
       options = [
         "x-systemd.automount"
@@ -116,14 +128,29 @@ in
         url = forgejoRootUrl;
         tokenFile = config.sops.secrets.forgejo-runner-token.path;
         labels = [
-          "debian-latest:docker://node:23-bookworm"
+          "debian-latest:docker://node:24-bookworm"
         ];
       };
     };
   };
 
   # Required for Forgejo actions
-  virtualisation.podman.enable = true;
+  virtualisation = {
+    podman = {
+      enable = true;
+    };
+  };
+
+  # Enable Archivebox container
+  modules = {
+    system = {
+      virtualisation = {
+        containers = {
+          archivebox.enable = true;
+        };
+      };
+    };
+  };
 
   environment.systemPackages = with pkgs; [
     git
@@ -157,9 +184,14 @@ in
       forgejo = {
         isSystemUser = true;
       };
+      archivebox = {
+        isSystemUser = true;
+        group = "archivebox";
+      };
     };
     groups = {
       immich.gid = 1002;
+      archivebox.gid = 1004;
     };
   };
 
