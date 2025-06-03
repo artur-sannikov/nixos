@@ -128,7 +128,7 @@ in
         url = forgejoRootUrl;
         tokenFile = config.sops.secrets.forgejo-runner-token.path;
         labels = [
-          "debian-latest:docker://node:23-bookworm"
+          "debian-latest:docker://node:24-bookworm"
         ];
       };
     };
