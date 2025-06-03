@@ -73,6 +73,7 @@ in
   sops = {
     secrets = {
       forgejo-runner-token = { };
+      forgejo-runner-main-token = { };
     };
   };
 
@@ -112,14 +113,25 @@ in
     };
     gitea-actions-runner = {
       package = pkgs.forgejo-actions-runner;
-      instances.default = {
-        enable = true;
-        name = "renovate";
-        url = forgejoRootUrl;
-        tokenFile = config.sops.secrets.forgejo-runner-token.path;
-        labels = [
-          "debian-latest:docker://node:24-bookworm"
-        ];
+      instances = {
+        default = {
+          enable = true;
+          name = "renovate";
+          url = forgejoRootUrl;
+          tokenFile = config.sops.secrets.forgejo-runner-token.path;
+          labels = [
+            "debian-latest:docker://node:24-bookworm"
+          ];
+        };
+        main = {
+          enable = true;
+          name = "main";
+          url = forgejoRootUrl;
+          tokenFile = config.sops.secrets.forgejo-runner-main-token.path;
+          labels = [
+            "debian-latest:docker://node:24-bookworm"
+          ];
+        };
       };
     };
   };
