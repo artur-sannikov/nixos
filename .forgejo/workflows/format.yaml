@@ -11,6 +11,7 @@ jobs:
     container: nixpkgs/nix-flakes:latest-x86_64-linux
     steps:
       - name: Install Node.js in environment
-        run: nix profile install nixpkgs#nodejs_24
+        run: |
+          nix profile install nixpkgs#nodejs_24
       - uses: actions/checkout@v4
       - run: nix run nixpkgs#nixfmt-tree -- --ci .
