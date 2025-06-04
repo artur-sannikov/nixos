@@ -1,0 +1,37 @@
+name: Flake lock updater
+# See https://github.com/jnsgruk/flypi/actions/workflows/lock-updater.yaml
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 0 * * 6"
+jobs:
+  lock-updater:
+    name: Flake lock updater
+    runs-on: debian-latest
+    container: nixpkgs/nix-flakes:latest-x86_64-linux
+    steps:
+      - name: Install required packages
+        run: |
+          nix profile install nixpkgs#nodejs_24 nixpkgs#findutils nixpkgs#jq
+      - name: Checkout flake
+        uses: actions/checkout@v4
+      - name: Prepare inputs to update
+        id: inputs
+        run: |
+          INPUTS="$(nix flake metadata --json | \
+            jq -r '.locks.nodes.root.inputs | to_entries | \
+            map(select(.key != "nix-secrets")) | .[].key' | \
+            xargs)"
+          echo "inputs=$INPUTS" >> "$GITHUB_OUTPUT"
+          echo "Selected inputs: $INPUTS"
+      - name: Update flake.lock
+        env:
+          INPUTS: ${{ steps.inputs.outputs.inputs }}
+        run: |
+          git config --global user.name "forgejo-actions"
+          git config --global user.email "actions@localhost"
+          nix flake update $INPUTS
+          if [[ `git status --porcelain` ]]; then
+            git commit -am "chore: update flake.lock"
+            git push
+          fi
