@@ -6,7 +6,7 @@ on:
       - devel
 jobs:
   test:
-    runs-on: debian-latest
+    runs-on: ubuntu-latest
     container: nixpkgs/nix-flakes:latest-x86_64-linux
     steps:
       - name: Install Node.js in environment
