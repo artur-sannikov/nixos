@@ -21,6 +21,8 @@
 
   # Import modules
   imports = [
+    ../../modules/home-manager/core/sops.nix
+
     # CLI apps
     ../../modules/home-manager/cli/default.nix
 
