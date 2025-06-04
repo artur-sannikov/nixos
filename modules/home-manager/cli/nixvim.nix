@@ -154,6 +154,9 @@
           scope = "file";
         };
       };
+      autoclose = {
+        enable = true;
+      };
     };
 
     # Extra plugins
