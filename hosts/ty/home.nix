@@ -30,7 +30,6 @@
     ../../modules/home-manager/gui/work.nix
     ../../modules/home-manager/gui/alacritty.nix
 
-    # ../../modules/home-manager/desktop_entries.nix
     ../../modules/home-manager/cli/nixvim.nix
     ../../modules/home-manager/services/ollama.nix
     ../../modules/home-manager/sessionVariables.nix
@@ -41,14 +40,6 @@
 
   # Enable zsh
   zsh.enable = true;
-
-  # Enable Catppuccin theme globally
-  #catppuccin = {
-  #  enable = true;
-  #  flavor = "mocha";
-  #  accent = "blue";
-  #  vscode.enable = false;
-  #};
 
   programs.home-manager.enable = true;
 }
