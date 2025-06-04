@@ -19,8 +19,7 @@ jobs:
         id: inputs
         run: |
           INPUTS="$(nix flake metadata --json | \
-            jq -r '.locks.nodes.root.inputs | to_entries | \
-            map(select(.key != "nix-secrets")) | .[].key' | \
+            jq -r '.locks.nodes.root.inputs | to_entries | map(select(.key != "nix-secrets")) | .[].key' | \
             xargs)"
           echo "inputs=$INPUTS" >> "$GITHUB_OUTPUT"
           echo "Selected inputs: $INPUTS"
