@@ -5,14 +5,11 @@ on:
       - main
       - devel
 jobs:
-  format:
-    name: Check formatting
+  test:
     runs-on: debian-latest
+    container: nixpkgs/nix-flakes:latest-x86_64-linux
     steps:
+      - name: Install Node.js in environment
+        run: nix profile install nixpkgs#nodejs_24
       - uses: actions/checkout@v4
-      - name: Install nix
-        uses: DeterminateSystems/nix-installer-action@v17
-        with:
-          extra-conf: |
-            auto-optimise-store = true
-      - run: nix run nixpkgs#nixfmt-tree -- --ci --fail-on-change .
+      - run: nix run nixpkgs#nixfmt-tree -- --ci .
