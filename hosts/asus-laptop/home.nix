@@ -1,3 +1,4 @@
+{ lib, ... }:
 {
   home = {
     username = "artur";
