@@ -1,4 +1,4 @@
-{ username, ... }:
+{ username, lib, ... }:
 {
   home = {
     username = "${username}";
@@ -26,22 +26,26 @@
   # ];
 
   # Import modules
-  imports = [
-    # CLI programs
-    ../../modules/home-manager/cli/default.nix
+  imports = lib.flatten [
+    (map lib.custom.relativeToRoot [
+      "modules/home-manager/core/sops.nix"
 
-    # GUI programs
-    ../../modules/home-manager/gui/common.nix
-    ../../modules/home-manager/gui/personal.nix
-    ../../modules/home-manager/gui/alacritty.nix
+      # CLI programs
+      "modules/home-manager/cli/default.nix"
 
-    # Systemd services
-    ../../modules/home-manager/services/kdeconnect.nix
-    ../../modules/home-manager/services/duplicacy-web.nix
+      # GUI programs
+      "modules/home-manager/gui/common.nix"
+      "modules/home-manager/gui/personal.nix"
+      "modules/home-manager/gui/alacritty.nix"
 
-    # Other home-manager configuration
-    ../../modules/home-manager/sessionVariables.nix
-    ../../modules/home-manager/desktop_entries.nix
+      # Systemd services
+      "modules/home-manager/services/kdeconnect.nix"
+      "modules/home-manager/services/duplicacy-web.nix"
+
+      # Other home-manager configuration
+      "modules/home-manager/sessionVariables.nix"
+      "modules/home-manager/desktop_entries.nix"
+    ])
   ];
 
   # Enable zsh

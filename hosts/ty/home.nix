@@ -2,6 +2,7 @@
   flake-inputs,
   pkgs,
   username,
+  lib,
   ...
 }:
 
@@ -20,35 +21,28 @@
   };
 
   # Import modules
-  imports = [
-    ../../modules/home-manager/core/sops.nix
+  imports = lib.flatten [
+    (map lib.custom.relativeToRoot [
+      "modules/home-manager/core/sops.nix"
 
-    # CLI apps
-    ../../modules/home-manager/cli/default.nix
+      # CLI apps
+      "modules/home-manager/cli/default.nix"
 
-    # Work GUI apps
-    ../../modules/home-manager/gui/work.nix
-    ../../modules/home-manager/gui/alacritty.nix
+      # Work GUI apps
+      "modules/home-manager/gui/work.nix"
+      "modules/home-manager/gui/alacritty.nix"
 
-    # ../../modules/home-manager/desktop_entries.nix
-    ../../modules/home-manager/cli/nixvim.nix
-    ../../modules/home-manager/services/ollama.nix
-    ../../modules/home-manager/sessionVariables.nix
-    ../../modules/home-manager/gui/fonts.nix
+      "modules/home-manager/cli/nixvim.nix"
+      "modules/home-manager/services/ollama.nix"
+      "modules/home-manager/sessionVariables.nix"
+      "modules/home-manager/gui/fonts.nix"
 
-    ../../modules/home-manager/services/duplicacy-web.nix
+      "modules/home-manager/services/duplicacy-web.nix"
+    ])
   ];
 
   # Enable zsh
   zsh.enable = true;
-
-  # Enable Catppuccin theme globally
-  #catppuccin = {
-  #  enable = true;
-  #  flavor = "mocha";
-  #  accent = "blue";
-  #  vscode.enable = false;
-  #};
 
   programs.home-manager.enable = true;
 }
