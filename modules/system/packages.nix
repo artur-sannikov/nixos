@@ -21,6 +21,7 @@
       lm_sensors
       micromamba
       nano
+      nix-init
       nmap
       pciutils
       python312
