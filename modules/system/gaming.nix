@@ -24,6 +24,9 @@ in
     programs = {
       steam = {
         enable = true;
+        extraCompatPackages = with pkgs; [
+          steamtinkerlaunch
+        ];
         package = pkgs.steam.override {
           extraLibraries = pkgs: [ pkgs.xorg.libxcb ];
           extraPkgs =
@@ -45,10 +48,6 @@ in
       };
       gamescope = {
         enable = true;
-        env = {
-          DXVK_HDR = "1";
-          ENABLE_GAMESCOPE_WSI = "1";
-        };
       };
       gamemode = {
         enable = true;
@@ -57,7 +56,9 @@ in
     environment = {
       systemPackages = with pkgs; [
         mangohud
-        protonup
+        protonup-ng
+        protonup-qt
+        protontricks
         limo # Mod manager
         flake-inputs.umu.packages.${pkgs.system}.umu-launcher
         (lutris.override {
