@@ -6,21 +6,28 @@
     ];
     interval = "hourly";
     templates = {
-      "backups" = {
-        "hourly" = 24;
-        "daily" = 7;
-        "monthly" = 2;
+      "backup" = {
+        "hourly" = 36;
+        "daily" = 30;
+        "monthly" = 3;
         "yearly" = 0;
         "autosnap" = true;
         "autoprune" = true;
       };
+      "none" = {
+        "autosnap" = false;
+        "autoprune" = false;
+      };
     };
     datasets = {
-      "home/Documents" = {
-        useTemplate = [ "backups" ];
+      "zroot/home" = {
+        useTemplate = [ "backup" ];
       };
-      "home/Desktop" = {
-        useTemplate = [ "backups" ];
+      "zroot/home/Downloads" = {
+        useTemplate = [ "none" ];
+      };
+      "zroot/home/zfs_exclude" = {
+        useTemplate = [ "none" ];
       };
     };
   };
