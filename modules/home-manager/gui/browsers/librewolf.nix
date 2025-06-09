@@ -15,6 +15,8 @@
 
       "network.trr.mode" = 2;
       "network.trr.uri" = "https://base.dns.mullvad.net/dns-query";
+
+      "security.ssl.enable_ocsp_must_staple" = false;
     };
   };
 }
