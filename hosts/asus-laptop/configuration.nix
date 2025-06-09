@@ -47,6 +47,7 @@
       "modules/system/services/audio.nix"
       "modules/system/services/mullvad.nix"
       "modules/system/services/sanoid.nix"
+      "modules/system/services/syncoid.nix"
       "modules/system/services/tailscale.nix"
       "modules/system/services/tlp.nix"
 
