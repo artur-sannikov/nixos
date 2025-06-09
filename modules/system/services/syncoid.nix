@@ -9,6 +9,12 @@
       };
     };
   };
+
+  users.users.syncoid = {
+    isSystemUser = true;
+    createHome = false;
+    home = "/var/lib/syncoid";
+  };
   services.syncoid = {
     enable = true;
     sshKey = config.sops.secrets."keys/ssh/syncoid-ssh-key".path;
