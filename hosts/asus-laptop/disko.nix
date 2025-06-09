@@ -69,10 +69,6 @@
             type = "zfs_fs";
             mountpoint = "/home/${username}/Desktop";
           };
-          "home/llms" = {
-            type = "zfs_fs";
-            mountpoint = "/home/${username}/llms";
-          };
           podman = {
             type = "zfs_fs";
             mountpoint = "/var/lib/containers/storage";
