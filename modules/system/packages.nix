@@ -25,6 +25,7 @@
       nmap
       pciutils
       python312
+      pv
       stress-ng
       samba
       sanoid
