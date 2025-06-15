@@ -24,6 +24,7 @@
       nix-init
       nmap
       pciutils
+      pre-commit
       python312
       pv
       stress-ng
