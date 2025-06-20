@@ -30,7 +30,7 @@
     podlet
     python312Packages.huggingface-hub
     python312Packages.pip
-    python312Packages.radian
+    radian
     sass
     screen
     shellcheck
