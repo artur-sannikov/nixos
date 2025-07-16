@@ -108,6 +108,7 @@
             "steam"
             "steam-unwrapped"
             "veracrypt"
+            "via"
             "zoom"
           ];
       };
