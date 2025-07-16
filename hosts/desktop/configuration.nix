@@ -185,9 +185,9 @@
       desktopManager.plasma6.enable = true;
 
       # Logitech
-      solaar = {
-        enable = true;
-      };
+      # solaar = {
+      #   enable = true;
+      # };
     };
 
     security = {
