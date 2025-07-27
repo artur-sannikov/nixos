@@ -47,10 +47,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    solaar = {
-      url = "https://flakehub.com/f/Svenum/Solaar-Flake/*.tar.gz"; # For latest stable version
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    # solaar = {
+    #   url = "https://flakehub.com/f/Svenum/Solaar-Flake/*.tar.gz"; # For latest stable version
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
 
     # flox = {
     #   url = "github:flox/flox";
@@ -85,7 +85,7 @@
       flatpaks,
       nixvim,
       lanzaboote,
-      solaar,
+      # solaar,
       ...
     }:
     let
@@ -108,6 +108,7 @@
             "steam"
             "steam-unwrapped"
             "veracrypt"
+            "via"
             "zoom"
           ];
       };
@@ -163,7 +164,7 @@
             home-manager.nixosModules.home-manager
             lanzaboote.nixosModules.lanzaboote
             stylix.nixosModules.stylix
-            solaar.nixosModules.default
+            # solaar.nixosModules.default
             {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
