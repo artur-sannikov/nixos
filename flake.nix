@@ -60,7 +60,7 @@
     # Motherboard support in latest experimental
     # Update to stable release later
     openrgb-experimental = {
-      url = "gitlab:CalcProgrammer1/OpenRGB";
+      url = "gitlab:CalcProgrammer1/OpenRGB?rev=12a3b1f83e5e59ab508a032a674ff039db1b802c";
       flake = false;
     };
 
