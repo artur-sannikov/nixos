@@ -1,7 +1,7 @@
 {
   services = {
     chrony = {
-      enable = true;
+      enable = false;
     };
   };
 }
