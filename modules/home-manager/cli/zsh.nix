@@ -24,7 +24,6 @@ in
           enable = true;
         };
         history = {
-          path = "$HOME/.histfile";
           save = 1000;
           size = 1000;
           expireDuplicatesFirst = true;
