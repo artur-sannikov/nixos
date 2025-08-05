@@ -78,6 +78,52 @@ in
         shortPath = true;
         format = "%B %* [%?N?%N / ?%S]";
       };
+      binds = [
+        {
+          key = "\\CD";
+          map = [
+            "attach"
+            "index"
+            "pager"
+          ];
+          action = "next-page";
+        }
+        {
+          key = "\\CU";
+          map = [
+            "attach"
+            "index"
+            "pager"
+          ];
+          action = "previous-page";
+        }
+        {
+          key = "g";
+          map = [ "pager" ];
+          action = "top";
+        }
+        {
+          key = "G";
+          map = [ "pager" ];
+          action = "bottom";
+        }
+        {
+          key = "g";
+          map = [
+            "attach"
+            "index"
+          ];
+          action = "first-entry";
+        }
+        {
+          key = "G";
+          map = [
+            "attach"
+            "index"
+          ];
+          action = "last-entry";
+        }
+      ];
       settings = {
         mailcap_path = toString mailcap;
       };
@@ -124,10 +170,7 @@ in
         set send_charset = "utf-8:iso-8859-1:us-ascii" # send in utf-8
 
         #sidebar
-        set sidebar_visible # comment to disable sidebar by default
-        set sidebar_short_path
         set sidebar_folder_indent
-        set sidebar_format = "%B %* [%?N?%N / ?%S]"
         set mail_check_stats
         bind index,pager \CJ sidebar-prev
         bind index,pager \CK sidebar-next
