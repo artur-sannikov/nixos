@@ -10,7 +10,6 @@
     ./gnupg.nix
     ./media.nix
     ./nix.nix
-    ./nixvim.nix
     ./packages.nix
     ./starship.nix
     ./tmux.nix

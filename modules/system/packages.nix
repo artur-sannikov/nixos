@@ -6,6 +6,7 @@
     [
       nfs-utils
       aha
+      air-formatter
       clinfo
       dig
       dmidecode
@@ -32,6 +33,8 @@
       sanoid
       ssh-audit
       system-config-printer
+      typstyle
+      nixd
       usbutils
       unzip
       vim

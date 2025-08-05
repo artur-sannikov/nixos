@@ -17,6 +17,7 @@
     fd
     devenv
     distrobox
+    hadolint
     gnumake
     isort
     jdk
@@ -28,6 +29,7 @@
     nextflow
     opentofu
     podlet
+    prettier
     python312Packages.huggingface-hub
     python312Packages.pip
     radian
