@@ -14,12 +14,13 @@ let
   '';
 in
 {
-  programs.neomutt.enable = true;
   sops = {
     secrets = {
       utu_password = { };
     };
   };
+
+  # Email accounts
   accounts = {
     email = {
       accounts = {
@@ -56,6 +57,8 @@ in
       };
     };
   };
+
+  # Enable email clients
   programs = {
     thunderbird = {
       enable = true;
@@ -67,6 +70,7 @@ in
       };
     };
     neomutt = {
+    enable = true;
       vimKeys = false;
       editor = "nano";
       sidebar = {

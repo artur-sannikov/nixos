@@ -43,7 +43,7 @@
     ./browsers/brave.nix
     ./browsers/mullvad-browser.nix
     ./vscodium.nix
-    ./thunderbird.nix
+    ./email.nix
     ./mpv.nix
   ];
 }
