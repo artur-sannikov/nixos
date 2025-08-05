@@ -70,7 +70,7 @@ in
       };
     };
     neomutt = {
-    enable = true;
+      enable = true;
       vimKeys = false;
       editor = "nano";
       sidebar = {
@@ -122,6 +122,17 @@ in
         set reply_regexp = "^(([Rr][Ee]?(\[[0-9]+\])?: *)?(\[[^]]+\] *)?)*"
         set quote_regexp = "^( {0,4}[>|:#%]| {0,4}[a-z0-9]+[>|]+)+"
         set send_charset = "utf-8:iso-8859-1:us-ascii" # send in utf-8
+
+        #sidebar
+        set sidebar_visible # comment to disable sidebar by default
+        set sidebar_short_path
+        set sidebar_folder_indent
+        set sidebar_format = "%B %* [%?N?%N / ?%S]"
+        set mail_check_stats
+        bind index,pager \CJ sidebar-prev
+        bind index,pager \CK sidebar-next
+        bind index,pager \CE sidebar-open
+        bind index,pager B sidebar-toggle-visible
       '';
     };
   };
