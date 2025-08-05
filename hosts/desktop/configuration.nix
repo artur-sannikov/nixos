@@ -62,6 +62,9 @@
       # Fonts
       "modules/system/fonts.nix"
 
+      # locale
+      "modules/system/locale.nix"
+
       # Import all core modules
       "modules/core/default.nix"
     ])
@@ -85,13 +88,6 @@
         };
       };
     };
-
-    i18n.defaultLocale = "en_US.UTF-8";
-
-    i18n.supportedLocales = [
-      "en_US.UTF-8/UTF-8"
-      "fi_FI.UTF-8/UTF-8"
-    ];
 
     networking = {
       hostName = "desktop";
