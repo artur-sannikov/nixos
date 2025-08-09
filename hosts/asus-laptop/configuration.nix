@@ -62,6 +62,9 @@
       # Fonts
       "modules/system/fonts.nix"
 
+      # locale
+      "modules/system/locale.nix"
+
       # Import all core modules
       "modules/core/default.nix"
     ])
