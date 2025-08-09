@@ -13,18 +13,6 @@
     stateVersion = "24.05";
   };
 
-  # The home.packages option allows you to install Nix packages into your
-  # environment.
-  # home.packages = with pkgs; [
-  #   mat2
-  #   devbox
-  #   gnumake
-  #   quarto
-  #   nixfmt-rfc-style
-  #   qt6.qtwayland
-  #   kdePackages.kate
-  # ];
-
   # Import modules
   imports = lib.flatten [
     (map lib.custom.relativeToRoot [
@@ -32,6 +20,7 @@
 
       # CLI programs
       "modules/home-manager/cli/default.nix"
+      "modules/home-manager/cli/nixvim/default.nix"
 
       # GUI programs
       "modules/home-manager/gui/common.nix"
