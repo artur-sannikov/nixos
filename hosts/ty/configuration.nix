@@ -30,6 +30,7 @@
       "modules/system/services/ssh.nix"
       "modules/system/services/audio.nix"
       "modules/system/services/mullvad.nix"
+      "modules/system/services/fwupd.nix"
       "modules/system/services/tailscale.nix"
       "modules/system/services/tlp.nix"
       "modules/system/services/samba.nix"
