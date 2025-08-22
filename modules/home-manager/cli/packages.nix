@@ -1,7 +1,6 @@
 {
   pkgs,
   pkgs-stable,
-  # flake-inputs,
   ...
 }:
 {
@@ -45,6 +44,7 @@
     typst
     virtualenv
     wl-clipboard-rs
+    urlscan
     yamlfmt
     yamllint
     zulip
