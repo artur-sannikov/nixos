@@ -19,4 +19,5 @@
       "security.ssl.enable_ocsp_must_staple" = false;
     };
   };
+  stylix.targets.librewolf.profileNames = [ "default" ];
 }
