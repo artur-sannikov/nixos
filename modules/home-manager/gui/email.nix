@@ -271,4 +271,8 @@ in
       '';
     };
   };
+  # Contacts
+  programs.abook = {
+    enable = true;
+  };
 }
