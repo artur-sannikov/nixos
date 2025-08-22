@@ -6,11 +6,11 @@
 }:
 let
   utu_email = "${flake-inputs.nix-secrets.utu_email}";
-  mailcap = pkgs.writeText "mailcap" ''
-    text/html; firefox %s; test=test -n "$display"; needsterminal;
-    text/html; lynx -assume_charset=%{charset} -display_charset=utf-8 -dump -width=1024 %s; nametemplate=%s.html; copiousoutput;
+  mailcap_file = pkgs.writeText "mailcap" ''
+    text/html; firefox %s; test=test -n "$display"; needsterminal
+    text/html; lynx -assume_charset=%{charset} -display_charset=utf-8 -dump -width=1024 %s; nametemplate=%s.html; copiousoutput
     text/plain; cat %s; copiousoutput
-    application/pdf; firefox %s; test=test -n "$display"; needsterminal;
+    application/pdf; ${pkgs.kdePackages.okular}/bin/okular %s;
   '';
 in
 {
@@ -72,7 +72,7 @@ in
     neomutt = {
       enable = true;
       vimKeys = false;
-      editor = "nano";
+      editor = "nvim";
       sidebar = {
         enable = true;
         shortPath = true;
@@ -123,9 +123,15 @@ in
           ];
           action = "last-entry";
         }
+        # View attachments
+        {
+          key = "<return>";
+          map = "attach";
+          action = "view-mailcap";
+        }
       ];
       settings = {
-        mailcap_path = toString mailcap;
+        mailcap_path = "${mailcap_file}";
       };
       # Config reference: https://seniormars.com/posts/neomutt/
       extraConfig = ''
