@@ -10,6 +10,9 @@
         find_files = {
           theme = "ivy";
         };
+        git_commits = {
+          theme = "ivy";
+        };
       };
     };
     keymaps = {
