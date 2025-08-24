@@ -29,7 +29,7 @@ in
           address = utu_email;
           userName = address;
           realName = "Artur Sannikov";
-          passwordCommand = " ${pkgs.coreutils}/bin/cat ${config.sops.secrets.utu_password.path}";
+          passwordCommand = "${pkgs.coreutils}/bin/cat ${config.sops.secrets.utu_password.path}";
           imap = {
             host = "mail.utu.fi";
             port = 993;
@@ -53,6 +53,18 @@ in
             enable = true;
             mailboxType = "imap";
           };
+          mbsync = {
+            enable = true;
+            create = "both";
+            expunge = "both";
+            extraConfig.account = {
+              PassCmd = "${pkgs.coreutils}/bin/cat ${config.sops.secrets.utu_password.path}";
+              AuthMechs = "LOGIN";
+              Host = "mail.utu.fi";
+              TLSType = "IMAPS";
+              Timeout = 60;
+            };
+          };
         };
       };
     };
@@ -68,6 +80,9 @@ in
           isDefault = true;
         };
       };
+    };
+    mbsync = {
+      enable = true;
     };
     neomutt = {
       enable = true;
