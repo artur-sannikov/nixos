@@ -193,6 +193,18 @@ in
         set reverse_name                     # reply as whomever it was to
         set include                          # include message in replies
         set text_flowed=yes                  # correct indentation for plain text
+        # mbsync/isync integration
+        # TODO The settings below are specific for Outlook
+        # neomutt with nix has extraConfig option that can change
+        # settings per account
+        set mbox_type = Maildir
+        set folder = "~/Maildir/work"
+        set spoolfile = "+Inbox"
+        set postponed = "+Drafts"
+        set record = "+Sent"
+        set trash = "+Trash"
+
+
         unset sig_dashes                     # no dashes before sig
         unset markers
 
