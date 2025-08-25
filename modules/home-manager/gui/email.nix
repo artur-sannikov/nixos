@@ -203,7 +203,11 @@ in
         set postponed = "+Drafts"
         set record = "+Sent"
         set trash = "+Trash"
+        mailboxes =Inbox =Drafts =Sent =Trash
 
+        # Caching
+        set header_cache     = ~/.cache/neomutt/cache/  # where to store headers
+        set message_cachedir = ~/.cache/neomutt/cache/  # where to store bodies
 
         unset sig_dashes                     # no dashes before sig
         unset markers
