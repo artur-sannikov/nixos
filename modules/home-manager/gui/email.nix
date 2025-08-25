@@ -51,7 +51,7 @@ in
           };
           neomutt = {
             enable = true;
-            mailboxType = "imap";
+            mailboxType = "maildir";
           };
           mbsync = {
             enable = true;
