@@ -51,6 +51,7 @@
       "modules/system/services/syncoid.nix"
       "modules/system/services/tailscale.nix"
       "modules/system/services/tlp.nix"
+      "modules/system/services/mbsyncd.nix"
 
       # Other system-related packages
       "modules/system/adb.nix"
