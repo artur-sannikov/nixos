@@ -50,6 +50,7 @@
       "modules/system/services/tailscale.nix"
       "modules/system/services/lact.nix"
       "modules/system/services/openrgb.nix"
+      "modules/system/services/mbsyncd.nix"
 
       # Other system-related packages
       "modules/system/adb.nix"
