@@ -179,7 +179,7 @@ in
         set imap_keepalive = 900             # 15 minutes
         set sleep_time = 0                   # don't sleep when idle
         set wait_key = no		     # mutt won't ask "press key to continue"
-        set envelope_from                    # which from?
+        # set envelope_from                    # which from?
         set edit_headers                     # show headers when composing
         set fast_reply                       # skip to compose when replying
         set askcc                            # ask for CC:
