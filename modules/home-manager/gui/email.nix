@@ -169,9 +169,10 @@ in
       # Config reference: https://seniormars.com/posts/neomutt/
       extraConfig = ''
         # settings
-        set pager_index_lines = 10          
+        set pager_index_lines = 10         
+        set use_threads = yes                # threaded style in index
         set pager_context = 3                # show 3 lines of context
-        set pager_stop                       # stop at end of message
+        set pager_stop = yes                 # stop at end of message
         set menu_scroll                      # scroll menu
         set tilde                            # use ~ to pad mutt
         set move = no                          # don't move messages when marking as read
@@ -179,7 +180,6 @@ in
         set imap_keepalive = 900             # 15 minutes
         set sleep_time = 0                   # don't sleep when idle
         set wait_key = no		     # mutt won't ask "press key to continue"
-        # set envelope_from                    # which from?
         set edit_headers                     # show headers when composing
         set fast_reply                       # skip to compose when replying
         set askcc                            # ask for CC:
