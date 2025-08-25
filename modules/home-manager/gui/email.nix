@@ -53,6 +53,9 @@ in
             enable = true;
             mailboxType = "maildir";
           };
+          msmtp = {
+            enable = true;
+          };
           mbsync = {
             enable = true;
             create = "both";
@@ -82,6 +85,9 @@ in
       };
     };
     mbsync = {
+      enable = true;
+    };
+    msmtp = {
       enable = true;
     };
     neomutt = {
