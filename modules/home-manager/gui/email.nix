@@ -180,18 +180,21 @@ in
         set imap_keepalive = 900             # 15 minutes
         set sleep_time = 0                   # don't sleep when idle
         set wait_key = no		     # mutt won't ask "press key to continue"
+
+        # Sending email
         set edit_headers                     # show headers when composing
+        set include                          # include message in replies
         set fast_reply                       # skip to compose when replying
         set askcc                            # ask for CC:
+        set reverse_name                     # reply as whomever it was to
+        set reply_to                         # reply to Reply to: field
+
         set fcc_attach                       # save attachments with the body
         set forward_format = "Fwd: %s"       # format of subject when forwarding
         set forward_decode                   # decode when forwarding
         set forward_quote                    # include message in forwards
         set mime_forward                     # forward attachments as part of body
         set attribution = "On %d, %n wrote:" # format of quoting header
-        set reply_to                         # reply to Reply to: field
-        set reverse_name                     # reply as whomever it was to
-        set include                          # include message in replies
         set text_flowed=yes                  # correct indentation for plain text
         # mbsync/isync integration
         # TODO The settings below are specific for Outlook
@@ -227,6 +230,7 @@ in
         #sidebar
         set sidebar_folder_indent
         set mail_check_stats
+        set sidebar_width = 15                        # width in screen columns
         bind index,pager \CJ sidebar-prev
         bind index,pager \CK sidebar-next
         bind index,pager \CE sidebar-open
