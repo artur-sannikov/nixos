@@ -10,6 +10,9 @@
       clipboard = "unnamedplus";
       number = true;
       relativenumber = true;
+      spell = true;
+      spelllang = "en_us";
+      formatoptions = "aw";
     };
     extraConfigVim = ''
       syntax off "" Distable syntax highlighting, treesitter handles it
