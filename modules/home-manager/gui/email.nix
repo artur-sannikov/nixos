@@ -182,8 +182,44 @@ in
         }
         {
           key = "\\Cn";
-          map = "index";
+          map = [
+            "index"
+            "pager"
+          ];
           action = "<vfolder-from-query>";
+        }
+        # Sidebar macros
+        {
+          key = "\\Co";
+          map = [
+            "index"
+            "pager"
+          ];
+          action = "<sidebar-toggle-visible>";
+        }
+        {
+          key = "\\CJ";
+          map = [
+            "index"
+            "pager"
+          ];
+          action = "<sidebar-next>";
+        }
+        {
+          key = "\\CK";
+          map = [
+            "index"
+            "pager"
+          ];
+          action = "<sidebar-prev>";
+        }
+        {
+          key = "\\CE";
+          map = [
+            "index"
+            "pager"
+          ];
+          action = "<sidebar-open>";
         }
       ];
       settings = {
@@ -254,10 +290,6 @@ in
         set sidebar_folder_indent
         set mail_check_stats
         set sidebar_width = 15                        # width in screen columns
-        bind index,pager \CJ sidebar-prev
-        bind index,pager \CK sidebar-next
-        bind index,pager \CE sidebar-open
-        bind index,pager B sidebar-toggle-visible
 
         # See https://seniormars.com/posts/neomutt/
         # Default index colors:
