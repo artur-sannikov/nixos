@@ -56,6 +56,9 @@ in
           msmtp = {
             enable = true;
           };
+          notmuch = {
+            enable = true;
+          };
           mbsync = {
             enable = true;
             create = "both";
@@ -88,6 +91,9 @@ in
       enable = true;
     };
     msmtp = {
+      enable = true;
+    };
+    notmuch = {
       enable = true;
     };
     neomutt = {
@@ -167,6 +173,17 @@ in
             "compose"
           ];
           action = "<pipe-pipe-entry> urlscan<Enter>";
+        }
+        {
+          key = "S";
+          map = "index";
+          # Sync email
+          action = "<shell-escape>mbsync -V -a<enter><shell-escape>notmuch new<enter>";
+        }
+        {
+          key = "\\Cn";
+          map = "index";
+          action = "<vfolder-from-query>";
         }
       ];
       settings = {
