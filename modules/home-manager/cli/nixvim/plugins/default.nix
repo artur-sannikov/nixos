@@ -8,6 +8,7 @@
     ./no-neck-pain.nix
     ./telescope.nix
     ./treesitter.nix
+    ./vim-be-good.nix
     ./web-devicons.nix
   ];
 }
