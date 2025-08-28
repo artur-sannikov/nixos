@@ -45,5 +45,6 @@
     ./vscodium.nix
     ./email.nix
     ./mpv.nix
+    ./keepassxc.nix
   ];
 }
