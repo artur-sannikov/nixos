@@ -125,6 +125,14 @@ in
           action = "previous-page";
         }
         {
+          key = "L"; # reply-all
+          map = [
+            "index"
+            "pager"
+          ];
+          action = "group-reply";
+        }
+        {
           key = "g";
           map = [ "pager" ];
           action = "top";
