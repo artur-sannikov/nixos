@@ -8,6 +8,7 @@
       termguicolors = true;
       shiftwidth = 4;
       expandtab = true;
+      colorcolumn = "80";
       clipboard = "unnamedplus";
       number = true;
       relativenumber = true;
@@ -15,7 +16,7 @@
       spelllang = "en_us";
       formatoptions = "aw";
     };
-   colorschemes = {
+    colorschemes = {
       catppuccin = {
         enable = true;
         settings = {
