@@ -7,6 +7,7 @@
     opts = {
       termguicolors = true;
       shiftwidth = 4;
+      expandtab = true;
       clipboard = "unnamedplus";
       number = true;
       relativenumber = true;
