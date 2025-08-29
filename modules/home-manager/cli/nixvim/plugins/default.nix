@@ -4,6 +4,7 @@
     ./cmp.nix
     ./lint.nix
     ./lsp.nix
+    ./markview.nix
     ./nix.nix
     ./no-neck-pain.nix
     ./telescope.nix

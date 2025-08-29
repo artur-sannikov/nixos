@@ -15,7 +15,7 @@
       spelllang = "en_us";
       formatoptions = "aw";
     };
-    colorschemes = {
+   colorschemes = {
       catppuccin = {
         enable = true;
         settings = {
@@ -36,6 +36,7 @@
     };
     extraConfigVim = ''
       syntax off "" Disable syntax highlighting, treesitter handles it
+      set nowrap
     '';
   };
 }
