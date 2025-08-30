@@ -8,6 +8,7 @@
       aha
       air-formatter
       clinfo
+      cyrus-sasl-xoauth2 # Required for mbsync email sync for outlook
       dig
       dmidecode
       exfat

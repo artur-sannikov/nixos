@@ -33,7 +33,7 @@
 
       # Systemd services
       "modules/home-manager/services/duplicacy-web.nix"
-      "modules/home-manager/services/ollama.nix"
+      # "modules/home-manager/services/ollama.nix"
     ])
   ];
 

@@ -45,11 +45,12 @@
       "modules/system/services/chrony.nix"
       "modules/system/services/fwupd.nix"
       "modules/system/services/keyboard.nix"
-      "modules/system/services/ollama.nix"
+      "modules/system/services/ollama-rocm.nix"
       "modules/system/services/ratbagd.nix"
       "modules/system/services/tailscale.nix"
       "modules/system/services/lact.nix"
       "modules/system/services/openrgb.nix"
+      "modules/system/services/mbsyncd.nix"
 
       # Other system-related packages
       "modules/system/adb.nix"

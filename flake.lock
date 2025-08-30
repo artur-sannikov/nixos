@@ -257,11 +257,11 @@
     },
     "flatpaks": {
       "locked": {
-        "lastModified": 1754777568,
-        "narHash": "sha256-0bBqT+3XncgF8F03RFAamw9vdf0VmaDoIJLTGkjfQZs=",
+        "lastModified": 1754513886,
+        "narHash": "sha256-iDO2Sr99l400kQWBIk/xEyZ9oMDht6Y/ScnK7k5+tmI=",
         "owner": "gmodena",
         "repo": "nix-flatpak",
-        "rev": "62f636b87ef6050760a8cb325cadb90674d1e23e",
+        "rev": "f3cf46a120cf17f0a2517667666db5adb8e60ae3",
         "type": "github"
       },
       "original": {
@@ -401,10 +401,10 @@
     },
     "nix-secrets": {
       "locked": {
-        "lastModified": 1749886787,
-        "narHash": "sha256-7c/YyU5qKHDA26CnLwC0YWVs0IPZbZ2tWZDXX/tZPQM=",
+        "lastModified": 1756126270,
+        "narHash": "sha256-XZjVrbUzQeO+ySmYLiGiAG8bc9+7160JUU2mHg3LUNg=",
         "ref": "main",
-        "rev": "5012f7126825415cfd37f1a9913fcd044ecf1e4b",
+        "rev": "840be40eff333466b82b6d9970b9906055587ea0",
         "shallow": true,
         "type": "git",
         "url": "ssh://git@codeberg.org/arsann/nix-secrets.git"
@@ -426,7 +426,7 @@
       "locked": {
         "lastModified": 1756432616,
         "narHash": "sha256-dSS+IHT2blLzhtFtFTiL9ljZ9mC7gLy2YpJSXdKvU6U=",
-        "owner": "nix-community",
+         "owner": "nix-community",
         "repo": "nix-vscode-extensions",
         "rev": "f649c82bc911b95421d7c686fc474b972238004f",
         "type": "github"
@@ -646,11 +646,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1754988908,
-        "narHash": "sha256-t+voe2961vCgrzPFtZxha0/kmFSHFobzF00sT8p9h0U=",
+        "lastModified": 1754328224,
+        "narHash": "sha256-glPK8DF329/dXtosV7YSzRlF4n35WDjaVwdOMEoEXHA=",
         "owner": "mic92",
         "repo": "sops-nix",
-        "rev": "3223c7a92724b5d804e9988c6b447a0d09017d48",
+        "rev": "49021900e69812ba7ddb9e40f9170218a7eca9f4",
         "type": "github"
       },
       "original": {
