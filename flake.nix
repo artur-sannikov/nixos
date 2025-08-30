@@ -142,7 +142,7 @@
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
               home-manager.users."${username}".imports = [
-                nixvim.homeManagerModules.nixvim
+                nixvim.homeModules.nixvim
                 ./hosts/asus-laptop/home.nix
               ];
               home-manager.extraSpecialArgs = {
@@ -171,7 +171,7 @@
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
               home-manager.users."${username}".imports = [
-                nixvim.homeManagerModules.nixvim
+                nixvim.homeModules.nixvim
                 ./hosts/desktop/home.nix
               ];
 
@@ -201,7 +201,7 @@
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
               home-manager.users."${username}".imports = [
-                nixvim.homeManagerModules.nixvim
+                nixvim.homeModules.nixvim
                 ./hosts/ty/home.nix
               ];
 

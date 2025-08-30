@@ -30,9 +30,12 @@
       "modules/system/services/ssh.nix"
       "modules/system/services/audio.nix"
       "modules/system/services/mullvad.nix"
+      "modules/system/services/fwupd.nix"
+      "modules/system/services/ollama.nix" # ollama without acceleration
       "modules/system/services/tailscale.nix"
       "modules/system/services/tlp.nix"
       "modules/system/services/samba.nix"
+      "modules/system/services/mbsyncd.nix"
 
       # Virtualization
       "modules/system/virtualization/bottles.nix"
