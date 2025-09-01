@@ -24,6 +24,7 @@
       jinja_inline
       jq
       json
+      just
       latex
       lua
       make

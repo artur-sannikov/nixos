@@ -20,7 +20,6 @@
       protonvpn-gui
       rclone
       strawberry-qt6
-      texlive.combined.scheme-medium
       texstudio
       vlc
       zoom-us
@@ -32,6 +31,7 @@
       mattermost-desktop
       onlyoffice-desktopeditors
       qbittorrent
+      texlive.combined.scheme-full
       tidal-hifi
       seafile-client
       zotero

@@ -1,6 +1,5 @@
 {
   pkgs,
-  pkgs-stable,
   ...
 }:
 {
@@ -20,6 +19,7 @@
     gnumake
     isort
     jdk
+    just
     kubectl
     lynx
     mat2
