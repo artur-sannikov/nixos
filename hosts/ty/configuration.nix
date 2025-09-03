@@ -7,7 +7,6 @@
   pkgs,
   lib,
   config,
-  flake-inputs,
   ...
 }:
 {
