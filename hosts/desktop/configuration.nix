@@ -6,7 +6,6 @@
   username,
   pkgs,
   lib,
-  flake-inputs,
   config,
   ...
 }:
