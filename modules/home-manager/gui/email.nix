@@ -30,6 +30,11 @@ in
           userName = address;
           realName = "Artur Sannikov";
           passwordCommand = "${pkgs.coreutils}/bin/cat ${config.sops.secrets.utu_password.path}";
+          gpg = {
+            key = "30E0632EB73F4E4C50A27B124AD9D2BC17EA15B5";
+            encryptByDefault = false;
+            signByDefault = true;
+          };
           imap = {
             host = "mail.utu.fi";
             port = 993;
@@ -293,6 +298,32 @@ in
         set reply_regexp = "^(([Rr][Ee]?(\[[0-9]+\])?: *)?(\[[^]]+\] *)?)*"
         set quote_regexp = "^( {0,4}[>|:#%]| {0,4}[a-z0-9]+[>|]+)+"
         set send_charset = "utf-8:iso-8859-1:us-ascii" # send in utf-8
+
+        ### Encryption ###
+
+        # Use GPGME
+        set crypt_use_gpgme = yes
+
+        # Automatically sign all outgoing email
+        set crypt_auto_sign = yes
+
+        # Sign replies to signed emails
+        set crypt_reply_sign = yes
+
+        # Encrypt replies to encrypted emails
+        set crypt_reply_encrypt = yes
+
+        # Encrypt and sign replies to encrypted and signed email
+        set crypt_reply_sign_encrypted = yes
+
+        # Attempt to verify signatures automatically
+        set crypt_verify_sig = yes
+
+        # Do not attempt to encrypt automatically
+        set crypt_opportunistic_encrypt = no
+
+        # Auto-view encrypted emails automatically
+        auto_view application/pgp-encrypted
 
         #sidebar
         set sidebar_folder_indent
