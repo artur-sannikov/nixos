@@ -33,7 +33,6 @@
       qbittorrent
       texlive.combined.scheme-full
       tidal-hifi
-      seafile-client
       zotero
     ]);
   # GUI apps with special settings
