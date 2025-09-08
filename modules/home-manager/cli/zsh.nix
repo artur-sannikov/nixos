@@ -31,8 +31,9 @@ in
           ignoreSpace = true;
         };
         shellAliases = {
-          "l." = "ls -ldh .";
-          "l" = "ls -lh";
+          ls = "exa";
+          l = "exa -lbF --git";
+          ll = "exa -lbF --git --icons";
           # Integration with direnv
           "tmux" = "direnv exec / tmux";
         };

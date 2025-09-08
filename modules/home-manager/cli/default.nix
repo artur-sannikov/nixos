@@ -6,6 +6,7 @@
     ./direnv.nix
     ./fastfetch.nix
     ./fzf.nix
+    ./eza.nix
     ./git.nix
     ./gnupg.nix
     ./media.nix
