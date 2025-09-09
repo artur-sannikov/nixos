@@ -13,6 +13,7 @@
     caddy
     cloud-utils
     fd
+    jq
     devenv
     distrobox
     hadolint
