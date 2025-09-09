@@ -28,16 +28,24 @@ in
           steamtinkerlaunch
         ];
         package = pkgs.steam.override {
-          extraLibraries = pkgs: [ pkgs.xorg.libxcb ];
+          #  extraLibraries = pkgs: [ pkgs.xorg.libxcb ];
           extraPkgs =
-            pkgs: with pkgs; [
-              gamescope-wsi
+            pkgs': with pkgs'; [
+              xorg.libXcursor
+              xorg.libXi
+              xorg.libXinerama
+              xorg.libXScrnSaver
+              libpng
+              libpulseaudio
+              libvorbis
+              stdenv.cc.cc.lib # Provides libstdc++.so.6
+              libkrb5
+              keyutils
             ];
           extraProfile = ''
             export STEAM_FORCE_DESKTOPUI_SCALING=${cfg.SteamUIScaling};
           '';
         };
-        # To enable HDR run Steam games with `gamemoderun gamescope --mangoapp --rt --force-grab-cursor --hdr-enabled -f -w 3840 -h 2160 --adaptive-sync --hdr-sdr-content-nits 250 --hdr-itm-target-nits 1000 -- %command%`
         gamescopeSession = {
           enable = true;
           env = {
