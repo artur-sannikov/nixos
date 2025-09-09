@@ -224,6 +224,8 @@
       # Default configuration directory
       XDG_CONFIG_HOME = "$HOME/.config";
       TERM = "alacritty";
+
+      KWIN_DRM_NO_AMS = "1";
     };
 
     gaming = {
