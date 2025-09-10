@@ -41,6 +41,7 @@
     ./browsers/librewolf.nix
     ./browsers/brave.nix
     ./browsers/mullvad-browser.nix
+    ./nextcloud-client.nix
     ./vscodium.nix
     ./email.nix
     ./mpv.nix
