@@ -21,6 +21,7 @@ in
       "hosts/homelab-services/disko.nix"
       "modules/system/services/openssh.nix"
       "modules/system/maintenence.nix"
+      "modules/system/services/tailscale.nix"
       "modules/system/virtualization/docker.nix"
       "modules/system/virtualization/containers/default.nix"
       "modules/core/default.nix"
@@ -79,10 +80,6 @@ in
 
   services = {
     qemuGuest.enable = true;
-    tailscale = {
-      enable = true;
-      package = pkgs-stable.tailscale;
-    };
     immich = {
       enable = true;
       user = "immich";
