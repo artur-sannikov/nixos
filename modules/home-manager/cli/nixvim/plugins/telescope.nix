@@ -14,7 +14,15 @@
           theme = "ivy";
         };
       };
+      mappings = {
+        i = {
+          "<C-n>" = "move_selection_next";
+          "<C-p>" = "move_selection_previous";
+          "<C-c>" = "close";
+        };
+      };
     };
+
     keymaps = {
       "<space>fd" = {
         mode = "n";
