@@ -6,6 +6,7 @@
     ./lsp.nix
     ./markview.nix
     ./nix.nix
+    ./quarto.nix
     ./no-neck-pain.nix
     ./telescope.nix
     ./treesitter.nix
