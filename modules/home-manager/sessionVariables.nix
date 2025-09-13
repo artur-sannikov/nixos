@@ -1,7 +1,7 @@
 {
   # Set environment variables
   home.sessionVariables = {
-    EDITOR = "nano";
+    EDITOR = "nvim";
     LC_TIME = "fi_FI.utf8";
   };
 }
