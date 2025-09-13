@@ -13,6 +13,7 @@
     ./nix.nix
     ./packages.nix
     ./starship.nix
+    ./tealdeer.nix
     ./tmux.nix
     ./yt-dlp.nix
     ./zsh.nix
