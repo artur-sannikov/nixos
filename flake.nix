@@ -2,7 +2,6 @@
   description = "NixOS configuration";
 
   inputs = {
-    # workaroun for stylix
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-25.05";
     disko.url = "github:nix-community/disko";
@@ -28,7 +27,6 @@
     };
 
     # https://github.com/danth/stylix
-    # See workaround for missing kde6 qt.platformTheme option https://github.com/nix-community/stylix/issues/1865
     stylix = {
       url = "github:nix-community/stylix";
       inputs.nixpkgs.follows = "nixpkgs";
