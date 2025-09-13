@@ -44,6 +44,7 @@
     toolbox
     typst
     virtualenv
+    wikiman
     wl-clipboard-rs
     urlscan
     yamlfmt
