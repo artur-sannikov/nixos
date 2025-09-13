@@ -1,0 +1,7 @@
+{
+  programs = {
+    tealdeer = {
+      enable = true;
+    };
+  };
+}
