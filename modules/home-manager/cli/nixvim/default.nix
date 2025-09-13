@@ -1,6 +1,7 @@
 {
   imports = [
     ./plugins
+    ./keymaps.nix
   ];
   programs.nixvim = {
     enable = true;
