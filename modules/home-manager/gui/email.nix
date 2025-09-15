@@ -29,6 +29,15 @@ in
           address = utu_email;
           userName = address;
           realName = "Artur Sannikov";
+          signature = {
+            text = ''
+              Artur Sannikov
+              Doctoral Researcher
+              Food Sciences Unit, Department of Life Technologies
+              University of Turku, Finland
+            '';
+            showSignature = "append";
+          };
           passwordCommand = "${pkgs.coreutils}/bin/cat ${config.sops.secrets.utu_password.path}";
           gpg = {
             key = "30E0632EB73F4E4C50A27B124AD9D2BC17EA15B5";
