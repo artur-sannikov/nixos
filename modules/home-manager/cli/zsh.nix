@@ -34,6 +34,7 @@ in
           ls = "exa";
           l = "exa -lbF --git";
           ll = "exa -lbF --git --icons";
+          cat = "bat";
           # Integration with direnv
           "tmux" = "direnv exec / tmux";
         };
