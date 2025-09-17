@@ -16,7 +16,7 @@
         markdown = [ "prettier" ];
         sh = [ "shfmt" ];
         typst = [ "typstyle" ];
-        r = [ "air-formatter" ];
+        r = [ "air" ];
         yaml = [ "yamlfmt" ];
       };
     };
