@@ -8,18 +8,19 @@
     age
     ansible
     ansible-lint
-    black
     beets
+    bitwarden-cli
+    black
     caddy
     cloud-utils
-    fd
-    jq
     devenv
     distrobox
-    hadolint
+    fd
     gnumake
+    hadolint
     isort
     jdk
+    jq
     just
     kubectl
     lynx
@@ -43,10 +44,10 @@
     tesseract
     toolbox
     typst
+    urlscan
     virtualenv
     wikiman
     wl-clipboard-rs
-    urlscan
     yamlfmt
     yamllint
     zulip
