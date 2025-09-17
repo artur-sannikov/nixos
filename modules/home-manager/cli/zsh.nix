@@ -62,6 +62,7 @@ in
           plugins = [
             "direnv"
             "git"
+            "git-auto-fetch"
             "fzf"
             "toolbox"
             "z"
