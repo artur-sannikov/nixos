@@ -17,6 +17,9 @@
             enable = true;
             package = null;
           };
+          air = {
+            enable = true;
+          };
 
           # bash
           bashls.enable = true;

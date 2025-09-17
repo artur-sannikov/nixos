@@ -6,6 +6,7 @@
   home.packages = with pkgs; [
     act
     age
+    air-formatter
     ansible
     ansible-lint
     beets
