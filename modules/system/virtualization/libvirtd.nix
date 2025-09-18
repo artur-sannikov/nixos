@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, username, ... }:
 {
   programs = {
     virt-manager = {
@@ -21,6 +21,16 @@
             secureBoot = true;
             tpmSupport = true;
           }).fd
+        ];
+      };
+    };
+  };
+  users = {
+    users = {
+      ${username} = {
+        extraGroups = [
+          "libvirtd"
+          "kvm"
         ];
       };
     };

@@ -107,9 +107,6 @@
         enable32Bit = true;
         extraPackages = with pkgs; [
           intel-media-driver
-          # vaapiIntel
-          # vaapiVdpau
-          # libvdpau-va-gl
         ];
       };
       bluetooth = {
@@ -200,7 +197,6 @@
         extraGroups = [
           "wheel"
           "input"
-          "libvirtd"
           "networkmanager"
         ];
       };
