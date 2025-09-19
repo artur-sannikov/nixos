@@ -1,13 +1,14 @@
 {
   imports = [
-    ./conform-nvim.nix
     ./cmp.nix
+    ./conform-nvim.nix
+    ./hardtime.nix
     ./lint.nix
     ./lsp.nix
     ./markview.nix
     ./nix.nix
-    ./quarto.nix
     ./no-neck-pain.nix
+    ./quarto.nix
     ./telescope.nix
     ./treesitter.nix
     ./vim-be-good.nix
