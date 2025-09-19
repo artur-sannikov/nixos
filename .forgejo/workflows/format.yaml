@@ -15,7 +15,7 @@ jobs:
         run: |
           nix profile install nixpkgs#nodejs_24
       - name: Checkout flake
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
       - name: Install nix
         uses: https://github.com/cachix/install-nix-action@v31
       - name: Check formatting of Nix code
