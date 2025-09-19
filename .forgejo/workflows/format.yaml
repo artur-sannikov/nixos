@@ -9,7 +9,7 @@ jobs:
   format:
     name: Formatting
     runs-on: ubuntu-latest
-    #container: nixpkgs/nix-flakes:latest-x86_64-linux
+    container: nixpkgs/nix-flakes:latest-x86_64-linux
     steps:
       - name: Install required packages
         run: |
