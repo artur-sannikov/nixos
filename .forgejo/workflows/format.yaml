@@ -9,12 +9,10 @@ jobs:
   format:
     name: Formatting
     runs-on: ubuntu-latest
-    container: nixpkgs/nix-flakes:latest-x86_64-linux
     steps:
       - name: Install required packages
         run: |
           nix profile install nixpkgs#nodejs_24
-      - name: Checkout flake
         uses: actions/checkout@v4
-      - name: Check formatting of Nix code
+        uses: https://github.com/cachix/install-nix-action@v31
         run: nix run nixpkgs#nixfmt-tree -- --ci .
