@@ -17,6 +17,7 @@
     devenv
     distrobox
     fd
+    gitleaks
     gnumake
     hadolint
     isort
