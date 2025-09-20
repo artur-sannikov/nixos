@@ -67,7 +67,7 @@ in
         protonup-ng
         protonup-qt
         protontricks
-        limo # Mod manager
+        # limo # Mod manager
         flake-inputs.umu.packages.${pkgs.system}.umu-launcher
         (lutris.override {
           extraPkgs = pkgs: [
