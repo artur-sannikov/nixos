@@ -17,7 +17,7 @@
         sh = [ "shfmt" ];
         typst = [ "typstyle" ];
         r = [ "air" ];
-        yaml = [ "yamlfmt" ];
+        yaml = [ "prettier" ];
       };
     };
   };
