@@ -7,7 +7,6 @@
     act
     age
     air-formatter
-    ansible
     ansible-lint
     beets
     bitwarden-cli
