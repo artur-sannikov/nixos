@@ -7,6 +7,7 @@
     act
     age
     air-formatter
+    ansible
     ansible-lint
     beets
     bitwarden-cli
@@ -34,6 +35,7 @@
     prettier
     python312Packages.huggingface-hub
     python312Packages.pip
+    pylint
     radian
     sass
     screen
