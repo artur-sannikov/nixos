@@ -1,5 +1,6 @@
 {
   imports = [
+    ./autoclose.nix
     ./cmp.nix
     ./conform-nvim.nix
     ./hardtime.nix
