@@ -1,5 +1,15 @@
+{ pkgs, ... }:
 {
   programs.nixvim = {
+    filetype = {
+      pattern = {
+        ".*\/playbooks\/.*\.ya?ml" = "yaml.ansible";
+        ".*\/roles\/.*\.ya?ml" = "yaml.ansible";
+      };
+    };
+    extraPlugins = with pkgs.vimPlugins; [
+      ansible-vim
+    ];
     plugins = {
       lualine.enable = true;
       lsp-format = {
@@ -36,6 +46,18 @@
 
           # Ansible
           ansiblels = {
+            enable = true;
+            filetypes = [
+              "yaml.ansible"
+            ];
+            settings = {
+              ansible = {
+                path = "${pkgs.ansible}";
+                useFullyQualifiedCollectionNames = true;
+              };
+            };
+          };
+          yamlls = {
             enable = true;
           };
         };
