@@ -3,14 +3,15 @@
     blink-cmp = {
       enable = true;
       settings = {
-        ghost_text = {
-          enabled = true;
+        completion = {
+          ghost_text = {
+            enabled = true;
+          };
+          documentation = {
+            auto_show = true;
+            auto_show_delay_ms = 500;
+          };
         };
-        documentation = {
-          auto_show = true;
-          auto_show_delay_ms = 500;
-        };
-        setupLspCapabilities = true;
         keymap = {
           "<C-p>" = [
             "select_prev"
@@ -34,6 +35,7 @@
           ];
         };
       };
+      setupLspCapabilities = true;
     };
   };
 }
