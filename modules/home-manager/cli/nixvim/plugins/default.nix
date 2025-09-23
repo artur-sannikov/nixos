@@ -2,6 +2,7 @@
   imports = [
     ./autoclose.nix
     ./cmp.nix
+    ./blink-cmp.nix
     ./conform-nvim.nix
     ./hardtime.nix
     ./lint.nix
