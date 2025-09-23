@@ -13,15 +13,23 @@
         set -g mouse on
 
         # Switch panes without prefix key
-        bind -n M-Left select-pane -L
-        bind -n M-Right select-pane -R
-        bind -n M-Up select-pane -U
-        bind -n M-Down select-pane -D
+        bind h select-pane -L
+        bind j select-pane -D
+        bind k select-pane -U
+        bind l select-pane -R
+
+        # bind h select-pane -L
+        # bind j select-pane -D
+        # bind k select-pane -U
+        # bind l select-pane -R
 
         # Split windows
-        bind-key v split-window -h -c "#{pane_current_path}"
-        bind-key h split-window -v -c "#{pane_current_path}"
+        bind-key / split-window -h -c "#{pane_current_path}"
+        bind-key - split-window -v -c "#{pane_current_path}"
 
+        # Clear screen
+        # bind-key ; send-keys C-l
+        bind -n C-k send-keys -R Enter \; clear-history \;
         # Switch windows
         bind -n S-Left previous-window
         bind -n S-Right next-window
