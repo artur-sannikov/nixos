@@ -48,6 +48,7 @@
     toolbox
     typst
     urlscan
+    vale
     virtualenv
     wikiman
     wl-clipboard-rs
