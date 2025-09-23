@@ -55,6 +55,14 @@
                 path = "${pkgs.ansible}";
                 useFullyQualifiedCollectionNames = true;
               };
+              completion = {
+                provideRedirectModules = true;
+                provideModuleOptionAliases = true;
+              };
+              ansibleLint = {
+                enabled = true;
+                path = "ansible-lint";
+              };
             };
           };
           yamlls = {
