@@ -8,6 +8,7 @@
           { name = "nvim_lsp"; }
           { name = "buffer"; }
           { name = "luasnip"; }
+          { name = "cmdline"; }
         ];
         # mapping = {
         #   "<C-n>" = "cmp.mapping.select_next_item()";
@@ -20,9 +21,5 @@
         # };
       };
     };
-    cmp-nvim-lsp.enable = true;
-    cmp-buffer.enable = true;
-    cmp-path.enable = true;
-    cmp-cmdline.enable = true;
   };
 }
