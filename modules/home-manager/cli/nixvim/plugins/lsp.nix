@@ -5,6 +5,9 @@
       pattern = {
         ".*\/playbooks\/.*\.ya?ml" = "yaml.ansible";
         ".*\/roles\/.*\.ya?ml" = "yaml.ansible";
+        # javascript template files look better with javascript
+        # parser
+        ".*\.js\.j2" = "js";
       };
     };
     extraPlugins = with pkgs.vimPlugins; [
