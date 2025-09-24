@@ -6,30 +6,17 @@
       shell = "${pkgs.zsh}/bin/zsh";
       shortcut = "C-f";
       escapeTime = 10;
+      plugins = with pkgs.tmuxPlugins; [ vim-tmux-navigator ];
       extraConfig = ''
         bind-key r source-file ~/.config/tmux/tmux.conf \; display-message "tmux.conf reloaded."
 
         # Mouse mode
         set -g mouse on
 
-        # Switch panes without prefix key
-        bind h select-pane -L
-        bind j select-pane -D
-        bind k select-pane -U
-        bind l select-pane -R
-
-        # bind h select-pane -L
-        # bind j select-pane -D
-        # bind k select-pane -U
-        # bind l select-pane -R
-
         # Split windows
         bind-key / split-window -h -c "#{pane_current_path}"
         bind-key - split-window -v -c "#{pane_current_path}"
 
-        # Clear screen
-        # bind-key ; send-keys C-l
-        bind -n C-k send-keys -R Enter \; clear-history \;
         # Switch windows
         bind -n S-Left previous-window
         bind -n S-Right next-window
