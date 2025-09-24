@@ -30,6 +30,7 @@
     micromamba
     multiqc
     nextflow
+    nodejs
     opentofu
     podlet
     prettier

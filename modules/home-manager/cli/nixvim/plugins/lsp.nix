@@ -3,16 +3,30 @@
   programs.nixvim = {
     filetype = {
       pattern = {
-        ".*\/playbooks\/.*\.ya?ml" = "yaml.ansible";
-        ".*\/roles\/.*\.ya?ml" = "yaml.ansible";
-        # javascript template files look better with javascript
+        # # javascript template files look better with javascript
         # parser
         ".*\.js\.j2" = "js";
       };
     };
     extraPlugins = with pkgs.vimPlugins; [
       ansible-vim
+      coc-nvim
+      (pkgs.vimUtils.buildVimPlugin {
+        pname = "coc-ansible";
+        version = "2024-05-17";
+        src = pkgs.fetchFromGitHub {
+          owner = "yaegassy";
+          repo = "coc-ansible";
+          rev = "33bee0daed278cf9f148017c6ffb03aefaaae085";
+          sha256 = "sha256-tF0O9lhY0eML/RT7hN39NaV6dSq+vlfc9DSbPaJlR0s=";
+        };
+      })
     ];
+    globals = {
+      coc_filetype_map = {
+        "yaml.ansible" = "ansible";
+      };
+    };
     plugins = {
       lualine.enable = true;
       lsp-format = {
@@ -45,28 +59,6 @@
           # nix
           nixd = {
             enable = true;
-          };
-
-          # Ansible
-          ansiblels = {
-            enable = true;
-            filetypes = [
-              "yaml.ansible"
-            ];
-            settings = {
-              ansible = {
-                path = "${pkgs.ansible}";
-                useFullyQualifiedCollectionNames = true;
-              };
-              completion = {
-                provideRedirectModules = true;
-                provideModuleOptionAliases = true;
-              };
-              ansibleLint = {
-                enabled = true;
-                path = "ansible-lint";
-              };
-            };
           };
           yamlls = {
             enable = true;
