@@ -20,6 +20,7 @@
       hjson
       html
       ini
+      javascript
       jinja
       jinja_inline
       jq
