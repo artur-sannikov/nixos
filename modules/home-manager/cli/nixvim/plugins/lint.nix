@@ -4,7 +4,7 @@
     lintersByFt = {
       dockerfile = [ "hadolint" ];
       python = [ "pylint" ];
-      "yaml.ansible" = [ "ansible-lint" ];
+      #      "yaml.ansible" = [ "ansible-lint" ];
     };
   };
 }
