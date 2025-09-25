@@ -41,10 +41,10 @@
     ./browsers/librewolf.nix
     ./browsers/brave.nix
     ./browsers/mullvad-browser.nix
+    ./email.nix
+    ./keepassxc.nix
+    ./mpv.nix
     ./nextcloud-client.nix
     ./vscodium.nix
-    ./email.nix
-    ./mpv.nix
-    ./keepassxc.nix
   ];
 }
