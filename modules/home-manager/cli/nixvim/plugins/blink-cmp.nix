@@ -1,8 +1,25 @@
+{ lib, ... }:
 {
   programs.nixvim.plugins = {
     blink-cmp = {
       enable = true;
       settings = {
+        #         enabled.__raw = ''
+        #           function()
+        #             local disabled_fts = {
+        #               "yaml.ansible",
+        #               "python",
+        #               "markdown",
+        #             }
+        #             return not vim.tbl_contains(disabled_fts, vim.bo.buftype)
+        #           end
+        #         '';
+        enabled = lib.generators.mkLuaInline ''
+          function()
+            return not vim.tbl_contains({ "yaml.ansible", "python" }, 
+            vim.bo.filetype)
+          end
+        '';
         completion = {
           ghost_text = {
             enabled = true;
