@@ -13,6 +13,7 @@
       dmidecode
       exfat
       exfatprogs
+      gcc
       git
       glxinfo
       gparted
