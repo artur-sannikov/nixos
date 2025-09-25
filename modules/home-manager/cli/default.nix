@@ -12,6 +12,7 @@
     ./media.nix
     ./nix.nix
     ./packages.nix
+    ./ripgrep.nix
     ./starship.nix
     ./tealdeer.nix
     ./tmux.nix
