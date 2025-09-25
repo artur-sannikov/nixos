@@ -16,5 +16,6 @@
     ./treesitter.nix
     ./vim-be-good.nix
     ./web-devicons.nix
+    ./yarepl.nix
   ];
 }
