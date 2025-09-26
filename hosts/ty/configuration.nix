@@ -35,6 +35,8 @@
       "modules/system/services/tlp.nix"
       "modules/system/services/samba.nix"
       "modules/system/services/mbsyncd.nix"
+      # Remap keyboard keys
+      "modules/system/services/xremap.nix"
 
       # Virtualization
       "modules/system/virtualization/bottles.nix"
