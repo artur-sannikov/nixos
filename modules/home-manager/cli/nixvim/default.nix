@@ -15,7 +15,7 @@
       relativenumber = true;
       spell = true;
       spelllang = "en_us";
-      formatoptions = "aw";
+      # formatoptions = "aw";
     };
     colorschemes = {
       catppuccin = {
