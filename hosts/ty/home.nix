@@ -42,5 +42,8 @@
   # Enable zsh
   zsh.enable = true;
 
+  # Enable yt-dlp
+  yt-dlp.enable = true;
+
   programs.home-manager.enable = true;
 }
