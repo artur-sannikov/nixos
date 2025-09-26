@@ -47,6 +47,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    # Remap keyboard keys
+    xremap-flake = {
+      url = "github:xremap/nix-flake";
+    };
+
     # solaar = {
     #   url = "https://flakehub.com/f/Svenum/Solaar-Flake/*.tar.gz"; # For latest stable version
     #   inputs.nixpkgs.follows = "nixpkgs";
@@ -194,7 +199,7 @@
             home-manager.nixosModules.home-manager
             stylix.nixosModules.stylix
             lanzaboote.nixosModules.lanzaboote
-
+            inputs.xremap-flake.nixosModules.default
             {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
