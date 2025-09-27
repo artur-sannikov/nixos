@@ -39,6 +39,9 @@
       # SSH Agent
       "modules/system/services/ssh.nix"
 
+      # Remap keyboard keys
+      "modules/system/services/xremap.nix"
+
       # Services
       "modules/system/services/audio.nix"
       "modules/system/services/chrony.nix"
