@@ -32,6 +32,7 @@
     nextflow
     nixpkgs-review
     nodejs
+    nodePackages.jsonlint
     opentofu
     podlet
     prettier
