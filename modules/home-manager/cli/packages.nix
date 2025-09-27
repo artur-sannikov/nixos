@@ -30,6 +30,7 @@
     micromamba
     multiqc
     nextflow
+    nixpkgs-review
     nodejs
     opentofu
     podlet
