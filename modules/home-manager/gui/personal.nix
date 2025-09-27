@@ -9,6 +9,7 @@
     with pkgs;
     [
       audacity
+      bitwarden-desktop
       calibre
       kdePackages.kcalc
       kdePackages.konversation
