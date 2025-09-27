@@ -141,6 +141,7 @@
             home-manager.nixosModules.home-manager
             stylix.nixosModules.stylix
             lanzaboote.nixosModules.lanzaboote
+            inputs.xremap-flake.nixosModules.default
             {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
@@ -169,6 +170,7 @@
             home-manager.nixosModules.home-manager
             lanzaboote.nixosModules.lanzaboote
             stylix.nixosModules.stylix
+            inputs.xremap-flake.nixosModules.default
             # solaar.nixosModules.default
             {
               home-manager.useGlobalPkgs = true;
