@@ -15,6 +15,7 @@
     caddy
     cloud-utils
     devenv
+    djlint
     distrobox
     fd
     gitleaks
