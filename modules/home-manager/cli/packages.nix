@@ -20,6 +20,7 @@
     gitleaks
     gnumake
     hadolint
+    hugo
     isort
     jdk
     jq
