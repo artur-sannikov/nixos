@@ -47,6 +47,7 @@
     shfmt
     sops
     talosctl
+    taplo
     terraform
     tesseract
     toolbox
