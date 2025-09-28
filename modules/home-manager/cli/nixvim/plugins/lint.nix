@@ -6,7 +6,6 @@
       python = [ "pylint" ];
       json = [ "jsonlint" ];
       yaml = [ "yamllint" ];
-      #      "yaml.ansible" = [ "ansible-lint" ];
     };
   };
 }
