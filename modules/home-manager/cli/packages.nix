@@ -18,6 +18,7 @@
     djlint
     distrobox
     fd
+    go
     gitleaks
     gnumake
     hadolint
