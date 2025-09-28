@@ -61,6 +61,11 @@
             enable = true;
           };
 
+          # toml
+          taplo = {
+            enable = true;
+          };
+
           # yaml
           yamlls = {
             enable = true;
