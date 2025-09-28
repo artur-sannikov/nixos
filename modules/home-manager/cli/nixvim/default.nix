@@ -18,6 +18,13 @@
       spelllang = "en_us";
       # formatoptions = "aw";
     };
+    diagnostic = {
+      settings = {
+        virtual_lines = {
+          current_line = true;
+        };
+      };
+    };
     colorschemes = {
       catppuccin = {
         enable = true;
