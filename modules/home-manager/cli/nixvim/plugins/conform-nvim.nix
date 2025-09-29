@@ -23,7 +23,7 @@
         scss = [ "prettier" ];
         typst = [ "typstyle" ];
         yaml = [ "prettier" ];
-        "yaml.ansible" = [ "ansible-lint" ];
+        # "yaml.ansible" = [ "ansible-lint" ];
       };
     };
   };
