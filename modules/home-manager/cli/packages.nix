@@ -23,6 +23,7 @@
     gnumake
     hadolint
     hugo
+    imagemagick
     isort
     jdk
     jq
