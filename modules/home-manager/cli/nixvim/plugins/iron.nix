@@ -12,9 +12,7 @@
       quarto = {
         command = [ "radian" ];
       };
-      repl_open_cmd = {
-        __raw = "require(\"iron.view\").split.vertical.botright.(40)";
-      };
+      repl_open_cmd.__raw = ''require("iron.view").bottom(40)'';
       keymaps = {
         send_motion = "<leader>sc";
         visual_send = "<leader>sc";
