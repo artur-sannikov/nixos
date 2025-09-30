@@ -5,6 +5,7 @@
     ./blink-cmp.nix
     ./conform-nvim.nix
     ./hardtime.nix
+    ./iron.nix
     ./lint.nix
     ./lsp.nix
     ./markview.nix
