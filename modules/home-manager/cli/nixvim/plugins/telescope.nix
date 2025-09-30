@@ -24,7 +24,7 @@
     };
 
     keymaps = {
-      "<space>fd" = {
+      "<leader>fd" = {
         mode = "n";
         action = "find_files";
         options = {
