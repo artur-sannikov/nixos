@@ -6,6 +6,9 @@
   ];
   programs.nixvim = {
     enable = true;
+    globals = {
+      mapleader = " ";
+    };
     opts = {
       termguicolors = true;
       shiftwidth = 4;

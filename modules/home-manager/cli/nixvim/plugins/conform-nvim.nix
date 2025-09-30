@@ -16,6 +16,7 @@
         html = [ "prettier" ];
         jinja = [ "djlint" ];
         javascript = [ "prettier" ];
+        quarto = [ "injected" ];
         markdown = [ "prettier" ];
         nix = [ "nixfmt" ];
         r = [ "air" ];
