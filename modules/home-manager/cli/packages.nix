@@ -7,8 +7,8 @@
     act
     age
     air-formatter
-    ansible
-    ansible-lint
+    # ansible
+    # ansible-lint
     beets
     bitwarden-cli
     black
@@ -49,6 +49,7 @@
     shellcheck
     shfmt
     sops
+    stylua
     talosctl
     taplo
     terraform
