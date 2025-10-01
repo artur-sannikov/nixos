@@ -64,7 +64,7 @@ in
             "direnv"
             "git"
             # "git-auto-fetch"
-            "fzf"
+            # "fzf"
             "toolbox"
             "z"
             "podman"
