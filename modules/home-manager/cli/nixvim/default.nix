@@ -1,7 +1,7 @@
 {
   imports = [
     ./autocmd.nix
-    ./plugins
+    ./plugins/default.nix
     ./keymaps.nix
   ];
   programs.nixvim = {
