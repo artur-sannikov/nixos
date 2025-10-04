@@ -38,6 +38,7 @@ in
           c = "clear";
           # Integration with direnv
           "tmux" = "direnv exec / tmux";
+          edit = "$EDITOR $(fzf)";
         };
         sessionVariables = {
           LC_ALL = "en_US.UTF-8";
