@@ -4,12 +4,12 @@
       enable = true;
       defaultOptions = [
         "--multi"
-        "--height=50%"
-        "--margin=5%,2%,2%,5%"
-        "--layout=reverse-list"
-        "--border=double"
-        "--prompt='$>''"
-        "--pointer='→'"
+        "--height 90%"
+        "--layout reverse"
+        "--border rounded"
+        "--info inline"
+        "--margin 2%,25%,2%,25%"
+        "--pointer '→'"
       ];
       enableBashIntegration = true;
       enableZshIntegration = true;
