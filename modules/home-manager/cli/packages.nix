@@ -55,6 +55,7 @@
     terraform
     tesseract
     toolbox
+    tree
     typst
     urlscan
     vale
