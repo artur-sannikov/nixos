@@ -1,38 +1,31 @@
 {
-    "initial_working_directory": "~",
-    "pdf_previewer": "none",
-    "posix_terminal_shell": "bash",
-    "jobs_tab_visibility": "shown",
-    "source_with_echo": true,
-    "panes": {
-        "quadrants": [
-            "Source",
-            "TabSet2",
-            "Console",
-            "TabSet1"
-        ],
-        "tabSet1": [
-            "Environment",
-            "Files",
-            "Plots",
-            "Connections",
-            "Packages",
-            "Help",
-            "Build",
-            "VCS",
-            "Tutorial",
-            "Viewer",
-            "Presentations",
-            "Presentation"
-        ],
-        "tabSet2": [
-            "History"
-        ],
-        "hiddenTabSet": [],
-        "console_left_on_top": false,
-        "console_right_on_top": true,
-        "additional_source_columns": 0
-    },
-    "editor_theme": "Cobalt",
-    "font_size_points": 12
+  "initial_working_directory": "~",
+  "pdf_previewer": "none",
+  "posix_terminal_shell": "bash",
+  "jobs_tab_visibility": "shown",
+  "source_with_echo": true,
+  "panes": {
+    "quadrants": ["Source", "TabSet2", "Console", "TabSet1"],
+    "tabSet1": [
+      "Environment",
+      "Files",
+      "Plots",
+      "Connections",
+      "Packages",
+      "Help",
+      "Build",
+      "VCS",
+      "Tutorial",
+      "Viewer",
+      "Presentations",
+      "Presentation"
+    ],
+    "tabSet2": ["History"],
+    "hiddenTabSet": [],
+    "console_left_on_top": false,
+    "console_right_on_top": true,
+    "additional_source_columns": 0
+  },
+  "editor_theme": "Cobalt",
+  "font_size_points": 12
 }
