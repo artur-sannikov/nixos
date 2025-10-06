@@ -12,8 +12,7 @@
         "--pointer '→'"
         "--preview 'tree -C {}'"
         "--preview-window '45%,border-sharp,hidden'"
-        "--bind 'ctrp-p:toggle-preview'"
-        "--bind 'enter:execute($EDITOR {+})"
+        "--bind 'ctrl-p:toggle-preview'"
       ];
       enableBashIntegration = true;
       enableZshIntegration = true;
