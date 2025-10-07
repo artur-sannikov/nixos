@@ -1,5 +1,6 @@
 {
   pkgs,
+  pkgs-stable,
   ...
 }:
 {
@@ -31,7 +32,6 @@
     kubectl
     lynx
     mat2
-    micromamba
     multiqc
     nextflow
     nixpkgs-review

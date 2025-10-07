@@ -19,10 +19,8 @@
       gparted
       inxi
       isoimagewriter
-      koboldcpp
       libva-utils
       lm_sensors
-      micromamba
       nano
       nix-init
       nmap
@@ -47,6 +45,7 @@
     ]
     ++ (with pkgs-stable; [
       quickemu
+      koboldcpp
     ]);
 
   programs = {

@@ -42,7 +42,6 @@ in
         };
         sessionVariables = {
           LC_ALL = "en_US.UTF-8";
-          MAMBA_ROOT_PREFIX = "$HOME/.micromamba"; # For micromamba
         };
         initContent = ''
             # Disable underline
@@ -56,8 +55,6 @@ in
             function git-grep-all() {
               git grep "$1" $(git rev-list --all)
           }
-            # Hook micromamba
-            eval "$(${pkgs.micromamba}/bin/micromamba shell hook --shell zsh)"
         '';
         oh-my-zsh = {
           enable = true;
