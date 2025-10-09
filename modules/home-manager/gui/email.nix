@@ -203,7 +203,7 @@ in
           action = "<shell-escape>mbsync -V -a<enter><shell-escape>notmuch new<enter>";
         }
         {
-          key = "\\Cn";
+          key = "\\Cf";
           map = [
             "index"
             "pager"
@@ -220,7 +220,7 @@ in
           action = "<sidebar-toggle-visible>";
         }
         {
-          key = "\\CJ";
+          key = "\\Cn";
           map = [
             "index"
             "pager"
@@ -228,7 +228,7 @@ in
           action = "<sidebar-next>";
         }
         {
-          key = "\\CK";
+          key = "\\Cp";
           map = [
             "index"
             "pager"
@@ -250,7 +250,7 @@ in
       # Config reference: https://seniormars.com/posts/neomutt/
       extraConfig = ''
         # settings
-        set pager_index_lines = 10         
+        set pager_index_lines = 10
         set use_threads = yes                # threaded style in index
         set pager_context = 3                # show 3 lines of context
         set pager_stop = yes                 # stop at end of message
