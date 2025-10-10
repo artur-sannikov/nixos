@@ -1,7 +1,7 @@
 # Artur's NixOS & Nix Home Manager configurations
 
 <p align="center">
-  <img src="https://img.shields.io/github/license/artur-sannikov/nixos" alt="License Badge"  height="20"/>
+  <img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License Badge"  height="20"/>
 </p>
 
 This repository contains NixOS configuration for my desktop, personal and work
