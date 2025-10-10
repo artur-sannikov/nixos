@@ -134,6 +134,42 @@ in
     };
   };
 
+  # systemd timer to delete old Forgejo action containers
+
+  # Forgejo action containers are updated and pulled automatically
+  # They are not deleted automatically and occupy a lot of space
+  # That's the only way I found to delete the old images
+  # I use binaries from pkgs as the safest approach of running programs
+  systemd = {
+    services.podman-cleanup = {
+      description = "Clean up renovate images";
+      serviceConfig = {
+        Type = "oneshot";
+        User = "root";
+        ExecStart = "${pkgs.writeShellScript "podman-cleanup" ''
+          #!${pkgs.bash}/bin/bash
+          set -euo pipefail
+
+          ${pkgs.podman}/bin/podman image ls -a  \
+          | ( ${pkgs.gnugrep}/bin/grep "renovate" || true ) \
+          | ${pkgs.gawk}/bin/awk '{print $3}' \
+          | ${pkgs.findutils}/bin/xargs --no-run-if-empty \
+          ${pkgs.podman}/bin/podman rmi -f
+        ''}";
+      };
+    };
+    timers = {
+      podman-cleanup = {
+        requires = [ "podman-cleanup.service" ];
+        wantedBy = [ "timers.target" ];
+        timerConfig = {
+          OnCalendar = "hourly";
+          Persistent = true;
+        };
+      };
+    };
+  };
+
   # Required for Forgejo actions
   virtualisation = {
     podman = {
