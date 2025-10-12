@@ -6,6 +6,7 @@
 }:
 let
   utu_email = "${flake-inputs.nix-secrets.utu_email}";
+  migadu_email = "${flake-inputs.nix-secrets.migadu_email}";
   mailcap_file = pkgs.writeText "mailcap" ''
     text/html; firefox %s; test=test -n "$display"; needsterminal
     text/html; lynx -assume_charset=%{charset} -display_charset=utf-8 -dump -width=1024 %s; nametemplate=%s.html; copiousoutput
@@ -17,6 +18,7 @@ in
   sops = {
     secrets = {
       utu_password = { };
+      migadu_password = { };
     };
   };
 
@@ -24,6 +26,56 @@ in
   accounts = {
     email = {
       accounts = {
+        migadu = rec {
+          primary = false;
+          flavor = "migadu.com";
+          address = migadu_email;
+          userName = address;
+          realName = "Artur Sannikov";
+          passwordCommand = "${pkgs.coreutils}/bin/cat ${config.sops.secrets.migadu_password.path}";
+          imap = {
+            host = "imap.migadu.com";
+            port = 993;
+            tls.enable = true;
+          };
+          smtp = {
+            host = "smtp.migadu.com";
+            port = 465;
+          };
+          neomutt = {
+            enable = true;
+            mailboxType = "maildir";
+            # sendMailCommand = "msmtpq --account migadu --read-envelope-from --read-recipients";
+            extraConfig = ''
+              unmailboxes *
+              mailboxes +Inbox +Drafts +Sent +Trash +Archive
+              set record='+Sent'
+              # set sendmail='msmtpq -a migadu --read-envelope-from --read-recipients'
+              set use_envelope_from
+            '';
+          };
+          msmtp = {
+            enable = true;
+            extraConfig = {
+              logfile = "~/msmtp/msmtp_migadu.log";
+            };
+          };
+          notmuch = {
+            enable = true;
+          };
+          mbsync = {
+            enable = true;
+            create = "both";
+            expunge = "both";
+            extraConfig.account = {
+              PassCmd = "${pkgs.coreutils}/bin/cat ${config.sops.secrets.migadu_password.path}";
+              AuthMechs = "LOGIN";
+              Host = "imap.migadu.com";
+              TLSType = "IMAPS";
+              Timeout = 60;
+            };
+          };
+        };
         work = rec {
           primary = true;
           address = utu_email;
@@ -66,9 +118,21 @@ in
           neomutt = {
             enable = true;
             mailboxType = "maildir";
+            # sendMailCommand = "msmtpq --account work --read-envelope-from --read-recipients";
+            extraConfig = ''
+              unmailboxes *
+              mailboxes +Inbox +Drafts +Sent +Trash +Archives +"Junk Email"
+              mailboxes +Slurm
+              # set sendmail='msmtpq'
+              # set sendmail='msmtpq -a work --read-envelope-from --read-recipients'
+              set use_envelope_from
+            '';
           };
           msmtp = {
             enable = true;
+            extraConfig = {
+              logfile = "~/msmtp/msmtp_work.log";
+            };
           };
           notmuch = {
             enable = true;
@@ -181,6 +245,22 @@ in
       ];
       macros = [
         {
+          key = "<f2>";
+          map = [
+            "index"
+            "pager"
+          ];
+          action = "<sync-mailbox><refresh><enter-command>source ~/.config/neomutt/migadu<enter><change-folder>!<enter>";
+        }
+        {
+          key = "<f3>";
+          map = [
+            "index"
+            "pager"
+          ];
+          action = "<sync-mailbox><refresh><enter-command>source ~/.config/neomutt/work<enter><change-folder>!<enter>";
+        }
+        {
           key = "\\Cb";
           map = [
             "index"
@@ -203,11 +283,8 @@ in
           action = "<shell-escape>mbsync -V -a<enter><shell-escape>notmuch new<enter>";
         }
         {
-          key = "\\Cf";
-          map = [
-            "index"
-            "pager"
-          ];
+          key = "\\\\";
+          map = [ "index" ];
           action = "<vfolder-from-query>";
         }
         # Sidebar macros
@@ -277,17 +354,11 @@ in
         set mime_forward                     # forward attachments as part of body
         set attribution = "On %d, %n wrote:" # format of quoting header
         set text_flowed=yes                  # correct indentation for plain text
-        # mbsync/isync integration
-        # TODO The settings below are specific for Outlook
-        # neomutt with nix has extraConfig option that can change
-        # settings per account
+
         set mbox_type = Maildir
-        set folder = "~/Maildir/work"
-        set spoolfile = "+Inbox"
-        set postponed = "+Drafts"
-        set record = "+Sent"
-        set trash = "+Trash"
-        mailboxes +Inbox +Drafts +Sent +Trash
+        # set postponed = "+Drafts"
+        # set record = "+Sent"
+        # set trash = "+Trash"
 
         # Caching
         set header_cache     = ~/.cache/neomutt/cache/  # where to store headers
