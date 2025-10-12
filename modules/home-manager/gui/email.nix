@@ -45,19 +45,17 @@ in
           neomutt = {
             enable = true;
             mailboxType = "maildir";
-            # sendMailCommand = "msmtpq --account migadu --read-envelope-from --read-recipients";
             extraConfig = ''
               unmailboxes *
               mailboxes +Inbox +Drafts +Sent +Trash +Archive
               set record='+Sent'
-              # set sendmail='msmtpq -a migadu --read-envelope-from --read-recipients'
-              set use_envelope_from
             '';
           };
           msmtp = {
             enable = true;
+            # Setting the log is imperative to be able to send email...
             extraConfig = {
-              logfile = "~/msmtp/msmtp_migadu.log";
+              logfile = "~/.cache/.msmtp_migadu.log";
             };
           };
           notmuch = {
@@ -118,20 +116,16 @@ in
           neomutt = {
             enable = true;
             mailboxType = "maildir";
-            # sendMailCommand = "msmtpq --account work --read-envelope-from --read-recipients";
             extraConfig = ''
               unmailboxes *
               mailboxes +Inbox +Drafts +Sent +Trash +Archives +"Junk Email"
               mailboxes +Slurm
-              # set sendmail='msmtpq'
-              # set sendmail='msmtpq -a work --read-envelope-from --read-recipients'
-              set use_envelope_from
             '';
           };
           msmtp = {
             enable = true;
             extraConfig = {
-              logfile = "~/msmtp/msmtp_work.log";
+              logfile = "~/.cache/.msmtp_work.log";
             };
           };
           notmuch = {
@@ -405,7 +399,7 @@ in
         # Auto-view encrypted emails automatically
         auto_view application/pgp-encrypted
 
-        #sidebar
+        # sidebar
         set sidebar_folder_indent
         set mail_check_stats
         set sidebar_width = 15                        # width in screen columns
