@@ -90,7 +90,7 @@ in
           };
           passwordCommand = "${pkgs.coreutils}/bin/cat ${config.sops.secrets.utu_password.path}";
           gpg = {
-            key = "30E0632EB73F4E4C50A27B124AD9D2BC17EA15B5";
+            key = "4653F089E0C1F62F4AB8FF09C76C0C265540AEF2";
             encryptByDefault = false;
             signByDefault = true;
           };
