@@ -314,6 +314,11 @@ in
           ];
           action = "<sidebar-open>";
         }
+        {
+          key = "A";
+          map = [ "index" ];
+          action = "<tag-pattern>~N<enter><tag-prefix><clear-flag>N<untag-pattern>.<enter>";
+        }
       ];
       settings = {
         mailcap_path = "${mailcap_file}";
