@@ -25,7 +25,6 @@
       # GUI programs
       "modules/home-manager/gui/common.nix"
       "modules/home-manager/gui/personal.nix"
-      "modules/home-manager/gui/alacritty.nix"
 
       # Other home-manager configuration
       "modules/home-manager/desktop_entries.nix"
