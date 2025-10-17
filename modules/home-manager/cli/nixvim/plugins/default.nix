@@ -8,6 +8,7 @@
     ./lint.nix
     ./lsp.nix
     ./markview.nix
+    ./neogit.nix
     ./nix.nix
     ./no-neck-pain.nix
     ./quarto.nix
