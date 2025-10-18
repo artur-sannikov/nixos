@@ -62,13 +62,6 @@
     #   inputs.nixpkgs.follows = "nixpkgs";
     # };
 
-    # Motherboard support in latest experimental
-    # Update to stable release later
-    openrgb-experimental = {
-      url = "gitlab:CalcProgrammer1/OpenRGB?rev=12a3b1f83e5e59ab508a032a674ff039db1b802c";
-      flake = false;
-    };
-
     sops-nix = {
       url = "github:mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -171,7 +164,6 @@
             lanzaboote.nixosModules.lanzaboote
             stylix.nixosModules.stylix
             inputs.xremap-flake.nixosModules.default
-            # solaar.nixosModules.default
             {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;

@@ -1059,23 +1059,6 @@
         "type": "github"
       }
     },
-    "openrgb-experimental": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1752529501,
-        "narHash": "sha256-5wUQg9OpGd8GNeQFAKrXoni22pya50Tu7tu6TEWuZVE=",
-        "owner": "CalcProgrammer1",
-        "repo": "OpenRGB",
-        "rev": "12a3b1f83e5e59ab508a032a674ff039db1b802c",
-        "type": "gitlab"
-      },
-      "original": {
-        "owner": "CalcProgrammer1",
-        "repo": "OpenRGB",
-        "rev": "12a3b1f83e5e59ab508a032a674ff039db1b802c",
-        "type": "gitlab"
-      }
-    },
     "pre-commit-hooks": {
       "inputs": {
         "flake-compat": "flake-compat_2",
@@ -1139,7 +1122,6 @@
         "nixpkgs": "nixpkgs",
         "nixpkgs-stable": "nixpkgs-stable_2",
         "nixvim": "nixvim",
-        "openrgb-experimental": "openrgb-experimental",
         "sops-nix": "sops-nix",
         "stylix": "stylix",
         "umu": "umu",
