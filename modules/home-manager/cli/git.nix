@@ -1,10 +1,10 @@
-{ pkgs, username, ... }:
+{ pkgs, ... }:
 {
   programs = {
     git = {
       enable = true;
       userName = "Artur Sannikov";
-      userEmail = "40318410+artur-sannikov@users.noreply.github.com";
+      userEmail = "git-sign@asannikov.com";
       extraConfig = {
         init.defaultBranch = "main";
         push.autoSetupRemote = true;
