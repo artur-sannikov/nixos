@@ -24,7 +24,7 @@
           colorMoved = "default";
         };
         commit.gpgsign = true;
-        user.signingkey = "468E82619269BA96";
+        user.signingkey = "AF9397CF9FF360BC";
       };
       ignores = [
         ".DS_Store"
