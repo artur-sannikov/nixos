@@ -23,7 +23,7 @@
           algorithm = "histogram";
           colorMoved = "default";
         };
-        commit.gpgsign = "true";
+        commit.gpgsign = true;
         gpg.format = "ssh";
         user.signingkey = "/home/${username}/.ssh/git-sign.pub";
       };
