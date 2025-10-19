@@ -24,8 +24,7 @@
           colorMoved = "default";
         };
         commit.gpgsign = true;
-        gpg.format = "ssh";
-        user.signingkey = "/home/${username}/.ssh/git-sign.pub";
+        user.signingkey = "AF9397CF9FF360BC";
       };
       ignores = [
         ".DS_Store"
