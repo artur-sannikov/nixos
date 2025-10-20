@@ -52,6 +52,10 @@
       url = "github:xremap/nix-flake";
     };
 
+    winapps = {
+      url = "github:winapps-org/winapps";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     # solaar = {
     #   url = "https://flakehub.com/f/Svenum/Solaar-Flake/*.tar.gz"; # For latest stable version
     #   inputs.nixpkgs.follows = "nixpkgs";
@@ -83,6 +87,7 @@
       flatpaks,
       nixvim,
       lanzaboote,
+      winapps,
       # solaar,
       ...
     }:
@@ -135,6 +140,7 @@
             stylix.nixosModules.stylix
             lanzaboote.nixosModules.lanzaboote
             inputs.xremap-flake.nixosModules.default
+
             {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
@@ -193,6 +199,17 @@
             home-manager.nixosModules.home-manager
             stylix.nixosModules.stylix
             lanzaboote.nixosModules.lanzaboote
+            (
+              {
+                ...
+              }:
+              {
+                environment.systemPackages = [
+                  winapps.packages.x86_64-linux.winapps
+                  winapps.packages.x86_64-linux.winapps-launcher # optional
+                ];
+              }
+            )
             inputs.xremap-flake.nixosModules.default
             {
               home-manager.useGlobalPkgs = true;
