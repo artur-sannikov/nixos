@@ -16,6 +16,7 @@
     ./starship.nix
     ./tealdeer.nix
     ./tmux.nix
+    ./yazi.nix
     ./yt-dlp.nix
     ./zsh.nix
   ];
