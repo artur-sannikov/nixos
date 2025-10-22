@@ -22,7 +22,6 @@
       strawberry-qt6
       texstudio
       vlc
-      zoom-us
     ])
     ++ (with pkgs; [
       anki
