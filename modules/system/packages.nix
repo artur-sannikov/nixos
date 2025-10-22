@@ -4,7 +4,7 @@
   environment.systemPackages =
     with pkgs;
     [
-      nfs-utils
+
       aha
       air-formatter
       clinfo
@@ -22,21 +22,22 @@
       libva-utils
       lm_sensors
       nano
+      nfs-utils
+      nixd
       nix-init
       nmap
       pciutils
       pre-commit
-      python312
       pv
-      stress-ng
+      python312
       samba
       sanoid
       ssh-audit
+      stress-ng
       system-config-printer
       typstyle
-      nixd
-      usbutils
       unzip
+      usbutils
       vim
       vulkan-tools
       wayland-utils
