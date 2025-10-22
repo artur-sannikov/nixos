@@ -39,8 +39,8 @@
     podlet
     poppler
     prettier
-    python312Packages.huggingface-hub
-    python312Packages.pip
+    python313Packages.huggingface-hub
+    python313Packages.pip
     pylint
     radian
     sass
