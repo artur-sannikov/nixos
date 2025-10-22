@@ -41,6 +41,7 @@
     python313Packages.pip
     pylint
     radian
+    resvg
     sass
     shellcheck
     shfmt
