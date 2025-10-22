@@ -15,7 +15,6 @@
     cloud-utils
     devenv
     djlint
-    fd
     go
     gitleaks
     gnumake
