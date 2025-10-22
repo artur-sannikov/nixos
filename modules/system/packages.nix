@@ -29,7 +29,7 @@
       pciutils
       pre-commit
       pv
-      python312
+      python313
       samba
       sanoid
       ssh-audit
