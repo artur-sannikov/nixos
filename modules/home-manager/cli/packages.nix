@@ -42,7 +42,6 @@
     pylint
     radian
     sass
-    screen
     shellcheck
     shfmt
     sops

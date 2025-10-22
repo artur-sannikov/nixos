@@ -53,6 +53,7 @@
       "modules/system/adb.nix"
       "modules/system/appimage.nix"
       "modules/system/nix.nix"
+      "modules/system/screen.nix"
       "modules/system/zoom-us.nix"
 
       # Ricing
