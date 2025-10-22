@@ -18,6 +18,7 @@
     ./tmux.nix
     ./yazi.nix
     ./yt-dlp.nix
+    ./zoxide.nix
     ./zsh.nix
   ];
 }

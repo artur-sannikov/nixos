@@ -61,9 +61,8 @@ in
             "direnv"
             "git"
             # "git-auto-fetch"
-            # "fzf"
             "toolbox"
-            "z"
+            "zoxide"
             "podman"
             "tmux"
           ];
