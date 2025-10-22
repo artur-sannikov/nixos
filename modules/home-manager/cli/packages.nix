@@ -13,6 +13,7 @@
     black
     caddy
     cloud-utils
+    file
     devenv
     djlint
     go
