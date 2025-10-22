@@ -8,8 +8,6 @@
     act
     age
     air-formatter
-    # ansible
-    # ansible-lint
     beets
     bitwarden-cli
     black
@@ -39,6 +37,7 @@
     nodePackages.jsonlint
     opentofu
     podlet
+    poppler
     prettier
     python312Packages.huggingface-hub
     python312Packages.pip
