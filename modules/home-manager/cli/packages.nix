@@ -15,7 +15,6 @@
     cloud-utils
     devenv
     djlint
-    distrobox
     fd
     go
     gitleaks
