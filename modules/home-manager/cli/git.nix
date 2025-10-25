@@ -3,9 +3,9 @@
   programs = {
     git = {
       enable = true;
-      userName = "Artur Sannikov";
-      userEmail = "git-sign@asannikov.com";
-      extraConfig = {
+      settings = {
+        user.name = "Artur Sannikov";
+        user.email = "git-sign@asannikov.com";
         init.defaultBranch = "main";
         push.autoSetupRemote = true;
         merge = {
