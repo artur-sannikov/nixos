@@ -10,20 +10,20 @@
     [
       audacity
       bitwarden-desktop
-      calibre
       kdePackages.kcalc
       kdePackages.konversation
       moonlight-qt
       monero-gui
       picard
-      protonmail-bridge-gui
       rustdesk-flutter
       telegram-desktop
       tor-browser
       veracrypt
     ]
     ++ (with pkgs-stable; [
+      calibre
       flacon
+      protonmail-bridge-gui
       signal-desktop
     ]);
 }
