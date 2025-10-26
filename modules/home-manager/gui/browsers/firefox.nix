@@ -23,7 +23,6 @@ in
       DontCheckDefaultBrowser = true;
       DisableTelemetry = true;
       DisableFirefoxStudies = true;
-      DisablePocket = true;
 
       # https://mozilla.github.io/policy-templates/#sanitizeonshutdown-all
       # Delete all data on shutdown
@@ -85,6 +84,35 @@ in
             "browser.warnOnQuitShortcut" = true;
             "browser.tabs.warnOnClose" = true;
             "browser.sessionstore.privacy_level" = 2;
+
+            # Disable that websites can get notifications if you copy or paste
+            "dom.event.clipboardevents.enabled" = true;
+
+            # Disable all telemetry
+            # See https://github.com/K3V1991/Disable-Firefox-Telemetry-and-Data-Collection
+            # Some entries do not exist anymore
+            # Search for more info https://searchfox.org/firefox-main
+            "browser.newtabpage.activity-stream.feeds.telemetry" = false;
+            "browser.newtabpage.activity-stream.telemetry" = false;
+            "datareporting.healthreport.service.enabled" = false;
+            "datareporting.healthreport.uploadEnabled" = false;
+            "datareporting.policy.dataSubmissionEnabled" = false;
+            "toolkit.telemetry.archive.enabled" = false;
+            "toolkit.telemetry.bhrPing.enabled" = false;
+            "toolkit.telemetry.enabled" = false;
+            "toolkit.telemetry.firstShutdownPing.enabled" = false;
+            "toolkit.telemetry.newProfilePing.enabled" = false;
+            "toolkit.telemetry.reportingpolicy.firstRun" = false;
+            "toolkit.telemetry.server" = "";
+            "toolkit.telemetry.shutdownPingSender.enabled" = false;
+            "toolkit.telemetry.unified" = false;
+            "toolkit.telemetry.updatePing.enabled" = false;
+            "breakpad.reportURL" = "";
+            "browser.tabs.crashReporting.sendReport" = false;
+            "beacon.enabled" = false;
+
+            # Disable Firefox experiments
+            "extensions.experiments.enabled" = false;
           };
     };
 
