@@ -62,6 +62,9 @@
       "modules/system/nix.nix"
       "modules/system/stylix.nix"
 
+      # Browsers
+      "modules/system/browsers"
+
       # Fonts
       "modules/system/fonts.nix"
 

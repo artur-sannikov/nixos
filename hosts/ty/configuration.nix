@@ -56,6 +56,9 @@
       "modules/system/screen.nix"
       "modules/system/zoom-us.nix"
 
+      # Browsers
+      "modules/system/browsers"
+
       # Ricing
       "modules/system/stylix.nix"
 

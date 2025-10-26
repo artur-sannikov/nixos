@@ -55,6 +55,9 @@
       "modules/system/services/tlp.nix"
       "modules/system/services/mbsyncd.nix"
 
+      # Browsers
+      "modules/system/browsers"
+
       # Other system-related packages
       "modules/system/adb.nix"
       "modules/system/appimage.nix"

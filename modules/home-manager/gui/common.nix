@@ -37,10 +37,7 @@
   # GUI apps with special settings
   imports = [
     ./alacritty.nix
-    ./browsers/firefox.nix
-    ./browsers/librewolf.nix
-    ./browsers/brave.nix
-    ./browsers/mullvad-browser.nix
+    ./browsers
     ./email.nix
     ./keepassxc.nix
     ./kitty.nix
