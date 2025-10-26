@@ -20,7 +20,6 @@ let
   };
 in
 {
-
   programs.librewolf = {
     enable = true;
     package = pkgs.librewolf;
