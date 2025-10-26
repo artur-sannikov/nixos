@@ -96,7 +96,6 @@ in
       dump = {
         enable = true;
         type = "tar.gz";
-        backupDir = "/home/${username}/forgejo-backups";
         interval = "hourly";
       };
       settings = {
