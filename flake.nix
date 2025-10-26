@@ -70,7 +70,6 @@
       disko,
       home-manager,
       stylix,
-      flatpaks,
       nixvim,
       lanzaboote,
       winapps,
@@ -120,7 +119,6 @@
           modules = [
             ./hosts/asus-laptop/configuration.nix
             disko.nixosModules.disko
-            flatpaks.nixosModules.nix-flatpak
             home-manager.nixosModules.home-manager
             stylix.nixosModules.stylix
             lanzaboote.nixosModules.lanzaboote
