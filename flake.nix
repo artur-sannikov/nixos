@@ -6,14 +6,10 @@
     nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-25.05";
     disko.url = "github:nix-community/disko";
     disko.inputs.nixpkgs.follows = "nixpkgs";
-    # home-manager, used for managing user configuration
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    # Declarative Nix Flatpaks
-    flatpaks.url = "github:gmodena/nix-flatpak";
-
     # VS Code extensions
     nix-vscode-extensions = {
       url = "github:nix-community/nix-vscode-extensions";
@@ -56,16 +52,6 @@
       url = "github:winapps-org/winapps";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    # solaar = {
-    #   url = "https://flakehub.com/f/Svenum/Solaar-Flake/*.tar.gz"; # For latest stable version
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
-
-    # flox = {
-    #   url = "github:flox/flox";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
-
     sops-nix = {
       url = "github:mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -88,7 +74,6 @@
       nixvim,
       lanzaboote,
       winapps,
-      # solaar,
       ...
     }:
     let
