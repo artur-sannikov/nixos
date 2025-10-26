@@ -28,6 +28,7 @@
       freetube
       gearlever
       mattermost-desktop
+      meld
       onlyoffice-desktopeditors
       qbittorrent
       texlive.combined.scheme-full
