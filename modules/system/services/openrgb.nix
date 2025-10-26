@@ -4,8 +4,9 @@
   services.hardware.openrgb = {
     enable = true;
     package = pkgs.openrgb.overrideAttrs (old: {
-      src = pkgs.fetchFromGitLab {
-        owner = "CalcProgrammer1";
+      src = pkgs.fetchFromGitea {
+        domain = "codeberg.org";
+        owner = "OpenRGB";
         repo = "OpenRGB";
         rev = "release_candidate_1.0rc2";
         sha256 = "sha256-vdIA9i1ewcrfX5U7FkcRR+ISdH5uRi9fz9YU5IkPKJQ=";
