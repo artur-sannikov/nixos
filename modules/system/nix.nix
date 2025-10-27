@@ -1,6 +1,17 @@
 {
-  nix.settings.trusted-users = [
-    "root"
-    "@wheel"
-  ];
+  nix = {
+    settings = {
+      # List of binary cache URLs that non-root users can use
+      trusted-substituters = [
+        "https://rstats-on-nix.cachix.org/"
+      ];
+      trusted-public-keys = [
+        "rstats-on-nix.cachix.org-1:vdiiVgocg6WeJrODIqdprZRUrhi1JzhBnXv7aWI6+F0="
+      ];
+      trusted-users = [
+        "root"
+        "@wheel"
+      ];
+    };
+  };
 }
