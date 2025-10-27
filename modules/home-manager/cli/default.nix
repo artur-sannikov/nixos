@@ -7,6 +7,7 @@
     ./distrobox.nix
     ./fastfetch.nix
     ./fd.nix
+    ./feh.nix
     ./fzf.nix
     ./eza.nix
     ./git.nix
