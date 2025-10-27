@@ -16,6 +16,7 @@ let
     image/png; feh %s;
     image/svg; feh %s;
     image/gif; feh %s;
+    application/vnd.openxmlformats-officedocument.presentationml.presentation; onlyoffice-desktopeditors %s;
     application/pdf; ${pkgs.kdePackages.okular}/bin/okular %s;
   '';
 in
