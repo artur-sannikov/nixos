@@ -11,6 +11,11 @@ let
     text/html; firefox %s; test=test -n "$display"; needsterminal
     text/html; lynx -assume_charset=%{charset} -display_charset=utf-8 -dump -width=1024 %s; nametemplate=%s.html; copiousoutput
     text/plain; cat %s; copiousoutput
+    image/jpg; ${pkgs.feh}/bin/feh %s;
+    image/jpg; ${pkgs.feh}/bin/feh %s;
+    image/png; ${pkgs.feh}/bin/feh %s;
+    image/svg; ${pkgs.feh}/bin/feh %s;
+    image/gif; ${pkgs.feh}/bin/feh %s;
     application/pdf; ${pkgs.kdePackages.okular}/bin/okular %s;
   '';
 in
