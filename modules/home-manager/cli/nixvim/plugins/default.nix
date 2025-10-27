@@ -4,6 +4,7 @@
     ./cmp.nix
     ./blink-cmp.nix
     ./conform-nvim.nix
+    ./diffview.nix
     ./hardtime.nix
     ./lint.nix
     ./lsp.nix
