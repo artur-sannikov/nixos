@@ -1,10 +1,11 @@
 {
   imports = [
     ./autoclose.nix
-    ./cmp.nix
     ./blink-cmp.nix
+    ./cmp.nix
     ./conform-nvim.nix
     ./diffview.nix
+    ./gitsigns.nix
     ./hardtime.nix
     ./lint.nix
     ./lsp.nix
