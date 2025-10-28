@@ -1,10 +1,16 @@
-{ pkgs, pkgs-stable, ... }:
+{
+  pkgs,
+  pkgs-stable,
+  flake-inputs,
+  ...
+}:
 # Install system-wide packages
 {
   environment.systemPackages =
     with pkgs;
     [
 
+      flake-inputs.winboat.packages."x86_64-linux".winboat
       aha
       air-formatter
       clinfo
