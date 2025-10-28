@@ -1109,6 +1109,7 @@
         "sops-nix": "sops-nix",
         "stylix": "stylix",
         "umu": "umu",
+        "winboat": "winboat",
         "xremap-flake": "xremap-flake"
       }
     },
@@ -1365,6 +1366,26 @@
         "dir": "packaging/nix",
         "owner": "Open-Wine-Components",
         "repo": "umu-launcher",
+        "type": "github"
+      }
+    },
+    "winboat": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1761401704,
+        "narHash": "sha256-zIaF3MEMNR17uiLLb+9bFjxar7EkOI6QyaOIxAhs/gQ=",
+        "owner": "TibixDev",
+        "repo": "winboat",
+        "rev": "aa868ea63512ab984c70c8a9e60ffe841a194167",
+        "type": "github"
+      },
+      "original": {
+        "owner": "TibixDev",
+        "repo": "winboat",
         "type": "github"
       }
     },
