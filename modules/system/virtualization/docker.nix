@@ -1,6 +1,7 @@
 {
   virtualisation.docker = {
-    enable = true;
+    # Disable system-wide docker
+    enable = false;
     rootless = {
       enable = true;
       setSocketVariable = true;
