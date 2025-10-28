@@ -48,10 +48,6 @@
       url = "github:xremap/nix-flake";
     };
 
-    winapps = {
-      url = "github:winapps-org/winapps";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     sops-nix = {
       url = "github:mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -72,7 +68,6 @@
       stylix,
       nixvim,
       lanzaboote,
-      winapps,
       ...
     }:
     let
@@ -182,17 +177,6 @@
             home-manager.nixosModules.home-manager
             stylix.nixosModules.stylix
             lanzaboote.nixosModules.lanzaboote
-            (
-              {
-                ...
-              }:
-              {
-                environment.systemPackages = [
-                  winapps.packages.x86_64-linux.winapps
-                  winapps.packages.x86_64-linux.winapps-launcher # optional
-                ];
-              }
-            )
             inputs.xremap-flake.nixosModules.default
             {
               home-manager.useGlobalPkgs = true;
