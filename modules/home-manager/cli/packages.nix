@@ -35,6 +35,7 @@
     nodejs
     nodePackages.jsonlint
     opentofu
+    pandoc
     podlet
     poppler
     prettier
