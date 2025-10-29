@@ -17,7 +17,7 @@
       "hosts/asus-laptop/hardware-configuration.nix"
 
       # Maintenence
-      "modules/system/maintenence.nix"
+      "modules/system/maintenance.nix"
 
       # Secure boot
       "modules/system/secureboot.nix"

@@ -19,7 +19,7 @@ in
     (map lib.custom.relativeToRoot [
       "hosts/homelab-services/disko.nix"
       "modules/system/services/openssh.nix"
-      "modules/system/maintenence.nix"
+      "modules/system/maintenance.nix"
       "modules/system/services/tailscale.nix"
       "modules/system/virtualization/docker.nix"
       "modules/system/virtualization/containers/default.nix"
