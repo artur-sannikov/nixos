@@ -1,7 +1,6 @@
 {
   nix = {
     settings = {
-      auto-optimise-store = true;
       # List of binary cache URLs that non-root users can use
       trusted-substituters = [
         "https://rstats-on-nix.cachix.org/"
