@@ -37,7 +37,6 @@
     ]);
   # GUI apps with special settings
   imports = [
-    ./alacritty.nix
     ./browsers
     ./email.nix
     ./keepassxc.nix
