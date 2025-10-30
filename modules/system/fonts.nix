@@ -4,5 +4,7 @@
     nerd-fonts.iosevka
     source-code-pro
     open-sans
+    liberation_ttf
+    roboto
   ];
 }
