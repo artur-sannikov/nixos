@@ -20,12 +20,12 @@
       exfatprogs
       gcc
       git
-      glxinfo
       gparted
       inxi
       isoimagewriter
       libva-utils
       lm_sensors
+      mesa-demos
       nano
       nfs-utils
       nixd
