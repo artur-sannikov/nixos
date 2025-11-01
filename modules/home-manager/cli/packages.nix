@@ -13,7 +13,7 @@
     caddy
     cloud-utils
     file
-    freerdp3
+    freerdp
     devenv
     djlint
     go
