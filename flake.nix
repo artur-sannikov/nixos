@@ -41,7 +41,8 @@
 
     lanzaboote = {
       url = "github:nix-community/lanzaboote/v0.4.2";
-      inputs.nixpkgs.follows = "nixpkgs";
+      # Temporary fix https://github.com/nix-community/lanzaboote/issues/485
+      # inputs.nixpkgs.follows = "nixpkgs";
     };
 
     # Remap keyboard keys
