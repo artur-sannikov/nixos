@@ -174,6 +174,10 @@ in
     podman = {
       enable = true;
     };
+    # Required for archivebox
+    docker = {
+      enable = lib.mkForce true;
+    };
   };
 
   # Enable Archivebox container
