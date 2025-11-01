@@ -10,10 +10,7 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    winboat = {
-      url = "github:TibixDev/winboat";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+
     # VS Code extensions
     nix-vscode-extensions = {
       url = "github:nix-community/nix-vscode-extensions";
@@ -72,7 +69,6 @@
       stylix,
       nixvim,
       lanzaboote,
-      winboat,
       ...
     }:
     let

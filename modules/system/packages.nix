@@ -10,7 +10,6 @@
     with pkgs;
     [
 
-      flake-inputs.winboat.packages."x86_64-linux".winboat
       aha
       air-formatter
       clinfo
@@ -48,6 +47,7 @@
       vulkan-tools
       wayland-utils
       wget
+      winboat
       wireguard-tools
     ]
     ++ (with pkgs-stable; [
