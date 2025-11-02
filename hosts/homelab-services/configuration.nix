@@ -80,6 +80,7 @@ in
     secrets = {
       forgejo-runner-token = { };
       forgejo-runner-main-token = { };
+      restic-forgejo-dump-backup-password = { };
     };
   };
 
@@ -92,6 +93,25 @@ in
       openFirewall = true;
       host = "0.0.0.0";
       mediaLocation = "/mnt/nas/photos";
+    };
+    restic = {
+      backups = {
+        forgejo-dump = {
+          initialize = true;
+          paths = [ (builtins.toString config.services.forgejo.dump.backupDir) ];
+          repository = "/mnt/nas/backups/forgejo-dump";
+          passwordFile = config.sops.secrets.restic-forgejo-dump-backup-password.path;
+          pruneOpts = [
+            "--keep-daily 7"
+            "--keep-weekly 5"
+            "--keep-monthly 12"
+          ];
+          timerConfig = {
+            OnCalendar = "13:00"; # One hour after forgejo-dump
+            Persistent = true;
+          };
+        };
+      };
     };
     forgejo = {
       enable = true;
