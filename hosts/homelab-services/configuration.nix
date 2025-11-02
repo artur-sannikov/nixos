@@ -96,7 +96,7 @@ in
       dump = {
         enable = true;
         type = "tar.gz";
-        interval = "hourly";
+        interval = "05:37";
       };
       settings = {
         server = {
@@ -133,28 +133,45 @@ in
     };
   };
 
-  # systemd timer to delete old Forgejo action containers
-
-  # Forgejo action containers are updated and pulled automatically
-  # They are not deleted automatically and occupy a lot of space
-  # That's the only way I found to delete the old images
-  # I use binaries from pkgs as the safest approach of running programs
   systemd = {
-    services.podman-cleanup = {
-      description = "Clean up renovate images";
-      serviceConfig = {
-        Type = "oneshot";
-        User = "root";
-        ExecStart = "${pkgs.writeShellScript "podman-cleanup" ''
-          #!${pkgs.bash}/bin/bash
-          set -euo pipefail
+    # systemd timer to delete old Forgejo action containers
+    # Forgejo action containers are updated and pulled automatically
+    # They are not deleted automatically and occupy a lot of space
+    # That's the only way I found to delete the old images
+    # I use binaries from pkgs as the safest approach of running programs
+    services = {
+      podman-cleanup = {
+        description = "Clean up renovate images";
+        serviceConfig = {
+          Type = "oneshot";
+          User = "root";
+          ExecStart = "${pkgs.writeShellScript "podman-cleanup" ''
+            #!${pkgs.bash}/bin/bash
+            set -euo pipefail
 
-          ${pkgs.podman}/bin/podman image ls -a  \
-          | ( ${pkgs.gnugrep}/bin/grep "renovate" || true ) \
-          | ${pkgs.gawk}/bin/awk '{print $3}' \
-          | ${pkgs.findutils}/bin/xargs --no-run-if-empty \
-          ${pkgs.podman}/bin/podman rmi -f
-        ''}";
+            ${pkgs.podman}/bin/podman image ls -a  \
+            | ( ${pkgs.gnugrep}/bin/grep "renovate" || true ) \
+            | ${pkgs.gawk}/bin/awk '{print $3}' \
+            | ${pkgs.findutils}/bin/xargs --no-run-if-empty \
+            ${pkgs.podman}/bin/podman rmi -f
+          ''}";
+        };
+      };
+      # Clean up old Forgejo dumps
+      forgejo-cleanup-dump = {
+        description = "Clean up Frogejo dumps";
+        serviceConfig = {
+          Type = "oneshot";
+          User = config.services.forgejo.user;
+          ExecStart =
+            let
+              findBin = "${pkgs.findutils}/bin/find";
+              dumpDir = config.services.forgejo.dump.backupDir;
+              # Dumps are pretty big
+              dumpKeepDays = 5;
+            in
+            "${findBin} '${dumpDir}' -type f -mtime +${builtins.toString dumpKeepDays} -delete";
+        };
       };
     };
     timers = {
@@ -163,6 +180,14 @@ in
         wantedBy = [ "timers.target" ];
         timerConfig = {
           OnCalendar = "hourly";
+          Persistent = true;
+        };
+      };
+      forgejo-cleanup-dump = {
+        requires = [ "forgejo-cleanup-dump.service" ];
+        wantedBy = [ "timers.target" ];
+        timerConfig = {
+          OnCalendar = "12:00";
           Persistent = true;
         };
       };
