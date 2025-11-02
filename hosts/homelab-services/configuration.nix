@@ -90,8 +90,6 @@ in
     forgejo = {
       enable = true;
       package = pkgs.forgejo;
-      user = "forgejo";
-      group = "forgejo";
       lfs.enable = true;
       dump = {
         enable = true;
