@@ -25,6 +25,13 @@
         key = "<C-k>";
         action = ":move '<-2<CR>gv=gv";
       }
+
+      # Rename all instances of X with LSP
+      {
+        mode = "n";
+        key = "<leader>rn";
+        action = "<cmd>lua vim.lsp.buf.rename()<CR>";
+      }
     ];
   };
 }
