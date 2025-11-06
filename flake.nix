@@ -38,16 +38,9 @@
       url = "github:Open-Wine-Components/umu-launcher?dir=packaging/nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    rust-overlay = {
-      url = "github:oxalica/rust-overlay";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     lanzaboote = {
       url = "github:nix-community/lanzaboote";
-      # Temporary fix https://github.com/nix-community/lanzaboote/issues/485
       inputs.nixpkgs.follows = "nixpkgs";
-      inputs.rust-overlay.follows = "rust-overlay";
     };
     # Remap keyboard keys
     xremap-flake = {
@@ -73,7 +66,6 @@
       home-manager,
       stylix,
       nixvim,
-      rust-overlay,
       lanzaboote,
       ...
     }:
