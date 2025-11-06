@@ -2,6 +2,7 @@
   pkgs,
   config,
   flake-inputs,
+  lib,
   ...
 }:
 let
@@ -25,6 +26,14 @@ in
     secrets = {
       utu_password = { };
       migadu_password = { };
+    };
+  };
+
+  # Write filepicker and dirpicker for neomutt
+  home = {
+    file = {
+      ".config/neomutt/filepicker".source = ./filepicker;
+      ".config/neomutt/dirpicker".source = ./dirpicker;
     };
   };
 
@@ -239,7 +248,7 @@ in
         # View attachments
         {
           key = "<return>";
-          map = "attach";
+          map = [ "attach" ];
           action = "view-mailcap";
         }
       ];
@@ -278,7 +287,7 @@ in
         }
         {
           key = "S";
-          map = "index";
+          map = [ "index" ];
           # Sync email
           action = "<shell-escape>mbsync -V -a<enter><shell-escape>notmuch new<enter>";
         }
@@ -286,6 +295,23 @@ in
           key = "\\\\";
           map = [ "index" ];
           action = "<vfolder-from-query>";
+        }
+        {
+          key = "a";
+          map = [ "compose" ];
+          action = lib.concatStrings [
+            "<shellescape>bash $HOME/.config/neomutt/filepicker<enter>"
+            "<enter-command>source $HOME/.config/neomutt/tmpfile<enter>"
+            "<shell-escape>bash $HOME/.config/neomutt/filepicker clean<enter>"
+          ];
+        }
+        {
+          key = "s";
+          map = [ "attach" ];
+          action = lib.concatStrings [
+            "<shell-escape>bash $HOME/.config/neomutt/dirpicker<enter>"
+            "<enter-command>source $HOME/.config/neomutt/tmpfile<enter>y<enter>"
+          ];
         }
         # Sidebar macros
         {
