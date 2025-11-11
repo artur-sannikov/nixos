@@ -102,16 +102,15 @@
     in
     {
       nixosConfigurations = {
-        asus-laptop = lib.nixosSystem {
-          inherit system;
+        tuxedo = lib.nixosSystem {
+          inherit system pkgs;
           specialArgs = {
             flake-inputs = inputs;
-            inherit pkgs;
             inherit username;
             inherit pkgs-stable;
           };
           modules = [
-            ./hosts/asus-laptop/configuration.nix
+            ./hosts/tuxedo/configuration.nix
             disko.nixosModules.disko
             home-manager.nixosModules.home-manager
             stylix.nixosModules.stylix
@@ -123,7 +122,7 @@
               home-manager.useUserPackages = true;
               home-manager.users."${username}".imports = [
                 nixvim.homeModules.nixvim
-                ./hosts/asus-laptop/home.nix
+                ./hosts/tuxedo/home.nix
               ];
               home-manager.extraSpecialArgs = {
                 flake-inputs = inputs;

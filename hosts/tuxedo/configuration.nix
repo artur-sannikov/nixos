@@ -13,8 +13,8 @@
   imports = lib.flatten [
     (map lib.custom.relativeToRoot [
       # Host-specific configuration
-      "hosts/asus-laptop/disko.nix"
-      "hosts/asus-laptop/hardware-configuration.nix"
+      "hosts/tuxedo/disko.nix"
+      "hosts/tuxedo/hardware-configuration.nix"
 
       # Maintenence
       "modules/system/maintenance.nix"
@@ -42,6 +42,8 @@
       # SSH Agent
       "modules/system/services/ssh.nix"
 
+      "modules/system/services/openssh.nix"
+
       # Remap keyboard keys
       "modules/system/services/xremap.nix"
 
@@ -64,7 +66,7 @@
       "modules/system/gaming.nix"
       "modules/system/nix.nix"
       "modules/system/stylix.nix"
-      "modules/system/vaapi.nix"
+      # "modules/system/vaapi.nix"
 
       # Fonts
       "modules/system/fonts.nix"
@@ -81,13 +83,18 @@
     sshAgent.enable = true;
 
     boot = {
+      extraModulePackages = with config.boot.kernelPackages; [ yt6801 ];
+      kernelParams = [
+        "acpi.ec_no_wakeup=1" # Fixes ACPI wakeup issues
+        "amdgpu.dcdebugmask=0x10" # Fixes Wayland slowdowns/freezes
+      ];
       loader = {
         systemd-boot.enable = true;
       };
     };
 
     networking = {
-      hostName = "asus";
+      hostName = "tuxedo";
       hostId = "2a2fff45";
       networkmanager.enable = true;
       firewall = {
@@ -112,15 +119,16 @@
     };
 
     hardware = {
+      tuxedo-drivers.enable = true;
       graphics = {
         enable = true;
         enable32Bit = true;
-        extraPackages = with pkgs; [
-          intel-media-driver
-          vaapiIntel
-          vaapiVdpau
-          libvdpau-va-gl
-        ];
+        # extraPackages = with pkgs; [
+        # intel-media-driver
+        # vaapiIntel
+        # vaapiVdpau
+        # libvdpau-va-gl
+        # ];
       };
       bluetooth = {
         enable = true;
@@ -130,16 +138,16 @@
 
     # Mount NFS
     fileSystems = {
-      "/mnt/nas/backup" = {
-        device = "192.168.20.5:/mnt/tank/ux5401-backup";
-        fsType = "nfs";
-        options = [
-          "x-systemd.automount"
-          "nofail"
-          "noauto"
-          "_netdev"
-        ];
-      };
+      # "/mnt/nas/backup" = {
+      #   device = "192.168.20.5:/mnt/tank/ux5401-backup";
+      #   fsType = "nfs";
+      #   options = [
+      #     "x-systemd.automount"
+      #     "nofail"
+      #     "noauto"
+      #     "_netdev"
+      #   ];
+      # };
       "/mnt/nas/media" = {
         device = "192.168.20.5:/mnt/tank/media";
         fsType = "nfs";
@@ -231,7 +239,7 @@
         virtualisation = {
           containers = {
             immich-remote-machine-learning.enable = false;
-            sillytavern.enable = true;
+            sillytavern.enable = false;
           };
         };
       };

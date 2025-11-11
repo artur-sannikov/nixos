@@ -37,6 +37,7 @@
       python313
       samba
       sanoid
+      sbctl
       ssh-audit
       stress-ng
       system-config-printer
