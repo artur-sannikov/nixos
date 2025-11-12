@@ -1,7 +1,6 @@
 {
   pkgs,
   pkgs-stable,
-  flake-inputs,
   ...
 }:
 # Install system-wide packages
@@ -9,7 +8,6 @@
   environment.systemPackages =
     with pkgs;
     [
-
       aha
       air-formatter
       clinfo
