@@ -49,6 +49,7 @@
     shellcheck
     shfmt
     sops
+    statix
     stylua
     talosctl
     taplo
