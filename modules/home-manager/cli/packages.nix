@@ -14,6 +14,7 @@
     cloud-utils
     file
     freerdp
+    deadnix
     devenv
     djlint
     go
