@@ -116,18 +116,19 @@
             stylix.nixosModules.stylix
             lanzaboote.nixosModules.lanzaboote
             inputs.xremap-flake.nixosModules.default
-
             {
-              home-manager.useGlobalPkgs = true;
-              home-manager.useUserPackages = true;
-              home-manager.users."${username}".imports = [
-                nixvim.homeModules.nixvim
-                ./hosts/tuxedo/home.nix
-              ];
-              home-manager.extraSpecialArgs = {
-                flake-inputs = inputs;
-                inherit pkgs-stable;
-                inherit username;
+              home-manager = {
+                useGlobalPkgs = true;
+                useUserPackages = true;
+                users."${username}".imports = [
+                  nixvim.homeModules.nixvim
+                  ./hosts/tuxedo/home.nix
+                ];
+                extraSpecialArgs = {
+                  flake-inputs = inputs;
+                  inherit pkgs-stable;
+                  inherit username;
+                };
               };
             }
           ];
@@ -147,18 +148,18 @@
             stylix.nixosModules.stylix
             inputs.xremap-flake.nixosModules.default
             {
-              home-manager.useGlobalPkgs = true;
-              home-manager.useUserPackages = true;
-              home-manager.users."${username}".imports = [
-                nixvim.homeModules.nixvim
-                ./hosts/desktop/home.nix
-              ];
-
-              # Optionally, use home-manager.extraSpecialArgs to pass arguments to home.nix
-              home-manager.extraSpecialArgs = {
-                flake-inputs = inputs;
-                inherit pkgs-stable;
-                inherit username;
+              home-manager = {
+                useGlobalPkgs = true;
+                useUserPackages = true;
+                users."${username}".imports = [
+                  nixvim.homeModules.nixvim
+                  ./hosts/desktop/home.nix
+                ];
+                extraSpecialArgs = {
+                  flake-inputs = inputs;
+                  inherit pkgs-stable;
+                  inherit username;
+                };
               };
             }
           ];
@@ -177,17 +178,18 @@
             lanzaboote.nixosModules.lanzaboote
             inputs.xremap-flake.nixosModules.default
             {
-              home-manager.useGlobalPkgs = true;
-              home-manager.useUserPackages = true;
-              home-manager.users."${username}".imports = [
-                nixvim.homeModules.nixvim
-                ./hosts/ty/home.nix
-              ];
-
-              home-manager.extraSpecialArgs = {
-                flake-inputs = inputs;
-                inherit pkgs-stable;
-                inherit username;
+              home-manager = {
+                useGlobalPkgs = true;
+                useUserPackages = true;
+                users."${username}".imports = [
+                  nixvim.homeModules.nixvim
+                  ./hosts/ty/home.nix
+                ];
+                extraSpecialArgs = {
+                  flake-inputs = inputs;
+                  inherit pkgs-stable;
+                  inherit username;
+                };
               };
             }
           ];

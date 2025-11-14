@@ -4,8 +4,11 @@
     git = {
       enable = true;
       settings = {
-        user.name = "Artur Sannikov";
-        user.email = "git-sign@asannikov.com";
+        user = {
+          name = "Artur Sannikov";
+          email = "git-sign@asannikov.com";
+          signingkey = "AF9397CF9FF360BC";
+        };
         init.defaultBranch = "main";
         push.autoSetupRemote = true;
         merge = {
@@ -24,7 +27,6 @@
           colorMoved = "default";
         };
         commit.gpgsign = true;
-        user.signingkey = "AF9397CF9FF360BC";
       };
       ignores = [
         ".DS_Store"
