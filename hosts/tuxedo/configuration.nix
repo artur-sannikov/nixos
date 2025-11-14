@@ -56,6 +56,7 @@
       "modules/system/services/tailscale.nix"
       "modules/system/services/tlp.nix"
       "modules/system/services/mbsyncd.nix"
+      "modules/system/services/fwupd.nix"
 
       # Browsers
       "modules/system/browsers"
