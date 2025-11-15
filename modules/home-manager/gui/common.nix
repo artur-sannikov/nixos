@@ -42,7 +42,7 @@
     ./keepassxc.nix
     ./kitty.nix
     ./mpv.nix
-    # ./nextcloud-client.nix
+    ./nextcloud-client.nix
     ./vscodium.nix
   ];
 }
