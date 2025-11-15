@@ -34,7 +34,6 @@
     nextflow
     nixpkgs-review
     nodejs
-    nodePackages.jsonlint
     opentofu
     pandoc
     podlet
