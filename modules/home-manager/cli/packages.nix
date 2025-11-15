@@ -36,6 +36,7 @@
     nodejs
     opentofu
     pandoc
+    pnpm
     podlet
     poppler
     prettier
