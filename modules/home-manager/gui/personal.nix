@@ -15,7 +15,6 @@
       moonlight-qt
       monero-gui
       picard
-      rustdesk-flutter
       telegram-desktop
       tor-browser
       veracrypt
@@ -24,6 +23,7 @@
       calibre
       flacon
       protonmail-bridge-gui
+      rustdesk-flutter
       signal-desktop
     ]);
 }
