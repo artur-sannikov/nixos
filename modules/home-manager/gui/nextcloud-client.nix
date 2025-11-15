@@ -1,9 +1,9 @@
-{ pkgs-stable, ... }:
+{ pkgs, ... }:
 {
   services = {
     nextcloud-client = {
       enable = true;
-      package = pkgs-stable.nextcloud-client;
+      package = pkgs.nextcloud-client;
     };
   };
 }
