@@ -8,10 +8,10 @@
     (with pkgs; [
       slack
       teams-for-linux
-      eduvpn-client
       quickemu
     ])
     ++ (with pkgs-stable; [
       seafile-client
+      eduvpn-client
     ]);
 }
