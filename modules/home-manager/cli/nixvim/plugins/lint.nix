@@ -6,7 +6,6 @@
           enable = true;
           lintersByFt = {
             dockerfile = [ "hadolint" ];
-            json = [ "jsonlint" ];
             markdown = [ "vale" ];
             nix = [
               "statix"
