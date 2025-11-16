@@ -22,10 +22,10 @@
     commands = {
       "home" = {
         source = "zroot/home";
-        target = "syncoid@192.168.20.5:tank/personal/backups/asus";
+        target = "syncoid@192.168.20.5:tank/personal/backups/${config.networking.hostName}";
         extraArgs = [
-          "--exclude=Downloads"
-          "--exclude=zfs_exclude"
+          "--exclude-datasets=Downloads"
+          "--exclude-datasets=zfs_exclude"
           "--delete-target-snapshots" # Delete snapshots on target which are missing on source
           "--sshoption=StrictHostKeyChecking=off"
         ];
