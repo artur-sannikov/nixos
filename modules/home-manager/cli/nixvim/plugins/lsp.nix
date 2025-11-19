@@ -66,6 +66,11 @@
             enable = true;
           };
 
+          # OpenTofu
+          tofu_ls = {
+            enable = true;
+          };
+
           # yaml
           yamlls = {
             enable = true;
