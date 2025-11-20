@@ -46,7 +46,6 @@
       vulkan-tools
       wayland-utils
       wget
-      winboat
       wireguard-tools
     ]
     ++ (with pkgs-stable; [
