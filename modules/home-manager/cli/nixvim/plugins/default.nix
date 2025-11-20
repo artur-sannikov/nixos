@@ -2,7 +2,6 @@
   imports = [
     ./autoclose.nix
     ./blink-cmp.nix
-    ./cmp.nix
     ./conform-nvim.nix
     ./diffview.nix
     ./gitsigns.nix
