@@ -23,6 +23,8 @@ in
         enable = true;
         settings = {
           embed-metadata = true;
+          embed-subs = true;
+          embed-thumbnail = true;
         };
       };
     };
