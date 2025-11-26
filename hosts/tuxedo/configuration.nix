@@ -57,6 +57,7 @@
       "modules/system/services/tlp.nix"
       "modules/system/services/mbsyncd.nix"
       "modules/system/services/fwupd.nix"
+      "modules/system/services/udisks2.nix"
 
       # Browsers
       "modules/system/browsers"
