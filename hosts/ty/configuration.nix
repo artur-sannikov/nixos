@@ -37,6 +37,7 @@
       "modules/system/services/mbsyncd.nix"
       # Remap keyboard keys
       "modules/system/services/xremap.nix"
+      "modules/system/services/udisks2.nix"
 
       # Virtualization
       "modules/system/virtualization/bottles.nix"
