@@ -36,6 +36,7 @@
       "modules/home-manager/gui/fonts.nix"
 
       "modules/home-manager/services/duplicacy-web.nix"
+      "modules/home-manager/services/udiskie.nix"
       "modules/home-manager/stylix.nix"
     ])
   ];
