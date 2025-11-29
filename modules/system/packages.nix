@@ -20,7 +20,7 @@
       git
       gparted
       inxi
-      isoimagewriter
+      kdePackages.isoimagewriter
       libva-utils
       lm_sensors
       mesa-demos
