@@ -34,10 +34,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    umu = {
-      url = "github:Open-Wine-Components/umu-launcher?dir=packaging/nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     lanzaboote = {
       url = "github:nix-community/lanzaboote/v0.4.3";
       inputs.nixpkgs.follows = "nixpkgs";

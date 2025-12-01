@@ -67,8 +67,7 @@ in
         protonup-ng
         protonup-qt
         protontricks
-        # limo # Mod manager
-        flake-inputs.umu.packages.${pkgs.system}.umu-launcher
+        umu-launcher
         (lutris.override {
           extraPkgs = pkgs: [
             wineWowPackages.stable
