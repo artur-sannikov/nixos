@@ -15,11 +15,11 @@
       inkscape
       kdePackages.filelight
       kdePackages.okular
-      libreoffice-qt6-fresh
+      libreoffice-qt-fresh
       obsidian
       protonvpn-gui
       rclone
-      strawberry-qt6
+      strawberry
       texstudio
       vlc
     ])
