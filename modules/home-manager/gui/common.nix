@@ -31,7 +31,6 @@
       meld
       onlyoffice-desktopeditors
       qbittorrent
-      texlive.combined.scheme-full
       tidal-hifi
       zotero
     ]);
