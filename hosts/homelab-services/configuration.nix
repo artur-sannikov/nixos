@@ -192,7 +192,7 @@ in
               findBin = "${pkgs.findutils}/bin/find";
               dumpDir = config.services.forgejo.dump.backupDir;
               # Dumps are pretty big
-              dumpKeepDays = 5;
+              dumpKeepDays = 3;
             in
             "${findBin} '${dumpDir}' -type f -mtime +${builtins.toString dumpKeepDays} -delete";
         };
