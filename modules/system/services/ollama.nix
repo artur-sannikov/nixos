@@ -3,8 +3,7 @@
   services = {
     ollama = {
       enable = true;
-      package = pkgs-stable.ollama;
-      acceleration = false;
+      package = pkgs-stable.ollama-cpu;
     };
     open-webui = {
       enable = true;
