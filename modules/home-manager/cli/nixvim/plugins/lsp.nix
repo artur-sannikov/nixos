@@ -66,6 +66,15 @@
             enable = true;
           };
 
+          # typst
+          tinymist = {
+            enable = true;
+            settings = {
+              exportPdf = "onSave";
+              formatterMode = "typstyle";
+            };
+          };
+
           # OpenTofu
           tofu_ls = {
             enable = true;
