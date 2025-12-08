@@ -72,6 +72,8 @@
             settings = {
               exportPdf = "onSave";
               formatterMode = "typstyle";
+              formatterProseWrap = true;
+              formatterPrintWidth = 80;
             };
           };
 
