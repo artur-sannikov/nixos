@@ -29,7 +29,6 @@
           sh = [ "shfmt" ];
           scss = [ "prettier" ];
           lua = [ "stylua" ];
-          typst = [ "typstyle" ];
           yaml = [ "prettier" ];
           "yaml.ansible" = [ "ansible-lint" ];
         };
