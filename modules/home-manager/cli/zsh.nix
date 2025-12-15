@@ -58,6 +58,7 @@ in
         oh-my-zsh = {
           enable = true;
           plugins = [
+            "ansible"
             "fzf"
             "direnv"
             "git"
