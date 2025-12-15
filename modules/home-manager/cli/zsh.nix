@@ -58,6 +58,7 @@ in
         oh-my-zsh = {
           enable = true;
           plugins = [
+            "fzf"
             "direnv"
             "git"
             # "git-auto-fetch"
