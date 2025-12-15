@@ -31,6 +31,7 @@
     lynx
     mat2
     multiqc
+    ncdu
     nextflow
     nixpkgs-review
     nodejs
