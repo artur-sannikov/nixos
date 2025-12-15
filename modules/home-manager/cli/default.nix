@@ -1,5 +1,6 @@
 {
   imports = [
+    ./atuin.nix
     ./bash.nix
     ./bat.nix
     ./btop.nix
