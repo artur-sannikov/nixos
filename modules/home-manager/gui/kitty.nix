@@ -30,10 +30,15 @@
         "ctrl+l" = "neighboring_window right";
         "ctrl+k" = "neighboring_window up";
         "ctrl+j" = "neighboring_window down";
+
         "ctrl+f>h" = "move_window left";
         "ctrl+f>l" = "move_window right";
         "ctrl+f>k" = "move_window up";
         "ctrl+f>j" = "move_window down";
+
+        "ctrl+f>," = "set_tab_title";
+        "ctrl+f>n" = "next_tab";
+        "ctrl+f>p" = "previous_tab";
       };
     };
   };
