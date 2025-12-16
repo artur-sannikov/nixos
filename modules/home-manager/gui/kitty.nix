@@ -21,6 +21,19 @@
         cursor_shape = "beam";
         cursor_beam_thickness = 1.5;
         cursor_blink_interval = 0;
+        shell = "zsh";
+        copy_on_select = "yes";
+      };
+      keybindings = {
+        "ctrl+f>c" = "new_tab";
+        "ctrl+h" = "neighboring_window left";
+        "ctrl+l" = "neighboring_window right";
+        "ctrl+k" = "neighboring_window up";
+        "ctrl+j" = "neighboring_window down";
+        "ctrl+f>h" = "move_window left";
+        "ctrl+f>l" = "move_window right";
+        "ctrl+f>k" = "move_window up";
+        "ctrl+f>j" = "move_window down";
       };
     };
   };
