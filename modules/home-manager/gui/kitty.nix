@@ -39,6 +39,9 @@
         "ctrl+f>," = "set_tab_title";
         "ctrl+f>n" = "next_tab";
         "ctrl+f>p" = "previous_tab";
+
+        "ctrl+f>-" = "launch --location=hsplit";
+        "ctrl+'" = "next_layout";
       };
     };
   };
