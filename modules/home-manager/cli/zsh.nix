@@ -38,6 +38,8 @@ in
           # Integration with direnv
           "tmux" = "direnv exec / tmux";
           edit = "$EDITOR $(fzf)";
+          # See issue here https://sw.kovidgoyal.net/kitty/faq/#i-get-errors-about-the-terminal-being-unknown-or-opening-the-terminal-failing-or-functional-keys-like-arrow-keys-don-t-work
+          s = "kitten ssh";
         };
         sessionVariables = {
           LC_ALL = "en_US.UTF-8";
