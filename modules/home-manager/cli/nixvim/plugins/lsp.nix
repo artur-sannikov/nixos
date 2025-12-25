@@ -86,6 +86,10 @@
           yamlls = {
             enable = true;
           };
+
+          harper-ls = {
+            enable = true;
+          };
         };
       };
     };
