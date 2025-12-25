@@ -78,6 +78,9 @@
 
       # Import all core modules
       "modules/core/default.nix"
+
+      # Wifi MAC randomization
+      "modules/system/networking/wifi-mac-randomization.nix"
     ])
   ];
 
@@ -98,7 +101,12 @@
     networking = {
       hostName = "tuxedo";
       hostId = "2a2fff45";
-      networkmanager.enable = true;
+      networkmanager = {
+        enable = true;
+        # device = {
+        #   "wifi.scan-rand-mac-address" = "yes";
+        # };
+      };
       firewall = {
         allowedTCPPorts = [
           # Syncthing port
