@@ -71,6 +71,9 @@
 
       # Import all core modules
       "modules/core/default.nix"
+
+      # Wifi MAC randomization
+      "modules/system/networking/wifi-mac-randomization.nix"
     ])
   ];
 
