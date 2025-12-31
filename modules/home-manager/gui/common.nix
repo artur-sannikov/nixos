@@ -18,7 +18,6 @@
       libreoffice-qt-fresh
       obsidian
       protonvpn-gui
-      rclone
       strawberry
       texstudio
       vlc
