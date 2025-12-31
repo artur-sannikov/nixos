@@ -59,6 +59,8 @@
       "modules/system/services/fwupd.nix"
       "modules/system/zoom-us.nix"
 
+      "modules/system/services/nvme-rs.nix"
+
       # Browsers
       "modules/system/browsers"
 

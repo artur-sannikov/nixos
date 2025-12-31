@@ -38,6 +38,7 @@
       # Remap keyboard keys
       "modules/system/services/xremap.nix"
       "modules/system/services/udisks2.nix"
+      "modules/system/services/nvme-rs.nix"
 
       # Virtualization
       "modules/system/virtualization/bottles.nix"
