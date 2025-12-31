@@ -41,6 +41,5 @@
     ./kitty.nix
     ./mpv.nix
     ./nextcloud-client.nix
-    ./vscodium.nix
   ];
 }
