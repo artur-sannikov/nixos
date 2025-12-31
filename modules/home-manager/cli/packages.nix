@@ -45,6 +45,7 @@
     python313Packages.pip
     pylint
     radian
+    rclone
     resvg
     sass
     shellcheck
