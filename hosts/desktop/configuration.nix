@@ -53,6 +53,7 @@
       "modules/system/services/lact.nix"
       "modules/system/services/openrgb.nix"
       "modules/system/services/mbsyncd.nix"
+      "modules/system/services/nvme-rs.nix"
 
       # Other system-related packages
       "modules/system/adb.nix"
