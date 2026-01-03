@@ -20,6 +20,7 @@
       protonvpn-gui
       strawberry
       texstudio
+      tidal-hifi
       vlc
     ])
     ++ (with pkgs; [
@@ -30,7 +31,6 @@
       meld
       onlyoffice-desktopeditors
       qbittorrent
-      tidal-hifi
       zotero
     ]);
   # GUI apps with special settings
