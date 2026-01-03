@@ -87,7 +87,7 @@
             enable = true;
           };
 
-          harper-ls = {
+          harper_ls = {
             enable = true;
           };
         };
