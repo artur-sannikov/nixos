@@ -2,14 +2,9 @@
 {
   programs.mpv = {
     enable = true;
-    package = pkgs.mpv-unwrapped.wrapper {
-      scripts = with pkgs.mpvScripts; [
-        sponsorblock
-      ];
-      mpv = pkgs.mpv-unwrapped.override {
-        waylandSupport = true;
-      };
-    };
+    scripts = with pkgs.mpvScripts; [
+      sponsorblock
+    ];
     config = {
       profile = "high-quality";
       ytdl-format = "bestvideo+bestaudio";
