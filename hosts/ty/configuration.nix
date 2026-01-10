@@ -52,7 +52,6 @@
       "modules/system/packages.nix"
 
       # Other system-related packages
-      "modules/system/adb.nix"
       "modules/system/appimage.nix"
       "modules/system/nix.nix"
       "modules/system/screen.nix"

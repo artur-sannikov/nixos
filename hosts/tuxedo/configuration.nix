@@ -65,7 +65,6 @@
       "modules/system/browsers"
 
       # Other system-related packages
-      "modules/system/adb.nix"
       "modules/system/appimage.nix"
       "modules/system/gaming.nix"
       "modules/system/nix.nix"
