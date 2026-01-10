@@ -56,7 +56,6 @@
       "modules/system/services/nvme-rs.nix"
 
       # Other system-related packages
-      "modules/system/adb.nix"
       "modules/system/appimage.nix"
       "modules/system/corectrl.nix"
       "modules/system/gaming.nix"
