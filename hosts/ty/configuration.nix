@@ -56,6 +56,7 @@
       "modules/system/nix.nix"
       "modules/system/screen.nix"
       "modules/system/zoom-us.nix"
+      "modules/system/apptainer.nix"
 
       # Browsers
       "modules/system/browsers"
