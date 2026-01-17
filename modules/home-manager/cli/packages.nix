@@ -55,7 +55,6 @@
     stylua
     talosctl
     taplo
-    terraform
     tesseract
     toolbox
     tree
