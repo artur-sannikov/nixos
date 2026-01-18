@@ -81,6 +81,8 @@
 
     boot = {
       kernelPackages = pkgs.linuxPackages_latest;
+      # For better gaming performance
+      kernelModules = [ "ntsync" ];
       loader = {
         efi.canTouchEfiVariables = true;
         systemd-boot = {
