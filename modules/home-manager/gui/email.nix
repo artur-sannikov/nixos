@@ -11,7 +11,6 @@ let
   mailcap_file = pkgs.writeText "mailcap" ''
     text/html; firefox %s; test=test -n "$display"; needsterminal
     text/html; lynx -assume_charset=%{charset} -display_charset=utf-8 -dump -width=1024 %s; nametemplate=%s.html; copiousoutput
-    text/plain; cat %s; copiousoutput
     image/jpg; feh %s;
     image/jpg; feh %s;
     image/png; feh %s;
