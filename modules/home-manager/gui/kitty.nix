@@ -43,6 +43,17 @@
 
         "ctrl+f>-" = "launch --location=hsplit";
         "ctrl+'" = "next_layout";
+
+        # Move between tabs
+        "ctrl+f>1" = "goto_tab 1";
+        "ctrl+f>2" = "goto_tab 2";
+        "ctrl+f>3" = "goto_tab 3";
+        "ctrl+f>4" = "goto_tab 4";
+        "ctrl+f>5" = "goto_tab 5";
+        "ctrl+f>6" = "goto_tab 6";
+        "ctrl+f>7" = "goto_tab 7";
+        "ctrl+f>8" = "goto_tab 8";
+        "ctrl+f>9" = "goto_tab 9";
       };
     };
   };
