@@ -37,8 +37,12 @@
 
           # https://github.com/catppuccin/nvim/tree/main/lua/catppuccin/groups/integrations
           integrations = {
-            cmp = true;
-            treesitter = true;
+            blink-cmp = true;
+            coc-nvim = true;
+            fzf = true;
+            markview = true;
+            neogit = true;
+            treesitter_context = true;
             telescope = true;
           };
 
