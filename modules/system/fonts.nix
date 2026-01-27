@@ -19,7 +19,7 @@
       };
     };
     enableDefaultPackages = true;
-    packages = with pkgs-stable; [
+    fonts.packages = with pkgs-stable; [
       nerd-fonts.iosevka
       nerd-fonts.iosevka-term
       nerd-fonts.sauce-code-pro
