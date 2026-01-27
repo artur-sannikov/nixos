@@ -296,7 +296,7 @@ in
           action = "<vfolder-from-query>";
         }
         {
-          key = "a";
+          key = "A";
           map = [ "compose" ];
           action = lib.concatStrings [
             "<shellescape>bash $HOME/.config/neomutt/filepicker<enter>"
@@ -305,7 +305,7 @@ in
           ];
         }
         {
-          key = "s";
+          key = "S";
           map = [ "attach" ];
           action = lib.concatStrings [
             "<shell-escape>bash $HOME/.config/neomutt/dirpicker<enter>"
