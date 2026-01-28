@@ -10,7 +10,7 @@ yarepl.setup({
 	ft = "REPL",
 	-- How yarepl open the REPL window, can be a string or a lua function.
 	-- See below example for how to configure this option
-	wincmd = "belowright 15 split",
+	wincmd = "vertical 25 split",
 	-- The available REPL palattes that `yarepl` can create REPL based on.
 	-- To disable a built-in meta, set its key to `false`, e.g., `metas = { R = false }`
 	metas = {
