@@ -161,8 +161,7 @@ in
       };
     };
   };
-
-  # Enable email clients
+  # Programs for email
   programs = {
     thunderbird = {
       enable = true;
@@ -356,7 +355,7 @@ in
             "index"
             "pager"
           ];
-          action = "<pipe-message> abook --add-email<enter> 'Add sender to address book'";
+          action = "<pipe-message>khard add-email<return> 'Add sender to address book'";
         }
         {
           key = "<Tab>";
@@ -366,7 +365,7 @@ in
       ];
       settings = {
         mailcap_path = "${mailcap_file}";
-        query_command = ''"abook --mutt-query '%s'"'';
+        query_command = ''"${pkgs.khard}/bin/khard email --parsable %s"'';
       };
       # Config reference: https://seniormars.com/posts/neomutt/
       extraConfig = ''
@@ -523,9 +522,28 @@ in
         color body red default "([a-z][a-z0-9+-]*://(((([a-z0-9_.!~*'();:&=+$,-]|%[0-9a-f][0-9a-f])*@)?((([a-z0-9]([a-z0-9-]*[a-z0-9])?)\\.)*([a-z]([a-z0-9-]*[a-z0-9])?)\\.?|[0-9]+\\.[0-9]+\\.[0-9]+\\.[0-9]+)(:[0-9]+)?)|([a-z0-9_.!~*'()$,;:@&=+-]|%[0-9a-f][0-9a-f])+)(/([a-z0-9_.!~*'():@&=+$,-]|%[0-9a-f][0-9a-f])*(;([a-z0-9_.!~*'():@&=+$,-]|%[0-9a-f][0-9a-f])*)*(/([a-z0-9_.!~*'():@&=+$,-]|%[0-9a-f][0-9a-f])*(;([a-z0-9_.!~*'():@&=+$,-]|%[0-9a-f][0-9a-f])*)*)*)?(\\?([a-z0-9_.!~*'();/?:@&=+$,-]|%[0-9a-f][0-9a-f])*)?(#([a-z0-9_.!~*'();/?:@&=+$,-]|%[0-9a-f][0-9a-f])*)?|(www|ftp)\\.(([a-z0-9]([a-z0-9-]*[a-z0-9])?)\\.)*([a-z]([a-z0-9-]*[a-z0-9])?)\\.?(:[0-9]+)?(/([-a-z0-9_.!~*'():@&=+$,]|%[0-9a-f][0-9a-f])*(;([-a-z0-9_.!~*'():@&=+$,]|%[0-9a-f][0-9a-f])*)*(/([-a-z0-9_.!~*'():@&=+$,]|%[0-9a-f][0-9a-f])*(;([-a-z0-9_.!~*'():@&=+$,]|%[0-9a-f][0-9a-f])*)*)*)?(\\?([-a-z0-9_.!~*'();/?:@&=+$,]|%[0-9a-f][0-9a-f])*)?(#([-a-z0-9_.!~*'();/?:@&=+$,]|%[0-9a-f][0-9a-f])*)?)[^].,:;!)? \t\r\n<>\"]"
       '';
     };
+    khard = {
+      enable = true;
+      settings = {
+        general = {
+          editor = "nvim";
+        };
+      };
+    };
   };
-  # Contacts
-  programs.abook = {
-    enable = true;
+  accounts = {
+    contact = {
+      basePath = ".contacts";
+      accounts = {
+        default = {
+          khard = {
+            enable = true;
+            addressbooks = [
+              "default"
+            ];
+          };
+        };
+      };
+    };
   };
 }
