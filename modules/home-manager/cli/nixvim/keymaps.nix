@@ -32,6 +32,14 @@
         key = "<leader>rn";
         action = "<cmd>lua vim.lsp.buf.rename()<CR>";
       }
+      {
+        mode = "t";
+        key = "<Esc>";
+        action = "<C-\\><C-n>";
+        options = {
+          desc = "Switch to normal mode";
+        };
+      }
     ];
   };
 }
