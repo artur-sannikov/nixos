@@ -350,6 +350,14 @@ in
           map = [ "index" ];
           action = "<tag-pattern>~N<enter><tag-prefix><clear-flag>N<untag-pattern>.<enter>";
         }
+        {
+          key = "B";
+          map = [
+            "index"
+            "pager"
+          ];
+          action = "<pipe-message> abook --add-email<enter> 'Add sender to address book'";
+        }
       ];
       settings = {
         mailcap_path = "${mailcap_file}";
