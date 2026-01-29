@@ -358,9 +358,15 @@ in
           ];
           action = "<pipe-message> abook --add-email<enter> 'Add sender to address book'";
         }
+        {
+          key = "<Tab>";
+          action = "<complete-query>";
+          map = [ "editor" ];
+        }
       ];
       settings = {
         mailcap_path = "${mailcap_file}";
+        query_command = ''"abook --mutt-query '%s'"'';
       };
       # Config reference: https://seniormars.com/posts/neomutt/
       extraConfig = ''
