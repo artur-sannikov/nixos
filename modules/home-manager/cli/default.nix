@@ -12,6 +12,7 @@
     ./fzf.nix
     ./eza.nix
     ./git.nix
+    ./gh-dash.nix
     ./gnupg.nix
     ./iamb.nix
     ./media.nix
