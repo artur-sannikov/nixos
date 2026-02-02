@@ -12,6 +12,7 @@
     ./neogit.nix
     ./nix.nix
     ./no-neck-pain.nix
+    ./octo.nix
     ./quarto.nix
     ./telescope.nix
     ./tmux-navigator.nix
