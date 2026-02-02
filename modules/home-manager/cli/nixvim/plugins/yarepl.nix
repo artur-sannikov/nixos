@@ -27,12 +27,12 @@
       }
       {
         mode = "n";
-        key = "<leader>sl";
-        action = "<Plug>(REPLSendLine)";
+        key = "<leader>rr";
+        action = "<Plug>(REPLSendLine)j";
       }
       {
         mode = "v";
-        key = "<leader>sv";
+        key = "<leader>rr";
         action = "<Plug>(REPLSendVisual)";
       }
     ];
