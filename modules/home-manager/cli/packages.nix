@@ -7,6 +7,7 @@
     act
     age
     air-formatter
+    bc
     beets
     bitwarden-cli
     black
