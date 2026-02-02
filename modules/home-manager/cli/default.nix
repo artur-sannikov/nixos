@@ -13,6 +13,7 @@
     ./eza.nix
     ./git.nix
     ./gnupg.nix
+    ./iamb.nix
     ./media.nix
     ./nix.nix
     ./packages.nix
