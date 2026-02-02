@@ -53,6 +53,7 @@
     sops
     statix
     stylua
+    tabiew
     talosctl
     taplo
     tesseract
