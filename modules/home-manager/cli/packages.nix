@@ -42,6 +42,7 @@
     podlet
     poppler
     prettier
+    proton-vpn-cli
     python313Packages.huggingface-hub
     python313Packages.pip
     pylint
