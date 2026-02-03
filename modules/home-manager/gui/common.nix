@@ -32,6 +32,7 @@
       onlyoffice-desktopeditors
       qbittorrent
       zotero
+      zulip
     ]);
   # GUI apps with special settings
   imports = [
