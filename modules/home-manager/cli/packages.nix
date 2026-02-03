@@ -32,6 +32,7 @@
     lynx
     mat2
     multiqc
+    nchat
     ncdu
     nextflow
     nixpkgs-review
