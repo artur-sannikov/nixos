@@ -17,9 +17,9 @@
       clipboard = "unnamedplus";
       number = true;
       relativenumber = true;
+      cursorline = true;
       spell = true;
       spelllang = "en_us";
-      # formatoptions = "aw";
     };
     diagnostic = {
       settings = {
