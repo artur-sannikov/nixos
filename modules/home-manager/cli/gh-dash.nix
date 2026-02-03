@@ -18,6 +18,12 @@
             filters = "is:open involves:@me -author:@me";
           }
         ];
+        defaults = {
+          preview = {
+            open = true;
+            width = 80;
+          };
+        };
         keybindings = {
           prs = [
             {
