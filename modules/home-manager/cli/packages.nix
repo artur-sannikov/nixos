@@ -70,6 +70,5 @@
     wl-clipboard-rs
     yamlfmt
     yamllint
-    zulip
   ];
 }
