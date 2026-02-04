@@ -538,9 +538,6 @@ in
         default = {
           khard = {
             enable = true;
-            addressbooks = [
-              "default"
-            ];
           };
         };
       };
