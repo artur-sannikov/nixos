@@ -48,6 +48,7 @@ to do after the installation:
 - Login into `bw`
 - Set up config file for `vdirsyncer` in `.config/vdirsyncer`
 - Set up Thunderbird if it asks for password
+- Set up `tailscale`
 
 ## Configuration mirrors
 
