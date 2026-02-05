@@ -33,6 +33,7 @@
       "modules/home-manager/cli/nixvim/default.nix"
       # "modules/home-manager/services/ollama.nix"
       "modules/home-manager/sessionVariables.nix"
+      "modules/home-manager/services/vdirsyncer.nix"
 
       "modules/home-manager/services/duplicacy-web.nix"
       "modules/home-manager/services/udiskie.nix"
