@@ -298,7 +298,7 @@ in
           key = "A";
           map = [ "compose" ];
           action = lib.concatStrings [
-            "<shellescape>bash $HOME/.config/neomutt/filepicker<enter>"
+            "<shell-escape>bash $HOME/.config/neomutt/filepicker<enter>"
             "<enter-command>source $HOME/.config/neomutt/tmpfile<enter>"
             "<shell-escape>bash $HOME/.config/neomutt/filepicker clean<enter>"
           ];
