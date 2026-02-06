@@ -49,6 +49,7 @@ to do after the installation:
 - Set up config file for `vdirsyncer` in `.config/vdirsyncer`
 - Set up Thunderbird if it asks for password
 - Set up `tailscale`
+- Install [Better Bibtex](https://retorque.re/zotero-better-bibtex/) for Zotero
 
 ## Configuration mirrors
 
