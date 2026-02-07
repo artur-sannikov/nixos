@@ -14,7 +14,7 @@ jobs:
         run: |
           nix profile add nixpkgs#nodejs_24 nixpkgs#findutils nixpkgs#jq
       - name: Checkout flake
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
         with:
           ref: devel
       - name: Prepare inputs to update
