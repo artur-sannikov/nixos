@@ -41,7 +41,7 @@
         "ctrl+f>n" = "next_tab";
         "ctrl+f>p" = "previous_tab";
 
-        "ctrl+f>-" = "launch --location=hsplit";
+        "ctrl+f>-" = "launch --cwd=current --location=hsplit";
         "ctrl+'" = "next_layout";
 
         # Move between tabs
