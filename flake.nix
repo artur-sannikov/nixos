@@ -100,7 +100,7 @@
             overlays = [ ];
           };
         };
-        hetzner1 = import ./hosts/nixos/hetzner1;
+        hetzner1 = import ./hosts/hetzner1;
         # deployment = {
         #   targetHost = "hetzner1";
         #   targetPort = 22;
