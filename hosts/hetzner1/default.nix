@@ -1,6 +1,6 @@
 { username, ... }:
 {
-  imports = "./";
+  imports = [ "./" ];
 
   deployment = {
     targetHost = "hetzner1";
