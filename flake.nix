@@ -59,13 +59,11 @@
       nixvim,
       lanzaboote,
       colmena,
-      self,
       ...
     }:
     let
       system = "x86_64-linux";
       username = "artur";
-      conf = self.nixosConfigurations;
 
       # ========== Extend lib with lib.custom ==========
       lib = nixpkgs.lib.extend (self: super: { custom = import ./lib { inherit (nixpkgs) lib; }; });
