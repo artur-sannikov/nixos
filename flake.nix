@@ -211,7 +211,7 @@
           ];
         };
       };
-      colmena = {
+      colmenaHive = colmena.lib.makeHive {
         meta = {
           nixpkgs = import nixpkgs {
             system = "x86_64-linux";
@@ -227,12 +227,12 @@
           deployment = {
             targetHost = "hetzner1";
             targetUser = "${username}";
+            buildOnTarget = false;
           };
           imports =
             lib.flatten [
               (map lib.custom.relativeToRoot [
                 "hosts/hetzner1/configuration.nix"
-                "hosts/hetzner1/hardware-configuration.nix"
               ])
             ]
             ++ [ disko.nixosModules.disko ];
