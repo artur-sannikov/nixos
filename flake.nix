@@ -57,7 +57,6 @@
       stylix,
       nixvim,
       lanzaboote,
-      self,
       ...
     }:
     let
