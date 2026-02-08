@@ -13,20 +13,10 @@
       "hosts/hetzner1/hardware-configuration.nix"
       "modules/system/services/openssh.nix"
       "modules/system/maintenance.nix"
+      "modules/system/grub.nix"
       "modules/core/default.nix"
     ])
   ];
-
-  boot = {
-    loader = {
-      grub = {
-        enable = true;
-        efiSupport = true;
-        efiInstallAsRemovable = true;
-        device = "nodev";
-      };
-    };
-  };
 
   networking = {
     hostName = "hetzner1";
@@ -43,16 +33,11 @@
   environment.systemPackages = with pkgs; [
     git
     tmux
+    vim
   ];
 
   sops = {
     secrets = {
-      secrets = {
-        "keys/ssh/hetzner1-authorized-keys/authorized-keys" = {
-          path = "/home/${username}/.ssh/authorized_keys";
-        };
-
-      };
       artur_passwd = {
         neededForUsers = true;
       };
@@ -68,6 +53,13 @@
         extraGroups = [
           "wheel"
         ];
+        openssh = {
+          authorizedKeys = {
+            keys = [
+              "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGIjp6rpHPkO5g7z3x/JUdKs2gEHnBENX7bvhCabWi82 artur@desktop"
+            ];
+          };
+        };
       };
     };
   };
