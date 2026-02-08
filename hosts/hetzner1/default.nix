@@ -1,6 +1,9 @@
-{ username, ... }:
+{ username, lib, ... }:
 {
-  imports = [ "./" ];
+
+  imports = lib.flatten [
+    (lib.custom.scanPaths ./.)
+  ];
 
   deployment = {
     targetHost = "hetzner1";
