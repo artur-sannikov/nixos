@@ -65,4 +65,25 @@
       };
     };
   };
+  security.sudo = {
+    extraRules = [
+      {
+        groups = [ "wheel" ];
+        commands = [
+          {
+            command = "/run/current-system/sw/bin/nix-store --no-gc-warning --realise /nix/store/*";
+            options = [ "NOPASSWD" ];
+          }
+          {
+            command = "/run/current-system/sw/bin/nix-env --profile /nix/var/nix/profiles/system --set /nix/store/*";
+            options = [ "NOPASSWD" ];
+          }
+          {
+            command = "/nix/store/*/bin/switch-to-configuration *";
+            options = [ "NOPASSWD" ];
+          }
+        ];
+      }
+    ];
+  };
 }
