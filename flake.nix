@@ -59,13 +59,13 @@
       nixvim,
       lanzaboote,
       colmena,
-    self,
+      self,
       ...
     }:
     let
       system = "x86_64-linux";
       username = "artur";
-conf = self.nixosConfigurations;
+      conf = self.nixosConfigurations;
 
       # ========== Extend lib with lib.custom ==========
       lib = nixpkgs.lib.extend (self: super: { custom = import ./lib { inherit (nixpkgs) lib; }; });
@@ -93,39 +93,6 @@ conf = self.nixosConfigurations;
       };
     in
     {
-  colmena = {
-    meta = {
-      description = "my personal machines";
-      # This can be overriden by node nixpkgs
-      nixpkgs = import inputs.nixpkgs { system = "x86_64-linux"; };
-      nodeNixpkgs = builtins.mapAttrs (name: value: value.pkgs) conf;
-      nodeSpecialArgs = builtins.mapAttrs (name: value: value._module.specialArgs) conf;
-    };
-  } // builtins.mapAttrs (name: value: { imports = value._module.args.modules; }) conf;
-        #   # nixpkgs = import nixpkgs { system = "x86_64-linux"; };
-        #
-        #   # This parameter functions similarly to `specialArgs` in `nixosConfigurations.xxx`,
-        #   # used for passing custom arguments to all submodules.
-        #   # specialArgs = {
-        #   #   inherit nixpkgs;
-        #   # };
-        # };
-
-        # Host name = "my-nixos"
-        "hetnzer1" =
-          { name, nodes, ... }:
-          {
-            # Parameters related to remote deployment
-            deployment.targetHost = "hetnzer1"; # Remote host's IP address
-            deployment.targetUser = "artur"; # Remote host's username
-
-            # This parameter functions similarly to `modules` in `nixosConfigurations.xxx`,
-            # used for importing all submodules.
-            imports = [
-              ./hosts/hetzner1/configuration.nix
-            ];
-          };
-      };
       nixosConfigurations = {
         tuxedo = lib.nixosSystem {
           inherit system pkgs;
@@ -244,6 +211,33 @@ conf = self.nixosConfigurations;
             ./hosts/hetzner1/hardware-configuration.nix
             disko.nixosModules.disko
           ];
+        };
+      };
+      colmena = {
+        meta = {
+          nixpkgs = import nixpkgs {
+            system = "x86_64-linux";
+          };
+          specialArgs = {
+            flake-inputs = inputs;
+            inherit username;
+            inherit pkgs-stable;
+            inherit lib; # Essential to be able to use lib.custom in modules
+          };
+        };
+        hetzner1_colmena = {
+          deployment = {
+            targetHost = "hetzner1";
+            targetUser = "${username}";
+          };
+          imports =
+            lib.flatten [
+              (map lib.custom.relativeToRoot [
+                "hosts/hetzner1/configuration.nix"
+                "hosts/hetzner1/hardware-configuration.nix"
+              ])
+            ]
+            ++ [ disko.nixosModules.disko ];
         };
       };
     };
