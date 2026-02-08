@@ -97,7 +97,10 @@
         meta = {
           nixpkgs = import nixpkgs {
             system = "x86_64-linux";
-            overlays = [ ];
+
+            specialArgs = {
+              inherit lib;
+            };
           };
         };
         hetzner1 = import ./hosts/hetzner1;
