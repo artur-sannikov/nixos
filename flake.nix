@@ -37,6 +37,8 @@
       url = "github:xremap/nix-flake";
     };
 
+    colmena.url = "github:zhaofengli/colmena";
+
     sops-nix = {
       url = "github:mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -57,6 +59,7 @@
       stylix,
       nixvim,
       lanzaboote,
+      colmena,
       ...
     }:
     let
@@ -90,6 +93,19 @@
       };
     in
     {
+      colmena = {
+        meta = {
+          nixpkgs = import nixpkgs {
+            system = "x86_64-linux";
+            overlays = [ ];
+          };
+        };
+        hetzner1 = import ./hosts/nixos/hetzner1;
+        # deployment = {
+        #   targetHost = "hetzner1";
+        #   targetPort = 22;
+        #   targetUser = "${username}";
+      };
       nixosConfigurations = {
         tuxedo = lib.nixosSystem {
           inherit system pkgs;
