@@ -13,6 +13,7 @@
       "hosts/hetzner1/hardware-configuration.nix"
       "modules/system/services/openssh.nix"
       "modules/system/maintenance.nix"
+      "modules/system/nix.nix"
       "modules/system/grub.nix"
       "modules/core/default.nix"
     ])
