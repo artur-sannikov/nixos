@@ -1,5 +1,4 @@
 name: Flake lock updater
-# See https://github.com/jnsgruk/flypi/actions/workflows/lock-updater.yaml
 on:
   workflow_dispatch:
   schedule:
@@ -8,15 +7,13 @@ jobs:
   lock-updater:
     name: Flake lock updater
     runs-on: ubuntu-latest
-    container: nixpkgs/nix-flakes:latest-x86_64-linux
     steps:
       - name: Install required packages
-        run: |
-          nix profile add nixpkgs#nodejs_25 nixpkgs#findutils nixpkgs#jq
+        run: apt-get update && apt-get install jq -y
+      - name: Install Lix
+        uses: https://codeberg.org/arsann/install-lix@v1
       - name: Checkout flake
         uses: actions/checkout@v6
-        with:
-          ref: devel
       - name: Prepare inputs to update
         id: inputs
         run: |
