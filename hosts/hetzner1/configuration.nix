@@ -10,6 +10,7 @@
   imports = lib.flatten [
     (map lib.custom.relativeToRoot [
       "hosts/hetzner1/disko.nix"
+      "hosts/hetzner1/hardware-configuration.nix"
       "modules/system/services/openssh.nix"
       "modules/system/maintenance.nix"
       "modules/core/default.nix"
