@@ -18,6 +18,7 @@
     ./media.nix
     ./nix.nix
     ./packages.nix
+    ./password-store.nix
     ./ripgrep.nix
     ./starship.nix
     ./tealdeer.nix
