@@ -183,7 +183,7 @@
             }
           ];
         };
-        homelab-services = lib.nixosSystem {
+        homelab-nixos = lib.nixosSystem {
           inherit system pkgs;
           specialArgs = {
             flake-inputs = inputs;
@@ -191,8 +191,8 @@
             inherit pkgs-stable;
           };
           modules = [
-            ./hosts/homelab-services/configuration.nix
-            ./hosts/homelab-services/hardware-configuration.nix
+            ./hosts/homelab-nixos/configuration.nix
+            ./hosts/homelab-nixos/hardware-configuration.nix
             disko.nixosModules.disko
           ];
         };

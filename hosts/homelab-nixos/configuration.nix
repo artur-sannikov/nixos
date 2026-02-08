@@ -13,7 +13,7 @@ in
 {
   imports = lib.flatten [
     (map lib.custom.relativeToRoot [
-      "hosts/homelab-services/disko.nix"
+      "hosts/homelab-nixos/disko.nix"
       "modules/system/services/openssh.nix"
       "modules/system/maintenance.nix"
       "modules/system/services/tailscale.nix"
@@ -35,7 +35,7 @@ in
   };
 
   networking = {
-    hostName = "nix-services";
+    hostName = "homelab-nixos";
     firewall = {
       enable = true;
       allowedTCPPorts = [ 3000 ]; # Forgejo
