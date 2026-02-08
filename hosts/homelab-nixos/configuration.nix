@@ -17,7 +17,6 @@ in
       "modules/system/services/openssh.nix"
       "modules/system/maintenance.nix"
       "modules/system/services/tailscale.nix"
-      # "modules/system/virtualization/docker.nix"
       "modules/system/virtualization/containers/default.nix"
       "modules/core/default.nix"
     ])
@@ -223,23 +222,6 @@ in
     podman = {
       enable = true;
     };
-    # Required for archivebox
-    # docker = {
-    #   enable = lib.mkForce true;
-    # };
-  };
-
-  # Enable Archivebox container
-  modules = {
-    system = {
-      virtualisation = {
-        containers = {
-          # /var/lib/docker eats up most server space quickly
-          archivebox.enable = false;
-        };
-      };
-    };
-  };
 
   environment.systemPackages = with pkgs; [
     git
