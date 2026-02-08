@@ -59,7 +59,7 @@
       stylix,
       nixvim,
       lanzaboote,
-      colmena,
+      self,
       ...
     }:
     let
@@ -99,7 +99,7 @@
             system = "x86_64-linux";
 
             specialArgs = {
-              inherit lib;
+              lib = self.lib;
             };
           };
         };
