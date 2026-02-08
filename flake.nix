@@ -196,6 +196,19 @@
             disko.nixosModules.disko
           ];
         };
+        hetzner1 = lib.nixosSystem {
+          inherit system pkgs;
+          specialArgs = {
+            flake-inputs = inputs;
+            inherit username;
+            inherit pkgs-stable;
+          };
+          modules = [
+            ./hosts/hetzner1/configuration.nix
+            ./hosts/hetzner1/hardware-configuration.nix
+            disko.nixosModules.disko
+          ];
+        };
       };
     };
 }
