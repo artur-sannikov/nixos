@@ -34,6 +34,7 @@
     git
     tmux
     vim
+    restic
   ];
 
   sops = {
