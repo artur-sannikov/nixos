@@ -37,8 +37,6 @@
       url = "github:xremap/nix-flake";
     };
 
-    colmena.url = "github:zhaofengli/colmena";
-
     sops-nix = {
       url = "github:mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -93,22 +91,6 @@
       };
     in
     {
-      colmena = {
-        meta = {
-          nixpkgs = import nixpkgs {
-            system = "x86_64-linux";
-
-            specialArgs = {
-              lib = self.lib;
-            };
-          };
-        };
-        hetzner1 = import ./hosts/hetzner1;
-        # deployment = {
-        #   targetHost = "hetzner1";
-        #   targetPort = 22;
-        #   targetUser = "${username}";
-      };
       nixosConfigurations = {
         tuxedo = lib.nixosSystem {
           inherit system pkgs;
