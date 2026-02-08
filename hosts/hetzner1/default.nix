@@ -2,9 +2,10 @@
 {
 
   imports = lib.flatten [
-    (lib.custom.scanPaths ./.)
+    (map lib.custom.relativeToRoot [
+      "hosts/hetzner1"
+    ])
   ];
-
   deployment = {
     targetHost = "hetzner1";
     targetUser = "${username}";
