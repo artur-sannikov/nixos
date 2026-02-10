@@ -2,3 +2,4 @@ files/
 .sops.yaml
 secrets.yaml
 hosts/asus-laptop/ATNA40YN04_Asus_Zenbook14XOLED.icm
+.worktrees/
