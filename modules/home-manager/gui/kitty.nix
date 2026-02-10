@@ -28,9 +28,9 @@
         enabled_layouts = "stack,horizontal,vertical,splits,tall:bias=50;full_size=1;mirrored=true";
 
         # Theme
-        active_tab_foreground = "#CDD6F4";
-        active_tab_background = "#638156";
-        background_opacity = 0.95;
+        # active_tab_foreground = "#CDD6F4";
+        # active_tab_background = "#638156";
+        # background_opacity = 0.95;
       };
       keybindings = {
         "ctrl+f>c" = "new_tab";
