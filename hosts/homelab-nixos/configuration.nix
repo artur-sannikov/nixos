@@ -75,6 +75,12 @@ in
   };
 
   services = {
+    openssh = {
+      settings = {
+        # Required for sudo auth with ssh private key
+        AllowAgentForwarding = lib.mkForce "yes";
+      };
+    };
     qemuGuest.enable = true;
     immich = {
       enable = true;
