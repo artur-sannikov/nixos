@@ -36,8 +36,7 @@
     xremap-flake = {
       url = "github:xremap/nix-flake";
     };
-    colmena.url = "github:zhaofengli/colmena";
-
+    deploy-rs.url = "github:serokell/deploy-rs";
     sops-nix = {
       url = "github:mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -58,7 +57,8 @@
       stylix,
       nixvim,
       lanzaboote,
-      colmena,
+      deploy-rs,
+      self,
       ...
     }:
     let
@@ -211,32 +211,26 @@
           ];
         };
       };
-      colmenaHive = colmena.lib.makeHive {
-        meta = {
-          nixpkgs = import nixpkgs {
-            system = "x86_64-linux";
-          };
-          specialArgs = {
-            flake-inputs = inputs;
-            inherit username;
-            inherit pkgs-stable;
-            inherit lib; # Essential to be able to use lib.custom in modules
+      deploy.nodes = {
+        hetzner1 = {
+          hostname = "hetzner1";
+          sshUser = "${username}";
+          interactiveSudo = false;
+          profiles.system = {
+            user = "root";
+            path = deploy-rs.lib.x86_64-linux.activate.nixos self.nixosConfigurations.hetzner1;
           };
         };
-        hetzner1_colmena = {
-          deployment = {
-            targetHost = "hetzner1";
-            targetUser = "${username}";
-            buildOnTarget = false;
+        homelab-nixos = {
+          hostname = "homelab-nixos";
+          sshUser = "${username}";
+          interactiveSudo = false;
+          profiles.system = {
+            user = "root";
+            path = deploy-rs.lib.x86_64-linux.activate.nixos self.nixosConfigurations.homelab-nixos;
           };
-          imports =
-            lib.flatten [
-              (map lib.custom.relativeToRoot [
-                "hosts/hetzner1/configuration.nix"
-              ])
-            ]
-            ++ [ disko.nixosModules.disko ];
         };
       };
+      checks = builtins.mapAttrs (system: deployLib: deployLib.deployChecks self.deploy) deploy-rs.lib;
     };
 }
