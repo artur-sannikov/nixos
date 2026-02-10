@@ -4,7 +4,7 @@
       nixvim.enable = false;
       kitty = {
         # Kitty's colors are broken
-        enable = false;
+        enable = true;
       };
       qt = {
         platform = "qtct";
