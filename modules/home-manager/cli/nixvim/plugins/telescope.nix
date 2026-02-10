@@ -31,6 +31,14 @@
           desc = "Find files in current directory";
         };
       };
+      "<leader>fb" = {
+        mode = "n";
+        action = "<cmd>:Telescope buffers<cr>";
+        options = {
+          silent = true;
+          desc = "Telescope list buffers";
+        };
+      };
     };
   };
 }
