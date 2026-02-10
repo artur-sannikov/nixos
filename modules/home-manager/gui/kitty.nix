@@ -5,6 +5,7 @@
   programs = {
     kitty = {
       enable = true;
+      themeFile = "Catppuccin-Mocha";
       font = {
         name = lib.mkForce "Iosevka Term Extended";
         size = lib.mkForce 12;
@@ -25,6 +26,11 @@
         copy_on_select = "yes";
         tab_title_template = "{fmt.fg.red}{bell_symbol}{activity_symbol}{fmt.fg.tab}{tab.last_focused_progress_percent}{index}:{title}";
         enabled_layouts = "stack,horizontal,vertical,splits,tall:bias=50;full_size=1;mirrored=true";
+
+        # Theme
+        active_tab_foreground = "#CDD6F4";
+        active_tab_background = "#638156";
+        background_opacity = 0.95;
       };
       keybindings = {
         "ctrl+f>c" = "new_tab";
