@@ -24,6 +24,7 @@
         shell = "zsh";
         copy_on_select = "yes";
         tab_title_template = "{fmt.fg.red}{bell_symbol}{activity_symbol}{fmt.fg.tab}{tab.last_focused_progress_percent}{index}:{title}";
+        enabled_layouts = "stack,horizontal,vertical,splits,tall:bias=50;full_size=1;mirrored=true";
       };
       keybindings = {
         "ctrl+f>c" = "new_tab";
