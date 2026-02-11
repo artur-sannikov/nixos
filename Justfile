@@ -22,3 +22,6 @@ test:
 switch:
     echo "Switching configuration for {{hostname}}"
     sudo nixos-rebuild switch --flake .#{{hostname}}
+
+deploy host:
+    nix run github:serokell/deploy-rs .#{{host}}
