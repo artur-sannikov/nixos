@@ -26,11 +26,6 @@
   # Set your time zone.
   time.timeZone = "Europe/Helsinki";
 
-  nix.settings.experimental-features = [
-    "nix-command"
-    "flakes"
-  ];
-
   environment.systemPackages = with pkgs; [
     git
     tmux

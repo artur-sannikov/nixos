@@ -59,12 +59,6 @@ in
     };
   };
 
-  # Enable Flakes
-  nix.settings.experimental-features = [
-    "nix-command"
-    "flakes"
-  ];
-
   # Secrets
   sops = {
     secrets = {
