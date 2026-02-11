@@ -40,6 +40,14 @@
           desc = "Switch to normal mode";
         };
       }
+      {
+        mode = "n";
+        key = "<leader>lq";
+        action = "ciw\"\"<Esc>P";
+        options = {
+          desc = "Surround word with quotes";
+        };
+      }
     ];
   };
 }
