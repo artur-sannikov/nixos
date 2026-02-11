@@ -19,7 +19,6 @@
         "nix-command"
         "flakes"
       ];
-
     };
   };
 }
