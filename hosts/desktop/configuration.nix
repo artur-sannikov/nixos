@@ -73,6 +73,8 @@
 
       # Import all core modules
       "modules/core/default.nix"
+
+      "modules/system/timezone.nix"
     ])
   ];
 
@@ -139,10 +141,6 @@
       bluetooth = {
         enable = true;
       };
-    };
-    # Set your time zone.
-    time = {
-      timeZone = "Europe/Helsinki";
     };
 
     # Mount NFS
