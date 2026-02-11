@@ -8,12 +8,18 @@
           fzf-native.enable = true;
         };
         settings = {
+          layout_strategy = "horizontal";
+          layout_config = {
+            width = 0.9;
+            mirror = true;
+            prompt_position = "top";
+          };
           pickers = {
             find_files = {
-              theme = "ivy";
+              theme = "dropdown";
             };
             git_commits = {
-              theme = "ivy";
+              theme = "dropdown";
             };
           };
           mappings = {
