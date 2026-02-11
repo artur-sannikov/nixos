@@ -1,3 +1,6 @@
+let
+  picker_theme = "dropdown";
+in
 {
   programs.nixvim = {
     plugins = {
@@ -16,10 +19,13 @@
           };
           pickers = {
             find_files = {
-              theme = "dropdown";
+              theme = "${picker_theme}";
+            };
+            buffers = {
+              theme = "${picker_theme}";
             };
             git_commits = {
-              theme = "dropdown";
+              theme = "${picker_theme}";
             };
           };
           mappings = {
