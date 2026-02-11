@@ -1,36 +1,51 @@
 {
-  programs.nixvim.plugins.telescope = {
-    enable = true;
-    extensions = {
-      # https://github.com/nvim-telescope/telescope-fzf-native.nvim
-      fzf-native.enable = true;
-    };
-    settings = {
-      pickers = {
-        find_files = {
-          theme = "ivy";
+  programs.nixvim = {
+    plugins = {
+      telescope = {
+        enable = true;
+        extensions = {
+          # https://github.com/nvim-telescope/telescope-fzf-native.nvim
+          fzf-native.enable = true;
         };
-        git_commits = {
-          theme = "ivy";
+        settings = {
+          pickers = {
+            find_files = {
+              theme = "ivy";
+            };
+            git_commits = {
+              theme = "ivy";
+            };
+          };
+          mappings = {
+            i = {
+              "<C-n>" = "move_selection_next";
+              "<C-p>" = "move_selection_previous";
+              "<C-c>" = "close";
+            };
+          };
         };
-      };
-      mappings = {
-        i = {
-          "<C-n>" = "move_selection_next";
-          "<C-p>" = "move_selection_previous";
-          "<C-c>" = "close";
-        };
-      };
-    };
 
-    keymaps = {
-      "<leader>fd" = {
-        mode = "n";
-        action = "find_files";
-        options = {
-          desc = "Find files in current directory";
-        };
+        # keymaps = {
+        #   "<leader>fd" = {
+        #     mode = "n";
+        #     action = "find_files";
+        #     options = {
+        #       desc = "Find files in current directory";
+        #     };
+        #   };
+        # };
       };
     };
+    keymaps = [
+      {
+        mode = "n";
+        key = "<leader>fb";
+        action = "<cmd>:Telescope buffers<cr>";
+        options = {
+          silent = true;
+          desc = "Telescope list buffers";
+        };
+      }
+    ];
   };
 }

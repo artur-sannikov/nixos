@@ -8,6 +8,7 @@
     ./hardtime.nix
     ./lint.nix
     ./lsp.nix
+    ./plenary.nix
     ./markview.nix
     ./neogit.nix
     ./nix.nix
