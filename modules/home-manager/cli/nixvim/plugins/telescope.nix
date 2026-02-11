@@ -24,23 +24,21 @@
             };
           };
         };
-
-        # keymaps = {
-        #   "<leader>fd" = {
-        #     mode = "n";
-        #     action = "find_files";
-        #     options = {
-        #       desc = "Find files in current directory";
-        #     };
-        #   };
-        # };
       };
     };
     keymaps = [
       {
+        key = "<leader>fd";
+        mode = [ "n" ];
+        action = "<cmd>Telescope find_files<cr>";
+        options = {
+          desc = "Search files by name";
+        };
+      }
+      {
         mode = "n";
-        key = "<leader>fb";
-        action = "<cmd>:Telescope buffers<cr>";
+        key = "<leader>b";
+        action = "<cmd>Telescope buffers<cr>";
         options = {
           silent = true;
           desc = "Telescope list buffers";
