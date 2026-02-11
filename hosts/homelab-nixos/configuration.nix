@@ -75,6 +75,12 @@ in
   };
 
   services = {
+    openssh = {
+      settings = {
+        # Required for sudo auth with ssh private key
+        AllowAgentForwarding = lib.mkForce "yes";
+      };
+    };
     qemuGuest.enable = true;
     immich = {
       enable = true;
@@ -111,6 +117,10 @@ in
         enable = true;
         type = "tar.gz";
         interval = "05:37";
+        # This should remove all dumps every 2 days because restic handles
+        # the real backup
+        # This option obsolete the systemd timer defined below
+        age = "2d";
       };
       settings = {
         server = {
