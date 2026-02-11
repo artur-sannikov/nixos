@@ -51,6 +51,37 @@
         AllowAgentForwarding = lib.mkForce "yes";
       };
     };
+    forgejo = {
+      enable = true;
+      package = pkgs.forgejo;
+      lfs = {
+        enable = true;
+      };
+      database = {
+        type = "postgres";
+      };
+
+      settings = {
+        DEFAULT = {
+          APP_NAME = "Artur's Git";
+        };
+
+        server = {
+          LANDING_PAGE = "explore";
+          DOMAIN = "git.asannikov.com";
+          ROOT_URL = "https://git.asannikov.com/";
+        };
+
+        service = {
+          DISABLE_REGISTRATION = true;
+        };
+
+        actions = {
+          ENABLED = true;
+          DEFAULT_ACTIONS_URL = "https://git.asannikov.com";
+        };
+      };
+    };
   };
   users = {
     mutableUsers = false;
