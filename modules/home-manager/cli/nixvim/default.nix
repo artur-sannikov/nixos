@@ -20,6 +20,7 @@
       cursorline = true;
       spell = true;
       spelllang = "en_us";
+      shell = "zsh";
     };
     diagnostic = {
       settings = {

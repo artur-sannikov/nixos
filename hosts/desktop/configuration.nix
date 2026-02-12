@@ -73,6 +73,8 @@
 
       # Import all core modules
       "modules/core/default.nix"
+
+      "modules/system/timezone.nix"
     ])
   ];
 
@@ -140,10 +142,6 @@
         enable = true;
       };
     };
-    # Set your time zone.
-    time = {
-      timeZone = "Europe/Helsinki";
-    };
 
     # Mount NFS
     fileSystems = {
@@ -172,12 +170,6 @@
     # Disable service because it fails frequently at rebuild
     # https://discourse.nixos.org/t/nixos-rebuild-switch-upgrade-networkmanager-wait-online-service-failure/30746/2
     systemd.services.NetworkManager-wait-online.enable = false;
-
-    # Enable Flakes
-    nix.settings.experimental-features = [
-      "nix-command"
-      "flakes"
-    ];
 
     services = {
       # Enable root Plasma 6.

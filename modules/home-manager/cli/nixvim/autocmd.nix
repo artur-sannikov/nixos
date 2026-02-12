@@ -3,7 +3,7 @@
     nixvim = {
       autoCmd = [
         {
-          # Remove trailing white space
+          # Remove trailing whitespace
           event = "BufWritePre";
           pattern = "*";
           command = ''%s/\s\+$//e'';
@@ -13,6 +13,12 @@
           event = "FileType";
           pattern = "yaml.ansible";
           command = ":lua vim.diagnostic.enable(false)";
+        }
+        {
+          # Disable spellcheck in terminal mode
+          event = "TermOpen";
+          pattern = "*";
+          command = "setlocal nospell";
         }
       ];
     };
