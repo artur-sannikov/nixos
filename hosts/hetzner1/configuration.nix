@@ -15,6 +15,7 @@
       "modules/system/maintenance.nix"
       "modules/system/nix.nix"
       "modules/system/grub.nix"
+      "modules/system/timezone.nix"
       "modules/core/default.nix"
     ])
   ];
@@ -22,14 +23,6 @@
   networking = {
     hostName = "hetzner1";
   };
-
-  # Set your time zone.
-  time.timeZone = "Europe/Helsinki";
-
-  nix.settings.experimental-features = [
-    "nix-command"
-    "flakes"
-  ];
 
   environment.systemPackages = with pkgs; [
     git

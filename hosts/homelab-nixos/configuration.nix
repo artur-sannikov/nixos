@@ -21,6 +21,7 @@ in
       "modules/system/services/tailscale.nix"
       "modules/system/virtualization/containers/default.nix"
       "modules/core/default.nix"
+      "modules/system/timezone.nix"
     ])
   ];
 
@@ -58,12 +59,6 @@ in
       ];
     };
   };
-
-  # Enable Flakes
-  nix.settings.experimental-features = [
-    "nix-command"
-    "flakes"
-  ];
 
   # Secrets
   sops = {

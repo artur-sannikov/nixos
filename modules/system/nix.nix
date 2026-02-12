@@ -1,4 +1,5 @@
 {
+
   nix = {
     settings = {
       # List of binary cache URLs that non-root users can use
@@ -13,6 +14,10 @@
       trusted-users = [
         "root"
         "@wheel"
+      ];
+      experimental-features = [
+        "nix-command"
+        "flakes"
       ];
     };
   };

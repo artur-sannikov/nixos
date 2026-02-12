@@ -41,7 +41,10 @@
       url = "github:mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
+    nixos-hardware = {
+      url = "github:NixOS/nixos-hardware/master";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     nix-secrets = {
       url = "git+ssh://git@codeberg.org/arsann/nix-secrets.git?ref=main&shallow=1";
       inputs = { };
@@ -58,6 +61,7 @@
       nixvim,
       lanzaboote,
       deploy-rs,
+      nixos-hardware,
       self,
       ...
     }:
@@ -105,6 +109,7 @@
             home-manager.nixosModules.home-manager
             stylix.nixosModules.stylix
             lanzaboote.nixosModules.lanzaboote
+            nixos-hardware.nixosModules.tuxedo-infinitybook-pro14-gen9-amd
             inputs.xremap-flake.nixosModules.default
             {
               home-manager = {
