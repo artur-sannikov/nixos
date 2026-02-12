@@ -291,7 +291,10 @@ in
         }
         {
           key = "\\\\";
-          map = [ "index" ];
+          map = [
+            "index"
+            "pager"
+          ];
           action = "<vfolder-from-query>";
         }
         {
