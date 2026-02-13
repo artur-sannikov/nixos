@@ -43,7 +43,6 @@
     };
     nixos-hardware = {
       url = "github:NixOS/nixos-hardware/master";
-      inputs.nixpkgs.follows = "nixpkgs";
     };
     nix-secrets = {
       url = "git+ssh://git@codeberg.org/arsann/nix-secrets.git?ref=main&shallow=1";
