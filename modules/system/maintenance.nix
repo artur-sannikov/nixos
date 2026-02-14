@@ -18,7 +18,7 @@
     gc = {
       automatic = true;
       dates = [ "9:00" ];
-      options = "--delete-older-than 14d";
+      options = "--delete-older-than 30d";
     };
   };
 }
