@@ -29,7 +29,6 @@
       # Systemd services
       "modules/home-manager/services/duplicacy-web.nix"
       "modules/home-manager/services/texlive.nix"
-      "modules/home-manager/services/vdirsyncer.nix"
 
       # Other home-manager configuration
       "modules/home-manager/desktop_entries.nix"
