@@ -6,9 +6,6 @@
       #   # Kitty's colors are broken
       #   enable = false;
       # };
-      qt = {
-        platform = "qtct";
-      };
     };
   };
 }
