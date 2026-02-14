@@ -40,6 +40,12 @@
     };
     gh = {
       enable = true;
+      extensions = with pkgs; [ gh-s ];
+      settings = {
+        git_protocol = "https";
+        prompt = "enabled";
+        editor = "nvim";
+      };
     };
   };
   home.packages = with pkgs; [
