@@ -24,4 +24,10 @@ switch:
     sudo nixos-rebuild switch --flake .#{{hostname}}
 
 deploy host:
-    nix run github:serokell/deploy-rs .#{{host}}
+    #!/usr/bin/env bash
+    if [ "{{host}}" = "homelab-nixos" ]; then
+        ssh -t pve2 'qm delsnapshot 105 update; qm snapshot 105 update'
+        nix run github:serokell/deploy-rs .#{{host}}
+    else
+        nix run github:serokell/deploy-rs .#{{host}}
+    fi
