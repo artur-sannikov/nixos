@@ -37,7 +37,6 @@
   # GUI apps with special settings
   imports = [
     ./browsers
-    ./email.nix
     ./keepassxc.nix
     ./kitty.nix
     ./mpv.nix

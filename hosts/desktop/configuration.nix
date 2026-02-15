@@ -54,7 +54,6 @@
       "modules/system/services/openrgb.nix"
       "modules/system/services/mbsyncd.nix"
       "modules/system/services/nvme-rs.nix"
-      "modules/system/services/vdirsyncer.nix"
 
       # Other system-related packages
       "modules/system/appimage.nix"

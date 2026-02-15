@@ -35,6 +35,9 @@
       "modules/home-manager/sessionVariables.nix"
       "modules/home-manager/desktop_entries.nix"
       "modules/home-manager/stylix.nix"
+
+      # Accounts
+      "modules/home-manager/accounts"
     ])
   ];
 

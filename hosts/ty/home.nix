@@ -38,6 +38,9 @@
       "modules/home-manager/services/udiskie.nix"
       "modules/home-manager/services/texlive.nix"
       "modules/home-manager/stylix.nix"
+
+      # Accounts
+      "modules/home-manager/accounts"
     ])
   ];
 
