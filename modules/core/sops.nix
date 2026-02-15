@@ -3,7 +3,7 @@
   ...
 }:
 let
-  secretspath = builtins.toString flake-inputs.nix-secrets;
+  secretspath = toString flake-inputs.nix-secrets;
 in
 {
   imports = [
