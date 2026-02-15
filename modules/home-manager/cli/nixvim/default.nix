@@ -21,6 +21,8 @@
       spell = true;
       spelllang = "en_us";
       shell = "zsh";
+      # Remove global status line to make split windows visibly separate
+      laststatus = 3;
     };
     diagnostic = {
       settings = {
@@ -46,7 +48,14 @@
             treesitter_context = true;
             telescope = true;
           };
-
+          # Default color is barely visible for split windows
+          custom_highlights = ''
+            function(colors)
+              return {
+                WinSeparator = { fg = colors.flamingo },
+              }
+            end
+          '';
           term_colors = true;
           transparent_background = true;
         };
