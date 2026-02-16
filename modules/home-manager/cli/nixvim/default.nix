@@ -8,6 +8,7 @@
     enable = true;
     globals = {
       mapleader = " ";
+      maplocalleader = " ";
     };
     opts = {
       termguicolors = true;
