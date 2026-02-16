@@ -14,6 +14,7 @@
     ./nix.nix
     ./no-neck-pain.nix
     ./octo.nix
+    ./oil.nix
     ./quarto.nix
     ./telescope.nix
     ./tmux-navigator.nix
