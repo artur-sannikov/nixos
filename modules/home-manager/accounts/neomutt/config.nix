@@ -3,11 +3,7 @@ let
   mailcap_file = pkgs.writeText "mailcap" ''
     text/html; firefox %s; test=test -n "$display"; needsterminal
     text/html; lynx -assume_charset=%{charset} -display_charset=utf-8 -dump -width=1024 %s; nametemplate=%s.html; copiousoutput
-    image/jpg; feh %s;
-    image/jpg; feh %s;
-    image/png; feh %s;
-    image/svg; feh %s;
-    image/gif; feh %s;
+    image/*; feh %s;
     application/vnd.openxmlformats-officedocument.presentationml.presentation; onlyoffice-desktopeditors %s;
     application/pdf; ${pkgs.kdePackages.okular}/bin/okular %s;
   '';
