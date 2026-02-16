@@ -5,6 +5,31 @@
     ./keymaps.nix
   ];
   programs.nixvim = {
+    # Fix for neogit crash: https://github.com/NeogitOrg/neogit/issues/1896
+    # extraConfigLua = builtins.readFile ./fix_neogit.lua;
+    extraConfigLua = ''
+      local M = {}
+
+      function M:open()
+        if self.buffer then
+          return self
+        end
+
+        local status_maps = config.get_reversed_status_maps()
+
+        local existing = vim.fn.bufnr("NeogitConsole")
+        if existing ~= -1 then
+          local buftype = vim.api.nvim_get_option_value("buftype", { buf = existing })
+          if buftype == "terminal" then
+            vim.api.nvim_buf_delete(existing, { force = true })
+          end
+        end
+
+        self.buffer = Buffer.create {
+          name = "NeogitConsole",
+        }
+      end
+    '';
     enable = true;
     globals = {
       mapleader = " ";
