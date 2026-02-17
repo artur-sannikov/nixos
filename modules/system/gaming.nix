@@ -31,10 +31,10 @@ in
           #  extraLibraries = pkgs: [ pkgs.xorg.libxcb ];
           extraPkgs =
             pkgs': with pkgs'; [
-              xorg.libXcursor
-              xorg.libXi
-              xorg.libXinerama
-              xorg.libXScrnSaver
+              libXcursor
+              libXi
+              libXinerama
+              libXScrnSaver
               libpng
               libpulseaudio
               libvorbis
