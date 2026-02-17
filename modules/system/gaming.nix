@@ -24,6 +24,9 @@ in
     programs = {
       steam = {
         enable = true;
+        protontricks = {
+          enable = true;
+        };
         extraCompatPackages = with pkgs; [
           steamtinkerlaunch
         ];
