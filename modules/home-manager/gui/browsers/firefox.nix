@@ -1,16 +1,15 @@
-{ pkgs, flake-inputs, ... }:
+{
+  pkgs,
+  flake-inputs,
+  lib,
+  ...
+}:
 {
   programs.firefox = {
     enable = true;
     profiles = {
       default-release = {
         isDefault = true;
-        extensions.packages = with flake-inputs.firefox-extensions.packages.${pkgs.system}; [
-          ublock-origin
-          bitwarden
-          libredirect
-          darkreader
-        ];
         search = {
           force = true;
           default = "ddg";
@@ -29,10 +28,11 @@
             }
           ];
         };
-        extensions.packages = with flake-inputs.firefox-extensions.packages.${pkgs.system}; [
-          ublock-origin
-          bitwarden
-        ];
+        # extensions.packages = with flake-inputs.firefox-extensions.packages.${pkgs.system}; [
+        #   bitwarden
+        #   ublock-origin
+        #   vimium
+        # ];
         search = {
           force = true;
           default = "ddg";
@@ -40,6 +40,7 @@
         };
       };
     };
+    # };
   };
   stylix.targets.firefox.profileNames = [
     "default-release"

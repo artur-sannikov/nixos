@@ -40,7 +40,6 @@
       "modules/home-manager/accounts"
     ])
   ];
-
   # Enable zsh
   zsh.enable = true;
 

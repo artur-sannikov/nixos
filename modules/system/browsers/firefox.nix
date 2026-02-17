@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 {
   programs.firefox = {
     enable = true;
@@ -10,6 +10,26 @@
     ];
     # https://mozilla.github.io/policy-templates/
     policies = {
+      ExtensionSettings =
+        let
+          moz = short: "https://addons.mozilla.org/firefox/downloads/latest/${short}/latest.xpi";
+        in
+        {
+          "uBlock0@raymondhill.net" = {
+            default_area = "menupanel";
+            install_url = moz "ublock-origin";
+            installation_mode = "force_installed";
+            private_browsing = true;
+            updates_disabled = true;
+          };
+          "{446900e4-71c2-419f-a6a7-df9c091e268b}" = {
+            default_area = "menupanel";
+            install_url = moz "bitwarden-password-manager";
+            installation_mode = "force_installed";
+            private_browsing = false;
+            updates_disabled = true;
+          };
+        };
       DontCheckDefaultBrowser = true;
       DisableTelemetry = true;
       DisableFirefoxStudies = true;
