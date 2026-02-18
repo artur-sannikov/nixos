@@ -88,6 +88,13 @@
         DisableTelemetry = true;
         DisableFirefoxStudies = true;
 
+        # Language
+        # https://mozilla.github.io/policy-templates/#requestedlocales
+        RequestedLocales = [
+          "fi"
+          "en-US"
+        ];
+
         # https://mozilla.github.io/policy-templates/#sanitizeonshutdown-all
         # Delete all data on shutdown
         SanitizeOnShutdown = true;
@@ -101,6 +108,7 @@
         DisplayBookmarksToolbar = "always";
         TranslateEnabled = true;
 
+        # https://mozilla.github.io/policy-templates/#usermessaging
         UserMessaging = {
           ExtensionRecommendations = false;
           FeatureRecommendations = false;
