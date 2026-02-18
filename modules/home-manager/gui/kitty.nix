@@ -1,15 +1,8 @@
-{ lib, ... }:
-# mkForce is required because default settings conflict with custom
-# definitions
 {
   programs = {
     kitty = {
       enable = true;
       themeFile = "Catppuccin-Mocha";
-      font = {
-        name = lib.mkForce "Iosevka Term Extended";
-        size = lib.mkForce 12;
-      };
       shellIntegration = {
         enableBashIntegration = true;
         enableZshIntegration = true;
