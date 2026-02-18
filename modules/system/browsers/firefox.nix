@@ -102,6 +102,8 @@
         UrlbarInterventions = false;
         SkipOnboarding = false;
         MoreFromMozilla = false;
+        FirefoxLabs = false;
+        Locked = true;
       };
 
       EnableTrackingProtection = {
@@ -119,6 +121,8 @@
         Highlights = false;
         Pocket = false;
         SponsoredPocket = false;
+        Stories = false;
+        SponsoredStories = false;
         Snippets = false;
       };
 
