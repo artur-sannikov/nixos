@@ -37,6 +37,48 @@
             updates_disabled = true;
           };
         };
+      "3rdparty".Extensions = {
+        "uBlock0@raymondhill.net".adminSettings = {
+          userSettings = rec {
+            uiTheme = "dark";
+            uiAccentCustom = true;
+            uiAccentCustom0 = "#8300ff";
+            cloudStorageEnabled = true;
+
+            importedLists = [
+              "https:#filters.adtidy.org/extension/ublock/filters/3.txt"
+              "https:#github.com/DandelionSprout/adfilt/raw/master/LegitimateURLShortener.txt"
+            ];
+
+            externalLists = lib.concatStringsSep "\n" importedLists;
+          };
+
+          selectedFilterLists = [
+            "ublock-filters"
+            "ublock-badware"
+            "ublock-privacy"
+            "ublock-quick-fixes"
+            "ublock-unbreak"
+            "easylist"
+            "easyprivacy"
+            "adguard-spyware-url"
+            "urlhaus-1"
+            "plowe-0"
+            "fanboy-cookiemonster"
+            "ublock-cookies-easylist"
+            "fanboy-social"
+            "fanboy-ai-suggestions"
+            "easylist-chat"
+            "easylist-newsletters"
+            "easylist-notifications"
+            "easylist-annoyances"
+            "ublock-annoyances"
+            "FIN-0"
+            "RUS-0"
+            "RUS-1"
+          ];
+        };
+      };
       DontCheckDefaultBrowser = true;
       DisableTelemetry = true;
       DisableFirefoxStudies = true;
