@@ -136,6 +136,13 @@
         Locked = true;
         FallBack = true;
       };
+
+      # Disable all AI features
+      GenerativeAI = {
+        Enabled = false;
+        Locked = true;
+      };
+
     };
   };
 }
