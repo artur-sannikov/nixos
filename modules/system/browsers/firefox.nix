@@ -29,6 +29,13 @@
             private_browsing = false;
             updates_disabled = true;
           };
+          "{d7742d87-e61d-4b78-b8a1-b469842139fa}" = {
+            default_area = "navbar";
+            install_url = moz "vimium-ff";
+            installation_mode = "force_installed";
+            private_browsing = true;
+            updates_disabled = true;
+          };
         };
       DontCheckDefaultBrowser = true;
       DisableTelemetry = true;
