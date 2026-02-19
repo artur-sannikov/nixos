@@ -54,8 +54,6 @@
         "ctrl+f>7" = "goto_tab 7";
         "ctrl+f>8" = "goto_tab 8";
         "ctrl+f>9" = "goto_tab 9";
-
-        "ctrl+v" = "paste_from_clipboard";
       };
     };
   };
