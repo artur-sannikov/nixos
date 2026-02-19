@@ -53,6 +53,12 @@ in
         DefaultLocalFontsSetting = 2;
         AIModeSettings = 1; # Disable AI integrations
         DevToolsGenAiSettings = 2; # Disable LLM in debugging
+        DefaultSensorsSetting = 2;
+        EnableMediaRouter = false; # Disable Chrome Cast
+        PromotionsEnabled = false;
+        SpellCheckServiceEnabled = false; # Disables Google spellcheck service
+        UrlKeyedAnonymizedDataCollectionEnabled = false;
+        UserFeedbackAllowed = false;
 
         # Miscellaneous
         AlternateErrorPagesEnabled = false;
@@ -66,6 +72,7 @@ in
         ShoppingListEnabled = false;
         AlwaysOpenPdfExternally = true;
         TranslateEnabled = false; # Don't really use it
+        LiveTranslateEnabled = false;
         RestoreOnStartup = 4; # Show list of URLs
         HomepageIsNewTabPage = true;
         NewTabPageLocation = "https://noai.duckduckgo.com";
