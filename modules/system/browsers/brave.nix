@@ -26,6 +26,17 @@
         PasswordLeakDetectionEnabled = false;
         SafeBrowsingExtendedReportingEnabled = false;
         SafeBrowsingSurveysEnabled = false;
+        ClearBrowsingDataOnExitList = [
+          "browsing_history"
+          "download_history"
+          "cookies_and_other_site_data"
+          "cached_images_and_files"
+          "password_signin"
+          "autofill"
+          "site_settings"
+          "hosted_app_data"
+        ];
+        BlockThirdPartyCookies = true;
         # User and device reporting
         DeviceActivityHeartbeatEnabled = false;
         DeviceMetricsReportingEnabled = false;
