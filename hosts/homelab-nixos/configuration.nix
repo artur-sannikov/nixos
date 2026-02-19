@@ -216,7 +216,6 @@ in
           "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFgZdLpHM/8kW/dpJPt4UFF3sR8/0NRCLhs7Ri6Q8KFR"
           "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHtE3vYbcfqCKSjLOJQFVqin2pGH3IxmpV9/db1Q5SNw"
         ];
-        initialHashedPassword = "$y$j9T$V7USJgwWqoEDnUa0pMjb30$E5mDIdm9KnS9aLu61AYVYTGdcGwFHUtOR4UWCb8wWh3"; # Initlal  password to be changed after first login
       };
       immich = {
         isSystemUser = true;
@@ -225,16 +224,9 @@ in
       forgejo = {
         isSystemUser = true;
       };
-      archivebox = {
-        isNormalUser = true;
-        createHome = false;
-        uid = 1002;
-        group = "archivebox";
-      };
     };
     groups = {
       immich.gid = 1002;
-      archivebox.gid = 1004;
     };
   };
 
