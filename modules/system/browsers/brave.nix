@@ -51,6 +51,8 @@ in
         DefaultGeolocationSetting = 2;
         DefaultNotificationsSetting = 2;
         DefaultLocalFontsSetting = 2;
+        AIModeSettings = 1; # Disable AI integrations
+        DevToolsGenAiSettings = 2; # Disable LLM in debugging
 
         # Miscellaneous
         AlternateErrorPagesEnabled = false;
