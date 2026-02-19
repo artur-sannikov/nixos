@@ -19,6 +19,7 @@ in
       "modules/system/services/openssh.nix"
       "modules/system/maintenance.nix"
       "modules/system/services/tailscale.nix"
+      "modules/system/services/immich.nix"
       "modules/system/virtualization/containers/default.nix"
       "modules/core/default.nix"
       "modules/system/timezone.nix"
@@ -38,16 +39,6 @@ in
 
   # Mount NFS
   fileSystems = {
-    "/mnt/nas/photos" = {
-      device = "192.168.20.5:/mnt/tank/personal/photos";
-      fsType = "nfs";
-      options = [
-        "x-systemd.automount"
-        "nofail"
-        "noauto"
-        "_netdev"
-      ];
-    };
     "/mnt/nas/backups/forgejo-dump" = {
       device = "192.168.20.5:/mnt/tank/personal/backups/forgejo-dump";
       fsType = "nfs";
@@ -80,14 +71,6 @@ in
       };
     };
     qemuGuest.enable = true;
-    immich = {
-      enable = true;
-      user = "immich";
-      group = "immich";
-      openFirewall = true;
-      host = "0.0.0.0";
-      mediaLocation = "/mnt/nas/photos";
-    };
     restic = {
       backups = {
         forgejo-dump = {
@@ -217,16 +200,9 @@ in
           "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHtE3vYbcfqCKSjLOJQFVqin2pGH3IxmpV9/db1Q5SNw"
         ];
       };
-      immich = {
-        isSystemUser = true;
-        group = "immich";
-      };
       forgejo = {
         isSystemUser = true;
       };
-    };
-    groups = {
-      immich.gid = 1002;
     };
   };
 
