@@ -114,7 +114,6 @@ in
         interval = "05:37";
         # This should remove all dumps every 2 days because restic handles
         # the real backup
-        # This option obsolete the systemd timer defined below
         age = "2d";
       };
       settings = {
@@ -174,40 +173,6 @@ in
             | ${pkgs.findutils}/bin/xargs --no-run-if-empty \
             ${pkgs.podman}/bin/podman rmi -f
           ''}";
-        };
-      };
-      # Clean up old Forgejo dumps
-      forgejo-cleanup-dump = {
-        description = "Clean up Frogejo dumps";
-        serviceConfig = {
-          Type = "oneshot";
-          User = config.services.forgejo.user;
-          ExecStart =
-            let
-              findBin = "${pkgs.findutils}/bin/find";
-              dumpDir = config.services.forgejo.dump.backupDir;
-              # Dumps are pretty big
-              dumpKeepDays = 3;
-            in
-            "${findBin} '${dumpDir}' -type f -mtime +${builtins.toString dumpKeepDays} -delete";
-        };
-      };
-    };
-    timers = {
-      podman-cleanup = {
-        requires = [ "podman-cleanup.service" ];
-        wantedBy = [ "timers.target" ];
-        timerConfig = {
-          OnCalendar = "hourly";
-          Persistent = true;
-        };
-      };
-      forgejo-cleanup-dump = {
-        requires = [ "forgejo-cleanup-dump.service" ];
-        wantedBy = [ "timers.target" ];
-        timerConfig = {
-          OnCalendar = "12:00";
-          Persistent = true;
         };
       };
     };
