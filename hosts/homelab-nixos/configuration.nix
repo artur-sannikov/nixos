@@ -89,7 +89,7 @@ in
       backups = {
         forgejo-dump = {
           initialize = true;
-          paths = [ (builtins.toString config.services.forgejo.dump.backupDir) ];
+          paths = [ (toString config.services.forgejo.dump.backupDir) ];
           repository = "/mnt/nas/backups/forgejo-dump";
           passwordFile = config.sops.secrets.restic-forgejo-dump-backup-password.path;
           pruneOpts = [
