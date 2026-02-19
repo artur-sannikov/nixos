@@ -63,6 +63,9 @@ in
   # Secrets
   sops = {
     secrets = {
+      homelab_nixos_passwd = {
+        neededForUsers = true;
+      };
       forgejo-runner-token = { };
       forgejo-runner-main-token = { };
       restic-forgejo-dump-backup-password = { };
@@ -200,9 +203,11 @@ in
   };
 
   users = {
+    mutableUsers = false;
     users = {
       ${username} = {
         isNormalUser = true;
+        hashedPasswordFile = config.sops.secrets.homelab_nixos_passwd.path;
         extraGroups = [
           "wheel"
         ];
