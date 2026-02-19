@@ -1,12 +1,15 @@
+let
+  braveExtensions = [
+    "cjpalhdlnbpafiamejdnhcphjbkeiagm" # ublock origin
+    "nngceckbapebfimnlniiiahkandclblb" # bitwarden
+    "dbepggeogbaibhgnhhndojpepiihcmeb" # vimium
+  ];
+in
 {
   programs = {
     chromium = {
       enable = true;
-      extensions = [
-        "cjpalhdlnbpafiamejdnhcphjbkeiagm" # ublock origin
-        "nngceckbapebfimnlniiiahkandclblb" # bitwarden
-        "dbepggeogbaibhgnhhndojpepiihcmeb" # vimium
-      ];
+      extensions = braveExtensions;
       defaultSearchProviderEnabled = true;
       defaultSearchProviderSearchURL = "https://noai.duckduckgo.com/?q={searchTerms}";
       # https://chromeenterprise.google/policies/
@@ -50,6 +53,8 @@
         ReportWebsiteTelemetry = "";
         # Quick Answers
         QuickAnswersEnabled = false;
+        ExtensionInstallAllowlist = braveExtensions;
+        ExtensionInstallBlocklist = [ "*" ]; # Block all extensions by default
         # Miscellaneous
         AlternateErrorPagesEnabled = false;
         AutofillCreditCardEnabled = false;
