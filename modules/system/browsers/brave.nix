@@ -17,11 +17,6 @@ in
         # Search options
         DefaultSearchProviderName = "DuckDuckGo";
         DefaultSearchProviderKeyword = "ddg";
-        # Content Settings
-        DefaultGeolocationSetting = 2;
-        DefaultNotificationsSetting = 2;
-        DefaultLocalFontsSetting = 2;
-        DefaultSensorsSetting = 2;
         DefaultSerialGuardSetting = 2;
         SyncDisabled = true;
         PasswordManagerEnabled = false;
@@ -40,21 +35,23 @@ in
           "hosted_app_data"
         ];
         BlockThirdPartyCookies = true;
-        # User and device reporting
-        DeviceActivityHeartbeatEnabled = false;
-        DeviceMetricsReportingEnabled = false;
-        HeartbeatEnabled = false;
-        LogUploadEnabled = false;
-        ReportAppInventory = "";
-        ReportDeviceActivityTimes = false;
-        ReportDeviceAppInfo = false;
-        ReportDeviceSystemInfo = false;
-        ReportDeviceUsers = false;
-        ReportWebsiteTelemetry = "";
-        # Quick Answers
-        QuickAnswersEnabled = false;
+
+        # Security
+        # https://github.com/RKNF404/chromium-hardening-guide/blob/main/configs/Configuration.config
+        HttpsOnlyMode = "force_enabled";
+        DnsOverHttpsMode = "automatic";
         ExtensionInstallAllowlist = braveExtensions;
         ExtensionInstallBlocklist = [ "*" ]; # Block all extensions by default
+        RemoteAccessHostAllowRemoteAccessConnections = false;
+        RemoteAccessHostFirewallTraversal = false;
+        RemoteDebuggingAllowed = false;
+        PaymentMethodQueryEnabled = false;
+
+        # Privacy
+        DefaultGeolocationSetting = 2;
+        DefaultNotificationsSetting = 2;
+        DefaultLocalFontsSetting = 2;
+
         # Miscellaneous
         AlternateErrorPagesEnabled = false;
         AutofillCreditCardEnabled = false;
@@ -64,9 +61,7 @@ in
         BuiltInDnsClientEnabled = false;
         DefaultBrowserSettingEnabled = false;
         MetricsReportingEnabled = false;
-        ParcelTrackingEnabled = false;
         ShoppingListEnabled = false;
-        WarnBeforeQuittingEnabled = true;
         AlwaysOpenPdfExternally = true;
         TranslateEnabled = false; # Don't really use it
         RestoreOnStartup = 4; # Show list of URLs
