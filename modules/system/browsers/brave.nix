@@ -9,7 +9,7 @@
       ];
       enablePlasmaBrowserIntegration = true;
       defaultSearchProviderEnabled = true;
-      defaultSearchProviderSearchURL = "https://noai.duckduckgo.com/?q=";
+      defaultSearchProviderSearchURL = "https://noai.duckduckgo.com/?q={searchTerms}";
       extraOpts = {
         # Search options
         "DefaultSearchProviderName" = "DuckDuckGo";
