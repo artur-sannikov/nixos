@@ -7,7 +7,6 @@
         "nngceckbapebfimnlniiiahkandclblb" # bitwarden
         "dbepggeogbaibhgnhhndojpepiihcmeb" # vimium
       ];
-      enablePlasmaBrowserIntegration = true;
       defaultSearchProviderEnabled = true;
       defaultSearchProviderSearchURL = "https://noai.duckduckgo.com/?q={searchTerms}";
       extraOpts = {
