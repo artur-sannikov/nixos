@@ -49,20 +49,21 @@
         DefaultBrowserSettingEnabled = false;
         MetricsReportingEnabled = false;
         ParcelTrackingEnabled = false;
-        RelatedWebsiteSetsEnabled = false;
         ShoppingListEnabled = false;
         WarnBeforeQuittingEnabled = true;
         AlwaysOpenPdfExternally = true;
-        AllowLanguages = [
-          "fi"
-          "en-US"
+        TranslateEnabled = false; # Don't really use it
+        RestoreOnStartup = 4; # Show list of URLs
+        HomepageIsNewTabPage = true;
+        NewTabPageLocation = "https://noai.duckduckgo.com";
+        RestoreOnStartupURLs = [
+          "https://noai.duckduckgo.com"
         ];
-        ForceLanguages = [
+        ForcedLanguages = [
           "fi"
           "en-US"
         ];
         SpellcheckLanguage = [
-          "fi"
           "it"
           "en-US"
         ];
