@@ -9,7 +9,6 @@
   home.packages =
     (with pkgs-stable; [
       element-desktop
-      haruna
       hunspell
       hunspellDicts.en_GB-large
       inkscape
@@ -18,7 +17,6 @@
       libreoffice-qt-fresh
       obsidian
       protonvpn-gui
-      strawberry
       texstudio
       tidal-hifi
       vlc
