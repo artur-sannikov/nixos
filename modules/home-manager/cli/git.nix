@@ -29,6 +29,12 @@
         commit.gpgsign = true;
       };
       ignores = [
+        ".Rproj.user"
+        ".Rhistory"
+        ".RData"
+        ".RDataTmp"
+        ".Renviron"
+        ".quarto"
         ".DS_Store"
         ".direnv/"
         ".devcontainer/"
