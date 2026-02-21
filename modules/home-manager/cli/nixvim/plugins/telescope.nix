@@ -11,6 +11,13 @@ in
           fzf-native.enable = true;
         };
         settings = {
+          defaults = {
+            file_ignore_patterns = [
+              "^node_modules"
+              "^.git"
+              "^.venv"
+            ];
+          };
           layout_strategy = "horizontal";
           layout_config = {
             width = 0.9;
@@ -20,6 +27,7 @@ in
           pickers = {
             find_files = {
               theme = "${picker_theme}";
+              hidden = true;
             };
             buffers = {
               theme = "${picker_theme}";
