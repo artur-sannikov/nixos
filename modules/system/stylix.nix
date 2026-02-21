@@ -21,7 +21,7 @@
       };
       sansSerif = serif;
       monospace = {
-        name = "SauceCode Pro Nerd Font";
+        name = "SauceCode Pro Nerd Font Mono";
         package = pkgs.nerd-fonts.sauce-code-pro;
       };
       emoji = {
