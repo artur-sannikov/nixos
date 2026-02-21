@@ -46,6 +46,7 @@ in
         };
       };
     };
+
     keymaps = [
       {
         key = "<leader>fd";
@@ -62,6 +63,15 @@ in
         options = {
           silent = true;
           desc = "Telescope list buffers";
+        };
+      }
+      {
+        mode = "n";
+        key = "<leader>gc";
+        action = "<cmd>Telescope git_commits<cr>";
+        options = {
+          silent = true;
+          desc = "Telescope search commits";
         };
       }
     ];
