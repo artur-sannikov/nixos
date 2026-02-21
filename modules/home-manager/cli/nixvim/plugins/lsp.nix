@@ -9,7 +9,7 @@
       };
     };
     extraPlugins = with pkgs.vimPlugins; [
-      ansible-vim
+      # ansible-vim
       # coc-nvim
       # (pkgs.vimUtils.buildVimPlugin {
       #   pname = "coc-ansible";
@@ -36,6 +36,15 @@
         enable = true;
         inlayHints = true;
         servers = {
+          ansiblels = {
+            enable = true;
+            package = pkgs.callPackage ./ansible-language-server/package.nix { };
+            config = {
+              settings.ansible = {
+                useFullyQualifiedCollectionNames = true;
+              };
+            };
+          };
           # lua
           lua_ls.enable = true;
 
