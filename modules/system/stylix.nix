@@ -12,8 +12,8 @@
     };
     fonts = rec {
       sizes = {
-        applications = 13;
-        terminal = 13;
+        applications = 14;
+        terminal = 14;
       };
       serif = {
         name = "UbuntuSans Nerd Font";
@@ -21,8 +21,8 @@
       };
       sansSerif = serif;
       monospace = {
-        name = "SauceCode Pro Nerd Font Mono";
-        package = pkgs.nerd-fonts.sauce-code-pro;
+        name = "Iosevka Nerd Font Mono";
+        package = pkgs.nerd-fonts.iosevka;
       };
       emoji = {
         name = "Noto Color Emoji";
