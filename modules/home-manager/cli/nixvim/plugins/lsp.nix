@@ -47,6 +47,10 @@
             enable = true;
           };
 
+          just = {
+            enable = true;
+          };
+
           # R
           r_language_server = {
             enable = true;
