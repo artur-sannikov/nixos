@@ -42,6 +42,10 @@
           docker_language_server = {
             enable = true;
           };
+          # Dockerfile language server
+          dockerls = {
+            enable = true;
+          };
 
           # R
           r_language_server = {
