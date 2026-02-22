@@ -39,6 +39,10 @@
           # lua
           lua_ls.enable = true;
 
+          docker_language_server = {
+            enable = true;
+          };
+
           # R
           r_language_server = {
             enable = true;
