@@ -11,9 +11,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # Firefox extensions
-    firefox-extensions = {
-      url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
+    home-manager = {
+      url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
