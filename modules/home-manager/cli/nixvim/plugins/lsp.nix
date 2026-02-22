@@ -67,6 +67,9 @@
           air = {
             enable = true;
           };
+          superhtml = {
+            enable = true;
+          };
           # toml
           taplo = {
             enable = true;
