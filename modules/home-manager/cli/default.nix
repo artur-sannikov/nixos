@@ -4,6 +4,7 @@
     ./bash.nix
     ./bat.nix
     ./btop.nix
+    ./chezmoi.nix
     ./direnv.nix
     ./distrobox.nix
     ./fastfetch.nix

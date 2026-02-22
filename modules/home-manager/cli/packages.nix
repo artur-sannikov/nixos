@@ -12,6 +12,7 @@
     bitwarden-cli
     black
     caddy
+    chezmoi
     cloud-utils
     file
     freerdp
