@@ -172,18 +172,19 @@
     systemd.services.NetworkManager-wait-online.enable = false;
 
     services = {
-      # Enable root Plasma 6.
-      xserver.enable = false;
-      displayManager.sddm = {
-        enable = true;
-        wayland.enable = true;
+      xserver = {
+        enable = false;
       };
-      desktopManager.plasma6.enable = true;
-
-      # Logitech
-      # solaar = {
-      #   enable = true;
-      # };
+      displayManager = {
+        plasma-login-manager = {
+          enable = true;
+        };
+      };
+      desktopManager = {
+        plasma6 = {
+          enable = true;
+        };
+      };
     };
 
     security = {

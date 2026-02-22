@@ -167,12 +167,19 @@
 
     services = {
       # Enable KDE Plasma 6.
-      xserver.enable = false;
-      displayManager.sddm = {
-        enable = true;
-        wayland.enable = true;
+      xserver = {
+        enable = false;
       };
-      desktopManager.plasma6.enable = true;
+      displayManager = {
+        plasma-login-manager = {
+          enable = true;
+        };
+      };
+      desktopManager = {
+        plasma6 = {
+          enable = true;
+        };
+      };
       printing.enable = true;
       avahi = {
         enable = true;
