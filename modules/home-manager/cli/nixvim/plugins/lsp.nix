@@ -36,22 +36,30 @@
         enable = true;
         inlayHints = true;
         servers = {
-          # lua
-          lua_ls.enable = true;
-
+          bashls = {
+            enable = true;
+          };
           docker_language_server = {
             enable = true;
           };
-          # Dockerfile language server
           dockerls = {
             enable = true;
           };
-
+          harper_ls = {
+            enable = true;
+          };
           just = {
             enable = true;
           };
-
-          # R
+          lua_ls = {
+            enable = true;
+          };
+          nixd = {
+            enable = true;
+          };
+          pylsp = {
+            enable = true;
+          };
           r_language_server = {
             enable = true;
             package = null;
@@ -59,25 +67,10 @@
           air = {
             enable = true;
           };
-
-          # bash
-          bashls.enable = true;
-
-          # Python
-          pylsp = {
-            enable = true;
-          };
-
-          # nix
-          nixd = {
-            enable = true;
-          };
-
           # toml
           taplo = {
             enable = true;
           };
-
           # typst
           tinymist = {
             enable = true;
@@ -88,18 +81,10 @@
               formatterPrintWidth = 80;
             };
           };
-
-          # OpenTofu
           tofu_ls = {
             enable = true;
           };
-
-          # yaml
           yamlls = {
-            enable = true;
-          };
-
-          harper_ls = {
             enable = true;
           };
         };
