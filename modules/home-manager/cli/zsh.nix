@@ -40,6 +40,15 @@ in
           edit = "$EDITOR $(fzf)";
           # See issue here https://sw.kovidgoyal.net/kitty/faq/#i-get-errors-about-the-terminal-being-unknown-or-opening-the-terminal-failing-or-functional-keys-like-arrow-keys-don-t-work
           s = "kitten ssh";
+
+          # Chezmoi re-add dictionary
+          # I add new words to ~/.config/harper-ls/dictionary.txt from Neovim
+          # so chezmoi cannot detect the changes.
+          # One way is to add them directly to the chezmoi repo, but I do
+          # not want to mess with it too much
+          # It's also possible to run a timer that would re-add it periodically
+          chz-harper = "chezmoi re-add ~/.config/harper-ls/dictionary.txt";
+
         };
         sessionVariables = {
           LC_ALL = "en_US.UTF-8";
