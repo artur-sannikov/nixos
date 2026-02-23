@@ -34,9 +34,6 @@ in
     };
   };
 
-  # Set your time zone.
-  time.timeZone = "Europe/Helsinki";
-
   # Mount NFS
   fileSystems = {
     "/mnt/nas/backups/forgejo-dump" = {
