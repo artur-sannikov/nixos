@@ -76,6 +76,18 @@
           DISABLE_REGISTRATION = true;
         };
 
+        ui = {
+          SHOW_USER_EMAIL = false;
+          DEFAULT_SHOW_FULL_NAME = false;
+        };
+
+        session = {
+          COOKIE_SECURE = true;
+          PROVIDER = "db";
+          PROVIDER_CONFIG = "";
+          SESSION_LIFE_TIME = 86400 * 5;
+        };
+
         actions = {
           ENABLED = true;
           DEFAULT_ACTIONS_URL = "https://git.asannikov.com";
