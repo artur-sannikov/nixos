@@ -90,7 +90,9 @@ in
     forgejo = {
       enable = true;
       package = pkgs.forgejo;
-      lfs.enable = true;
+      lfs = {
+        enable = true;
+      };
       dump = {
         enable = true;
         type = "tar.gz";
@@ -104,7 +106,9 @@ in
           DOMAIN = forgejoDomain;
           ROOT_URL = forgejoRootUrl;
         };
-        service.DISABLE_REGISTRATION = true;
+        service = {
+          DISABLE_REGISTRATION = true;
+        };
       };
     };
     gitea-actions-runner = {
