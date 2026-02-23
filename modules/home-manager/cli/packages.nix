@@ -17,6 +17,7 @@
     file
     freerdp
     deadnix
+    deploy-rs
     devenv
     djlint
     go
