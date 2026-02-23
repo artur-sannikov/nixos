@@ -16,7 +16,7 @@
       "hosts/tuxedo/disko.nix"
       "hosts/tuxedo/hardware-configuration.nix"
 
-      # Maintenence
+      # Maintenance
       "modules/system/maintenance.nix"
 
       # Secure boot

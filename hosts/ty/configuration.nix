@@ -14,7 +14,7 @@
     (map lib.custom.relativeToRoot [
       "hosts/ty/hardware-configuration.nix"
 
-      # Maintenence
+      # Maintenance
       "modules/system/maintenance.nix"
 
       # Secure boot

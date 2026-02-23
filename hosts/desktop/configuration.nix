@@ -16,7 +16,7 @@
       "hosts/desktop/disko.nix"
       "hosts/desktop/hardware-configuration.nix"
 
-      # Maintenence
+      # Maintenance
       "modules/system/maintenance.nix"
 
       # Secure boot
