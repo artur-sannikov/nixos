@@ -38,6 +38,7 @@
     nchat
     ncdu
     nextflow
+    nitrokey-app2
     nixpkgs-review
     nodejs
     opentofu

@@ -126,6 +126,9 @@
     };
 
     hardware = {
+      nitrokey = {
+        enable = true;
+      };
       amdgpu.overdrive.enable = true;
       graphics = {
         enable = true;
