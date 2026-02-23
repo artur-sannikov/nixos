@@ -24,6 +24,7 @@
     gnumake
     hadolint
     hugo
+    hyperfine
     imagemagick
     isort
     jdk
