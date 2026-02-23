@@ -96,6 +96,10 @@
           ENABLED = true;
           DEFAULT_ACTIONS_URL = "https://git.asannikov.com";
         };
+
+        repository = {
+          DISABLE_STARS = true;
+        };
       };
     };
     caddy = {

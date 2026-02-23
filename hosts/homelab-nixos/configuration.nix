@@ -109,6 +109,9 @@ in
         service = {
           DISABLE_REGISTRATION = true;
         };
+        repository = {
+          DISABLE_STARS = true; # self-hosting so, doesn't make sense
+        };
       };
     };
     gitea-actions-runner = {
