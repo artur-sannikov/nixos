@@ -7,8 +7,8 @@
         src = pkgs.fetchFromGitHub {
           owner = "milanglacier";
           repo = "yarepl.nvim";
-          rev = "v0.11.0";
-          hash = "sha256-6kl7xQpDiyuiqmjTPVbAjff+EGIVzWw/RBOaqZP3iGo=";
+          rev = "v0.12.0";
+          hash = "sha256-3JkrQCTvWFE6CRRbeiqqmA8tVVl4ZzE+hQX75ODuHo8=";
         };
         nvimSkipModules = [ "yarepl.extensions.fzf" ];
       })
