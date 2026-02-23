@@ -27,6 +27,10 @@
     };
     firewall = {
       enable = true;
+      allowedTCPPorts = [
+        80
+        443
+      ];
     };
   };
 
@@ -91,6 +95,16 @@
         actions = {
           ENABLED = true;
           DEFAULT_ACTIONS_URL = "https://git.asannikov.com";
+        };
+      };
+    };
+    caddy = {
+      enable = true;
+      virtualHosts = {
+        "git.asannikov.com" = {
+          extraConfig = ''
+            reverse_proxy http://localhost:3000
+          '';
         };
       };
     };
