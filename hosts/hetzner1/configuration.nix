@@ -46,6 +46,7 @@
       artur_passwd = {
         neededForUsers = true;
       };
+      "forgejo/public/forgejo-runner-token" = { };
     };
   };
   services = {
@@ -102,6 +103,28 @@
         };
       };
     };
+    gitea-actions-runner = {
+      package = pkgs.forgejo-runner;
+      instances = {
+        main = {
+          enable = true;
+          name = "main";
+          url = "https://git.asannikov.com";
+          tokenFile = config.sops.secrets."forgejo/public/forgejo-runner-token".path;
+          labels = [
+            "docker:docker://node:24-alpine"
+            "alpine-latest:docker://node:24-alpine"
+            "debian-latest:docker://node:24-trixie"
+          ];
+          settings = {
+            # Run 10 jobs at once
+            runner = {
+              capacity = 10;
+            };
+          };
+        };
+      };
+    };
     caddy = {
       enable = true;
       virtualHosts = {
@@ -113,6 +136,14 @@
       };
     };
   };
+
+  # Required for Forgejo actions
+  virtualisation = {
+    podman = {
+      enable = true;
+    };
+  };
+
   users = {
     mutableUsers = false;
     users = {
