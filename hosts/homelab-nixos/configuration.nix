@@ -54,8 +54,8 @@ in
       homelab_nixos_passwd = {
         neededForUsers = true;
       };
-      forgejo-runner-token = { };
-      forgejo-runner-main-token = { };
+      "forgejo/private/forgejo-runner-token" = { };
+      "forgejo/private/forgejo-runner-main-token" = { };
       restic-forgejo-dump-backup-password = { };
     };
   };
@@ -121,7 +121,7 @@ in
           enable = true;
           name = "renovate";
           url = forgejoRootUrl;
-          tokenFile = config.sops.secrets.forgejo-runner-token.path;
+          tokenFile = config.sops.secrets."forgejo/private/forgejo-runner-token".path;
           labels = [
             "debian-latest:docker://node:24-trixie"
           ];
@@ -130,7 +130,7 @@ in
           enable = true;
           name = "main";
           url = forgejoRootUrl;
-          tokenFile = config.sops.secrets.forgejo-runner-main-token.path;
+          tokenFile = config.sops.secrets."forgejo/private/forgejo-runner-main-token".path;
           labels = [
             "debian-latest:docker://node:24-trixie"
           ];
