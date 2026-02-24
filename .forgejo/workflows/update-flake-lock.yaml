@@ -6,10 +6,12 @@ on:
 jobs:
   lock-updater:
     name: Flake lock updater
-    runs-on: ubuntu-latest
+    runs-on: alpine-latest
     steps:
       - name: Install required packages
-        run: apt-get update && apt-get install jq -y
+        run: |
+          apk update
+          apk add jq
       - name: Install Lix
         uses: actions/install-lix@v1
       - name: Checkout flake
