@@ -124,7 +124,6 @@ in
           tokenFile = config.sops.secrets.forgejo-runner-token.path;
           labels = [
             "debian-latest:docker://node:24-trixie"
-            "native:host"
           ];
         };
         main = {
@@ -134,7 +133,6 @@ in
           tokenFile = config.sops.secrets.forgejo-runner-main-token.path;
           labels = [
             "debian-latest:docker://node:24-trixie"
-            "native:host"
           ];
         };
       };
