@@ -14,6 +14,8 @@ jobs:
         uses: https://codeberg.org/arsann/install-lix@v1
       - name: Checkout flake
         uses: actions/checkout@v6
+        with:
+          ref: devel
       - name: Prepare inputs to update
         id: inputs
         run: |
