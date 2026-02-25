@@ -25,7 +25,6 @@
       anki
       bitwarden-desktop
       freetube
-      gearlever
       mattermost-desktop
       meld
       onlyoffice-desktopeditors
