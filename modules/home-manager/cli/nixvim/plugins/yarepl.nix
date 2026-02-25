@@ -35,6 +35,11 @@
         key = "<leader>rr";
         action = "<Plug>(REPLSendVisual)";
       }
+      {
+        mode = "n";
+        key = "<leader>rf";
+        action = "<Plug>(REPLFocus)";
+      }
     ];
   };
 }
