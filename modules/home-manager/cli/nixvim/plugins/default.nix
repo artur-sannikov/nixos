@@ -14,6 +14,7 @@
     ./neogit.nix
     ./nix.nix
     ./no-neck-pain.nix
+    ./nvim-surround.nix
     ./octo.nix
     ./oil.nix
     ./quarto.nix
