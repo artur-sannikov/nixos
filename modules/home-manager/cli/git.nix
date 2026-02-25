@@ -36,6 +36,7 @@
         ".Renviron"
         ".quarto"
         ".DS_Store"
+        ".httr-oauth"
         ".direnv/"
         ".devcontainer/"
         "result"
