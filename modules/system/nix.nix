@@ -4,12 +4,14 @@
     settings = {
       # List of binary cache URLs that non-root users can use
       trusted-substituters = [
-        "https://rstats-on-nix.cachix.org/"
-        "https://nix-community.cachix.org/"
+        "https://nix-community.cachix.org?priority=10"
+        "https://numtide.cachix.org?priority=11"
+        "https://rstats-on-nix.cachix.org?priority=12"
       ];
       trusted-public-keys = [
-        "rstats-on-nix.cachix.org-1:vdiiVgocg6WeJrODIqdprZRUrhi1JzhBnXv7aWI6+F0="
         "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
+        "numtide.cachix.org-1:2ps1kLBUWjxIneOy1Ik6cQjb41X0iXVXeHigGmycPPE="
+        "rstats-on-nix.cachix.org-1:vdiiVgocg6WeJrODIqdprZRUrhi1JzhBnXv7aWI6+F0="
       ];
       trusted-users = [
         "root"
