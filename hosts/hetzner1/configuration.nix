@@ -22,9 +22,6 @@
 
   networking = {
     hostName = "hetzner1";
-    nftables = {
-      enable = true;
-    };
     firewall = {
       enable = true;
       allowedTCPPorts = [
