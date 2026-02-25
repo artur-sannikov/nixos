@@ -10,6 +10,7 @@
     ./lsp.nix
     ./plenary.nix
     ./markview.nix
+    ./molten.nix
     ./neogit.nix
     ./nix.nix
     ./no-neck-pain.nix
