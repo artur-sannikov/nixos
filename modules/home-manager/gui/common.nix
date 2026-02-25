@@ -8,6 +8,7 @@
 
   home.packages =
     (with pkgs-stable; [
+      anki
       element-desktop
       hunspell
       hunspellDicts.en_GB-large
@@ -22,7 +23,6 @@
       vlc
     ])
     ++ (with pkgs; [
-      anki
       bitwarden-desktop
       freetube
       mattermost-desktop
