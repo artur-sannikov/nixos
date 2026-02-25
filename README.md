@@ -8,8 +8,8 @@
   />
 </p>
 
-This repository contains NixOS configuration for my desktop, personal and work
-laptops, and a small VM running on Proxmox (for my
+This repository contains NixOS configuration for my desktop, personal, and work
+laptops, Hetzner VM, and a small VM running on Proxmox (for my
 [homelab](https://codeberg.org/arsann/homelab)). The configurations are based
 on a [Nix flake](https://wiki.nixos.org/wiki/Flakes) for easy management and
 configuration. Changes are made in `devel` branch and then merged into `main`
@@ -27,7 +27,7 @@ branch.
 
 ## Updates
 
-Updates are managed via `flake.lock` on my own private Forgejo instance.
+Updates are managed via `flake.lock` on my [Forgejo instance](https://git.asannikov.com/artur/nixos).
 The workflows are
 [public](https://codeberg.org/arsann/nixos/src/branch/main/.forgejo/workflows).
 
@@ -38,7 +38,7 @@ with flake. EmergentMind wrote a
 [great post](https://unmovedcentre.com/posts/secrets-management/) on how to
 implement this.
 
-## Stuff to do manually
+## Stuff to Do Manually
 
 Not everything is feasible (still?) to declare. Not an exhaustive list of stuff
 to do after the installation:
@@ -46,13 +46,13 @@ to do after the installation:
 - Login into Librewolf for syncing
 - Login into `gh`
 - Login into `bw`
-- Set up config file for `vdirsyncer` in `.config/vdirsyncer`
 - Set up Thunderbird if it asks for password
 - Set up `tailscale`
 - Install [Better Bibtex](https://retorque.re/zotero-better-bibtex/) for Zotero
 
 ## Configuration mirrors
 
-This configuration is available on
+This configuration is available on my own [Forgejo
+instance](https://git.asannikov.com/artur/nixos),
 [Codeberg](https://codeberg.org/arsann/nixos) and
 [GitHub](https://github.com/artur-sannikov/nixos).
