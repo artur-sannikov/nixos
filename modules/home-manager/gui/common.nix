@@ -23,6 +23,7 @@
     ])
     ++ (with pkgs; [
       anki
+      bitwarden-desktop
       freetube
       gearlever
       mattermost-desktop
