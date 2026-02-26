@@ -20,6 +20,7 @@
     ./nix.nix
     ./packages.nix
     ./password-store.nix
+    ./rbw.nix
     ./ripgrep.nix
     ./starship.nix
     ./tealdeer.nix

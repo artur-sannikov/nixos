@@ -74,10 +74,10 @@ in
             "fzf"
             "direnv"
             "git"
-            # "git-auto-fetch"
             "toolbox"
             "zoxide"
             "podman"
+            "rbw"
             "tmux"
           ];
         };
