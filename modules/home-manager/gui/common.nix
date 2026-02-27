@@ -23,7 +23,6 @@
       vlc
     ])
     ++ (with pkgs; [
-      bitwarden-desktop
       freetube
       mattermost-desktop
       meld
