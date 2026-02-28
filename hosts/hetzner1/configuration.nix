@@ -116,9 +116,8 @@
             "debian-latest:docker://node:24-trixie"
           ];
           settings = {
-            # Run 10 jobs at once
             runner = {
-              capacity = 10;
+              capacity = 1;
             };
           };
         };
