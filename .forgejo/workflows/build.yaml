@@ -13,10 +13,28 @@ jobs:
     steps:
       - name: Install Lix
         uses: actions/install-lix@v1
+      - name: Configure access to nix-secrests on Codeberg
+        env:
+          CODEBERG_TOKEN: ${{ secrets.CODEBERG_TOKEN }}
+        run: |
+          cat > ~/.netrc <<EOF
+          machine codeberg.org
+            login arsann
+            password ${CODEBERG_TOKEN}
+          EOF
       - name: Checkout flake
         uses: actions/checkout@v6
         with:
           ref: devel
       - name: Build
         run: |
-          nix build -L .#nixosConfigurations.${{ matrix.machine }}.config.system.build.toplevel  && echo "Success"
+          # I override an nix-secret input here which I normally access with
+          # SSH. However I opted for a revocable app token from Codeberg
+          # which is accessed from `.netrc`
+          nix build -L \
+            .#nixosConfigurations.${{ matrix.machine }}.config.system.build.toplevel \
+            --override-input nix-secrets git+https://codeberg.org/arsann/nix-secrets.git \
+            --no-write-lock-file
+        # Just in case
+      - name: Delete .netrc
+        run: rm -f ~/.netrc
