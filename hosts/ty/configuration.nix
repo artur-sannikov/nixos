@@ -47,6 +47,7 @@
       "modules/system/virtualization/podman.nix"
       "modules/system/virtualization/singularity.nix"
       "modules/system/virtualization/docker.nix"
+      "modules/system/services/attic-watch-store.nix"
 
       # System-wide packages
       "modules/system/packages.nix"

@@ -57,6 +57,7 @@
       # "modules/system/services/tlp.nix"
       "modules/system/services/mbsyncd.nix"
       "modules/system/services/fwupd.nix"
+      "modules/system/services/attic-watch-store.nix"
       "modules/system/zoom-us.nix"
 
       "modules/system/services/nvme-rs.nix"
