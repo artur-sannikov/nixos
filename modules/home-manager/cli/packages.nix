@@ -11,6 +11,7 @@
         act
         age
         air-formatter
+        attic-client
         bc
         bitwarden-cli
         black
