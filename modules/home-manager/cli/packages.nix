@@ -19,6 +19,7 @@
         cloud-utils
         file
         freerdp
+        forgejo-cli
         deadnix
         deploy-rs
         devenv
