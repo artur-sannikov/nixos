@@ -44,6 +44,7 @@
         neededForUsers = true;
       };
       "forgejo/public/forgejo-runner-token" = { };
+      "atticd/server_token" = { };
     };
   };
   services = {
@@ -61,6 +62,7 @@
       };
       database = {
         type = "postgres";
+        createDatabase = true;
       };
 
       settings = {
@@ -130,9 +132,68 @@
             reverse_proxy http://localhost:3000
           '';
         };
+        "cache.asannikov.com" = {
+          extraConfig = ''
+            reverse_proxy http://localhost:8080
+          '';
+        };
+      };
+    };
+
+    # This is for attic
+    # Forgejo has its own database (port 5432)
+    postgresql = {
+      enable = true;
+      enableJIT = true;
+      enableTCPIP = false;
+      package = pkgs.postgresql_17_jit;
+      settings = {
+        port = 5432;
+
+        max_connections = 100;
+      };
+      ensureDatabases = [
+        "atticd"
+      ];
+      ensureUsers = [
+        {
+          name = "atticd";
+          ensureDBOwnership = true;
+        }
+        {
+          name = "forgejo";
+          ensureDBOwnership = true;
+        }
+      ];
+      authentication = ''
+        # Local services
+        local forgejo forgejo peer
+        local atticd atticd peer
+        host atticd atticd 127.0.0.1/32 trust
+      '';
+    };
+    atticd = {
+      enable = true;
+      environmentFile = config.sops.secrets."atticd/server_token".path;
+      settings = {
+        listen = "127.0.0.1:8080";
+        allowed-hosts = [ "cache.asannikov.com" ];
+        api-endpoint = "https://cache.asannikov.com";
+        jwt = { };
+        database = {
+          url = "postgresql://atticd@127.0.0.1:5432/atticd";
+          heartbeat = true;
+        };
+        storage = {
+          type = "local";
+          path = "/var/lib/atticd/storage";
+        };
       };
     };
   };
+  systemd.tmpfiles.rules = [
+    "d /var/lib/atticd/storage 0750 atticd atticd"
+  ];
 
   # Required for Forgejo actions
   virtualisation = {
@@ -143,7 +204,17 @@
 
   users = {
     mutableUsers = false;
+    groups = {
+      atticd = { };
+    };
     users = {
+      # Need atticd declarative storage creation
+      atticd = {
+        isSystemUser = true;
+        group = "atticd";
+        home = "/var/lib/atticd";
+        createHome = true;
+      };
       ${username} = {
         isNormalUser = true;
         hashedPasswordFile = config.sops.secrets.artur_passwd.path;
