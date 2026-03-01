@@ -57,6 +57,14 @@ in
         };
       }
       {
+        key = "<leader>fg";
+        mode = [ "n" ];
+        action = "<cmd>Telescope live_grep<cr>";
+        options = {
+          desc = "Search in files in cwd";
+        };
+      }
+      {
         mode = "n";
         key = "<leader>b";
         action = "<cmd>Telescope buffers<cr>";
