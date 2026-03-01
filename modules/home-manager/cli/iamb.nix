@@ -5,6 +5,9 @@
       settings = {
         profiles.user.user_id = "@liberty5804:matrix.org";
         layout.style = "restore";
+        notifications = {
+          enable = true;
+        };
         image_preview.protocol = {
           type = "kitty";
           size = {
