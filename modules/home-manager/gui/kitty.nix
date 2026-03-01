@@ -26,6 +26,8 @@
         # background_opacity = 0.95;
       };
       keybindings = {
+        # Scrollback in Neovim
+        "ctrl+i" = "launch --stdin-source=@screen_scrollback --type=overlay nvim +$ +'nnoremap q ZQ'";
         "ctrl+f>c" = "new_tab";
         "ctrl+h" = "neighboring_window left";
         "ctrl+l" = "neighboring_window right";
