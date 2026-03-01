@@ -25,6 +25,9 @@ switch:
     echo "Switching configuration for {{ hostname }}"
     sudo nixos-rebuild switch --flake .#{{ hostname }}
 
+lint:
+    statix check --ignore hardware-configuration.nix .
+
 deploy host:
     #!/usr/bin/env bash
     if [ "{{ host }}" = "homelab-nixos" ]; then
