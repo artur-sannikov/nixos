@@ -19,7 +19,6 @@
     ./oil.nix
     ./quarto.nix
     ./telescope.nix
-    ./tmux-navigator.nix
     ./treesitter.nix
     ./vim-be-good.nix
     ./web-devicons.nix
