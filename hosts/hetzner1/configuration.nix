@@ -177,7 +177,7 @@
       settings = {
         listen = "127.0.0.1:8080";
         allowed-hosts = [ "cache.asannikov.com" ];
-        api-endpoint = "https://cache.asannikov.com";
+        api-endpoint = "https://cache.asannikov.com/";
         jwt = { };
         database = {
           url = "postgresql://atticd@127.0.0.1:5432/atticd";
