@@ -73,6 +73,8 @@
             neogit = true;
             treesitter_context = true;
             telescope = true;
+            gitsigns = true;
+            octo = true;
           };
           # Default color is barely visible for split windows
           custom_highlights = ''
