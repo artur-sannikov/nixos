@@ -35,9 +35,9 @@ in
           ll = "exa -lbF --git --icons";
           cat = "bat";
           c = "clear";
-          # Integration with direnv
-          "tmux" = "direnv exec / tmux";
+          "tmux" = "direnv exec / tmux"; # Integration with direnv
           edit = "$EDITOR $(fzf)";
+          rpw = "rbwpw"; # Copy password to clipboard
           # See issue here https://sw.kovidgoyal.net/kitty/faq/#i-get-errors-about-the-terminal-being-unknown-or-opening-the-terminal-failing-or-functional-keys-like-arrow-keys-don-t-work
           s = "kitten ssh";
 
