@@ -14,13 +14,13 @@ yarepl.setup({
 	-- The available REPL palattes that `yarepl` can create REPL based on.
 	-- To disable a built-in meta, set its key to `false`, e.g., `metas = { R = false }`
 	metas = {
-		aichat = { cmd = "aichat", formatter = yarepl.formatter.bracketed_pasting },
+		aichat = false,
 		radian = { cmd = "radian", formatter = yarepl.formatter.bracketed_pasting },
 		ipython = { cmd = "ipython", formatter = yarepl.formatter.bracketed_pasting },
-		python = { cmd = "python", formatter = yarepl.formatter.trim_empty_lines },
-		R = { cmd = "R", formatter = yarepl.formatter.trim_empty_lines },
-		bash = { cmd = "bash", formatter = yarepl.formatter.trim_empty_lines },
-		zsh = { cmd = "zsh", formatter = yarepl.formatter.bracketed_pasting },
+		python = false,
+		R = false,
+		bash = false,
+		zsh = false,
 	},
 	-- when a REPL process exits, should the window associated with those REPLs closed?
 	close_on_exit = true,
