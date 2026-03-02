@@ -12,7 +12,8 @@
           chunks = "curly";
         };
         codeRunner = {
-          enabled = false;
+          enabled = true;
+          default_method = "molten";
         };
       };
     };

@@ -2,7 +2,7 @@
   programs = {
     nixvim = {
       plugins = {
-        telescope = {
+        molten = {
           enable = true;
         };
       };
