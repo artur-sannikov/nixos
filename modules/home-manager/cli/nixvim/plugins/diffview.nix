@@ -1,11 +1,7 @@
 {
-  programs = {
-    nixvim = {
-      plugins = {
-        diffview = {
-          enable = true;
-        };
-      };
+  plugins = {
+    diffview = {
+      enable = true;
     };
   };
 }

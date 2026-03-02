@@ -1,11 +1,7 @@
 {
-  programs = {
-    nixvim = {
-      plugins = {
-        gitsigns = {
-          enable = true;
-        };
-      };
+  plugins = {
+    gitsigns = {
+      enable = true;
     };
   };
 }

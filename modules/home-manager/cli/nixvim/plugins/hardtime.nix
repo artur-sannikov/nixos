@@ -1,5 +1,7 @@
 {
-  programs.nixvim.plugins.hardtime = {
-    enable = true;
+  plugins = {
+    hardtime = {
+      enable = true;
+    };
   };
 }

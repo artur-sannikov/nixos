@@ -1,5 +1,5 @@
 {
-  programs.nixvim.plugins = {
+  plugins = {
     no-neck-pain = {
       enable = true;
       settings = {

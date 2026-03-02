@@ -1,11 +1,7 @@
 {
-  programs = {
-    nixvim = {
-      plugins = {
-        molten = {
-          enable = true;
-        };
-      };
+  plugins = {
+    molten = {
+      enable = true;
     };
   };
 }

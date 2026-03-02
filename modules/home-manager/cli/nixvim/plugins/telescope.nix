@@ -2,86 +2,84 @@ let
   picker_theme = "dropdown";
 in
 {
-  programs.nixvim = {
-    plugins = {
-      telescope = {
-        enable = true;
-        extensions = {
-          # https://github.com/nvim-telescope/telescope-fzf-native.nvim
-          fzf-native.enable = true;
+  plugins = {
+    telescope = {
+      enable = true;
+      extensions = {
+        # https://github.com/nvim-telescope/telescope-fzf-native.nvim
+        fzf-native.enable = true;
+      };
+      settings = {
+        defaults = {
+          file_ignore_patterns = [
+            "^node_modules"
+            "^.git"
+            "^.venv"
+          ];
         };
-        settings = {
-          defaults = {
-            file_ignore_patterns = [
-              "^node_modules"
-              "^.git"
-              "^.venv"
-            ];
+        layout_strategy = "horizontal";
+        layout_config = {
+          width = 0.9;
+          mirror = true;
+          prompt_position = "top";
+        };
+        pickers = {
+          find_files = {
+            theme = "${picker_theme}";
+            hidden = true;
           };
-          layout_strategy = "horizontal";
-          layout_config = {
-            width = 0.9;
-            mirror = true;
-            prompt_position = "top";
+          buffers = {
+            theme = "${picker_theme}";
           };
-          pickers = {
-            find_files = {
-              theme = "${picker_theme}";
-              hidden = true;
-            };
-            buffers = {
-              theme = "${picker_theme}";
-            };
-            git_commits = {
-              theme = "${picker_theme}";
-            };
+          git_commits = {
+            theme = "${picker_theme}";
           };
-          mappings = {
-            i = {
-              "<C-n>" = "move_selection_next";
-              "<C-p>" = "move_selection_previous";
-              "<C-c>" = "close";
-            };
+        };
+        mappings = {
+          i = {
+            "<C-n>" = "move_selection_next";
+            "<C-p>" = "move_selection_previous";
+            "<C-c>" = "close";
           };
         };
       };
     };
-
-    keymaps = [
-      {
-        key = "<leader>fd";
-        mode = [ "n" ];
-        action = "<cmd>Telescope find_files<cr>";
-        options = {
-          desc = "Search files by name";
-        };
-      }
-      {
-        key = "<leader>fg";
-        mode = [ "n" ];
-        action = "<cmd>Telescope live_grep<cr>";
-        options = {
-          desc = "Search in files in cwd";
-        };
-      }
-      {
-        mode = "n";
-        key = "<leader>b";
-        action = "<cmd>Telescope buffers<cr>";
-        options = {
-          silent = true;
-          desc = "Telescope list buffers";
-        };
-      }
-      {
-        mode = "n";
-        key = "<leader>gc";
-        action = "<cmd>Telescope git_commits<cr>";
-        options = {
-          silent = true;
-          desc = "Telescope search commits";
-        };
-      }
-    ];
   };
+
+  keymaps = [
+    {
+      key = "<leader>fd";
+      mode = [ "n" ];
+      action = "<cmd>Telescope find_files<cr>";
+      options = {
+        desc = "Search files by name";
+      };
+    }
+    {
+      key = "<leader>fg";
+      mode = [ "n" ];
+      action = "<cmd>Telescope live_grep<cr>";
+      options = {
+        desc = "Search in files in cwd";
+      };
+    }
+    {
+      mode = "n";
+      key = "<leader>b";
+      action = "<cmd>Telescope buffers<cr>";
+      options = {
+        silent = true;
+        desc = "Telescope list buffers";
+      };
+    }
+    {
+      mode = "n";
+      key = "<leader>gc";
+      action = "<cmd>Telescope git_commits<cr>";
+      options = {
+        silent = true;
+        desc = "Telescope search commits";
+      };
+    }
+  ];
 }

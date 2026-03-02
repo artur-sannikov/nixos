@@ -1,6 +1,6 @@
 {
-  programs.nixvim = {
-    plugins.conform-nvim = {
+  plugins = {
+    conform-nvim = {
       enable = true;
       settings = {
         # If auto-format is disable do not run formatting on save
@@ -38,24 +38,24 @@
         ];
       };
     };
-    keymaps = [
-      {
-        # https://github.com/stevearc/conform.nvim/issues/192
-        # Cheers ram-xv!
-        mode = "n";
-        key = "<leader>tf";
-        action.__raw = ''
-          function()
-            if vim.b.disable_autoformat then
-              vim.b.disable_autoformat = false
-              vim.notify("Enabled autoformat for this buffer")
-            else
-              vim.b.disable_autoformat = true
-              vim.notify("Disabled autoformat for this buffer")
-            end
-          end
-        '';
-      }
-    ];
   };
+  keymaps = [
+    {
+      # https://github.com/stevearc/conform.nvim/issues/192
+      # Cheers ram-xv!
+      mode = "n";
+      key = "<leader>tf";
+      action.__raw = ''
+        function()
+          if vim.b.disable_autoformat then
+            vim.b.disable_autoformat = false
+            vim.notify("Enabled autoformat for this buffer")
+          else
+            vim.b.disable_autoformat = true
+            vim.notify("Disabled autoformat for this buffer")
+          end
+        end
+      '';
+    }
+  ];
 }
