@@ -29,8 +29,8 @@
         # Scrollback in Neovim
         "ctrl+i" = "launch --stdin-source=@screen_scrollback --type=overlay nvim +$ +'nnoremap q ZQ'";
         "ctrl+f>c" = "new_tab";
-        "ctrl+h" = "neighboring_window left";
-        "ctrl+l" = "neighboring_window right";
+        "ctrl+[" = "next_window";
+        "ctrl+]" = "previous_window";
         "ctrl+k" = "neighboring_window up";
         "ctrl+j" = "neighboring_window down";
 
