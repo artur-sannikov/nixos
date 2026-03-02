@@ -79,7 +79,7 @@ in
           mkdir -p $XDG_CONFIG_HOME/attic
           cp ${config.sops.templates."attic-config.toml".path} $XDG_CONFIG_HOME/attic/config.toml
         '';
-        script = "${pkgs.attic-client}/bin/attic watch-store --ignore-upstream-cache-filter main";
+        script = "${pkgs.attic-client}/bin/attic watch-store main";
       };
     };
     tmpfiles = {
