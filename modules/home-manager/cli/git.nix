@@ -1,16 +1,37 @@
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 {
   programs = {
     git = {
       enable = true;
+      ignores = [
+        ".Rproj.user"
+        ".Rhistory"
+        ".RData"
+        ".RDataTmp"
+        ".Renviron"
+        ".quarto"
+        ".DS_Store"
+        ".httr-oauth"
+        ".direnv/"
+        ".devcontainer/"
+        "result"
+      ];
       settings = {
         user = {
           name = "Artur Sannikov";
           email = "git-sign@asannikov.com";
           signingkey = "AF9397CF9FF360BC";
         };
-        init.defaultBranch = "main";
-        push.autoSetupRemote = true;
+        core = {
+          # Does not work if not explicitly set?
+          excludesFile = "${config.xdg.configHome}/git/ignore";
+        };
+        init = {
+          defaultBranch = "main";
+        };
+        push = {
+          autoSetupRemote = true;
+        };
         merge = {
           conflictstyle = "zdiff3";
           tool = "nvim";
@@ -26,21 +47,10 @@
           algorithm = "histogram";
           colorMoved = "default";
         };
-        commit.gpgsign = true;
+        commit = {
+          gpgsign = true;
+        };
       };
-      ignores = [
-        ".Rproj.user"
-        ".Rhistory"
-        ".RData"
-        ".RDataTmp"
-        ".Renviron"
-        ".quarto"
-        ".DS_Store"
-        ".httr-oauth"
-        ".direnv/"
-        ".devcontainer/"
-        "result"
-      ];
       lfs = {
         enable = true;
       };
