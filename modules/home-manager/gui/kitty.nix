@@ -27,7 +27,7 @@
       };
       keybindings = {
         # Scrollback in Neovim
-        "ctrl+i" = "launch --stdin-source=@screen_scrollback --type=overlay nvim +$ +'nnoremap q ZQ'";
+        "ctrl+s" = "launch --stdin-source=@screen_scrollback --type=overlay nvim +$ +'nnoremap q ZQ'";
         "ctrl+f>c" = "new_tab";
         "ctrl+[" = "next_window";
         "ctrl+]" = "previous_window";
