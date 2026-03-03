@@ -1,12 +1,6 @@
 { pkgs, ... }:
 let
   settings = {
-    "browser.toolbars.bookmarks.visibility" = "always";
-    "privacy.clearOnShutdown.history" = true;
-    "privacy.clearOnShutdown.cookies" = true;
-    "privacy.clearOnShutdown.downloads" = true;
-    "privacy.clearOnShutdown.openWindows" = true;
-
     # Enable Firefox sync
     "identity.fxaccounts.enabled" = true;
 
@@ -29,6 +23,29 @@ in
         id = 1;
         inherit settings;
       };
+    };
+    policies = {
+
+      # Not needed with Vimium
+      DisplayBookmarksToolbar = "never";
+      # Language
+      # https://mozilla.github.io/policy-templates/#requestedlocales
+      RequestedLocales = [
+        "fi"
+        "en-US"
+      ];
+
+      # https://mozilla.github.io/policy-templates/#sanitizeonshutdown-all
+      # Delete all data on shutdown
+      SanitizeOnShutdown = true;
+
+      # https://mozilla.github.io/policy-templates/#httpsonlymode
+      HttpsOnlyMode = "force_enabled";
+
+      # https://mozilla.github.io/policy-templates/#disableformhistory
+      DisableFormHistory = true;
+
+      TranslateEnabled = true;
     };
   };
   stylix.targets.librewolf.profileNames = [
