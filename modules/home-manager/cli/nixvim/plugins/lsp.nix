@@ -19,62 +19,64 @@
         #     };
         #   };
         # };
-      };
-
-      # lua
-      lua_ls.enable = true;
-
-      # R
-      r_language_server = {
-        enable = true;
-        package = null;
-      };
-      air = {
-        enable = true;
-      };
-
-      # bash
-      bashls.enable = true;
-
-      # Python
-      pylsp = {
-        enable = true;
-      };
-
-      # nix
-      nixd = {
-        enable = true;
-      };
-
-      # toml
-      taplo = {
-        enable = true;
-      };
-
-      # typst
-      tinymist = {
-        enable = true;
-        settings = {
-          exportPdf = "onSave";
-          formatterMode = "typstyle";
-          formatterProseWrap = true;
-          formatterPrintWidth = 80;
+        lua_ls = {
+          enable = true;
         };
-      };
 
-      # OpenTofu
-      tofu_ls = {
-        enable = true;
-      };
+        # R
+        r_language_server = {
+          enable = true;
+          package = null;
+        };
+        air = {
+          enable = true;
+        };
 
-      # yaml
-      yamlls = {
-        enable = true;
-      };
+        # bash
+        bashls.enable = true;
 
-      harper_ls = {
-        enable = true;
+        # Python
+        pylsp = {
+          enable = true;
+        };
+
+        # nix
+        nixd = {
+          enable = true;
+        };
+
+        # toml
+        taplo = {
+          enable = true;
+        };
+
+        # typst
+        tinymist = {
+          enable = true;
+          settings = {
+            exportPdf = "onSave";
+            formatterMode = "typstyle";
+            formatterProseWrap = true;
+            formatterPrintWidth = 80;
+          };
+        };
+
+        # OpenTofu
+        tofu_ls = {
+          enable = true;
+        };
+
+        # yaml
+        yamlls = {
+          enable = true;
+        };
+
+        harper_ls = {
+          enable = true;
+        };
       };
     };
   };
+
+  # lua
 }
