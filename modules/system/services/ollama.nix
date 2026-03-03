@@ -6,7 +6,7 @@
       package = pkgs-stable.ollama-cpu;
     };
     open-webui = {
-      enable = true;
+      enable = false;
       package = pkgs-stable.open-webui;
     };
   };
