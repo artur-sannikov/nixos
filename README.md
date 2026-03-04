@@ -45,6 +45,7 @@ to do after the installation:
 
 - Login into Librewolf for syncing
 - Login into `gh`
+- Login into `fj` (`forgejo-cli`)
 - Login into `bw`
 - Set up Thunderbird if it asks for password
 - Set up `tailscale`
