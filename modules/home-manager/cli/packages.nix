@@ -77,6 +77,7 @@
         wl-clipboard-rs
         yamlfmt
         yamllint
+        zip
       ]
       ++ (with pkgs-stable; [
         beets
