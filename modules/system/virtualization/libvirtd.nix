@@ -5,15 +5,20 @@
       enable = true;
     };
   };
-  virtualisation.libvirtd = {
-    allowedBridges = [
-      "nm-bridge"
-      "virbr0"
-    ];
-    enable = true;
-    qemu = {
-      runAsRoot = false;
-      swtpm.enable = true; # Allows libvirtd to use swtpm to create an emulated TPM
+  virtualisation = {
+    libvirtd = {
+      allowedBridges = [
+        "nm-bridge"
+        "virbr0"
+      ];
+      enable = false;
+      qemu = {
+        runAsRoot = false;
+        # Allows libvirtd to use swtpm to create an emulated TPM
+        swtpm = {
+          enable = true;
+        };
+      };
     };
   };
   users = {
@@ -26,5 +31,7 @@
       };
     };
   };
-  environment.systemPackages = [ pkgs.virt-viewer ];
+  environment = {
+    systemPackages = [ pkgs.virt-viewer ];
+  };
 }
