@@ -22,7 +22,7 @@
     ++ (with pkgs-stable; [
       calibre
       flacon
-      protonmail-bridge-gui
+      # protonmail-bridge-gui
       rustdesk-flutter
       signal-desktop
     ]);
