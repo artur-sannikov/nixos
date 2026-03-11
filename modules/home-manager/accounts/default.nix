@@ -23,6 +23,7 @@ in
     ./msmtp.nix
     ./neomutt
     ./notmuch.nix
+    ./protonmail-bridge.nix
     ./thunderbird.nix
   ];
   accounts = {
