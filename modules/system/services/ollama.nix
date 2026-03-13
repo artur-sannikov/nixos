@@ -2,7 +2,7 @@
 {
   services = {
     ollama = {
-      enable = true;
+      enable = false;
       package = pkgs-stable.ollama-cpu;
     };
     open-webui = {
