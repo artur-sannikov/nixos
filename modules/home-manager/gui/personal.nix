@@ -9,7 +9,6 @@
     with pkgs;
     [
       audacity
-      bitwarden-desktop
       kdePackages.kcalc
       kdePackages.konversation
       moonlight-qt
