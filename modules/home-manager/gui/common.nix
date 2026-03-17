@@ -21,6 +21,7 @@
       texstudio
       tidal-hifi
       vlc
+      zulip
     ])
     ++ (with pkgs; [
       freetube
@@ -29,7 +30,6 @@
       onlyoffice-desktopeditors
       qbittorrent
       zotero
-      zulip
     ]);
   # GUI apps with special settings
   imports = [

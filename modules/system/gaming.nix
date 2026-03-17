@@ -1,9 +1,9 @@
 {
   pkgs,
+  pkgs-stable,
   username,
   config,
   lib,
-  flake-inputs,
   ...
 }:
 with lib;
@@ -65,7 +65,7 @@ in
       };
     };
     environment = {
-      systemPackages = with pkgs; [
+      systemPackages = with pkgs-stable; [
         mangohud
         protonup-ng
         protonup-qt
