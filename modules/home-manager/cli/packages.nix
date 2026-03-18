@@ -11,6 +11,7 @@
         act
         age
         air-formatter
+        air-formatter
         attic-client
         bc
         bitwarden-cli
@@ -18,16 +19,16 @@
         caddy
         chezmoi
         cloud-utils
-        file
-        freerdp
-        forgejo-cli
         deadnix
         deploy-rs
         devenv
         djlint
-        go
+        file
+        forgejo-cli
+        freerdp
         gitleaks
         gnumake
+        go
         hadolint
         hugo
         hyperfine
@@ -39,8 +40,8 @@
         kubectl
         lynx
         mat2
-        nchat
         ncdu
+        nchat
         nextflow
         nixpkgs-review
         nodejs
@@ -49,11 +50,12 @@
         pnpm
         podlet
         poppler
+        pre-commit
         prettier
         proton-vpn-cli
+        pylint
         python313Packages.huggingface-hub
         python313Packages.pip
-        pylint
         radian
         rclone
         resvg
@@ -61,6 +63,7 @@
         shellcheck
         shfmt
         sops
+        ssh-audit
         statix
         stylua
         tabiew
@@ -70,6 +73,7 @@
         toolbox
         tree
         typst
+        typstyle
         urlscan
         vale
         virtualenv

@@ -9,7 +9,6 @@
     with pkgs;
     [
       aha
-      air-formatter
       android-tools
       clinfo
       cyrus-sasl-xoauth2 # Required for mbsync email sync for outlook
@@ -31,16 +30,12 @@
       nix-init
       nmap
       pciutils
-      pre-commit
       pv
       python313
       samba
-      sanoid
       sbctl
-      ssh-audit
       stress-ng
       system-config-printer
-      typstyle
       unzip
       usbutils
       vim
