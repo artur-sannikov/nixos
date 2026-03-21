@@ -45,6 +45,7 @@
       };
       "forgejo/public/forgejo-runner-token" = { };
       "atticd/server_token" = { };
+      "ntfy-sh/env" = { };
     };
   };
   services = {
@@ -123,21 +124,38 @@
         };
       };
     };
-    caddy = {
-      enable = true;
-      virtualHosts = {
-        "git.asannikov.com" = {
+    caddy =
+      let
+        ntfyShConfig = {
+          # https://docs.ntfy.sh/config/#nginxapache2caddy
           extraConfig = ''
-            reverse_proxy http://localhost:3000
+             reverse_proxy http://localhost:7070
+             @httpget {
+                protocol http
+                method GET
+                path_regexp ^/([-_a-z0-9]{0,64}$|docs/|static/)
+            }
+            redir @httpget https://{host}{uri}
           '';
         };
-        "cache.asannikov.com" = {
-          extraConfig = ''
-            reverse_proxy http://localhost:8080
-          '';
+      in
+      {
+        enable = true;
+        virtualHosts = {
+          "git.asannikov.com" = {
+            extraConfig = ''
+              reverse_proxy http://localhost:3000
+            '';
+          };
+          "cache.asannikov.com" = {
+            extraConfig = ''
+              reverse_proxy http://localhost:8080
+            '';
+          };
+          "ntfy.asannikov.com" = ntfyShConfig;
+          "http://ntfy.asannikov.com" = ntfyShConfig;
         };
       };
-    };
 
     # This is for attic
     # Forgejo has its own database (port 5432)
@@ -187,6 +205,19 @@
           type = "local";
           path = "/var/lib/atticd/storage";
         };
+      };
+    };
+    ntfy-sh = {
+      enable = true;
+      environmentFile = config.sops.secrets."ntfy-sh/env".path;
+      settings = {
+        base-url = "https://ntfy.asannikov.com";
+        listen-http = "127.0.0.1:7070";
+        behind-proxy = true;
+        enable-signup = false;
+        require-login = true;
+        enable-login = true;
+        auth-default-access = "deny-all";
       };
     };
   };
