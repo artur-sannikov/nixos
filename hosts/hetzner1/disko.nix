@@ -7,19 +7,12 @@
         content = {
           type = "gpt";
           partitions = {
-            ESP = {
-              priority = 1;
-              name = "ESP";
-              size = "1000M";
-              type = "EF00";
-              content = {
-                type = "filesystem";
-                format = "vfat";
-                mountpoint = "/boot";
-                mountOptions = [
-                  "umask=0077"
-                ];
-              };
+            # Cost-optimized VM on Hetzner uses legacy BIOS
+            # because it runs on older hardware
+            boot = {
+              size = "1M";
+              type = "EF02"; # for grub MBR
+              attributes = [ 0 ]; # partition attribute
             };
             root = {
               size = "100%";
