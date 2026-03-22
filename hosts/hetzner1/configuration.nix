@@ -14,12 +14,18 @@
       "modules/system/services/openssh.nix"
       "modules/system/maintenance.nix"
       "modules/system/nix.nix"
-      "modules/system/grub.nix"
       "modules/system/timezone.nix"
       "modules/core/default.nix"
     ])
   ];
 
+  boot = {
+    loader = {
+      grub = {
+        enable = true;
+      };
+    };
+  };
   networking = {
     hostName = "hetzner1";
     firewall = {
