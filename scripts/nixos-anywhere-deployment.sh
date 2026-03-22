@@ -4,10 +4,10 @@ set -e
 
 # Check if NIXOS_ANYWHERE_HOST is set
 if [[ -z "${NIXOS_ANYWHERE_HOST}" ]]; then
-    echo "NIXOS_ANYWHERE_HOST is not set!"
-    exit 1
+	echo "NIXOS_ANYWHERE_HOST is not set!"
+	exit 1
 else
-    echo "NIXOS_ANYWHERE_HOST variable is set to ${NIXOS_ANYWHERE_HOST}"
+	echo "NIXOS_ANYWHERE_HOST variable is set to ${NIXOS_ANYWHERE_HOST}"
 fi
 
 # Create a temporary directory
@@ -15,7 +15,7 @@ temp=$(mktemp -d)
 
 # Function to cleanup temporary directory on exit
 cleanup() {
-    rm -rf "$temp"
+	rm -rf "$temp"
 }
 trap cleanup EXIT
 
@@ -30,6 +30,8 @@ chmod 600 "$temp/etc/ssh/ssh_host_ed25519_key"
 
 # Install NixOS to the host system with our secrets
 nix run github:nix-community/nixos-anywhere -- --extra-files "$temp" \
-    --flake ".#${NIXOS_ANYWHERE_HOST}" \
-    --ssh-option "PubkeyAuthentication=no" \
-    --target-host root@"${NIXOS_ANYWHERE_HOST}"
+	--flake ".#${NIXOS_ANYWHERE_HOST}" \
+	--ssh-option "PubkeyAuthentication=no" \
+	--generate-hardware-config nixos-generate-config \
+	../hosts/"${NIXOS_ANYWHERE_HOST}"/hardware-configuration.nix \
+	--target-host root@"${NIXOS_ANYWHERE_HOST}"
