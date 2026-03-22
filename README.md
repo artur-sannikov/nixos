@@ -51,6 +51,44 @@ to do after the installation:
 - Set up `tailscale`
 - Install [Better Bibtex](https://retorque.re/zotero-better-bibtex/) for Zotero
 
+## nixos-anywhere deployment
+
+The script `scripts/nixos-anywhere-deployment.sh` allows the remote deployment
+of NixOS machines. I use it to deploy, for example, my NixOS box. It handles
+everything: from disk configuration to the actual configuration.
+
+The only required environment variable is `NIXOS_ANYWHERE_HOST`.
+
+```shell
+export NIXOS_ANYWHERE_HOST=<host>
+```
+
+For secrets, I use `pass` utility. The secrets are decrypted by the
+host SSH key, which is an entry `nixos_anywhere_ed25519_hostkey`.
+
+If you are deploying a new machine, first generate a unique SSH key for
+this machine and add it to `pass`.
+
+```shell
+cd /tmp
+ssh-keygen ./id_ed25519
+# This will overwrite the entry
+pass insert --multiline --force nixos_anywhere_ed25519_hostkey < /tmp/id_ed25519
+nix-shell -p ssh-to-age --run 'cat /tmp/id_ed25519.pub | ssh-to-age'
+
+# Add the generate age key to sops.yaml
+
+Then update the key
+sops --config ../nix-secrets/.sops.yaml updatekeys ../nix-secrets/secrets.yaml
+
+# Update the flake in nixos main repo
+nix flake update nix-secrets
+
+# Remove the generated key
+rm /tmp/id_ed25519*
+
+```
+
 ## Configuration mirrors
 
 This configuration is available on my own [Forgejo
