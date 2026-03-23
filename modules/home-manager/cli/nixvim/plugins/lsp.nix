@@ -43,6 +43,16 @@
         # nix
         nixd = {
           enable = true;
+          settings =
+            let
+              flake = "(builtins.getFlake (builtins.toString ./.))";
+            in
+            {
+              options = {
+                nixos.expr = "${flake}.nixosConfigurations.desktop.options";
+                home-manager.expr = "${flake}.nixosConfigurations.desktop.options.home-manager.users.type.getSubOptions []";
+              };
+            };
         };
 
         # toml
