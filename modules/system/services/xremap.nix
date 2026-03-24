@@ -11,7 +11,10 @@
           {
             name = "Global";
             remap = {
-              "CapsLock" = "Esc";
+              "CapsLock" = {
+                alone = "Esc";
+                held = "Ctrl_L";
+              };
             };
           }
         ];
