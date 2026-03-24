@@ -4,6 +4,9 @@ let
     # Enable Firefox sync
     "identity.fxaccounts.enabled" = true;
 
+    # Disable menu pop-up at alt press
+    "ui.key.menuAccessKeyFocuses" = false;
+
     "network.trr.mode" = 2;
     "network.trr.uri" = "https://base.dns.mullvad.net/dns-query";
 

@@ -4,6 +4,10 @@
     enable = true;
     # Use arkenfox hardening
     autoConfigFiles = [ "${pkgs.arkenfox-userjs}/user.cfg" ];
+    preferences = {
+      # Disable menu pop-up at alt press
+      "ui.key.menuAccessKeyFocuses" = false;
+    };
     languagePacks = [
       "fi"
       "en-US"
