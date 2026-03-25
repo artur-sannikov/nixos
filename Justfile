@@ -25,6 +25,11 @@ switch:
     echo "Switching configuration for {{ hostname }}"
     sudo nixos-rebuild switch --flake .#{{ hostname }}
 
+build host:
+    echo "Building configuration for {{ host }}"
+    nix build .#nixosConfigurations.{{ host }}.config.system.build.toplevel
+
+
 lint:
     statix check --ignore hardware-configuration.nix .
 
