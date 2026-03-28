@@ -131,6 +131,12 @@
             lanzaboote.nixosModules.lanzaboote
             nixos-hardware.nixosModules.tuxedo-infinitybook-pro14-gen9-amd
             inputs.xremap-flake.nixosModules.default
+
+            {
+              nixpkgs.overlays = [
+                (import ./overlay.nix)
+              ];
+            }
             {
               home-manager = {
                 useGlobalPkgs = true;
@@ -162,6 +168,11 @@
             lanzaboote.nixosModules.lanzaboote
             stylix.nixosModules.stylix
             {
+              nixpkgs.overlays = [
+                (import ./overlay.nix)
+              ];
+            }
+            {
               home-manager = {
                 useGlobalPkgs = true;
                 useUserPackages = true;
@@ -191,6 +202,11 @@
             stylix.nixosModules.stylix
             lanzaboote.nixosModules.lanzaboote
             inputs.xremap-flake.nixosModules.default
+            {
+              nixpkgs.overlays = [
+                (import ./overlay.nix)
+              ];
+            }
             {
               home-manager = {
                 useGlobalPkgs = true;
