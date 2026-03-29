@@ -1,10 +1,4 @@
 {
-  pkgs,
-  flake-inputs,
-  lib,
-  ...
-}:
-{
   programs.firefox = {
     enable = true;
     profiles = {
@@ -28,11 +22,15 @@
             }
           ];
         };
-        # extensions.packages = with flake-inputs.firefox-extensions.packages.${pkgs.system}; [
-        #   bitwarden
-        #   ublock-origin
-        #   vimium
-        # ];
+        search = {
+          force = true;
+          default = "ddg";
+          privateDefault = "ddg";
+        };
+      };
+      violentmonkey = {
+        isDefault = false;
+        id = 2;
         search = {
           force = true;
           default = "ddg";
@@ -40,7 +38,6 @@
         };
       };
     };
-    # };
   };
   stylix.targets.firefox.profileNames = [
     "default-release"
