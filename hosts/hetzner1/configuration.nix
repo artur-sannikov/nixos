@@ -61,6 +61,9 @@
         AllowAgentForwarding = lib.mkForce "yes";
       };
     };
+    fail2ban = {
+      enable = true;
+    };
     forgejo = {
       enable = true;
       package = pkgs.forgejo;
