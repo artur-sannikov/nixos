@@ -36,13 +36,25 @@
       ];
     };
   };
-
-  environment.systemPackages = with pkgs; [
-    git
-    tmux
-    vim
-    restic
-  ];
+  environment = {
+    systemPackages = with pkgs; [
+      git
+      tmux
+      vim
+      restic
+    ];
+    etc = {
+      "fail2ban/filter.d/caddy-status.conf" = {
+        # https://muetsch.io/how-to-integrate-caddy-with-fail2ban.html
+        text = ''
+          [Definition]
+          failregex = ^.*"remote_ip":"<HOST>",.*?"status":(?:401|403),.*$
+          ignoreregex =
+          datepattern = LongEpoch
+        '';
+      };
+    };
+  };
 
   sops = {
     secrets = {
@@ -63,6 +75,16 @@
     };
     fail2ban = {
       enable = true;
+      jails = {
+        caddy-status = {
+          settings = {
+            port = "http,https";
+            filter = "caddy-status";
+            logpath = "/var/log/caddy/*.access.log";
+            maxretry = 10;
+          };
+        };
+      };
     };
     forgejo = {
       enable = true;
@@ -272,5 +294,7 @@
       };
     };
   };
+
   system.stateVersion = "26.05";
+
 }
