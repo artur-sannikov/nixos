@@ -9,6 +9,7 @@
       };
       settings = {
         scrollback_lines = 10000;
+        scrollback_pager = "nvim --cmd 'set eventignore=FileType' +'nnoremap q ZQ' +'call nvim_open_term(0, {})' +'set nomodified nolist' +'$' -";
         # Hide mouse pointer when typing
         mouse_hide_wait = "-3.0";
         enable_audio_bell = "no";
@@ -27,7 +28,7 @@
       };
       keybindings = {
         # Scrollback in Neovim
-        "ctrl+s" = "launch --stdin-source=@screen_scrollback --type=overlay nvim +$ +'nnoremap q ZQ'";
+        "ctrl+s" = "show_scrollback";
         "ctrl+f>c" = "new_tab";
         "ctrl+[" = "next_window";
         "ctrl+]" = "previous_window";
