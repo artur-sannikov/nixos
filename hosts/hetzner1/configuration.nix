@@ -75,6 +75,12 @@
     };
     fail2ban = {
       enable = true;
+      bantime-increment = {
+        enable = true;
+        factor = "4";
+        maxtime = "72h";
+        overalljails = true;
+      };
       jails = {
         caddy-status = {
           settings = {
