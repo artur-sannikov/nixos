@@ -16,11 +16,15 @@
         ".devcontainer/"
         "result"
       ];
+      signing = {
+        format = "openpgp";
+        key = "AF9397CF9FF360BC";
+        signByDefault = true;
+      };
       settings = {
         user = {
           name = "Artur Sannikov";
           email = "git-sign@asannikov.com";
-          signingkey = "AF9397CF9FF360BC";
         };
         core = {
           # Does not work if not explicitly set?
