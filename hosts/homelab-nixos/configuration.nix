@@ -164,6 +164,17 @@ in
         };
       };
     };
+    timers = {
+      podman-cleanup = {
+        enable = true;
+        description = "Clean up renovate images";
+        timerConfig = {
+          OnBootSec = "10m";
+          OnUnitActiveSec = "24h";
+          Unit = "podman-cleanup.service";
+        };
+      };
+    };
   };
 
   environment.systemPackages = with pkgs; [
