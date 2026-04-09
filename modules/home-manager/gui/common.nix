@@ -29,6 +29,7 @@
       meld
       onlyoffice-desktopeditors
       qbittorrent
+      seafile-client
       zotero
     ]);
   # GUI apps with special settings
