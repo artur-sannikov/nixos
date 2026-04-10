@@ -11,7 +11,6 @@
       quickemu
     ])
     ++ (with pkgs-stable; [
-      seafile-client
       eduvpn-client
     ]);
 }
