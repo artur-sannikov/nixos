@@ -71,14 +71,15 @@ in
           enable = true;
           plugins = [
             "ansible"
-            "fzf"
             "direnv"
+            "fzf"
             "git"
-            "toolbox"
-            "zoxide"
+            "opentofu"
             "podman"
             "rbw"
             "tmux"
+            "toolbox"
+            "zoxide"
           ];
         };
       };
