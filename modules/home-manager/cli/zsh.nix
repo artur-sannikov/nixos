@@ -79,6 +79,7 @@ in
             "rbw"
             "tmux"
             "toolbox"
+            "vi-mode"
             "zoxide"
           ];
         };
