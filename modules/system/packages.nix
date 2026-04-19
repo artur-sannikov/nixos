@@ -21,6 +21,7 @@
       gparted
       inxi
       kdePackages.isoimagewriter
+      koboldcpp
       libva-utils
       lm_sensors
       mesa-demos
@@ -46,7 +47,6 @@
     ]
     ++ (with pkgs-stable; [
       quickemu
-      koboldcpp
     ]);
 
   programs = {
