@@ -191,14 +191,6 @@
       geoclue2.geoProviderUrl = "https://api.beacondb.net/v1/geolocate";
     };
 
-    security = {
-      apparmor = {
-        enable = true;
-        killUnconfinedConfinables = true;
-        packages = [ pkgs.apparmor-profiles ];
-      };
-    };
-
     # Secrets
     sops = {
       secrets = {

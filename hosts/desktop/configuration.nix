@@ -187,12 +187,10 @@
         };
       };
     };
-
+    # Allows Pipewire to use the realtime scheduler for increased performance
     security = {
-      apparmor = {
+      rtkit = {
         enable = true;
-        killUnconfinedConfinables = true;
-        packages = [ pkgs.apparmor-profiles ];
       };
     };
 

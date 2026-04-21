@@ -182,15 +182,6 @@ in
     tmux
   ];
 
-  security = {
-    rtkit.enable = true;
-    apparmor = {
-      enable = true;
-      killUnconfinedConfinables = true;
-      packages = [ pkgs.apparmor-profiles ];
-    };
-  };
-
   # Required for Forgejo actions
   virtualisation = {
     podman = {

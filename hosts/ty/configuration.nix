@@ -185,14 +185,6 @@
       resolved.enable = true;
     };
 
-    security = {
-      apparmor = {
-        enable = true;
-        killUnconfinedConfinables = true;
-        packages = [ pkgs.apparmor-profiles ];
-      };
-    };
-
     # Secrets
     sops = {
       secrets = {
