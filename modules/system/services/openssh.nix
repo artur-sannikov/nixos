@@ -57,7 +57,6 @@
         # Miscellaneous
         Compression = "no";
         PrintMotd = false;
-        Banner = "false";
 
         KbdInteractiveAuthentication = false;
       };
