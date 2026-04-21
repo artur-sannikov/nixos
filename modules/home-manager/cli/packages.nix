@@ -45,6 +45,7 @@
         nextflow
         nixpkgs-review
         nodejs
+        openssl
         opentofu
         pandoc
         pnpm
