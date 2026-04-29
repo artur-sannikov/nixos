@@ -13,11 +13,11 @@
     # Hard link identical files in nix store
     optimise = {
       automatic = true;
-      dates = [ "15:00" ];
+      dates = [ "18:00" ];
     };
     gc = {
       automatic = true;
-      dates = [ "9:00" ];
+      dates = [ "weekly" ];
       options = "--delete-older-than 30d";
     };
   };
