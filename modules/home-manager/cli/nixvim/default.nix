@@ -1,6 +1,12 @@
 {
   programs = {
     nixvim = {
+      nixpkgs = {
+        config = {
+          # Many packages are now "unfree", lacking licenses
+          allowUnfree = true;
+        };
+      };
       imports = [
         ./autocmd.nix
         ./plugins
