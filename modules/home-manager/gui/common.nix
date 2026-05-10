@@ -19,7 +19,6 @@
       obsidian
       protonvpn-gui
       texstudio
-      tidal-hifi
       vlc
       zulip
     ])
