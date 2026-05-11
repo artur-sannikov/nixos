@@ -25,6 +25,7 @@
       libva-utils
       lm_sensors
       mesa-demos
+      mono
       nano
       nfs-utils
       nixd
