@@ -14,6 +14,7 @@
         air-formatter
         attic-client
         bc
+        beets
         bitwarden-cli
         black
         caddy
@@ -85,7 +86,6 @@
         zip
       ]
       ++ (with pkgs-stable; [
-        beets
         multiqc
       ]);
   };
