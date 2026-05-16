@@ -8,8 +8,10 @@
   environment.systemPackages =
     with pkgs;
     [
+      p7zip
       aha
       android-tools
+      cabextract
       clinfo
       cyrus-sasl-xoauth2 # Required for mbsync email sync for outlook
       dig
