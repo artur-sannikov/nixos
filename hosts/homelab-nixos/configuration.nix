@@ -168,9 +168,11 @@ in
       podman-cleanup = {
         enable = true;
         description = "Clean up renovate images";
+        wantedBy = [ "timers.target" ];
         timerConfig = {
           OnBootSec = "10m";
           OnUnitActiveSec = "24h";
+          Persistent = true;
           Unit = "podman-cleanup.service";
         };
       };
