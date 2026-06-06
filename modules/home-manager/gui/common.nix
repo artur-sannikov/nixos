@@ -20,7 +20,6 @@
       proton-vpn
       texstudio
       vlc
-      zulip
     ])
     ++ (with pkgs; [
       freetube
@@ -30,6 +29,7 @@
       qbittorrent
       seafile-client
       zotero
+      # zulip
     ]);
   # GUI apps with special settings
   imports = [
