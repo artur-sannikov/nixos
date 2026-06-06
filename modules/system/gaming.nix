@@ -65,7 +65,7 @@ in
       };
     };
     environment = {
-      systemPackages = with pkgs-stable; [
+      systemPackages = with pkgs; [
         mangohud
         protonup-ng
         protonup-qt
