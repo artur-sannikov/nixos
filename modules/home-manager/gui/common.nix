@@ -17,7 +17,7 @@
       kdePackages.okular
       libreoffice-qt-fresh
       obsidian
-      proton-vpn
+      protonvpn-gui
       texstudio
       vlc
     ])
