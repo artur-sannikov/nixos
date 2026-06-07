@@ -27,16 +27,16 @@ branch.
 
 ## Updates
 
-Updates are managed via `flake.lock` on my [Forgejo instance](https://git.asannikov.com/artur/nixos).
-The workflows are
+Updates are managed via `flake.lock` on my [Forgejo
+instance](https://git.asannikov.com/artur/nixos). The workflows are
 [public](https://codeberg.org/arsann/nixos/src/branch/main/.forgejo/workflows).
 
 ## Secrets
 
-I keep secrets in a private repository and pull them into my configuration
-with flake. EmergentMind wrote a
-[great post](https://unmovedcentre.com/posts/secrets-management/) on how to
-implement this.
+I keep secrets in a private repository and pull them into my configuration with
+flake. EmergentMind wrote a [great
+post](https://unmovedcentre.com/posts/secrets-management/) on how to implement
+this.
 
 ## Nixvim
 
@@ -56,11 +56,12 @@ to do after the installation:
 - Set up `tailscale`
 - Install [Better Bibtex](https://retorque.re/zotero-better-bibtex/) for Zotero
 
-## nixos-anywhere deployment
+## nixos-anywhere Deployment
 
 The script `scripts/nixos-anywhere-deployment.sh` allows the remote deployment
-of NixOS machines. I use it to deploy, for example, my NixOS box. It handles
-everything: from disk configuration to the actual configuration.
+of NixOS machines. I use it to deploy, for example, my Hetzner box, running my
+[Git server](https://git.asannikov.com). It handles everything: from disk
+configuration to the actual configuration.
 
 The only required environment variable is `NIXOS_ANYWHERE_HOST`.
 
@@ -68,11 +69,11 @@ The only required environment variable is `NIXOS_ANYWHERE_HOST`.
 export NIXOS_ANYWHERE_HOST=<host>
 ```
 
-For secrets, I use `pass` utility. The secrets are decrypted by the
-host SSH key, which is an entry `nixos_anywhere_ed25519_hostkey`.
+For secrets, I use `pass` utility. The secrets are decrypted by the host SSH
+key, which is an entry `nixos_anywhere_ed25519_hostkey`.
 
-If you are deploying a new machine, first generate a unique SSH key for
-this machine and add it to `pass`.
+If you are deploying a new machine, first generate a unique SSH key for this
+machine and add it to `pass`.
 
 ```shell
 cd /tmp
@@ -94,7 +95,7 @@ rm /tmp/id_ed25519*
 
 ```
 
-## Configuration mirrors
+## Configuration Mirrors
 
 This configuration is available on my own [Forgejo
 instance](https://git.asannikov.com/artur/nixos),
