@@ -38,6 +38,11 @@ with flake. EmergentMind wrote a
 [great post](https://unmovedcentre.com/posts/secrets-management/) on how to
 implement this.
 
+## Nixvim
+
+My Nixvim configuration is standalone and can be found
+[here](https://git.asannikov.com/artur/nixvim).
+
 ## Stuff to Do Manually
 
 Not everything is feasible (still?) to declare. Not an exhaustive list of stuff
