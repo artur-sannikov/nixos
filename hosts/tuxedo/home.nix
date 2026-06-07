@@ -20,7 +20,6 @@
 
       # CLI programs
       "modules/home-manager/cli/default.nix"
-      "modules/home-manager/cli/nixvim/default.nix"
       "modules/home-manager/cli/managarr.nix"
 
       # GUI programs

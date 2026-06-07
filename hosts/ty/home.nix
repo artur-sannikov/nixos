@@ -30,7 +30,6 @@
       "modules/home-manager/gui/work.nix"
       "modules/home-manager/gui/common.nix"
 
-      "modules/home-manager/cli/nixvim/default.nix"
       # "modules/home-manager/services/ollama.nix"
       "modules/home-manager/sessionVariables.nix"
 

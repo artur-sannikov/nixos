@@ -55,8 +55,7 @@
     # Nice editor
     # https://nix-community.github.io/nixvim/
     nixvim = {
-      url = "github:nix-community/nixvim";
-      inputs.nixpkgs.follows = "nixpkgs";
+      url = "git+https://git.asannikov.com/artur/nixvim.git";
     };
 
     # Remap keyboard keys
@@ -78,7 +77,6 @@
       disko,
       home-manager,
       stylix,
-      nixvim,
       lanzaboote,
       deploy-rs,
       nixos-hardware,
@@ -137,7 +135,6 @@
                 useGlobalPkgs = true;
                 useUserPackages = true;
                 users."${username}".imports = [
-                  nixvim.homeModules.nixvim
                   ./hosts/tuxedo/home.nix
                 ];
                 extraSpecialArgs = {
@@ -168,7 +165,6 @@
                 useGlobalPkgs = true;
                 useUserPackages = true;
                 users."${username}".imports = [
-                  nixvim.homeModules.nixvim
                   ./hosts/desktop/home.nix
                 ];
                 extraSpecialArgs = {
@@ -199,7 +195,6 @@
                 useGlobalPkgs = true;
                 useUserPackages = true;
                 users."${username}".imports = [
-                  nixvim.homeModules.nixvim
                   ./hosts/ty/home.nix
                 ];
                 extraSpecialArgs = {

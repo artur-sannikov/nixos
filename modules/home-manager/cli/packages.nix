@@ -1,6 +1,7 @@
 {
   pkgs,
   pkgs-stable,
+  flake-inputs,
   ...
 }:
 {
@@ -84,6 +85,7 @@
         yamlfmt
         yamllint
         zip
+        flake-inputs.nixvim.packages.${system}.default
       ]
       ++ (with pkgs-stable; [
         multiqc
