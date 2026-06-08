@@ -6,6 +6,7 @@ hostname := `hostname`
 
 alias t := test
 alias s := switch
+alias b := boot
 
 # Default command when 'just' is run without arguments
 default:
@@ -25,10 +26,13 @@ switch:
     echo "Switching configuration for {{ hostname }}"
     sudo nixos-rebuild switch --flake .#{{ hostname }}
 
+boot:
+    echo "Creating boot entry for {{ hostname }}"
+    sudo nixos-rebuild boot --flake .#{{ hostname }}
+
 build host:
     echo "Building configuration for {{ host }}"
     nix build .#nixosConfigurations.{{ host }}.config.system.build.toplevel
-
 
 lint:
     statix check --ignore hardware-configuration.nix .
