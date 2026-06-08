@@ -206,6 +206,24 @@
     },
     "flake-parts_2": {
       "inputs": {
+        "nixpkgs-lib": "nixpkgs-lib_2"
+      },
+      "locked": {
+        "lastModified": 1778716662,
+        "narHash": "sha256-m1Yf0wZ8j1OHjTc2UwHwyQRSnNeSgLJOd7q5Y45hzi4=",
+        "owner": "hercules-ci",
+        "repo": "flake-parts",
+        "rev": "f7c1a2d347e4c52d5fb8d10cb4d94b5884e546fb",
+        "type": "github"
+      },
+      "original": {
+        "owner": "hercules-ci",
+        "repo": "flake-parts",
+        "type": "github"
+      }
+    },
+    "flake-parts_3": {
+      "inputs": {
         "nixpkgs-lib": [
           "nixvim",
           "nixvim",
@@ -226,7 +244,7 @@
         "type": "github"
       }
     },
-    "flake-parts_3": {
+    "flake-parts_4": {
       "inputs": {
         "nixpkgs-lib": [
           "stylix",
@@ -247,9 +265,9 @@
         "type": "github"
       }
     },
-    "flake-parts_4": {
+    "flake-parts_5": {
       "inputs": {
-        "nixpkgs-lib": "nixpkgs-lib_2"
+        "nixpkgs-lib": "nixpkgs-lib_3"
       },
       "locked": {
         "lastModified": 1765835352,
@@ -337,6 +355,21 @@
       "original": {
         "owner": "nix-community",
         "repo": "home-manager",
+        "type": "github"
+      }
+    },
+    "import-tree": {
+      "locked": {
+        "lastModified": 1778781969,
+        "narHash": "sha256-Jjuz5CmSkur8KvLDoGa+vylEp+RkQtv4mt/qcMznpH0=",
+        "owner": "vic",
+        "repo": "import-tree",
+        "rev": "d321337efd0f23a9eb14a42adb7b2c29313ab274",
+        "type": "github"
+      },
+      "original": {
+        "owner": "vic",
+        "repo": "import-tree",
         "type": "github"
       }
     },
@@ -432,6 +465,21 @@
       }
     },
     "nixpkgs-lib_2": {
+      "locked": {
+        "lastModified": 1777168982,
+        "narHash": "sha256-GOkGPcboWE9BmGCRMLX3worL4EMnsnG8MyKmXNeYuhQ=",
+        "owner": "nix-community",
+        "repo": "nixpkgs.lib",
+        "rev": "f5901329dade4a6ea039af1433fb087bd9c1fe14",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "repo": "nixpkgs.lib",
+        "type": "github"
+      }
+    },
+    "nixpkgs-lib_3": {
       "locked": {
         "lastModified": 1765674936,
         "narHash": "sha256-k00uTP4JNfmejrCLJOwdObYC9jHRrr/5M/a/8L2EIdo=",
@@ -541,16 +589,32 @@
     },
     "nixvim": {
       "inputs": {
-        "flake-parts": "flake-parts",
+        "flake-parts": "flake-parts_2",
         "nixpkgs": "nixpkgs_4",
         "nixvim": "nixvim_2"
       },
       "locked": {
+<<<<<<< HEAD
         "lastModified": 1780968078,
         "narHash": "sha256-nSUshZcHB8fa20TpcNEraUHO5lPwA2oG4afa8APbTuI=",
+||||||| parent of d7a9a96 (feat: add flake-parts and import-tree)
+        "lastModified": 1780881682,
+        "narHash": "sha256-9cTHEWh7T4vrs5yk6nNX5RwUjUyQOJLMM60kI+ZTnLg=",
+=======
+        "lastModified": 1780943470,
+        "narHash": "sha256-0DSfZgiEoajD5XST4bwMpUUWhhfDR4Why1RT4sNRQRQ=",
+>>>>>>> d7a9a96 (feat: add flake-parts and import-tree)
         "ref": "refs/heads/main",
+<<<<<<< HEAD
         "rev": "45b0a4b2618a31e374951b75703dc4658c7e6c75",
         "revCount": 12,
+||||||| parent of d7a9a96 (feat: add flake-parts and import-tree)
+        "rev": "aec603f7309e6ef88dcaf8067d090ee3bdc9265b",
+        "revCount": 7,
+=======
+        "rev": "663d15a7a17ebcff0f0798c34016e3d16c66a0a2",
+        "revCount": 11,
+>>>>>>> d7a9a96 (feat: add flake-parts and import-tree)
         "type": "git",
         "url": "https://git.asannikov.com/artur/nixvim.git"
       },
@@ -561,7 +625,7 @@
     },
     "nixvim_2": {
       "inputs": {
-        "flake-parts": "flake-parts_2",
+        "flake-parts": "flake-parts_3",
         "nixpkgs": "nixpkgs_5",
         "systems": "systems_2"
       },
@@ -631,7 +695,9 @@
       "inputs": {
         "deploy-rs": "deploy-rs",
         "disko": "disko",
+        "flake-parts": "flake-parts",
         "home-manager": "home-manager",
+        "import-tree": "import-tree",
         "lanzaboote": "lanzaboote",
         "nix-secrets": "nix-secrets",
         "nixos-hardware": "nixos-hardware",
@@ -691,7 +757,7 @@
         "base16-helix": "base16-helix",
         "base16-vim": "base16-vim",
         "firefox-gnome-theme": "firefox-gnome-theme",
-        "flake-parts": "flake-parts_3",
+        "flake-parts": "flake-parts_4",
         "gnome-shell": "gnome-shell",
         "nixpkgs": [
           "nixpkgs"
@@ -865,7 +931,7 @@
     "xremap-flake": {
       "inputs": {
         "crane": "crane_2",
-        "flake-parts": "flake-parts_4",
+        "flake-parts": "flake-parts_5",
         "nixpkgs": "nixpkgs_6",
         "xremap": "xremap"
       },
