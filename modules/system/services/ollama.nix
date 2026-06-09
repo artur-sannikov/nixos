@@ -1,13 +1,9 @@
-{ pkgs-stable, ... }:
+{ pkgs, ... }:
 {
   services = {
     ollama = {
-      enable = false;
-      package = pkgs-stable.ollama-cpu;
-    };
-    open-webui = {
-      enable = false;
-      package = pkgs-stable.open-webui;
+      enable = true;
+      package = pkgs.ollama-cpu;
     };
   };
 }
