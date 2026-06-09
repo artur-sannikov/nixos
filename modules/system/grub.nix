@@ -1,11 +1,13 @@
 {
-  boot = {
-    loader = {
-      grub = {
-        enable = true;
-        efiSupport = true;
-        efiInstallAsRemovable = true;
-        device = "nodev";
+  flake.nixosModules.grub = {
+    boot = {
+      loader = {
+        grub = {
+          enable = true;
+          efiSupport = true;
+          efiInstallAsRemovable = true;
+          device = "nodev";
+        };
       };
     };
   };
