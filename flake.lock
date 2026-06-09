@@ -105,11 +105,11 @@
         "utils": "utils"
       },
       "locked": {
-        "lastModified": 1770019181,
-        "narHash": "sha256-hwsYgDnby50JNVpTRYlF3UR/Rrpt01OrxVuryF40CFY=",
+        "lastModified": 1780929542,
+        "narHash": "sha256-/DTEDl6pUIusBx3+QZ1is+imWtlUotm2L/AvK+YBuwk=",
         "owner": "serokell",
         "repo": "deploy-rs",
-        "rev": "77c906c0ba56aabdbc72041bf9111b565cdd6171",
+        "rev": "1c1703ab92db600e4f5884d762ba9e22ebe7a41c",
         "type": "github"
       },
       "original": {
@@ -125,11 +125,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1780290312,
-        "narHash": "sha256-eTAlX0CwgB84Ts3GaBd944A3DRXVMzgA0EqroZBISUo=",
+        "lastModified": 1780894562,
+        "narHash": "sha256-c3430xwxwhHipl3jigUGMMBfpaMylDqytW/kdmB3ZGs=",
         "owner": "nix-community",
         "repo": "disko",
-        "rev": "115e5211780054d8a890b41f0b7734cafad54dfe",
+        "rev": "24fed06cac83bcc44ac8efbb57cab1a82fa0bedc",
         "type": "github"
       },
       "original": {
@@ -327,11 +327,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1780679734,
-        "narHash": "sha256-KmRNvpNOb7QEORa06bVgjW9kITcx0VhsI7w0vhmZyD8=",
+        "lastModified": 1780943742,
+        "narHash": "sha256-01bTMR9ZPG+uxPaZBeOwagg5uxIaFYs2/3YIrOX+bCA=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "b2b7db486e06e098711dc291bb25db82850e1d16",
+        "rev": "df39142474950e42d5fc3bf2fef9d6c62abbe8d7",
         "type": "github"
       },
       "original": {
@@ -546,11 +546,11 @@
         "nixvim": "nixvim_2"
       },
       "locked": {
-        "lastModified": 1780881682,
-        "narHash": "sha256-9cTHEWh7T4vrs5yk6nNX5RwUjUyQOJLMM60kI+ZTnLg=",
+        "lastModified": 1780968078,
+        "narHash": "sha256-nSUshZcHB8fa20TpcNEraUHO5lPwA2oG4afa8APbTuI=",
         "ref": "refs/heads/main",
-        "rev": "aec603f7309e6ef88dcaf8067d090ee3bdc9265b",
-        "revCount": 7,
+        "rev": "45b0a4b2618a31e374951b75703dc4658c7e6c75",
+        "revCount": 12,
         "type": "git",
         "url": "https://git.asannikov.com/artur/nixvim.git"
       },
@@ -566,11 +566,11 @@
         "systems": "systems_2"
       },
       "locked": {
-        "lastModified": 1780878695,
-        "narHash": "sha256-gfgbg6IYd8RrSaqOR3sQPo6nSEH0471j7YUZkICWSPk=",
+        "lastModified": 1780952308,
+        "narHash": "sha256-Kam3161tlm/5t/3Jmw57QJt+3Be0oL5HLYc4ixbUSYc=",
         "owner": "nix-community",
         "repo": "nixvim",
-        "rev": "f782166c3d631af6db6ecbbcbd83b0fe6ed60ff0",
+        "rev": "5dac467f1ca6b506bba95d25f6def2497d7a0af4",
         "type": "github"
       },
       "original": {
