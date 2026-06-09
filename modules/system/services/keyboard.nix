@@ -1,11 +1,14 @@
-{ pkgs, ... }:
 {
+  flake.nixosModules.keyboard =
+    { pkgs, ... }:
+    {
 
-  # Quantum Mechanical Keyboard
-  hardware.keyboard.qmk.enable = true;
+      # Quantum Mechanical Keyboard
+      hardware.keyboard.qmk.enable = true;
 
-  environment.systemPackages = with pkgs; [
-    via
-  ];
-  services.udev.packages = [ pkgs.via ];
+      environment.systemPackages = with pkgs; [
+        via
+      ];
+      services.udev.packages = [ pkgs.via ];
+    };
 }
