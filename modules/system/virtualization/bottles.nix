@@ -1,7 +1,10 @@
-{ pkgs, ... }:
 {
-  environment.systemPackages = with pkgs; [
-    bottles
-    wine64
-  ];
+  flake.nixosModules.bottles =
+    { pkgs, ... }:
+    {
+      environment.systemPackages = with pkgs; [
+        bottles
+        wine64
+      ];
+    };
 }
