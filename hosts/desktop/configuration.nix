@@ -20,18 +20,18 @@
       "modules/system/maintenance.nix"
 
       # Secure boot
-      "modules/system/secureboot.nix"
+      # "modules/system/secureboot.nix"
 
       # Virtualization
-      "modules/system/virtualization/bottles.nix"
+      # "modules/system/virtualization/bottles.nix"
       "modules/system/virtualization/containers/default.nix"
-      "modules/system/virtualization/libvirtd.nix"
+      # "modules/system/virtualization/libvirtd.nix"
       "modules/system/virtualization/podman.nix"
       "modules/system/virtualization/singularity.nix"
       "modules/system/virtualization/docker.nix"
 
       # System-wide packages
-      "modules/system/packages.nix"
+      # "modules/system/packages.nix"
 
       # Syncthing
       "modules/system/services/syncthing.nix"
@@ -54,9 +54,9 @@
       "modules/system/services/attic-watch-store.nix"
 
       # Other system-related packages
-      "modules/system/appimage.nix"
+      # "modules/system/appimage.nix"
       "modules/system/corectrl.nix"
-      "modules/system/gaming.nix"
+      # "modules/system/gaming.nix"
       "modules/system/nix.nix"
       "modules/system/stylix.nix"
 
