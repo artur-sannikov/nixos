@@ -15,25 +15,27 @@ let
   };
 in
 {
-  # Create files for cache
-  systemd.user.tmpfiles.rules = msmtpLogFiles;
+  flake.modules.homeManager.email = {
+    # Create files for cache
+    systemd.user.tmpfiles.rules = msmtpLogFiles;
 
-  # Enable msmtp for accounts
-  accounts = {
-    email = {
-      accounts = {
-        migadu = {
-          msmtp = mkMsmtp "migadu";
-        };
-        work = {
-          msmtp = mkMsmtp "work";
+    # Enable msmtp for accounts
+    accounts = {
+      email = {
+        accounts = {
+          migadu = {
+            msmtp = mkMsmtp "migadu";
+          };
+          work = {
+            msmtp = mkMsmtp "work";
+          };
         };
       };
     };
-  };
-  programs = {
-    msmtp = {
-      enable = true;
+    programs = {
+      msmtp = {
+        enable = true;
+      };
     };
   };
 }

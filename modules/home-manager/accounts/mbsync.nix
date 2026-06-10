@@ -19,44 +19,46 @@ let
   };
 in
 {
-  accounts = {
-    email = {
-      accounts = {
-        migadu = {
-          mbsync = lib.recursiveUpdate commonMbsyncConfig {
-            extraConfig = {
-              account = {
-                PassCmd = "${pkgs.coreutils}/bin/cat ${config.sops.secrets.migadu_password.path}";
-                Host = "imap.migadu.com";
+  flake.modules.homeManager.email = {
+    accounts = {
+      email = {
+        accounts = {
+          migadu = {
+            mbsync = lib.recursiveUpdate commonMbsyncConfig {
+              extraConfig = {
+                account = {
+                  PassCmd = "${pkgs.coreutils}/bin/cat ${config.sops.secrets.migadu_password.path}";
+                  Host = "imap.migadu.com";
+                };
               };
             };
           };
-        };
-        work = {
-          mbsync = lib.recursiveUpdate commonMbsyncConfig {
-            extraConfig = {
-              account = {
-                PassCmd = "${pkgs.coreutils}/bin/cat ${config.sops.secrets.utu_password.path}";
-                Host = "mail.utu.fi";
+          work = {
+            mbsync = lib.recursiveUpdate commonMbsyncConfig {
+              extraConfig = {
+                account = {
+                  PassCmd = "${pkgs.coreutils}/bin/cat ${config.sops.secrets.utu_password.path}";
+                  Host = "mail.utu.fi";
+                };
               };
             };
           };
         };
       };
     };
-  };
-  services = {
-    mbsync = {
-      enable = true;
-      # Index new emails
-      postExec = ''
-        ${pkgs.notmuch}/bin/notmuch new
-      '';
+    services = {
+      mbsync = {
+        enable = true;
+        # Index new emails
+        postExec = ''
+          ${pkgs.notmuch}/bin/notmuch new
+        '';
+      };
     };
-  };
-  programs = {
-    mbsync = {
-      enable = true;
+    programs = {
+      mbsync = {
+        enable = true;
+      };
     };
   };
 }
