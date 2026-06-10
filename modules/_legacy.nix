@@ -15,7 +15,7 @@ let
   username = "artur";
 
   # ========== Extend lib with lib.custom ==========
-  lib = nixpkgs.lib.extend (self: super: { custom = import ./lib { inherit (nixpkgs) lib; }; });
+  lib = nixpkgs.lib.extend (self: super: { custom = import ../lib { inherit (nixpkgs) lib; }; });
   pkgs = import nixpkgs {
     inherit system;
     config.allowUnfreePredicate =
