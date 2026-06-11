@@ -1,5 +1,5 @@
 {
-  flake.nixosModules.keyboard =
+  flake.modules.nixosModules.keyboard =
     { pkgs, ... }:
     {
 

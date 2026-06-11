@@ -1,5 +1,5 @@
 {
-  flake.nixosModules.gaming =
+  flake.modules.nixosModules.gaming =
     {
       pkgs,
       username,

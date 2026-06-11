@@ -1,5 +1,5 @@
 {
-  flake.nixosModules.base = {
+  flake.modules.nixosModules.base = {
     nixpkgs.config.allowUnfreePredicate =
       pkg:
       builtins.elem (pkg.pname or "") [

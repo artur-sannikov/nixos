@@ -1,5 +1,5 @@
 {
-  flake.nixosModules.libvirtd =
+  flake.modules.nixosModules.libvirtd =
     { pkgs, username, ... }:
     {
       programs = {

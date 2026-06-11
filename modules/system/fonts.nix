@@ -1,6 +1,6 @@
 { pkgs-stable, ... }:
 {
-  flake.nixosModules.base = {
+  flake.modules.nixosModules.base = {
     fonts = {
       enableDefaultPackages = true;
       fontconfig = {

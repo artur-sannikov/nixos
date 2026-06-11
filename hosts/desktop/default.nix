@@ -20,16 +20,15 @@ in
     };
     modules = [
       ../../hosts/desktop/configuration.nix
-      self.nixosModules.base
-      self.nixosModules.secureBoot
-      self.nixosModules.boot
-      self.nixosModules.libvird
-      self.nixosModules.bottles
-      self.nixosModules.gaming
-      self.nixosModules.keyboard
+      self.modules.nixosModules.base
+      self.modules.nixosModules.secureBoot
+      self.modules.nixosModules.libvird
+      self.modules.nixosModules.bottles
+      self.modules.nixosModules.gaming
+      self.modules.nixosModules.keyboard
       inputs.disko.nixosModules.disko
       # inputs.home-manager.nixosModules.home-manager
-      inputs.home-manager.flakeModules.home-amanager
+      inputs.home-manager.flakeModules.home-manager
       inputs.stylix.nixosModules.stylix
       inputs.lanzaboote.nixosModules.lanzaboote
       (import ../../overlay.nix)
@@ -39,9 +38,9 @@ in
           useUserPackages = true;
           users.${username}.imports = [
             ../../hosts/desktop/home.nix
-            self.flake.homeModules.base
-            self.flake.homeModules.email
-            self.flake.homeModules.contact
+            self.homeModules.base
+            self.homeModules.email
+            self.homeModules.contact
           ];
           extraSpecialArgs = {
             flake-inputs = inputs;
