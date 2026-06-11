@@ -1,7 +1,9 @@
 {
-  programs = {
-    fastfetch = {
-      enable = true;
+  flake.modules.homeModules.cli = {
+    programs = {
+      fastfetch = {
+        enable = true;
+      };
     };
   };
 }

@@ -3,19 +3,8 @@
   config,
   ...
 }:
-with lib;
-let
-  cfg = config.zsh;
-in
 {
-  options.zsh = {
-    enable = mkOption {
-      type = types.bool;
-      default = false;
-      description = "Enable zsh shell";
-    };
-  };
-  config = mkIf cfg.enable {
+  flake.modules.homeModules.cli = {
     programs = {
       zsh = {
         enable = true;

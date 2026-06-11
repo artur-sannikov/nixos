@@ -1,76 +1,78 @@
 { config, pkgs, ... }:
 {
-  programs = {
-    git = {
-      enable = true;
-      ignores = [
-        ".Rproj.user"
-        ".Rhistory"
-        ".RData"
-        ".RDataTmp"
-        ".Renviron"
-        ".quarto"
-        ".DS_Store"
-        ".httr-oauth"
-        ".direnv/"
-        ".devcontainer/"
-        "result"
-      ];
-      signing = {
-        format = "openpgp";
-        key = "AF9397CF9FF360BC";
-        signByDefault = true;
-      };
-      settings = {
-        user = {
-          name = "Artur Sannikov";
-          email = "git-sign@asannikov.com";
+  flake.modules.homeModules.cli = {
+    programs = {
+      git = {
+        enable = true;
+        ignores = [
+          ".Rproj.user"
+          ".Rhistory"
+          ".RData"
+          ".RDataTmp"
+          ".Renviron"
+          ".quarto"
+          ".DS_Store"
+          ".httr-oauth"
+          ".direnv/"
+          ".devcontainer/"
+          "result"
+        ];
+        signing = {
+          format = "openpgp";
+          key = "AF9397CF9FF360BC";
+          signByDefault = true;
         };
-        core = {
-          # Does not work if not explicitly set?
-          excludesFile = "${config.xdg.configHome}/git/ignore";
-        };
-        init = {
-          defaultBranch = "main";
-        };
-        push = {
-          autoSetupRemote = true;
-        };
-        merge = {
-          conflictstyle = "zdiff3";
-          tool = "nvim";
-        };
-        mergetool = {
-          promt = false;
-          "nvim" = {
-            cmd = "nvim -d \"$BASE\" \"$LOCAL\" \"$REMOTE\" \"$MERGED\" -c 'wincmd w' 'wincmd J' -c 'norm ]c'";
+        settings = {
+          user = {
+            name = "Artur Sannikov";
+            email = "git-sign@asannikov.com";
+          };
+          core = {
+            # Does not work if not explicitly set?
+            excludesFile = "${config.xdg.configHome}/git/ignore";
+          };
+          init = {
+            defaultBranch = "main";
+          };
+          push = {
+            autoSetupRemote = true;
+          };
+          merge = {
+            conflictstyle = "zdiff3";
+            tool = "nvim";
+          };
+          mergetool = {
+            promt = false;
+            "nvim" = {
+              cmd = "nvim -d \"$BASE\" \"$LOCAL\" \"$REMOTE\" \"$MERGED\" -c 'wincmd w' 'wincmd J' -c 'norm ]c'";
+            };
+          };
+          credential.helper = "cache";
+          diff = {
+            algorithm = "histogram";
+            colorMoved = "default";
+          };
+          commit = {
+            gpgsign = true;
           };
         };
-        credential.helper = "cache";
-        diff = {
-          algorithm = "histogram";
-          colorMoved = "default";
-        };
-        commit = {
-          gpgsign = true;
+        lfs = {
+          enable = true;
         };
       };
-      lfs = {
+      gh = {
         enable = true;
+        extensions = with pkgs; [ gh-s ];
+        settings = {
+          git_protocol = "https";
+          prompt = "enabled";
+          editor = "nvim";
+        };
       };
     };
-    gh = {
-      enable = true;
-      extensions = with pkgs; [ gh-s ];
-      settings = {
-        git_protocol = "https";
-        prompt = "enabled";
-        editor = "nvim";
-      };
-    };
+    home.packages = with pkgs; [
+      # Rewrite git history
+      git-filter-repo
+    ];
   };
-  home.packages = with pkgs; [
-    # Rewrite git history
-    git-filter-repo
-  ];
 }

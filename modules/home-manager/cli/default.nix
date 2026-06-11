@@ -16,8 +16,8 @@
     ./gh-dash.nix
     ./gnupg.nix
     ./iamb.nix
-    ./media.nix
-    ./nix.nix
+    # ./media.nix
+    # ./nix.nix
     ./packages.nix
     ./password-store.nix
     ./rbw.nix
@@ -25,7 +25,7 @@
     ./starship.nix
     ./tealdeer.nix
     ./tmux.nix
-    ./yazi
+    # ./yazi
     ./yt-dlp.nix
     ./zoxide.nix
     ./zsh.nix

@@ -1,7 +1,9 @@
 {
-  programs = {
-    tealdeer = {
-      enable = true;
+  flake.modules.homeModules.cli = {
+    programs = {
+      tealdeer = {
+        enable = true;
+      };
     };
   };
 }

@@ -1,7 +1,9 @@
 {
-  programs = {
-    fd = {
-      enable = true;
+  flake.modules.homeModules.cli = {
+    programs = {
+      fd = {
+        enable = true;
+      };
     };
   };
 }
