@@ -1,7 +1,0 @@
-{
-  services = {
-    chrony = {
-      enable = false;
-    };
-  };
-}

@@ -41,7 +41,6 @@
 
       # Services
       "modules/system/services/audio.nix"
-      "modules/system/services/chrony.nix"
       "modules/system/services/fwupd.nix"
       "modules/system/services/keyboard.nix"
       "modules/system/services/ollama-rocm.nix"
