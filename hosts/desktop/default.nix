@@ -22,7 +22,6 @@ in
       ../../hosts/desktop/configuration.nix
       self.modules.nixosModules.base
       self.modules.nixosModules.secureBoot
-      self.modules.nixosModules.libvird
       self.modules.nixosModules.bottles
       self.modules.nixosModules.gaming
       self.modules.nixosModules.ollama-rocm
@@ -33,6 +32,7 @@ in
       self.modules.nixosModules.stylix
       self.modules.nixosModules.gui
       self.modules.nixosModules.virtualization
+      self.modules.nixosModules.sillytavern
       self.modules.nixosModules.ssh
       self.modules.nixosModules.immich-machine-learning
       self.modules.nixosModules.nix

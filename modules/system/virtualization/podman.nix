@@ -1,22 +1,24 @@
 {
-  virtualisation = {
-    podman = {
-      enable = true;
-      autoPrune = {
+  flake.modules.nixosModules.virtualization = {
+    virtualisation = {
+      podman = {
         enable = true;
-        flags = [
-          "--all"
-        ];
+        autoPrune = {
+          enable = true;
+          flags = [
+            "--all"
+          ];
+        };
       };
-    };
-    containers = {
-      storage = {
-        settings = {
-          # defaults
-          storage = {
-            driver = "overlay";
-            graphroot = "/var/lib/containers/storage";
-            runroot = "/run/containers/storage";
+      containers = {
+        storage = {
+          settings = {
+            # defaults
+            storage = {
+              driver = "overlay";
+              graphroot = "/var/lib/containers/storage";
+              runroot = "/run/containers/storage";
+            };
           };
         };
       };
