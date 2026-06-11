@@ -3,12 +3,14 @@
   ...
 }:
 {
-  services = {
-    ollama = {
-      enable = true;
-      package = pkgs.ollama;
-      acceleration = false;
-      port = 8555;
+  flake.modules.homeModules.ollama = {
+    services = {
+      ollama = {
+        enable = true;
+        package = pkgs.ollama;
+        acceleration = false;
+        port = 8555;
+      };
     };
   };
 }
