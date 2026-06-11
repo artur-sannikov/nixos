@@ -1,6 +1,5 @@
-{ lib, ... }:
 {
-  flake.modules.homeModules.email = {
+  flake.modules.homeModules.email = { lib, ... }: {
     programs = {
       neomutt = {
         enable = true;

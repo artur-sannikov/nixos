@@ -38,11 +38,13 @@ in
       self.modules.nixosModules.nix
       self.modules.nixosModules.nix-maintenance
       self.modules.nixosModules.syncthing
+      self.modules.nixosModules.email
       inputs.disko.nixosModules.disko
       # inputs.home-manager.nixosModules.home-manager
       inputs.home-manager.flakeModules.home-manager
       inputs.stylix.nixosModules.stylix
       inputs.lanzaboote.nixosModules.lanzaboote
+      self.homeModules.email
       (import ../../overlay.nix)
       {
         home-manager = {
