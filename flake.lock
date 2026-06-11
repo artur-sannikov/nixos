@@ -105,11 +105,11 @@
         "utils": "utils"
       },
       "locked": {
-        "lastModified": 1780929542,
-        "narHash": "sha256-/DTEDl6pUIusBx3+QZ1is+imWtlUotm2L/AvK+YBuwk=",
+        "lastModified": 1781023725,
+        "narHash": "sha256-Gt+qFANcrDRjl3xzidLYrAUQCd3808iuAsLwZbYYAEU=",
         "owner": "serokell",
         "repo": "deploy-rs",
-        "rev": "1c1703ab92db600e4f5884d762ba9e22ebe7a41c",
+        "rev": "2ce9051767ee4d1a3c43b52ba327431783bfd463",
         "type": "github"
       },
       "original": {
@@ -345,11 +345,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1780943742,
-        "narHash": "sha256-01bTMR9ZPG+uxPaZBeOwagg5uxIaFYs2/3YIrOX+bCA=",
+        "lastModified": 1781009359,
+        "narHash": "sha256-w/mZkRscTatf8NWyUstli8ROzM/eopxZzi0WRjoeYkU=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "df39142474950e42d5fc3bf2fef9d6c62abbe8d7",
+        "rev": "c58ead12efcac436afffa93a22099a5595eb4157",
         "type": "github"
       },
       "original": {
@@ -419,11 +419,11 @@
         "nixpkgs": "nixpkgs_2"
       },
       "locked": {
-        "lastModified": 1780310866,
-        "narHash": "sha256-fPBRVf6A5xlACYcOI59shGrjURuvwu0lRsDoSCEXt/I=",
+        "lastModified": 1781020964,
+        "narHash": "sha256-fS7xTi2j2iso5Hj7RNZLv/acDlCT+fgMVkVk40A7Uco=",
         "owner": "NixOS",
         "repo": "nixos-hardware",
-        "rev": "4ed851c979641e28597a05086332d75cdc9e395f",
+        "rev": "32c2cd9e46286c4eced3dc6b613c659126bf3cca",
         "type": "github"
       },
       "original": {
@@ -594,27 +594,11 @@
         "nixvim": "nixvim_2"
       },
       "locked": {
-<<<<<<< HEAD
-        "lastModified": 1780968078,
-        "narHash": "sha256-nSUshZcHB8fa20TpcNEraUHO5lPwA2oG4afa8APbTuI=",
-||||||| parent of d7a9a96 (feat: add flake-parts and import-tree)
-        "lastModified": 1780881682,
-        "narHash": "sha256-9cTHEWh7T4vrs5yk6nNX5RwUjUyQOJLMM60kI+ZTnLg=",
-=======
-        "lastModified": 1780943470,
-        "narHash": "sha256-0DSfZgiEoajD5XST4bwMpUUWhhfDR4Why1RT4sNRQRQ=",
->>>>>>> d7a9a96 (feat: add flake-parts and import-tree)
+        "lastModified": 1781026053,
+        "narHash": "sha256-Hlu2PDk+y1zKFTPFtNZ9iiomgHudxMMj+XLjWRZDehY=",
         "ref": "refs/heads/main",
-<<<<<<< HEAD
-        "rev": "45b0a4b2618a31e374951b75703dc4658c7e6c75",
-        "revCount": 12,
-||||||| parent of d7a9a96 (feat: add flake-parts and import-tree)
-        "rev": "aec603f7309e6ef88dcaf8067d090ee3bdc9265b",
-        "revCount": 7,
-=======
-        "rev": "663d15a7a17ebcff0f0798c34016e3d16c66a0a2",
-        "revCount": 11,
->>>>>>> d7a9a96 (feat: add flake-parts and import-tree)
+        "rev": "76ea07a7414101ecadf8c46d1ccb6ced05771ad5",
+        "revCount": 13,
         "type": "git",
         "url": "https://git.asannikov.com/artur/nixvim.git"
       },
@@ -770,11 +754,11 @@
         "tinted-zed": "tinted-zed"
       },
       "locked": {
-        "lastModified": 1780701809,
-        "narHash": "sha256-u7AUNs6U6eD1os4+ghbr1gH4QjPWzOdKvpeM+E+XRKM=",
+        "lastModified": 1781018772,
+        "narHash": "sha256-C+cGIUaC6dqfwTbI+BwCd572PbESGA3WYxR1sLTqxkY=",
         "owner": "nix-community",
         "repo": "stylix",
-        "rev": "3a02d9f73608641b28e08b26acb0b0b47c05f14b",
+        "rev": "a378e4c09031fb15a4d65da88aa628f71fc52f6b",
         "type": "github"
       },
       "original": {
