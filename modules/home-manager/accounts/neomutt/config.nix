@@ -11,7 +11,7 @@ let
   '';
 in
 {
-  flake.modules.homeManager.neomutt = {
+  flake.modules.homeModules.email = {
     home = {
       file = {
         ".config/neomutt/filepicker".source = ./filepicker;

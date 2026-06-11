@@ -1,6 +1,6 @@
 {
-  programs = {
-    flake.modules.homeManager.email = {
+  flake.modules.homeModules.email = {
+    programs = {
       khard = {
         enable = true;
         settings = {

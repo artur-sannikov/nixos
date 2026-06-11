@@ -9,12 +9,7 @@ let
   };
 in
 {
-  flake.modules.homeManager.email = {
-    # imports = [
-    #   ./config.nix
-    #   ./keybinds.nix
-    #   ./macros.nix
-    # ];
+  flake.modules.homeModules.email = {
     accounts = {
       email = {
         accounts = {

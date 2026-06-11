@@ -1,8 +1,7 @@
 {
-  flake.modules.homeManager.neomutt = {
+  flake.modules.homeModules.email = {
     programs = {
       neomutt = {
-
         binds = [
           {
             key = "\\CD";

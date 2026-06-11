@@ -1,6 +1,6 @@
 { pkgs, ... }:
 {
-  flake.modules.homeManager.neomutt = {
+  flake.modules.homeModules.email = {
     accounts = {
       email = {
         accounts = {

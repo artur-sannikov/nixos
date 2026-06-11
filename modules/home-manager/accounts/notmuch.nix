@@ -1,5 +1,5 @@
 {
-  flake.modules.homeManager.email = {
+  flake.modules.homeModules.email = {
     accounts = {
       email = {
         accounts = {

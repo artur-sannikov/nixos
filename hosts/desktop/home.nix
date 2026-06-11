@@ -16,35 +16,30 @@
   # Import modules
   imports = lib.flatten [
     (map lib.custom.relativeToRoot [
-      "modules/home-manager/core/sops.nix"
+      # "modules/home-manager/core/sops.nix"
 
       # CLI programs
-      "modules/home-manager/cli/default.nix"
-      "modules/home-manager/cli/managarr.nix"
+      # "modules/home-manager/cli/default.nix"
+      # "modules/home-manager/cli/managarr.nix"
 
       # GUI programs
-      "modules/home-manager/gui/common.nix"
-      "modules/home-manager/gui/personal.nix"
+      # "modules/home-manager/gui/common.nix"
+      # "modules/home-manager/gui/personal.nix"
 
       # Systemd services
       "modules/home-manager/services/kdeconnect.nix"
-      "modules/home-manager/services/duplicacy-web.nix"
+      # "modules/home-manager/services/duplicacy-web.nix"
       "modules/home-manager/services/texlive.nix"
 
       # Other home-manager configuration
-      "modules/home-manager/sessionVariables.nix"
+      # "modules/home-manager/sessionVariables.nix"
       "modules/home-manager/desktop_entries.nix"
       "modules/home-manager/stylix.nix"
 
       # Accounts
-      "modules/home-manager/accounts"
+      # "modules/home-manager/accounts"
     ])
   ];
-  # Enable zsh
-  zsh.enable = true;
-
-  # Enable yt-dlp
-  yt-dlp.enable = true;
 
   programs.home-manager.enable = true;
 }

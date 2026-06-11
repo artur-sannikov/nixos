@@ -9,7 +9,7 @@ let
   carddav_url = "https://nextcloud.${flake-inputs.nix-secrets.domain}/remote.php/dav/addressbooks/users/${username}";
 in
 {
-  flake.modules.homeManager.contact = {
+  flake.modules.homeModules.contact = {
     accounts = {
       contact = {
         basePath = ".contacts";

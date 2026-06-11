@@ -15,7 +15,7 @@ let
   };
 in
 {
-  flake.modules.homeManager.email = {
+  flake.modules.homeModules.email = {
     # Create files for cache
     systemd.user.tmpfiles.rules = msmtpLogFiles;
 
