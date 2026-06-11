@@ -9,6 +9,7 @@ let
   username = "artur";
   pkgs = import inputs.nixpkgs { inherit system; };
   pkgs-stable = import inputs.nixpkgs-stable { inherit system; };
+  lib = config.flake.lib;
 in
 {
   flake.nixosConfigurations.desktop = inputs.nixpkgs.lib.nixosSystem {
@@ -18,6 +19,10 @@ in
       inherit username pkgs-stable;
     };
     modules = [
+      # Host-specific hardware and disk configurations
+      ./_disko.nix
+      ./_hardware-configuration.nix
+
       self.modules.nixosModules.base
       self.modules.nixosModules.secureBoot
       self.modules.nixosModules.bottles
@@ -43,6 +48,7 @@ in
       inputs.home-manager.flakeModules.home-manager
       inputs.stylix.nixosModules.stylix
       inputs.lanzaboote.nixosModules.lanzaboote
+      self.homeModules.email
       (import ../../overlay.nix)
       {
         home-manager = {
@@ -50,15 +56,15 @@ in
           useUserPackages = true;
           users.${username}.imports = [
             ../../hosts/desktop/home.nix
-            self.modules.homeModules.base
-            self.modules.homeModules.gui
-            self.modules.homeModules.cli
-            self.modules.homeModules.personal-cli
-            self.modules.homeModules.personal
-            self.modules.homeModules.email
-            self.modules.homeModules.personal-email
-            self.modules.homeModules.contact
-            self.modules.homeModules.stylix
+            self.homeModules.base
+            self.homeModules.gui
+            self.homeModules.cli
+            self.homeModules.personal-cli
+            self.homeModules.personal
+            self.homeModules.email
+            self.homeModules.personal-email
+            self.homeModules.contact
+            self.homeModules.stylix
           ];
           extraSpecialArgs = {
             flake-inputs = inputs;
