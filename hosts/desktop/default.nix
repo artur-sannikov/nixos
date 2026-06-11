@@ -34,11 +34,12 @@ in
       self.modules.nixosModules.gui
       self.modules.nixosModules.virtualization
       self.modules.nixosModules.ssh
-      self.nixosModules.immich-machine-learning
+      self.modules.nixosModules.immich-machine-learning
       self.modules.nixosModules.nix
       self.modules.nixosModules.nix-maintenance
       self.modules.nixosModules.syncthing
       self.modules.nixosModules.email
+      self.modules.nixosModules.timezone-static
       inputs.disko.nixosModules.disko
       # inputs.home-manager.nixosModules.home-manager
       inputs.home-manager.flakeModules.home-manager
