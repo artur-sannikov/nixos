@@ -4,7 +4,6 @@
 
 {
   username,
-  pkgs,
   lib,
   config,
   ...
@@ -70,7 +69,6 @@
       "modules/system/gaming.nix"
       "modules/system/nix.nix"
       "modules/system/stylix.nix"
-      # "modules/system/vaapi.nix"
 
       # Fonts
       "modules/system/fonts.nix"
