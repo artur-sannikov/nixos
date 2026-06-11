@@ -1,5 +1,5 @@
 {
-  flake.nixosModules.systemPackages =
+  flake.modules.nixosModules.cli =
     {
       pkgs,
       pkgs-stable,
@@ -21,7 +21,6 @@
           exfat
           exfatprogs
           gcc
-          git
           gparted
           inxi
           kdePackages.isoimagewriter
