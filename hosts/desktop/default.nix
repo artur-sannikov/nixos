@@ -30,6 +30,7 @@ in
       self.modules.nixosModules.nvme
       self.modules.nixosModules.keyboard
       self.modules.nixosModules.attic-watch-store
+      self.modules.nixosModules.stylix
       self.modules.nixosModules.gui
       self.modules.nixosModules.virtualization
       self.modules.nixosModules.ssh
@@ -57,6 +58,7 @@ in
             self.homeModules.email
             self.homeModules.personal-email
             self.homeModules.contact
+            self.homeModules.stylix
           ];
           extraSpecialArgs = {
             flake-inputs = inputs;

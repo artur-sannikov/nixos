@@ -1,11 +1,11 @@
 {
-  stylix = {
-    targets = {
-      nixvim.enable = false;
-      # kitty = {
-      #   # Kitty's colors are broken
-      #   enable = false;
-      # };
+  flake.modules.homeModules.stylix = {
+    stylix = {
+      targets = {
+        nixvim = {
+          enable = false;
+        };
+      };
     };
   };
 }
