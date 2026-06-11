@@ -29,6 +29,7 @@ in
       self.modules.nixosModules.audio
       self.modules.nixosModules.nvme
       self.modules.nixosModules.keyboard
+      self.modules.nixosModules.attic-watch-store
       self.modules.nixosModules.gui
       self.modules.nixosModules.virtualization
       self.modules.nixosModules.ssh
