@@ -1,7 +1,9 @@
 {
-  services = {
-    fwupd = {
-      enable = true;
+  flake.modules.nixosModules.fwupd = {
+    services = {
+      fwupd = {
+        enable = true;
+      };
     };
   };
 }
