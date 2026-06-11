@@ -1,62 +1,64 @@
 {
-  programs = {
-    kitty = {
-      enable = true;
-      themeFile = "Catppuccin-Mocha";
-      shellIntegration = {
-        enableBashIntegration = true;
-        enableZshIntegration = true;
-      };
-      settings = {
-        scrollback_lines = 10000;
-        scrollback_pager = "nvim --cmd 'set eventignore=FileType' +'nnoremap q ZQ' +'call nvim_open_term(0, {})' +'set nomodified nolist' +'$' -";
-        # Hide mouse pointer when typing
-        mouse_hide_wait = "-3.0";
-        enable_audio_bell = "no";
-        cursor_shape = "beam";
-        cursor_beam_thickness = 1.5;
-        cursor_blink_interval = 0;
-        shell = "zsh";
-        copy_on_select = "yes";
-        tab_title_template = "{fmt.fg.red}{bell_symbol}{activity_symbol}{fmt.fg.tab}{tab.last_focused_progress_percent}{index}:{title}";
-        enabled_layouts = "stack,horizontal,vertical,splits,tall:bias=50;full_size=1;mirrored=true";
+  flake.modules.homeModules.gui = {
+    programs = {
+      kitty = {
+        enable = true;
+        themeFile = "Catppuccin-Mocha";
+        shellIntegration = {
+          enableBashIntegration = true;
+          enableZshIntegration = true;
+        };
+        settings = {
+          scrollback_lines = 10000;
+          scrollback_pager = "nvim --cmd 'set eventignore=FileType' +'nnoremap q ZQ' +'call nvim_open_term(0, {})' +'set nomodified nolist' +'$' -";
+          # Hide mouse pointer when typing
+          mouse_hide_wait = "-3.0";
+          enable_audio_bell = "no";
+          cursor_shape = "beam";
+          cursor_beam_thickness = 1.5;
+          cursor_blink_interval = 0;
+          shell = "zsh";
+          copy_on_select = "yes";
+          tab_title_template = "{fmt.fg.red}{bell_symbol}{activity_symbol}{fmt.fg.tab}{tab.last_focused_progress_percent}{index}:{title}";
+          enabled_layouts = "stack,horizontal,vertical,splits,tall:bias=50;full_size=1;mirrored=true";
 
-        # Theme
-        # active_tab_foreground = "#CDD6F4";
-        # active_tab_background = "#638156";
-        # background_opacity = 0.95;
-      };
-      keybindings = {
-        # Scrollback in Neovim
-        "ctrl+s" = "show_scrollback";
-        "ctrl+f>c" = "new_tab";
-        "ctrl+[" = "next_window";
-        "ctrl+]" = "previous_window";
-        "ctrl+k" = "neighboring_window up";
-        "ctrl+j" = "neighboring_window down";
+          # Theme
+          # active_tab_foreground = "#CDD6F4";
+          # active_tab_background = "#638156";
+          # background_opacity = 0.95;
+        };
+        keybindings = {
+          # Scrollback in Neovim
+          "ctrl+s" = "show_scrollback";
+          "ctrl+f>c" = "new_tab";
+          "ctrl+[" = "next_window";
+          "ctrl+]" = "previous_window";
+          "ctrl+k" = "neighboring_window up";
+          "ctrl+j" = "neighboring_window down";
 
-        "ctrl+f>h" = "move_window left";
-        "ctrl+f>l" = "move_window right";
-        "ctrl+f>k" = "move_window up";
-        "ctrl+f>j" = "move_window down";
+          "ctrl+f>h" = "move_window left";
+          "ctrl+f>l" = "move_window right";
+          "ctrl+f>k" = "move_window up";
+          "ctrl+f>j" = "move_window down";
 
-        "ctrl+f>," = "set_tab_title";
-        "ctrl+f>n" = "next_tab";
-        "ctrl+f>p" = "previous_tab";
+          "ctrl+f>," = "set_tab_title";
+          "ctrl+f>n" = "next_tab";
+          "ctrl+f>p" = "previous_tab";
 
-        "ctrl+f>-" = "launch --cwd=current --location=hsplit";
-        "ctrl+'" = "next_layout";
+          "ctrl+f>-" = "launch --cwd=current --location=hsplit";
+          "ctrl+'" = "next_layout";
 
-        # Move between tabs
-        "ctrl+f>1" = "goto_tab 1";
-        "ctrl+f>2" = "goto_tab 2";
-        "ctrl+f>3" = "goto_tab 3";
-        "ctrl+f>4" = "goto_tab 4";
-        "ctrl+f>5" = "goto_tab 5";
-        "ctrl+f>6" = "goto_tab 6";
-        "ctrl+f>7" = "goto_tab 7";
-        "ctrl+f>8" = "goto_tab 8";
-        "ctrl+f>9" = "goto_tab 9";
+          # Move between tabs
+          "ctrl+f>1" = "goto_tab 1";
+          "ctrl+f>2" = "goto_tab 2";
+          "ctrl+f>3" = "goto_tab 3";
+          "ctrl+f>4" = "goto_tab 4";
+          "ctrl+f>5" = "goto_tab 5";
+          "ctrl+f>6" = "goto_tab 6";
+          "ctrl+f>7" = "goto_tab 7";
+          "ctrl+f>8" = "goto_tab 8";
+          "ctrl+f>9" = "goto_tab 9";
+        };
       };
     };
   };

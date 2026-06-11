@@ -1,28 +1,33 @@
-{ pkgs, pkgs-stable, ... }:
-
 {
-  imports = [
-    ./common.nix
-  ];
+  inputs,
+  pkgs,
+  pkgs-stable,
+  ...
+}:
+{
   # Personal apps
-  home.packages =
-    with pkgs;
-    [
-      audacity
-      kdePackages.kcalc
-      kdePackages.konversation
-      moonlight-qt
-      monero-gui
-      picard
-      telegram-desktop
-      tor-browser
-      veracrypt
-    ]
-    ++ (with pkgs-stable; [
-      calibre
-      flacon
-      # protonmail-bridge-gui
-      rustdesk-flutter
-      signal-desktop
-    ]);
+  flake.modules.homeModules.personal = {
+    imports = with inputs.self.modules.homeModules; [
+      gui
+    ];
+    home.packages =
+      with pkgs;
+      [
+        audacity
+        kdePackages.kcalc
+        kdePackages.konversation
+        moonlight-qt
+        monero-gui
+        picard
+        telegram-desktop
+        tor-browser
+        veracrypt
+      ]
+      ++ (with pkgs-stable; [
+        calibre
+        flacon
+        rustdesk-flutter
+        signal-desktop
+      ]);
+  };
 }

@@ -1,6 +1,6 @@
-{
-  imports = [
-    ./brave.nix
-    ./firefox.nix
-  ];
-}
+# {
+#   imports = [
+#     ./brave.nix
+#     ./firefox.nix
+#   ];
+# }

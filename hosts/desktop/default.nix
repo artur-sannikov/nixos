@@ -39,6 +39,7 @@ in
           users.${username}.imports = [
             ../../hosts/desktop/home.nix
             self.homeModules.base
+            self.homeModules.gui
             self.homeModules.email
             self.homeModules.contact
           ];

@@ -1,5 +1,7 @@
 {
-  programs.keepassxc = {
-    enable = true;
+  flake.modules.homeModules.gui = {
+    programs.keepassxc = {
+      enable = true;
+    };
   };
 }
