@@ -1,12 +1,14 @@
 { pkgs, ... }:
 {
-  services = {
-    protonmail-bridge = {
-      enable = true;
-      logLevel = "warn";
+  flake.modules.homeModules.personal-email = {
+    services = {
+      protonmail-bridge = {
+        enable = true;
+        logLevel = "warn";
+      };
     };
-  };
-  home = {
-    packages = with pkgs; [ protonmail-bridge ];
+    home = {
+      packages = with pkgs; [ protonmail-bridge ];
+    };
   };
 }
