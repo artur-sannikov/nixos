@@ -1,19 +1,9 @@
 {
-  lib,
-  config,
-  ...
-}:
-with lib;
-let
-  cfg = config.sshAgent;
-in
-{
-  options.sshAgent = {
-    enable = lib.mkEnableOption "sshAgent";
-  };
-  config = mkIf cfg.enable {
+  flake.modules.nixosModules.ssh = {
     programs = {
-      ssh.startAgent = true;
+      ssh = {
+        startAgent = true;
+      };
     };
   };
 }

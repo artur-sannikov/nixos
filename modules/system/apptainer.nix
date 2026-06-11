@@ -1,9 +1,11 @@
 { pkgs, ... }:
 {
-  programs = {
-    singularity = {
-      enable = true;
-      package = pkgs.apptainer;
+  flake.modules.nixosModules.virtualization = {
+    programs = {
+      singularity = {
+        enable = true;
+        package = pkgs.apptainer;
+      };
     };
   };
 }

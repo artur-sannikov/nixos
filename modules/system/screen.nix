@@ -1,7 +1,9 @@
 {
-  programs = {
-    screen = {
-      enable = true;
+  flake.modules.homeModules.cli = {
+    programs = {
+      screen = {
+        enable = true;
+      };
     };
   };
 }
