@@ -1,5 +1,5 @@
 {
-  flake.nixosModules.sanoid =
+  flake.modules.nixosModules.sanoid =
     { pkgs, ... }:
     {
       services = {
