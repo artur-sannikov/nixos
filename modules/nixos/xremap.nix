@@ -1,4 +1,4 @@
 { inputs, ... }:
 {
-  flake.modules.nixos.base.imports = [ inputs.xremap-flake.nixosModules.default ];
+  flake.modules.nixosModules.xremap.imports = [ inputs.xremap-flake.nixosModules.default ];
 }
