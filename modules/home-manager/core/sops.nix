@@ -1,11 +1,11 @@
-{ flake-inputs, username, ... }:
+{ inputs, ... }:
 let
-  secretspath = builtins.toString flake-inputs.nix-secrets;
+  secretspath = toString inputs.nix-secrets;
 in
 {
-  flake.homeModules.base = {
+  flake.modules.homeModules.base = { username, ... }: {
     imports = [
-      flake-inputs.sops-nix.homeManagerModules.sops
+      inputs.sops-nix.homeManagerModules.sops
     ];
 
     sops = {

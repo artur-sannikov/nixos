@@ -1,6 +1,5 @@
-# { self, inputs, ... }:
 {
-  flake.modules.nixosModules.secureBoot = { pkgs, lib }: {
+  flake.modules.nixosModules.secureBoot = { pkgs, lib, ... }: {
     environment.systemPackages = [
       # For debugging and troubleshooting Secure Boot.
       pkgs.sbctl
