@@ -1,7 +1,9 @@
 {
-  services = {
-    lact = {
-      enable = true;
+  flake.modules.nixosModules.lact = {
+    services = {
+      lact = {
+        enable = true;
+      };
     };
   };
 }
