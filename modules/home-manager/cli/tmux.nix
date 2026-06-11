@@ -1,48 +1,49 @@
 { pkgs, ... }:
 {
-  programs = {
-    tmux = {
-      enable = true;
-      shell = "${pkgs.zsh}/bin/zsh";
-      shortcut = "C-f";
-      escapeTime = 10;
-      plugins = with pkgs.tmuxPlugins; [ vim-tmux-navigator ];
-      extraConfig = ''
-        bind-key r source-file ~/.config/tmux/tmux.conf \; display-message "tmux.conf reloaded."
+  flake.modules.homeModules.cli = {
+    programs = {
+      tmux = {
+        enable = true;
+        shell = "${pkgs.zsh}/bin/zsh";
+        shortcut = "C-f";
+        escapeTime = 10;
+        extraConfig = ''
+          bind-key r source-file ~/.config/tmux/tmux.conf \; display-message "tmux.conf reloaded."
 
-        # Mouse mode
-        set -g mouse on
+          # Mouse mode
+          set -g mouse on
 
-        # Split windows
-        bind-key / split-window -h -c "#{pane_current_path}"
-        bind-key - split-window -v -c "#{pane_current_path}"
+          # Split windows
+          bind-key / split-window -h -c "#{pane_current_path}"
+          bind-key - split-window -v -c "#{pane_current_path}"
 
-        # Switch windows
-        bind -n S-Left previous-window
-        bind -n S-Right next-window
+          # Switch windows
+          bind -n S-Left previous-window
+          bind -n S-Right next-window
 
-        # Reorder windows
-        bind-key -n C-S-Left swap-window -t -1
-        bind-key -n C-S-Right swap-window -t +1
+          # Reorder windows
+          bind-key -n C-S-Left swap-window -t -1
+          bind-key -n C-S-Right swap-window -t +1
 
-        # Enable copy-to-clipboard on Wayland
-        set -s copy-command 'wl-copy'
+          # Enable copy-to-clipboard on Wayland
+          set -s copy-command 'wl-copy'
 
-        # Status bar customization
-        set -g status-justify centre
-        set -g status-left "";
-        set -g status-right '#[fg=#D9E0EE]%H:%M %d/%m/%y'
+          # Status bar customization
+          set -g status-justify centre
+          set -g status-left "";
+          set -g status-right '#[fg=#D9E0EE]%H:%M %d/%m/%y'
 
-        # Synchronize panes
-        bind-key y set-window-option synchronize-panes\; display-message "synchronize mode toggled."
+          # Synchronize panes
+          bind-key y set-window-option synchronize-panes\; display-message "synchronize mode toggled."
 
-        # Enable vim mode
-        set-window-option -g mode-keys vi
+          # Enable vim mode
+          set-window-option -g mode-keys vi
 
-        # Fix nvim colors in tmux
-        set -g default-terminal "tmux-256color"
-        set -ag terminal-overrides ",xterm-256color:RGB"
-      '';
+          # Fix nvim colors in tmux
+          set -g default-terminal "tmux-256color"
+          set -ag terminal-overrides ",xterm-256color:RGB"
+        '';
+      };
     };
   };
 }
