@@ -1,7 +1,17 @@
 {
-  security.rtkit.enable = true;
-  services.pipewire = {
-    enable = true;
-    pulse.enable = true;
+  flake.modules.nixosModules.audio = {
+    security = {
+      rtkit = {
+        enable = true;
+      };
+    };
+    services = {
+      pipewire = {
+        enable = true;
+        pulse = {
+          enable = true;
+        };
+      };
+    };
   };
 }
