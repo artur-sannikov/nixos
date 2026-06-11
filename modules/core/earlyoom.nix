@@ -1,5 +1,7 @@
 {
-  services.earlyoom = {
-    enable = true;
+  flake.modules.nixosModules.base = {
+    services.earlyoom = {
+      enable = true;
+    };
   };
 }
