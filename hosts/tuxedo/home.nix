@@ -27,11 +27,10 @@
       "modules/home-manager/gui/personal.nix"
 
       # Systemd services
-      "modules/home-manager/services/duplicacy-web.nix"
-      "modules/home-manager/services/texlive.nix"
+      # "modules/home-manager/services/duplicacy-web.nix"
+      # "modules/home-manager/services/texlive.nix"
 
       # Other home-manager configuration
-      "modules/home-manager/desktop_entries.nix"
       "modules/home-manager/sessionVariables.nix"
       "modules/home-manager/stylix.nix"
 
