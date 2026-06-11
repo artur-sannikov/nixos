@@ -10,7 +10,7 @@
         enable = false;
       };
       # TLP - Optimize Linux Laptop Battery Life
-      # ttps://linrunner.de/tlp/index.html
+      # https://linrunner.de/tlp/index.html
       tlp = {
         enable = true;
         settings = {
