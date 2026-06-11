@@ -2,7 +2,6 @@
   self,
   inputs,
   config,
-  lib,
   ...
 }:
 let
@@ -13,7 +12,7 @@ let
   lib = config.flake.lib;
 in
 {
-  flake.nixosConfigurations.desktop = lib.nixosSystem {
+  flake.nixosConfigurations.desktop = inputs.nixpkgs.lib.nixosSystem {
     inherit system pkgs;
     specialArgs = {
       flake-inputs = inputs;
@@ -22,8 +21,15 @@ in
     modules = [
       ../../hosts/desktop/configuration.nix
       self.nixosModules.base
+      self.nixosModules.secureBoot
+      self.nixosModules.boot
+      self.nixosModules.libvird
+      self.nixosModules.bottles
+      self.nixosModules.gaming
+      self.nixosModules.keyboard
       inputs.disko.nixosModules.disko
-      inputs.home-manager.nixosModules.home-manager
+      # inputs.home-manager.nixosModules.home-manager
+      inputs.home-manager.flakeModules.home-amanager
       inputs.stylix.nixosModules.stylix
       inputs.lanzaboote.nixosModules.lanzaboote
       (import ../../overlay.nix)
@@ -33,8 +39,9 @@ in
           useUserPackages = true;
           users.${username}.imports = [
             ../../hosts/desktop/home.nix
-            # config.flake.modules.homeManager.base
-            # self.modules.homeManager.base
+            self.flake.homeModules.base
+            self.flake.homeModules.email
+            self.flake.homeModules.contact
           ];
           extraSpecialArgs = {
             flake-inputs = inputs;
