@@ -1,7 +1,9 @@
 {
-  services = {
-    nvme-rs = {
-      enable = true;
+  flake.modules.nixosModules.nvme = {
+    services = {
+      nvme-rs = {
+        enable = true;
+      };
     };
   };
 }
