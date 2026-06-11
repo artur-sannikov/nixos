@@ -1,11 +1,13 @@
 {
-  services = {
-    samba = {
-      enable = true;
-      settings = {
-        global = {
-          security = "user";
-          "workgroup" = "utu";
+  flake.modules.nixosModules.samba = {
+    services = {
+      samba = {
+        enable = true;
+        settings = {
+          global = {
+            security = "user";
+            "workgroup" = "utu";
+          };
         };
       };
     };
