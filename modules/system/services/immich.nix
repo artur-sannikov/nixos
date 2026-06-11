@@ -1,5 +1,5 @@
 {
-  flake.nixosModules.immich = {
+  flake.modules.nixosModules.immich = {
     # Mount NFS
     fileSystems = {
       "/mnt/nas/photos" = {
