@@ -1,7 +1,9 @@
 {
-  programs = {
-    zoom-us = {
-      enable = true;
+  flake.modules.nixosModules.gui = {
+    programs = {
+      zoom-us = {
+        enable = true;
+      };
     };
   };
 }
