@@ -17,41 +17,43 @@ let
   };
 in
 {
-  programs.librewolf = {
-    enable = true;
-    package = pkgs.librewolf;
-    profiles = {
-      default = { inherit settings; };
-      work = {
-        id = 1;
-        inherit settings;
+  flake.modules.homeModules.gui = {
+    programs.librewolf = {
+      enable = true;
+      package = pkgs.librewolf;
+      profiles = {
+        default = { inherit settings; };
+        work = {
+          id = 1;
+          inherit settings;
+        };
+      };
+      policies = {
+        # Not needed with Vimium
+        DisplayBookmarksToolbar = "never";
+        # Language
+        # https://mozilla.github.io/policy-templates/#requestedlocales
+        RequestedLocales = [
+          "fi"
+          "en-US"
+        ];
+
+        # https://mozilla.github.io/policy-templates/#sanitizeonshutdown-all
+        # Delete all data on shutdown
+        SanitizeOnShutdown = true;
+
+        # https://mozilla.github.io/policy-templates/#httpsonlymode
+        HttpsOnlyMode = "force_enabled";
+
+        # https://mozilla.github.io/policy-templates/#disableformhistory
+        DisableFormHistory = true;
+
+        # https://mozilla.github.io/policy-templates/#translateenabled
+        TranslateEnabled = true;
       };
     };
-    policies = {
-
-      # Not needed with Vimium
-      DisplayBookmarksToolbar = "never";
-      # Language
-      # https://mozilla.github.io/policy-templates/#requestedlocales
-      RequestedLocales = [
-        "fi"
-        "en-US"
-      ];
-
-      # https://mozilla.github.io/policy-templates/#sanitizeonshutdown-all
-      # Delete all data on shutdown
-      SanitizeOnShutdown = true;
-
-      # https://mozilla.github.io/policy-templates/#httpsonlymode
-      HttpsOnlyMode = "force_enabled";
-
-      # https://mozilla.github.io/policy-templates/#disableformhistory
-      DisableFormHistory = true;
-
-      TranslateEnabled = true;
-    };
+    stylix.targets.librewolf.profileNames = [
+      "default"
+    ];
   };
-  stylix.targets.librewolf.profileNames = [
-    "default"
-  ];
 }
