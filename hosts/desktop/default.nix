@@ -19,9 +19,10 @@ in
     };
     modules = [
       self.modules.nixosModules.base
+      self.modules.nixosModules.fonts
       self.modules.nixosModules.secureBoot
       self.modules.nixosModules.bottles
-      self.modules.nixosModules.gaming
+      # self.modules.nixosModules.gaming
       self.modules.nixosModules.ollama-rocm
       self.modules.nixosModules.audio
       self.modules.nixosModules.nvme
@@ -49,7 +50,7 @@ in
           useGlobalPkgs = true;
           useUserPackages = true;
           users.${username}.imports = [
-            ../../hosts/desktop/home.nix
+            # ../../hosts/desktop/home.nix
             self.modules.homeModules.base
             self.modules.homeModules.gui
             self.modules.homeModules.cli

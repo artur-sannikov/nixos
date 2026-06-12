@@ -66,7 +66,7 @@
 
       # Other system-related packages
       "modules/system/appimage.nix"
-      "modules/system/gaming.nix"
+      # "modules/system/gaming.nix"
       "modules/system/nix.nix"
       "modules/system/stylix.nix"
 

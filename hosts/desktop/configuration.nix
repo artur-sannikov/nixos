@@ -225,10 +225,10 @@
       KWIN_DRM_NO_AMS = "1";
     };
 
-    gaming = {
-      enable = true;
-      SteamUIScaling = "1.5";
-    };
+    # gaming = {
+    #   enable = true;
+    #   SteamUIScaling = "1.5";
+    # };
 
     modules = {
       system = {
