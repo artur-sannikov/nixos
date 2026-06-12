@@ -33,7 +33,7 @@ in
         ./_disko.nix
         ./_hardware-configuration.nix
         ./_boot.nix
-        self.modules.nixosModules.cli
+        self.modules.nixos.cli
         # self.modules.nixosModules.base
         # self.modules.nixosModules.fonts
         # self.modules.nixosModules.secureBoot

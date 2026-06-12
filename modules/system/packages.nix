@@ -1,5 +1,5 @@
 {
-  flake.modules.nixosModules.cli =
+  flake.modules.nixos.cli =
     {
       pkgs,
       pkgs-stable,
