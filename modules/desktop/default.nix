@@ -38,6 +38,7 @@ in
         self.modules.nixos.base
         self.modules.nixos.users-artur
         self.modules.nixos.workstation-personal
+        self.modules.nixos.desktop
         # {
         #   home-manager.users.artur.imports = with self.modules.homeManager; [
         #     email
