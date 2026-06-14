@@ -1,5 +1,5 @@
 {
-  flake.modules.nixosModules.base = {
+  flake.modules.nixos.sudo = {
     security = {
       sudo = {
         extraConfig = ''

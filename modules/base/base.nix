@@ -6,6 +6,7 @@
       nix-maintenance
       nixpkgs
       sops
+      sudo
     ];
     system = {
       stateVersion = "24.05";
