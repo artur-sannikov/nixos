@@ -1,8 +1,9 @@
 { inputs, self, ... }:
 {
-  flake.modules.nixos.workstation-work = {
+  flake.modules.nixos.workstation = {
     imports = with inputs.self.modules.nixos; [
-      workstation # Common stuff between personal and work
+      cli
+      home-manager
     ];
     users = {
       users = {
@@ -15,7 +16,9 @@
       };
     };
     home-manager.users.artur.imports = with self.modules.homeManager; [
-      gui-work
+      accounts
+      email
+      sops
     ];
   };
 }

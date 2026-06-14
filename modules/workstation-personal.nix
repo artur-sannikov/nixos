@@ -2,9 +2,8 @@
 {
   flake.modules.nixos.workstation-personal = {
     imports = with inputs.self.modules.nixos; [
-      cli
+      workstation # Common stuff between personal and work
       gaming
-      home-manager
     ];
     users = {
       users = {
@@ -17,11 +16,8 @@
       };
     };
     home-manager.users.artur.imports = with self.modules.homeManager; [
-      accounts
-      email
       email-personal
       gui-personal
-      sops
     ];
   };
 }
