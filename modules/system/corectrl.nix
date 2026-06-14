@@ -1,5 +1,5 @@
 {
-  flake.modules.nixosModules.cli = {
+  flake.modules.nixos.corectrl = {
     programs = {
       corectrl = {
         enable = true;
