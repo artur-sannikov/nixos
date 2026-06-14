@@ -1,5 +1,5 @@
 {
-  flake.modules.nixosModules.email = { pkgs, ... }: {
+  flake.modules.nixos.email = { pkgs, ... }: {
     systemd = {
       user = {
         services = {

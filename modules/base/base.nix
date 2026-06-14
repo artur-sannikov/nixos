@@ -7,6 +7,7 @@
       nixpkgs
       sops
       sudo
+      users
     ];
     system = {
       stateVersion = "24.05";

@@ -1,7 +1,4 @@
-{
-  inputs,
-  ...
-}:
+{ inputs, ... }:
 let
   secretspath = toString inputs.nix-secrets;
 in
@@ -20,4 +17,16 @@ in
       };
     };
   };
+  flake.modules.homeManager.sops =
+    # { config, ... }:
+    {
+      imports = [ inputs.sops-nix.homeManagerModules.sops ];
+      sops = {
+        defaultSopsFile = "${secretspath}/secrets.yaml";
+        validateSopsFiles = false;
+        age = {
+          keyFile = "/home/artur/.config/sops/age/keys.txt";
+        };
+      };
+    };
 }

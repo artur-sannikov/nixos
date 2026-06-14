@@ -10,7 +10,7 @@
       environment.systemPackages =
         with pkgs;
         [
-          p7zip
+          # p7zip
           aha
           android-tools
           cabextract
@@ -23,8 +23,8 @@
           gcc
           gparted
           inxi
-          kdePackages.isoimagewriter
-          koboldcpp
+          # kdePackages.isoimagewriter
+          # koboldcpp
           libva-utils
           lm_sensors
           mesa-demos
@@ -52,9 +52,5 @@
         ++ (with pkgs-stable; [
           quickemu
         ]);
-
-      programs = {
-        partition-manager.enable = true;
-      };
     };
 }

@@ -7,8 +7,10 @@
     nixpkgs.config.allowUnfreePredicate =
       pkg:
       builtins.elem (lib.getName pkg) [
-        "zoom"
         "obsidian"
+        "steam"
+        "steam-unwrapped"
+        "zoom"
       ];
   };
 }
