@@ -43,8 +43,14 @@
         };
       };
     };
-    # stylix.targets.firefox.profileNames = [
-    #   "default-release"
-    # ];
+    stylix = {
+      targets = {
+        firefox = {
+          profileNames = [
+            "default-release"
+          ];
+        };
+      };
+    };
   };
 }

@@ -4,6 +4,7 @@
     imports = with inputs.self.modules.nixos; [
       cli
       home-manager
+      stylix
     ];
     users = {
       users = {
@@ -19,6 +20,7 @@
       accounts
       email
       sops
+      stylix
     ];
   };
 }

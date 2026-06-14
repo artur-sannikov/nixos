@@ -31,7 +31,7 @@
               package = pkgs.noto-fonts-color-emoji;
             };
           };
-          image = ./scarlet_tree.png;
+          # image = ./scarlet_tree.png;
           base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
           cursor = {
             package = pkgs.capitaine-cursors-themed;
@@ -45,15 +45,6 @@
       };
       homeManager.stylix = { pkgs, ... }: {
         stylix = {
-          targets = {
-            firefox = {
-              profileNames = [ "default" ];
-            };
-            librewolf = {
-              profileNames = [ "default" ];
-            };
-          };
-
           icons = {
             enable = true;
             package = pkgs.papirus-icon-theme;
