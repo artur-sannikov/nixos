@@ -1,5 +1,5 @@
 {
-  flake.modules.homeModules.cli = {
+  flake.modules.homeManager.cli = {
     programs = {
       eza = {
         enable = true;

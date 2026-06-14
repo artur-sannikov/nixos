@@ -1,5 +1,5 @@
 {
-  flake.modules.homeModules.cli = { pkgs-stable, ... }: {
+  flake.modules.homeManager.cli = { pkgs-stable, ... }: {
     programs = {
       iamb = {
         enable = true;

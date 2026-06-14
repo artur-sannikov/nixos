@@ -1,6 +1,6 @@
 { inputs, ... }:
 {
-  flake.modules.homeModules.personal-cli =
+  flake.modules.homeManager.personal-cli =
     {
       config,
       pkgs,

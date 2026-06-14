@@ -1,5 +1,5 @@
 {
-  flake.modules.homeModules.cli = { pkgs, ... }: {
+  flake.modules.homeManager.cli = { pkgs, ... }: {
     programs = {
       tmux = {
         enable = true;

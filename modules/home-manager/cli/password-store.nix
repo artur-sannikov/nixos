@@ -1,5 +1,5 @@
 {
-  flake.modules.homeModules.cli = { config, ... }: {
+  flake.modules.homeManager.cli = { config, ... }: {
     programs = {
       zsh = {
         sessionVariables = {

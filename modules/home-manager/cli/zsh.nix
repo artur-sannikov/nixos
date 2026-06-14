@@ -1,10 +1,5 @@
 {
-  lib,
-  config,
-  ...
-}:
-{
-  flake.modules.homeModules.cli = {
+  flake.modules.homeManager.cli = {
     programs = {
       zsh = {
         enable = true;

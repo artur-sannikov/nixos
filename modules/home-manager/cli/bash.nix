@@ -1,6 +1,5 @@
 {
-
-  flake.modules.homeModules.cli = {
+  flake.modules.homeManager.cli = {
     programs = {
       bash = {
         enable = true;

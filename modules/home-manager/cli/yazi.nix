@@ -1,5 +1,5 @@
 {
-  flake.modules.homeModules.cli = {
+  flake.modules.homeManager.cli = {
     programs = {
       yazi = {
         enable = true;

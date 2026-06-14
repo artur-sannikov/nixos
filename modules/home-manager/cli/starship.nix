@@ -1,6 +1,6 @@
 { lib, ... }:
 {
-  flake.modules.homeModules.cli = {
+  flake.modules.homeManager.cli = {
     # https://starship.rs/
     programs = {
       starship = {

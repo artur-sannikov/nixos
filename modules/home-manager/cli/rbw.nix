@@ -1,6 +1,6 @@
 { inputs, ... }:
 {
-  flake.modules.homeModules.cli = { pkgs, ... }: {
+  flake.modules.homeManager.cli = { pkgs, ... }: {
     programs = {
       rbw = {
         enable = true;
