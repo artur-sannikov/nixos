@@ -6,7 +6,7 @@ let
   secretspath = toString inputs.nix-secrets;
 in
 {
-  flake.modules.nixosModules.base = {
+  flake.modules.nixos.sops = {
     imports = [
       inputs.sops-nix.nixosModules.sops
     ];

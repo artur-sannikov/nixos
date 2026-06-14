@@ -1,5 +1,5 @@
 {
-  flake.modules.nixosModules.nix-maintenance = {
+  flake.modules.nixos.nix-maintenance = {
     system = {
       autoUpgrade = {
         # Managed via flake.lock
