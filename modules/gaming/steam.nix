@@ -49,20 +49,6 @@
         };
       };
       environment = {
-        systemPackages = with pkgs; [
-          mangohud
-          protonup-ng
-          protonup-qt
-          protontricks
-          umu-launcher
-          (heroic.override {
-            extraPkgs = pkgs: [
-              gamescope
-              gamemode
-              gamescope-wsi
-            ];
-          })
-        ];
         sessionVariables = {
           STEAM_EXTRA_COMPAT_TOOLS_PATHS = "/home/${username}/.steam/root/compatibilitytools.d";
         };
