@@ -1,0 +1,33 @@
+{
+  imports = [
+    ./atuin.nix
+    ./bash.nix
+    ./bat.nix
+    ./btop.nix
+    ./chezmoi.nix
+    ./direnv.nix
+    ./distrobox.nix
+    ./fastfetch.nix
+    ./fd.nix
+    ./feh.nix
+    ./fzf.nix
+    ./eza.nix
+    ./git.nix
+    ./gh-dash.nix
+    ./gnupg.nix
+    ./iamb.nix
+    # ./media.nix
+    # ./nix.nix
+    ./packages.nix
+    ./password-store.nix
+    ./rbw.nix
+    ./ripgrep.nix
+    ./starship.nix
+    ./tealdeer.nix
+    ./tmux.nix
+    # ./yazi
+    ./yt-dlp.nix
+    ./zoxide.nix
+    ./zsh.nix
+  ];
+}
