@@ -18,6 +18,7 @@
         # Services
         self.modules.nixos.attic
         self.modules.nixos.forgejo-public
+        self.modules.nixos.ntfy-sh
 
         self.modules.nixos.users-artur
         {

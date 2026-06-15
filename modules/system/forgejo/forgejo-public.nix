@@ -52,17 +52,6 @@
             };
           };
         };
-        # Reverse proxy
-        caddy = {
-          enable = true;
-          virtualHosts = {
-            "git.asannikov.com" = {
-              extraConfig = ''
-                reverse_proxy http://localhost:3000
-              '';
-            };
-          };
-        };
       };
     };
 }
