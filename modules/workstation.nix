@@ -24,6 +24,7 @@
       locale
       zramswap
       plasma-de # Plasma 6
+      networkmanager
 
       # User
       users-artur
@@ -33,7 +34,6 @@
         artur = {
           extraGroups = [
             "input"
-            "networkmanager"
           ];
         };
       };

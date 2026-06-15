@@ -67,7 +67,7 @@ in
         AllowAgentForwarding = lib.mkForce "yes";
       };
     };
-    qemuGuest.enable = true;
+    # qemuGuest.enable = true;
     restic = {
       backups = {
         forgejo-dump = {

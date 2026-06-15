@@ -6,16 +6,6 @@
       samba # For printing and stuff
       xremap
     ];
-    users = {
-      users = {
-        artur = {
-          extraGroups = [
-            "input"
-            "networkmanager"
-          ];
-        };
-      };
-    };
     home-manager.users.artur.imports = with self.modules.homeManager; [
       gui-work
     ];

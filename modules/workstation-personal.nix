@@ -12,7 +12,6 @@
         artur = {
           extraGroups = [
             "input"
-            "networkmanager"
           ];
         };
       };
