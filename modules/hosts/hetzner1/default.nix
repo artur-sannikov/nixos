@@ -13,7 +13,12 @@
         ./_disko.nix
         ./_hardware-configuration.nix
         self.modules.nixos.server
+        self.modules.nixos.fail2ban
+
+        # Services
+        self.modules.nixos.attic
         self.modules.nixos.forgejo-public
+
         self.modules.nixos.users-artur
         {
           users = {
