@@ -17,16 +17,14 @@ in
       };
     };
   };
-  flake.modules.homeManager.sops =
-    # { config, ... }:
-    {
-      imports = [ inputs.sops-nix.homeManagerModules.sops ];
-      sops = {
-        defaultSopsFile = "${secretspath}/secrets.yaml";
-        validateSopsFiles = false;
-        age = {
-          keyFile = "/home/artur/.config/sops/age/keys.txt";
-        };
+  flake.modules.homeManager.sops = {
+    imports = [ inputs.sops-nix.homeManagerModules.sops ];
+    sops = {
+      defaultSopsFile = "${secretspath}/secrets.yaml";
+      validateSopsFiles = false;
+      age = {
+        keyFile = "/home/artur/.config/sops/age/keys.txt";
       };
     };
+  };
 }
