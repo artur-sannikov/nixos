@@ -44,6 +44,7 @@
       email
       sops
       stylix
+      duplicacy-web
     ];
   };
 }
