@@ -1,12 +1,11 @@
 {
   self,
   inputs,
-  config,
   ...
 }:
 let
   system = "x86_64-linux";
-  username = "artur";
+  # username = "artur";
   pkgs = import inputs.nixpkgs { inherit system; };
   pkgs-stable = import inputs.nixpkgs-stable { inherit system; };
 in
@@ -15,7 +14,7 @@ in
     inherit system pkgs;
     specialArgs = {
       flake-inputs = inputs;
-      inherit username pkgs-stable;
+      inherit pkgs-stable;
     };
     modules = [
       self.modules.nixosModules.base

@@ -1,0 +1,165 @@
+{
+  flake.modules.nixos.gui = { pkgs, lib, ... }: {
+    programs.firefox = {
+      enable = true;
+      # Use arkenfox hardening
+      autoConfigFiles = [ "${pkgs.arkenfox-userjs}/user.cfg" ];
+      preferences = {
+        # Disable menu pop-up at alt press
+        "ui.key.menuAccessKeyFocuses" = false;
+      };
+      languagePacks = [
+        "fi"
+        "en-US"
+      ];
+      # https://mozilla.github.io/policy-templates/
+      policies =
+        let
+          moz = short: "https://addons.mozilla.org/firefox/downloads/latest/${short}/latest.xpi";
+          customLists = [
+            "https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/adblock/pro.txt"
+            "https://raw.githubusercontent.com/DandelionSprout/adfilt/master/Dandelion Sprout's Anti-Malware List.txt"
+            "https://raw.githubusercontent.com/DandelionSprout/adfilt/master/LegitimateURLShortener.txt"
+            "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/spam-tlds-ublock.txt"
+            "https://raw.githubusercontent.com/iam-py-test/my_filters_001/main/antimalware.txt"
+            "https://raw.githubusercontent.com/yokoffing/filterlists/main/annoyance_list.txt"
+            "https://raw.githubusercontent.com/yokoffing/filterlists/main/click2load.txt"
+            "https://raw.githubusercontent.com/yokoffing/filterlists/main/privacy_essentials.txt"
+          ];
+        in
+        {
+          ExtensionSettings = {
+            "uBlock0@raymondhill.net" = {
+              default_area = "menupanel";
+              install_url = moz "ublock-origin";
+              installation_mode = "force_installed";
+              private_browsing = true;
+              updates_disabled = true;
+            };
+            "{446900e4-71c2-419f-a6a7-df9c091e268b}" = {
+              default_area = "menupanel";
+              install_url = moz "bitwarden-password-manager";
+              installation_mode = "force_installed";
+              private_browsing = false;
+              updates_disabled = true;
+            };
+            "{d7742d87-e61d-4b78-b8a1-b469842139fa}" = {
+              default_area = "navbar";
+              install_url = moz "vimium-ff";
+              installation_mode = "force_installed";
+              private_browsing = true;
+              updates_disabled = true;
+            };
+          };
+          "3rdparty".Extensions = {
+            "uBlock0@raymondhill.net".adminSettings = {
+              userSettings = rec {
+                uiTheme = "dark";
+                uiAccentCustom = true;
+                uiAccentCustom0 = "#8300ff";
+                cloudStorageEnabled = true;
+                importedLists = customLists;
+                externalLists = lib.concatStringsSep "\n" importedLists;
+              };
+              selectedFilterLists = [
+                "ublock-filters"
+                "ublock-badware"
+                "ublock-privacy"
+                "ublock-quick-fixes"
+                "ublock-unbreak"
+                "easylist"
+                "easyprivacy"
+                "adguard-spyware-url"
+                "urlhaus-1"
+                "plowe-0"
+                "fanboy-cookiemonster"
+                "ublock-cookies-easylist"
+                "fanboy-social"
+                "fanboy-ai-suggestions"
+                "easylist-chat"
+                "easylist-newsletters"
+                "easylist-notifications"
+                "easylist-annoyances"
+                "ublock-annoyances"
+                "FIN-0"
+                "RUS-0"
+                "RUS-1"
+              ]
+              ++ customLists;
+            };
+          };
+          DontCheckDefaultBrowser = true;
+          DisableTelemetry = true;
+          DisableFirefoxStudies = true;
+
+          # Language
+          # https://mozilla.github.io/policy-templates/#requestedlocales
+          RequestedLocales = [
+            "fi"
+            "en-US"
+          ];
+
+          # https://mozilla.github.io/policy-templates/#sanitizeonshutdown-all
+          # Delete all data on shutdown
+          SanitizeOnShutdown = true;
+
+          # https://mozilla.github.io/policy-templates/#httpsonlymode
+          HttpsOnlyMode = "force_enabled";
+
+          # https://mozilla.github.io/policy-templates/#disableformhistory
+          DisableFormHistory = true;
+
+          DisplayBookmarksToolbar = "always";
+          TranslateEnabled = true;
+
+          # https://mozilla.github.io/policy-templates/#usermessaging
+          UserMessaging = {
+            ExtensionRecommendations = false;
+            FeatureRecommendations = false;
+            UrlbarInterventions = false;
+            SkipOnboarding = false;
+            MoreFromMozilla = false;
+            FirefoxLabs = false;
+            Locked = true;
+          };
+
+          EnableTrackingProtection = {
+            Value = true;
+            Locked = true;
+            Cryptomining = true;
+            Fingerprinting = true;
+            EmailTracking = true;
+          };
+
+          FirefoxHome = {
+            Search = true;
+            TopSites = false;
+            SponsoredTopSites = false;
+            Highlights = false;
+            Pocket = false;
+            SponsoredPocket = false;
+            Stories = false;
+            SponsoredStories = false;
+            Snippets = false;
+          };
+
+          # Disable password save offer
+          OfferToSaveLogins = false;
+
+          # https://mozilla.github.io/policy-templates/#dnsoverhttps
+          DNSOverHTTPS = {
+            Enabled = true;
+            ProviderURL = "https://base.dns.mullvad.net/dns-query";
+            Locked = true;
+            FallBack = true;
+          };
+
+          # Disable all AI features
+          GenerativeAI = {
+            Enabled = false;
+            Locked = true;
+          };
+        };
+    };
+  };
+}

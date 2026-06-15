@@ -3,12 +3,12 @@
     programs = {
       texlive = {
         enable = true;
-        extraPackages = tpkgs: {
-          inherit (tpkgs)
-            scheme-medium
-            wrapfig
-            ;
-        };
+        # extraPackages = tpkgs: {
+        #   inherit (tpkgs)
+        #     scheme-medium
+        #     wrapfig
+        #     ;
+        # };
       };
     };
   };

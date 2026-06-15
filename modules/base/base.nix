@@ -7,6 +7,7 @@
       nixpkgs
       sops
       sudo
+      tailscale
       users
     ];
     system = {

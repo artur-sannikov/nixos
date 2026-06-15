@@ -3,6 +3,8 @@
   flake.modules.nixos.workstation-work = {
     imports = with inputs.self.modules.nixos; [
       workstation # Common stuff between personal and work
+      samba # For printing and stuff
+      xremap
     ];
     users = {
       users = {

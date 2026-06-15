@@ -8,8 +8,10 @@
       pkg:
       builtins.elem (lib.getName pkg) [
         "obsidian"
+        "slack"
         "steam"
         "steam-unwrapped"
+        "via"
         "zoom"
       ];
   };

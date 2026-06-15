@@ -4,6 +4,8 @@
     imports = with inputs.self.modules.nixos; [
       workstation # Common stuff between personal and work
       gaming
+      xremap
+      sillytavern
     ];
     users = {
       users = {

@@ -6,7 +6,13 @@
       lact # Videocard tweaking
       ollama-rocm # Accelerate with AMD
       ratbagd # Mouse setup
+      openrgb
+      immich-machine-learning
     ];
-    nixpkgs.config.rocmSupport = true;
+    nixpkgs = {
+      config = {
+        rocmSupport = true;
+      };
+    };
   };
 }
