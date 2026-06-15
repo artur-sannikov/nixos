@@ -36,6 +36,7 @@
         server
         forgejo-private
         users-artur
+        qemuguest # Proxmox node
       ]);
     };
   };
