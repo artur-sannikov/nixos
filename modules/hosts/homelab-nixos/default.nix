@@ -13,9 +13,6 @@
         ./_disko.nix
         ./_hardware-configuration.nix
         ./_filesystems.nix
-        self.modules.nixos.server
-        self.modules.nixos.forgejo-private
-        self.modules.nixos.users-artur
         {
           users = {
             users = {
@@ -32,9 +29,14 @@
             };
           };
         }
-        self.modules.nixos.grub
         inputs.disko.nixosModules.disko
-      ];
+      ]
+      ++ (with self.modules.nixos; [
+        grub
+        server
+        forgejo-private
+        users-artur
+      ]);
     };
   };
 }
