@@ -4,6 +4,7 @@
     imports = with inputs.self.modules.nixos; [
       timezone-dynamic
       wifi-privacy
+      printing
     ];
   };
 }
