@@ -8,6 +8,9 @@
       ratbagd # Mouse setup
       openrgb
       immich-machine-learning
+
+      # Desktop does not need automatic timezone
+      timezone-static
     ];
     nixpkgs = {
       config = {
