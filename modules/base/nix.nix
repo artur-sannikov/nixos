@@ -1,5 +1,5 @@
 {
-  flake.modules.nixosModules.nix = { config, ... }: {
+  flake.modules.nixos.nix = { config, ... }: {
     sops = {
       secrets = {
         "atticd/netrc" = { };

@@ -25,6 +25,7 @@
       zramswap
       plasma-de # Plasma 6
       networkmanager
+      nix
 
       # User
       users-artur
