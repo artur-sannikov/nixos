@@ -33,5 +33,5 @@ nix run github:nix-community/nixos-anywhere -- --extra-files "$temp" \
 	--flake ".#${NIXOS_ANYWHERE_HOST}" \
 	--ssh-option "PubkeyAuthentication=no" \
 	--generate-hardware-config nixos-generate-config \
-	../hosts/"${NIXOS_ANYWHERE_HOST}"/hardware-configuration.nix \
+	../modules/hosts/"${NIXOS_ANYWHERE_HOST}"/hardware-configuration.nix \
 	--target-host root@"${NIXOS_ANYWHERE_HOST}"
