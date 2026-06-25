@@ -1,6 +1,6 @@
 {
   flake.modules.homeManager.gui =
-    { pkgs, ... }:
+    { pkgs-stable, ... }:
     let
       settings = {
         # Enable Firefox sync
@@ -22,7 +22,7 @@
       programs = {
         librewolf = {
           enable = true;
-          package = pkgs.librewolf;
+          package = pkgs-stable.librewolf;
           profiles = {
             default = { inherit settings; };
             work = {
