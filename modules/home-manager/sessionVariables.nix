@@ -1,5 +1,5 @@
 {
-  flake.homeManager.base = {
+  flake.modules.homeManager.base = {
     # Set environment variables
     home.sessionVariables = {
       EDITOR = "nvim";

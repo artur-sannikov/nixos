@@ -16,6 +16,7 @@
         moonlight-qt
         monero-gui
         picard
+        signal-desktop
         telegram-desktop
         tor-browser
       ]
@@ -23,7 +24,6 @@
         calibre
         flacon
         rustdesk-flutter
-        signal-desktop
       ]);
   };
 }

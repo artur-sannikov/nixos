@@ -3,7 +3,7 @@
     programs = {
       firefox = {
         configPath = "${config.xdg.configHome}/mozilla/firefox";
-        enable = true;
+        enable = false; # Enabled via home-manager
         profiles = {
           default-release = {
             isDefault = true;

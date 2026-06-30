@@ -6,7 +6,7 @@
 
     home-manager = {
       useGlobalPkgs = true;
-      useUserPackages = true;
+      useUserPackages = false;
       extraSpecialArgs = {
         inherit inputs;
         username = "artur";

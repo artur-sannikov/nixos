@@ -53,7 +53,7 @@ in
             self.modules.homeModules.base
             self.modules.homeModules.gui
             self.modules.homeModules.cli
-            self.modules.homeModules.personal-cli
+            self.modules.homeModules.cli-personal
             self.modules.homeModules.personal
             self.modules.homeModules.email
             self.modules.homeModules.personal-email
