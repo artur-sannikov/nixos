@@ -19,6 +19,7 @@
     home-manager.users.artur.imports = with self.modules.homeManager; [
       email-personal
       gui-personal
+      cli-personal
     ];
   };
 }
