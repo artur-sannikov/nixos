@@ -11,7 +11,6 @@
       inherit system;
       specialArgs = { inherit username; };
       modules = modules ++ [
-        ../hosts/${hostName}/_disko.nix
         { networking.hostName = hostName; }
       ];
     };
