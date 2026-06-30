@@ -32,7 +32,7 @@
         inputs.disko.nixosModules.disko
       ]
       ++ (with self.modules.nixos; [
-        grub
+        grub-efi
         server
         forgejo-private
         users-artur

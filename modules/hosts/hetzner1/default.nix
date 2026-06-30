@@ -37,7 +37,7 @@
             };
           };
         }
-        self.modules.nixos.grub
+        self.modules.nixos.grub-bios
         inputs.disko.nixosModules.disko
       ];
     };
