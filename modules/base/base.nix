@@ -5,6 +5,7 @@
       earlyloom
       nix-maintenance
       nixpkgs
+      nix
       sops
       sudo
       tailscale
