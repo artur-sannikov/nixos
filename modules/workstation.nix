@@ -41,6 +41,7 @@
     };
     home-manager.users.artur.imports = with self.modules.homeManager; [
       accounts
+      base
       cli
       email
       sops
