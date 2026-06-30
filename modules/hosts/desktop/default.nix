@@ -10,7 +10,6 @@
       hostName = "desktop";
       modules = [
         # Host-specific hardware and disk configurations
-        ./_disko.nix
         ./_hardware-configuration.nix
         ./_boot.nix
         ./_filesystems.nix
