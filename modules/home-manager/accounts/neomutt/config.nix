@@ -4,12 +4,12 @@
     let
       mailcap_file = pkgs.writeText "mailcap" ''
         text/html; firefox %s; test=test -n "$display"; needsterminal
-        text/html; lynx -assume_charset=%{charset} -display_charset=utf-8 -dump -width=1024 %s; nametemplate=%s.html; copiousoutput
         text/plain; $EDITOR %s ;needsterminal
         text/csv; tw %s ; needsterminal
         image/*; feh %s;
         application/vnd.openxmlformats-officedocument.presentationml.presentation; onlyoffice-desktopeditors %s;
         application/pdf; ${pkgs.kdePackages.okular}/bin/okular %s;
+        text/html; elinks -dump %s; copiousoutput
       '';
     in
     {
@@ -103,7 +103,8 @@
             set crypt_opportunistic_encrypt = no
 
             # Auto-view encrypted emails automatically
-            auto_view application/pgp-encrypted
+            auto_view application/pgp-encrypted text/html
+            alternative_order text/plain text/html
 
             # sidebar
             set sidebar_folder_indent
