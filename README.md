@@ -16,14 +16,18 @@ configuration. Changes are made in `devel` branch and then merged into `main`
 branch.
 
 > [!NOTE]
->
-> **System Information:**
->
-> - **Desktop environment:** KDE Plasma 6
-> - **File systems:** BTRFS/ZFS
-> - **Shell:** zsh
-> - **Terminal:** Kitty
-> - **Editor:** Nixvim
+> The configuration follows the dendritic pattern. My old configuration is
+> located in the `old-config` branch.
+
+## System Information
+
+**System Information:**
+
+- **Desktop environment:** KDE Plasma 6
+- **File systems:** BTRFS/ZFS
+- **Shell:** zsh
+- **Terminal:** Kitty
+- **Editor:** Nixvim
 
 ## Updates
 
