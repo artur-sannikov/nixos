@@ -13,6 +13,6 @@ jobs:
       - name: Install Lix
         uses: actions/install-lix@v1
       - name: Checkout flake
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
       - name: Check formatting of Nix code
         run: nix run nixpkgs#nixfmt-tree -- --ci .
