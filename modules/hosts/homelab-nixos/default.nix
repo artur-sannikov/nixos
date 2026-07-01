@@ -35,6 +35,7 @@
         grub-efi
         server
         forgejo-private
+        immich
         users-artur
         qemuguest # Proxmox node
       ]);
