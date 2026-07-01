@@ -26,6 +26,7 @@
             deploy-rs
             devenv
             djlint
+            elinks
             file
             forgejo-cli
             freerdp
