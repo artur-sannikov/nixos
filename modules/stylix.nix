@@ -31,7 +31,12 @@
               package = pkgs.noto-fonts-color-emoji;
             };
           };
-          # image = ./scarlet_tree.png;
+          icons = {
+            enable = true;
+            package = pkgs.papirus-icon-theme;
+            dark = "Papirus-Dark";
+            light = "Papirus-Light";
+          };
           base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
           cursor = {
             package = pkgs.capitaine-cursors-themed;
@@ -40,16 +45,16 @@
           };
           opacity = {
             terminal = 0.95;
+            desktop = 0.95;
           };
         };
       };
-      homeManager.stylix = { pkgs, ... }: {
+      homeManager.stylix = {
         stylix = {
-          icons = {
-            enable = true;
-            package = pkgs.papirus-icon-theme;
-            light = "Papirus-Light";
-            dark = "Papirus-Dark";
+          targets = {
+            nixvim = {
+              enable = false;
+            };
           };
         };
       };
