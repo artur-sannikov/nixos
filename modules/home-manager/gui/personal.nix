@@ -1,10 +1,7 @@
-{
-  inputs,
-  ...
-}:
+{ inputs, ... }:
 {
   # Personal apps
-  flake.modules.homeManager.gui-personal = { pkgs, pkgs-stable, ... }: {
+  flake.modules.homeManager.gui-personal = { pkgs, ... }: {
     imports = with inputs.self.modules.homeManager; [
       gui
     ];
@@ -20,7 +17,7 @@
         telegram-desktop
         tor-browser
       ]
-      ++ (with pkgs-stable; [
+      ++ (with pkgs.stable; [
         calibre
         flacon
         rustdesk-flutter
