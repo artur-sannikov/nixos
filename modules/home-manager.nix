@@ -1,5 +1,5 @@
 { inputs, ... }: {
-  flake.modules.nixos.home-manager = { config, ... }: {
+  flake.modules.nixos.home-manager = {
     imports = [
       inputs.home-manager.nixosModules.home-manager
     ];
@@ -7,11 +7,6 @@
     home-manager = {
       useGlobalPkgs = true;
       useUserPackages = false;
-      extraSpecialArgs = {
-        inherit inputs;
-        username = "artur";
-        inherit (config._module.args) pkgs-stable;
-      };
       users = {
         artur = {
           home = {

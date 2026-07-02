@@ -1,10 +1,6 @@
 {
   flake.modules.nixos.cli =
-    {
-      pkgs,
-      pkgs-stable,
-      ...
-    }:
+    { pkgs, ... }:
     # Install system-wide packages
     {
       environment.systemPackages =
@@ -49,7 +45,7 @@
           wget
           wireguard-tools
         ]
-        ++ (with pkgs-stable; [
+        ++ (with pkgs.stable; [
           quickemu
         ]);
     };

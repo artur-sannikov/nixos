@@ -1,9 +1,9 @@
 {
-  flake.modules.homeManager.cli = { pkgs-stable, ... }: {
+  flake.modules.homeManager.cli = { pkgs, ... }: {
     programs = {
       iamb = {
         enable = true;
-        package = pkgs-stable.iamb;
+        package = pkgs.stable.iamb;
         settings = {
           profiles.user.user_id = "@liberty5804:matrix.org";
           layout.style = "restore";

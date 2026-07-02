@@ -1,7 +1,7 @@
 {
-  flake.modules.homeManager.gui = { pkgs-stable, ... }: {
+  flake.modules.homeManager.gui = { pkgs, ... }: {
     home = {
-      packages = with pkgs-stable; [
+      packages = with pkgs.stable; [
         mullvad-browser
       ];
     };

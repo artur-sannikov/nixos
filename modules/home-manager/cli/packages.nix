@@ -1,11 +1,7 @@
+{ inputs, ... }:
 {
   flake.modules.homeManager.cli =
-    {
-      inputs,
-      pkgs,
-      pkgs-stable,
-      ...
-    }:
+    { pkgs, ... }:
     {
       home = {
         packages =
@@ -89,7 +85,7 @@
             zip
             inputs.nixvim.packages.${system}.default
           ]
-          ++ (with pkgs-stable; [
+          ++ (with pkgs.stable; [
             multiqc
           ]);
       };

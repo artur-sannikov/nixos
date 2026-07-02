@@ -3,12 +3,11 @@
   flake.modules.homeManager.gui =
     {
       pkgs,
-      pkgs-stable,
       ...
     }:
     {
       home.packages =
-        (with pkgs-stable; [
+        (with pkgs.stable; [
           anki
           hunspell
           hunspellDicts.en_GB-large

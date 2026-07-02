@@ -1,7 +1,7 @@
 {
   flake.modules.homeManager.email =
-    { username, ... }:
     let
+      username = "artur";
       accountNames = [
         "work"
         "migadu"

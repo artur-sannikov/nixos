@@ -2,11 +2,7 @@
 {
   # Work apps
   flake.modules.homeManager.gui-work =
-    {
-      pkgs,
-      pkgs-stable,
-      ...
-    }:
+    { pkgs, ... }:
     {
       imports = with inputs.self.modules.homeManager; [
         gui
@@ -17,7 +13,7 @@
           teams-for-linux
           quickemu
         ])
-        ++ (with pkgs-stable; [
+        ++ (with pkgs.stable; [
           eduvpn-client
         ]);
     };

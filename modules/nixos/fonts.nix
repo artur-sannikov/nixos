@@ -1,11 +1,11 @@
 {
-  flake.modules.nixos.fonts = { pkgs-stable, ... }: {
+  flake.modules.nixos.fonts = { pkgs, ... }: {
     fonts = {
       enableDefaultPackages = true;
       fontconfig = {
         useEmbeddedBitmaps = true;
       };
-      packages = with pkgs-stable; [
+      packages = with pkgs.stable; [
         nerd-fonts.iosevka
         nerd-fonts.iosevka-term
         nerd-fonts.ubuntu-sans
