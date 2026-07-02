@@ -45,5 +45,21 @@
           enable = true;
         };
       };
+      # For some reason, these rules are required for the network to work
+      # inside the containers created by Forgejo
+      # See https://reddit.com/r/NixOS/comments/199f16j/why_dont_my_podman_containers_have_internet_access/
+      networking = {
+        firewall = {
+          interfaces = {
+            podman1 = {
+              allowedUDPPorts = [ 53 ];
+            };
+            podman2 = {
+              allowedUDPPorts = [ 53 ];
+            };
+          };
+        };
+      };
+
     };
 }
