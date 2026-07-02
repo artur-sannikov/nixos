@@ -22,6 +22,8 @@
             deploy-rs
             devenv
             djlint
+            dua
+            duf
             elinks
             file
             forgejo-cli
