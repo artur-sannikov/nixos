@@ -14,6 +14,7 @@
         ./_hardware-configuration.nix
         self.modules.nixos.server
         self.modules.nixos.fail2ban
+        self.modules.nixos.fail2ban-caddy-jail # Because it has caddy installed
 
         # Services
         self.modules.nixos.attic
