@@ -37,7 +37,7 @@
             };
           };
         }
-        self.modules.nixos.grub-bios
+        self.modules.nixos.grub-bios # Old Hetzner machines use GRUB
         inputs.disko.nixosModules.disko
       ];
     };
