@@ -9,6 +9,7 @@
               filter = "caddy-status";
               logpath = "/var/log/caddy/access*.log";
               maxretry = 5;
+              findtime = 60;
               backend = "auto";
             };
           };

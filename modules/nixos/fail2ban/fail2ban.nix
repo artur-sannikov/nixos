@@ -3,10 +3,11 @@
     services = {
       fail2ban = {
         enable = true;
+        bantime = "1h";
         bantime-increment = {
           enable = true;
           factor = "4";
-          maxtime = "72h";
+          maxtime = "168h";
           overalljails = true;
         };
       };
