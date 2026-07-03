@@ -13,7 +13,7 @@ jobs:
       - name: Install Lix
         uses: actions/install-lix@v1
       - name: Checkout flake
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
         with:
           ref: devel
       - name: Prepare inputs to update
