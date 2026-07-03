@@ -22,7 +22,7 @@
           # https://muetsch.io/how-to-integrate-caddy-with-fail2ban.html
           text = ''
             [Definition]
-            failregex = ^.*"remote_ip":"<HOST>",.*?"status":(?:401|403|404|500),.*$
+            failregex = ^.*"remote_ip":"<HOST>",.*?"status":(?:401|403|500),.*$
             ignoreregex =
             datepattern = LongEpoch
           '';
