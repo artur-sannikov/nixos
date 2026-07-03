@@ -18,6 +18,7 @@
             caddy
             chezmoi
             cloud-utils
+            codespell
             deadnix
             deploy-rs
             devenv
