@@ -19,4 +19,4 @@ jobs:
       - name: Run statix
         run: nix run nixpkgs#statix -- check --ignore "_hardware-configuration.nix" .
       - name: Run deadnix
-        run: nix run nixpkgs#deadnix --fail --exclude modules/hosts/**/_hardware-configuration.nix
+        run: nix run nixpkgs#deadnix -- --fail --exclude modules/hosts/**/_hardware-configuration.nix
