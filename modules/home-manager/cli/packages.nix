@@ -66,7 +66,6 @@
             shellcheck
             shfmt
             sops
-            spellcheck # html
             ssh-audit
             statix
             stylua
