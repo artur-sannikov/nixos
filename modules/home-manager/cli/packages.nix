@@ -73,6 +73,7 @@
             talosctl
             taplo
             tesseract
+            tflint
             toolbox
             tree
             typst
