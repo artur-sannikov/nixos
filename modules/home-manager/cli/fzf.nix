@@ -18,6 +18,10 @@
         enableBashIntegration = true;
         enableZshIntegration = true;
         defaultCommand = "fd --hidden --strip-cwd-prefix --exclude .git";
+        # Use Atuin for Ctrl-R
+        historyWidget = {
+          command = "";
+        };
       };
     };
   };
