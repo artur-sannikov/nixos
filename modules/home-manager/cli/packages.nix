@@ -8,6 +8,7 @@
           with pkgs;
           [
             act
+            actionlint
             age
             air-formatter
             attic-client
