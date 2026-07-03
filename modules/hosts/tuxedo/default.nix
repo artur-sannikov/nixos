@@ -17,6 +17,7 @@
         self.modules.nixos.workstation-personal
         self.modules.nixos.laptop
         self.modules.nixos.tuxedo-drivers # This is tuxedo machine
+        inputs.nixos-hardware.nixosModules.tuxedo-infinitybook-pro14-gen9-amd
         self.modules.nixos.zfs
         inputs.disko.nixosModules.disko
         inputs.lanzaboote.nixosModules.lanzaboote
