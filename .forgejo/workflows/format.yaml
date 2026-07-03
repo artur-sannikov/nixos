@@ -1,4 +1,4 @@
-name: Check formatting
+name: Check nix code and format
 on:
   workflow_dispatch:
   push:
@@ -16,3 +16,5 @@ jobs:
         uses: actions/checkout@v7
       - name: Check formatting of Nix code
         run: nix run nixpkgs#nixfmt-tree -- --ci .
+      - name: Run statix
+        run: nix run nixpkgs#statix -- check --ignore "_hardware-configuration.nix" .
