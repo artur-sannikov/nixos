@@ -32,6 +32,7 @@
             gnumake
             go
             hadolint
+            htmlhint
             hugo
             hyperfine
             imagemagick
