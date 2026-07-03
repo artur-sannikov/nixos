@@ -2,6 +2,7 @@
 {
   flake.modules.nixos.workstation-personal = {
     imports = with inputs.self.modules.nixos; [
+      llama-cpu
       workstation # Common stuff between personal and work
       gaming
       xremap

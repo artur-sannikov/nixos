@@ -5,6 +5,7 @@
       corectrl
       lact # Videocard tweaking
       ollama-rocm # Accelerate with AMD
+      llama-rocm
       ratbagd # Mouse setup
       openrgb
       immich-machine-learning
