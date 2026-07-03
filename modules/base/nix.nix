@@ -9,10 +9,7 @@
       settings = {
         # List of binary cache URLs that non-root users can use
         trusted-substituters = [
-          "https://nix-community.cachix.org?priority=10"
-          "https://numtide.cachix.org?priority=11"
-          "https://rstats-on-nix.cachix.org?priority=12"
-          "https://cache.asannikov.com/main?priority=13"
+          "https://rstats-on-nix.cachix.org"
         ];
         trusted-public-keys = [
           "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
@@ -20,14 +17,17 @@
           "rstats-on-nix.cachix.org-1:vdiiVgocg6WeJrODIqdprZRUrhi1JzhBnXv7aWI6+F0="
           "main:qry3jdoFrVZ1PwPUhJaZix3S2LBLE6fRMXoxk/yNvvQ="
         ];
-        trusted-users = [
-          "root"
-          "@wheel"
+        # Only used by Nix
+        substituters = [
+          "https://nix-community.cachix.org"
+          "https://numtide.cachix.org"
+          "https://cache.asannikov.com/main"
         ];
         experimental-features = [
           "nix-command"
           "flakes"
         ];
+        trusted-users = [ "@wheel" ];
         netrc-file = config.sops.secrets."atticd/netrc".path;
       };
     };
