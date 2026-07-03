@@ -70,6 +70,7 @@
             ssh-audit
             statix
             stylua
+            stylelint
             tabiew
             talosctl
             taplo
