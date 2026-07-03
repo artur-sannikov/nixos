@@ -1,5 +1,5 @@
 {
-  flake.modules.nixos.virtualization = { lib, ... }: {
+  flake.modules.nixos.virtualization = {
     virtualisation.docker = {
       # Disable system-wide docker
       enable = false;
