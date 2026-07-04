@@ -64,6 +64,11 @@
       url = "github:xremap/nix-flake";
     };
 
+    # https://github.com/fufexan/nix-gaming
+    nix-gaming = {
+      url = "github:fufexan/nix-gaming";
+    };
+
     # Remote deployment
     deploy-rs = {
       url = "github:serokell/deploy-rs";
