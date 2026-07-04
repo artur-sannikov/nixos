@@ -8,6 +8,9 @@
           ports = [
             "3003:3003"
           ];
+          labels = {
+            "io.containers.autoupdate" = "registry";
+          };
           volumes = [
             "immich-machine-learning:/cache"
           ];
