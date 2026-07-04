@@ -14,6 +14,7 @@
 
       environment = {
         systemPackages = with pkgs; [
+          qmk
           via
         ];
       };
