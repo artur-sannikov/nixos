@@ -28,6 +28,7 @@
       nix
 
       podman-auto-update
+      metube
 
       # User
       users-artur
