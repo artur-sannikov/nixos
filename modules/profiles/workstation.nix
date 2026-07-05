@@ -27,6 +27,8 @@
       networkmanager
       nix
 
+      podman-auto-update
+
       # User
       users-artur
     ];
