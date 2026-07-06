@@ -18,6 +18,7 @@
 
       # Create directory
       systemd.tmpfiles.rules = [
+        "d /home/${username}/podman 1750 ${username} -"
         "d /home/${username}/podman/metube 1750 ${username} -"
         "d /home/${username}/podman/metube/downloads 1750 ${username} -"
         "d /home/${username}/podman/gluetun 1700 ${username} -"
