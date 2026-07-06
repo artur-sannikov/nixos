@@ -8,6 +8,7 @@
         Type = "oneshot";
         ExecStart = "${pkgs.podman}/bin/podman auto-update";
         ExecStartPost = "${pkgs.podman}/bin/podman image prune -f";
+        Restart = "on-failure"; # It sometimes fails if DNS does not work
       };
     };
 
