@@ -43,6 +43,9 @@
             };
             gluetun = {
               image = "ghcr.io/qdm12/gluetun:latest";
+              labels = {
+                "io.containers.autoupdate" = "registry";
+              };
               autoStart = true;
               hostname = "gluetun";
               ports = [
