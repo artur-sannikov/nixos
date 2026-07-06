@@ -6,6 +6,7 @@
         useEmbeddedBitmaps = true;
       };
       packages = with pkgs.stable; [
+        corefonts
         dejavu_fonts
         font-awesome
         liberation_ttf
@@ -21,6 +22,7 @@
         open-sans
         roboto
         source-code-pro
+        vista-fonts
       ];
     };
   };
