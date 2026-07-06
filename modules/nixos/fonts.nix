@@ -6,21 +6,21 @@
         useEmbeddedBitmaps = true;
       };
       packages = with pkgs.stable; [
+        dejavu_fonts
+        font-awesome
+        liberation_ttf
         nerd-fonts.iosevka
         nerd-fonts.iosevka-term
-        nerd-fonts.ubuntu-sans
-        nerd-fonts.sauce-code-pro
         nerd-fonts.jetbrains-mono
-        font-awesome
-        dejavu_fonts
+        nerd-fonts.sauce-code-pro
+        nerd-fonts.ubuntu-sans
         noto-fonts
-        noto-fonts-color-emoji
-        noto-fonts-cjk-serif
         noto-fonts-cjk-sans
-        source-code-pro
+        noto-fonts-cjk-serif
+        noto-fonts-color-emoji
         open-sans
-        liberation_ttf
         roboto
+        source-code-pro
       ];
     };
   };
