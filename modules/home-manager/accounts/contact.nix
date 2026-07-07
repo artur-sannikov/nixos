@@ -1,19 +1,15 @@
-{
-  inputs,
-  username,
-  ...
-}:
-let
-  carddav_url = "https://nextcloud.${inputs.nix-secrets.domain}/remote.php/dav/addressbooks/users/${username}";
-in
+{ inputs, ... }:
 {
   flake.modules.homeManager.contact =
     {
       config,
       pkgs,
-      username,
       ...
     }:
+    let
+      carddav_url = "https://nextcloud.${inputs.nix-secrets.domain}/remote.php/dav/addressbooks/users/${username}";
+      username = "artur";
+    in
     {
       accounts = {
         contact = {

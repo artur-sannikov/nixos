@@ -46,6 +46,7 @@
       accounts
       base
       cli
+      contact
       email
       sops
       stylix
