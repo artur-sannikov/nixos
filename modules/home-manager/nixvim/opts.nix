@@ -1,0 +1,89 @@
+{
+  flake.modules.nixvim.default =
+    { pkgs, ... }:
+    {
+      extraPackages = with pkgs; [
+        fd # For Telescope
+        ripgrep # For Telescope
+        luaPackages.tree-sitter-cli
+      ];
+      filetype = {
+        pattern = {
+          # javascript template files look better with javascript
+          # parser
+          ".*\.js\.j2" = "js";
+        };
+        pattern = {
+          ".*/.github/workflows/.*%.ya?ml" = "yaml.ghaction";
+          ".*/.forgejo/workflows/.*%.ya?ml" = "yaml.ghaction";
+        };
+      };
+      globals = {
+        coc_filetype_map = {
+          "yaml.ansible" = "ansible";
+        };
+      };
+      globals = {
+        mapleader = " ";
+        maplocalleader = " ";
+      };
+      opts = {
+        termguicolors = true;
+        shiftwidth = 4;
+        expandtab = true;
+        colorcolumn = "80";
+        clipboard = "unnamedplus";
+        number = true;
+        relativenumber = true;
+        cursorline = true;
+        spell = true;
+        spelllang = "en_us";
+        shell = "zsh";
+        # Remove global status line to make split windows visibly separate
+        laststatus = 3;
+      };
+      diagnostic = {
+        settings = {
+          virtual_lines = {
+            current_line = true;
+          };
+        };
+      };
+      colorschemes = {
+        catppuccin = {
+          enable = true;
+          settings = {
+            default_integrations = true;
+            flavour = "mocha";
+
+            # https://github.com/catppuccin/nvim/tree/main/lua/catppuccin/groups/integrations
+            integrations = {
+              blink-cmp = true;
+              coc-nvim = true;
+              fzf = true;
+              markview = true;
+              neogit = true;
+              treesitter_context = true;
+              telescope = true;
+              gitsigns = true;
+              octo = true;
+            };
+            # Default color is barely visible for split windows
+            custom_highlights = ''
+              function(colors)
+                return {
+                  WinSeparator = { fg = colors.flamingo },
+                }
+              end
+            '';
+            term_colors = true;
+            transparent_background = true;
+          };
+        };
+      };
+      extraConfigVim = ''
+        syntax off "" Disable syntax highlighting, treesitter handles it
+        set nowrap
+      '';
+    };
+}

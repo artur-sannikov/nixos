@@ -54,9 +54,7 @@
 
     # Nice editor
     # https://nix-community.github.io/nixvim/
-    nixvim = {
-      url = "git+https://git.asannikov.com/artur/nixvim.git";
-    };
+    nixvim.url = "github:nix-community/nixvim";
 
     # Remap keyboard keys
     # https://github.com/xremap/nix-flake

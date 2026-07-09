@@ -1,4 +1,4 @@
-{ inputs, ... }:
+{ self, ... }:
 {
   flake.modules.homeManager.cli =
     { pkgs, ... }:
@@ -50,6 +50,7 @@
             nextflow
             nixpkgs-review
             nodejs
+            self.packages.${pkgs.system}.nvim
             openssl
             opentofu
             pandoc
@@ -90,7 +91,6 @@
             yamlfmt
             yamllint
             zip
-            inputs.nixvim.packages.${system}.default
           ]
           ++ (with pkgs.stable; [
             multiqc
