@@ -6,6 +6,10 @@
         imports = [ inputs.stylix.nixosModules.stylix ];
         stylix = {
           enable = true;
+          image = pkgs.fetchurl {
+            url = "https://raw.githubusercontent.com/zhichaoh/catppuccin-wallpapers/refs/heads/main/landscapes/Cloudsday.jpg";
+            hash = "sha256-+EkcQlbWPGud6dvRNqB+yRe8T1UsNAenwrLgFLy3G2A=";
+          };
           targets = {
             # Explicitly enable fonts
             fontconfig = {
