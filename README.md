@@ -44,8 +44,17 @@ this.
 
 ## Nixvim
 
-My Nixvim configuration is standalone and can be found
-[here](https://git.asannikov.com/artur/nixvim).
+Nixvim is available as a flake output from this repo. To start it, run
+
+```shell
+nix run "git+https://codeberg.org/arsann/nixos#nvim"
+```
+
+Or if you want to use the `devel` branch:
+
+```shell
+nix run "git+https://codeberg.org/arsann/nixos?ref=devel#nvim"
+```
 
 ## Stuff to Do Manually
 
