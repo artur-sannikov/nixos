@@ -15,7 +15,7 @@
           "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
           "numtide.cachix.org-1:2ps1kLBUWjxIneOy1Ik6cQjb41X0iXVXeHigGmycPPE="
           "rstats-on-nix.cachix.org-1:vdiiVgocg6WeJrODIqdprZRUrhi1JzhBnXv7aWI6+F0="
-          "main:qry3jdoFrVZ1PwPUhJaZix3S2LBLE6fRMXoxk/yNvvQ="
+          "main:Jn9sx6cavlFxmR9YrBjRomNlCpATM2fnzbsUSRGS/S4="
         ];
         # Only used by Nix
         substituters = [
