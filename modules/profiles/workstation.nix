@@ -24,6 +24,7 @@
       locale
       zramswap
       plasma-de # Plasma 6
+      niri
       networkmanager
       nix
 
@@ -50,6 +51,8 @@
       email
       sops
       stylix
+      niri
+      noctalia
       duplicacy-web
     ];
   };
