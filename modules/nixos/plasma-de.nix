@@ -1,20 +1,32 @@
 { lib, ... }:
 {
-  flake.modules.nixos.plasma-de = {
-    services = {
-      xserver = {
-        enable = false;
-      };
-      displayManager = {
-        plasma-login-manager = {
-          enable = lib.mkDefault true;
+  flake.modules.nixos.plasma-de =
+    { pkgs, ... }:
+    {
+      services = {
+        xserver = {
+          enable = false;
+        };
+        displayManager = {
+          plasma-login-manager = {
+            enable = lib.mkDefault true;
+          };
+        };
+        desktopManager = {
+          plasma6 = {
+            enable = true;
+          };
         };
       };
-      desktopManager = {
+      environment = {
         plasma6 = {
-          enable = true;
+          excludePackages = with pkgs.kdePackages; [
+            elisa
+            konsole
+            qrca
+            plasma-browser-integration
+          ];
         };
       };
     };
-  };
 }
