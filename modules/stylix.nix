@@ -61,6 +61,11 @@
             };
           };
         };
+        home = {
+          pointerCursor = {
+            enable = true;
+          };
+        };
       };
     };
   };
