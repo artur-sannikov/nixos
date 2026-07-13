@@ -8,6 +8,10 @@
       noctalia = {
         enable = true;
         settings = {
+          # For Niri overview blurred wallpaper
+          backdrop = {
+            enabled = true;
+          };
           bar = {
             main = {
               enabled = true;

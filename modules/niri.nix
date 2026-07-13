@@ -131,6 +131,9 @@
                 {
                   matches = [ { namespace = "^launcher$"; } ];
                   opacity = 0.9;
+                  # Blurred wallpaper in the overview
+                  matches = [ { namespace = "^noctalia-backdrop"; } ];
+                  place-within-backdrop = true;
                 }
               ];
             };
