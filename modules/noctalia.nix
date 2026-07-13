@@ -31,12 +31,17 @@
                 "brightness"
                 "keyboard_layout"
                 "network"
-                "control_center"
+                "nightlight"
                 "session"
               ];
             };
           };
 
+          nightlight = {
+            enabled = true;
+            start_time = "20:30";
+            stop_time = "07:00";
+          };
           dock = {
             enabled = false;
           };
