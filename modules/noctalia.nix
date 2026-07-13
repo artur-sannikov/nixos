@@ -16,6 +16,7 @@
             main = {
               enabled = true;
               position = "top";
+              background_opacity = 0.85;
             };
           };
 

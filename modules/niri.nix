@@ -21,18 +21,13 @@
     };
 
     homeManager.niri =
-      { pkgs, lib, ... }:
+      {
+        pkgs,
+        lib,
+        ...
+      }:
       {
         programs = {
-          fuzzel = {
-            enable = true;
-            settings = {
-              main = {
-                terminal = "kitty";
-                font = lib.mkForce "monospace:size=16";
-              };
-            };
-          };
           niri = {
             settings = {
               prefer-no-csd = true;
@@ -63,8 +58,6 @@
 
               binds = {
                 "Mod+Return".action.spawn = [ "kitty" ];
-                "Mod+D".action.spawn = [ "fuzzel" ];
-
                 "Mod+Q".action.close-window = [ ];
 
                 ### Focus ###
@@ -102,6 +95,20 @@
                 # Floating window
                 "Mod+V".action.toggle-window-floating = [ ];
                 "Mod+Shift+V".action.switch-focus-between-floating-and-tiling = [ ];
+
+                # Noctalia bindings
+                "Mod+Space".action.spawn = [
+                  "noctalia"
+                  "msg"
+                  "panel-toggle"
+                  "launcher"
+                ];
+
+                "Mod+S".action.spawn = [
+                  "noctalia"
+                  "msg"
+                  "settings-toggle"
+                ];
               };
 
               window-rules = [
@@ -129,8 +136,6 @@
               ];
               layer-rules = [
                 {
-                  matches = [ { namespace = "^launcher$"; } ];
-                  opacity = 0.9;
                   # Blurred wallpaper in the overview
                   matches = [ { namespace = "^noctalia-backdrop"; } ];
                   place-within-backdrop = true;
