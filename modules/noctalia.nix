@@ -36,11 +36,24 @@
               ];
             };
           };
-
           nightlight = {
             enabled = true;
             start_time = "20:30";
             stop_time = "07:00";
+          };
+          idle = {
+            behavior = {
+              screen-off = {
+                enabled = true;
+                timeout = 300;
+                action = "screen_off";
+              };
+              lock = {
+                enabled = true;
+                timeout = 600;
+                action = "lock";
+              };
+            };
           };
           dock = {
             enabled = false;
