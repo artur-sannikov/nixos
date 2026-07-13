@@ -2,7 +2,9 @@
 {
   flake.modules = {
     nixos.niri = {
+    nixos.niri = { pkgs, ... }: {
       imports = [ inputs.niri.nixosModules.niri ];
+      nixpkgs.overlays = [ inputs.niri.overlays.niri ];
       services = {
         gnome = {
           gnome-keyring = {
@@ -16,6 +18,7 @@
         };
         niri = {
           enable = true;
+          package = pkgs.niri-unstable;
         };
       };
     };
