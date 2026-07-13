@@ -39,8 +39,12 @@
         spell = true;
         spelllang = "en_us";
         shell = "zsh";
+
         # Remove global status line to make split windows visibly separate
         laststatus = 3;
+
+        # Disable the duplicated mode indication, leave only the powerline
+        showmode = false;
       };
       diagnostic = {
         settings = {
