@@ -36,6 +36,10 @@
               ];
             };
           };
+          widget = {
+            clock = {
+              format = "  %A, %e %B %H:%M";
+            };
           nightlight = {
             enabled = true;
             start_time = "20:30";
