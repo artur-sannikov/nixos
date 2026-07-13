@@ -17,6 +17,23 @@
               enabled = true;
               position = "top";
               background_opacity = 0.85;
+              start = [
+                "ram"
+                "cpu"
+                "battery"
+              ];
+              end = [
+                "media"
+                "tray"
+                "notifications"
+                "volume"
+                "bluetooth"
+                "brightness"
+                "keyboard_layout"
+                "network"
+                "control_center"
+                "session"
+              ];
             };
           };
 
