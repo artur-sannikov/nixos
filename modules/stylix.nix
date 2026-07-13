@@ -48,8 +48,8 @@
             size = 32;
           };
           opacity = {
-            terminal = 0.95;
-            desktop = 0.95;
+            terminal = 0.85;
+            desktop = 0.85;
           };
         };
       };

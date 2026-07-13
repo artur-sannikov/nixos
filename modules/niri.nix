@@ -2,9 +2,7 @@
 {
   flake.modules = {
     nixos.niri = {
-    nixos.niri = { pkgs, ... }: {
       imports = [ inputs.niri.nixosModules.niri ];
-      nixpkgs.overlays = [ inputs.niri.overlays.niri ];
       services = {
         gnome = {
           gnome-keyring = {
@@ -18,53 +16,101 @@
         };
         niri = {
           enable = true;
-          package = pkgs.niri-unstable;
         };
       };
     };
-    homeManager.niri = { pkgs, lib, ... }: {
-      programs.niri = {
-        settings = {
-          spawn-at-startup = [
-            { command = [ "noctalia" ]; }
-            {
-              argv = [
-                "nm-applet"
-                "--indicator"
+
+    homeManager.niri =
+      { pkgs, lib, ... }:
+      {
+        programs = {
+          fuzzel = {
+            enable = true;
+            settings = {
+              main = {
+                terminal = "kitty";
+                font = lib.mkForce "monospace:size=16";
+              };
+            };
+          };
+          niri = {
+            settings = {
+              # Xwayland
+              xwayland-satellite = {
+                enable = true;
+                path = lib.getExe pkgs.xwayland-satellite;
+              };
+              spawn-at-startup = [
+                { command = [ "noctalia" ]; }
+                {
+                  command = [
+                    "nm-applet" # Save wifi passwords between sessions
+                    "--indicator"
+                  ];
+                }
               ];
-            }
-          ];
-          input = {
-            keyboard = {
-              xkb = {
-                layout = "us";
+              input = {
+                keyboard = {
+                  xkb = {
+                    layout = "us";
+                  };
+                };
               };
-            };
-          };
-          layout = {
-            gaps = 5;
-          };
-
-          binds = {
-            "Mod+Return" = {
-              action = {
-                spawn-sh = lib.getExe pkgs.kitty;
+              layout = {
+                gaps = 5;
               };
-            };
-            # Focus
-            "Mod+H".action.focus-column-left = [ ];
-            "Mod+L".action.focus-column-right = [ ];
-            "Mod+K".action.focus-window-up = [ ];
-            "Mod+J".action.focus-window-down = [ ];
 
-            # Move
-            "Mod+Shift+H".action.move-column-left = [ ];
-            "Mod+Shift+L".action.move-column-right = [ ];
-            "Mod+Shift+K".action.move-window-up = [ ];
-            "Mod+Shift+J".action.move-window-down = [ ];
+              binds = {
+                "Mod+Return".action.spawn = [ "kitty" ];
+                "Mod+D".action.spawn = [ "fuzzel" ];
+
+                "Mod+Q".action.close-window = [ ];
+
+                ### Focus ###
+
+                # Windows
+                "Mod+H".action.focus-column-left = [ ];
+                "Mod+L".action.focus-column-right = [ ];
+                "Mod+K".action.focus-window-or-workspace-up = [ ];
+                "Mod+J".action.focus-window-or-workspace-down = [ ];
+
+                # Overview
+                "Mod+O" = {
+                  repeat = false;
+                  action.toggle-overview = [ ];
+                };
+
+                # Move
+                "Mod+Shift+H".action.move-column-left = [ ];
+                "Mod+Shift+L".action.move-column-right = [ ];
+                "Mod+Shift+K".action.move-column-to-workspace-up = [ ];
+                "Mod+Shift+J".action.move-column-to-workspace-down = [ ];
+
+                # Width of columns
+                "Mod+Shift+F".action.fullscreen-window = [ ];
+                "Mod+1".action.set-column-width = "25%";
+                "Mod+2".action.set-column-width = "50%";
+                "Mod+3".action.set-column-width = "75%";
+                "Mod+4".action.set-column-width = "100%";
+
+                "Mod+Minus".action.set-column-width = "-10%";
+                "Mod+Equal".action.set-column-width = "+10%";
+              };
+              window-rules = [
+                {
+                  # Fix tinted background when using stylix
+                  draw-border-with-background = false;
+                }
+              ];
+              layer-rules = [
+                {
+                  matches = [ { namespace = "^launcher$"; } ];
+                  opacity = 0.8;
+                }
+              ];
+            };
           };
         };
       };
-    };
   };
 }
