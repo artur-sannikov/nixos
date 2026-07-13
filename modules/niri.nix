@@ -35,6 +35,7 @@
           };
           niri = {
             settings = {
+              prefer-no-csd = true;
               # Xwayland
               xwayland-satellite = {
                 enable = true;
