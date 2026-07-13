@@ -16,9 +16,7 @@
           };
 
           dock = {
-            enabled = true;
-            position = "bottom";
-            auto_hide = true;
+            enabled = false;
           };
         };
       };
