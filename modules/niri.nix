@@ -3,7 +3,17 @@
   flake.modules = {
     nixos.niri = {
       imports = [ inputs.niri.nixosModules.niri ];
+      services = {
+        gnome = {
+          gnome-keyring = {
+            enable = true;
+          };
+        };
+      };
       programs = {
+        nm-applet = {
+          enable = true;
+        };
         niri = {
           enable = true;
         };
@@ -14,6 +24,12 @@
         settings = {
           spawn-at-startup = [
             { command = [ "noctalia" ]; }
+            {
+              argv = [
+                "nm-applet"
+                "--indicator"
+              ];
+            }
           ];
           input = {
             keyboard = {
