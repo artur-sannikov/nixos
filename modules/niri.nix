@@ -16,7 +16,6 @@
             { command = [ "noctalia" ]; }
           ];
           input = {
-            mod-key = "Ctrl"; # Bound to Caps Lock in my case
             keyboard = {
               xkb = {
                 layout = "us";
