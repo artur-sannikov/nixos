@@ -52,7 +52,7 @@
               input = {
                 keyboard = {
                   xkb = {
-                    layout = "us";
+                    layout = "us,ru,fi";
                   };
                 };
               };
@@ -95,17 +95,41 @@
 
                 "Mod+Minus".action.set-column-width = "-10%";
                 "Mod+Equal".action.set-column-width = "+10%";
+
+                "Mod+F".action.maximize-column = [ ];
+
+                # Floating window
+                "Mod+V".action.toggle-window-floating = [ ];
+                "Mod+Shift+V".action.switch-focus-between-floating-and-tiling = [ ];
               };
+
               window-rules = [
                 {
                   # Fix tinted background when using stylix
                   draw-border-with-background = false;
+
+                  # Rounded corners
+                  geometry-corner-radius = {
+                    top-left = 5.0;
+                    top-right = 5.0;
+                    bottom-right = 5.0;
+                    bottom-left = 5.0;
+                  };
+                  clip-to-geometry = true;
+                }
+                {
+                  matches = [ { app-id = "librewolf"; } ];
+                  open-maximized = true;
+                }
+                {
+                  matches = [ { app-id = "firefox"; } ];
+                  open-maximized = true;
                 }
               ];
               layer-rules = [
                 {
                   matches = [ { namespace = "^launcher$"; } ];
-                  opacity = 0.8;
+                  opacity = 0.9;
                 }
               ];
             };
