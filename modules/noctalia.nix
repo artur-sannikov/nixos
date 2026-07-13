@@ -40,6 +40,10 @@
             clock = {
               format = "  %A, %e %B %H:%M";
             };
+            media = {
+              hide_when_no_media = true;
+            };
+          };
           nightlight = {
             enabled = true;
             start_time = "20:30";
