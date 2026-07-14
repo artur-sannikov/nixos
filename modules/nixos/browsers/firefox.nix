@@ -162,6 +162,10 @@
             Enabled = false;
             Locked = true;
           };
+          Preferences = {
+            "browser.download.deletePrivate" = true;
+            "browser.download.deletePrivate.chosen" = true;
+          };
         };
     };
   };
