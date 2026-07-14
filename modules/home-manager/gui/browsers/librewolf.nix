@@ -55,6 +55,10 @@
 
             # https://mozilla.github.io/policy-templates/#promptfordownloadlocation
             PromptForDownloadLocation = true;
+
+            # Disable password save offer
+            OfferToSaveLogins = false;
+
             Preferences = {
               "browser.download.deletePrivate" = true; # Delete private window downloads on close
               "browser.download.deletePrivate.chosen" = true;
