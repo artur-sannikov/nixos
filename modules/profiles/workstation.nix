@@ -12,6 +12,7 @@
       email
       fwupd
       nvme-rs
+      nur
       qmk
       gui # zoom and browsers
       cli

@@ -14,80 +14,80 @@
       ];
       # https://mozilla.github.io/policy-templates/
       policies =
-        let
-          moz = short: "https://addons.mozilla.org/firefox/downloads/latest/${short}/latest.xpi";
-          customLists = [
-            "https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/adblock/pro.txt"
-            "https://raw.githubusercontent.com/DandelionSprout/adfilt/master/Dandelion Sprout's Anti-Malware List.txt"
-            "https://raw.githubusercontent.com/DandelionSprout/adfilt/master/LegitimateURLShortener.txt"
-            "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/spam-tlds-ublock.txt"
-            "https://raw.githubusercontent.com/iam-py-test/my_filters_001/main/antimalware.txt"
-            "https://raw.githubusercontent.com/yokoffing/filterlists/main/annoyance_list.txt"
-            "https://raw.githubusercontent.com/yokoffing/filterlists/main/click2load.txt"
-            "https://raw.githubusercontent.com/yokoffing/filterlists/main/privacy_essentials.txt"
-          ];
-        in
+        # let
+        #   moz = short: "https://addons.mozilla.org/firefox/downloads/latest/${short}/latest.xpi";
+        #   customLists = [
+        #     "https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/adblock/pro.txt"
+        #     "https://raw.githubusercontent.com/DandelionSprout/adfilt/master/Dandelion Sprout's Anti-Malware List.txt"
+        #     "https://raw.githubusercontent.com/DandelionSprout/adfilt/master/LegitimateURLShortener.txt"
+        #     "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/spam-tlds-ublock.txt"
+        #     "https://raw.githubusercontent.com/iam-py-test/my_filters_001/main/antimalware.txt"
+        #     "https://raw.githubusercontent.com/yokoffing/filterlists/main/annoyance_list.txt"
+        #     "https://raw.githubusercontent.com/yokoffing/filterlists/main/click2load.txt"
+        #     "https://raw.githubusercontent.com/yokoffing/filterlists/main/privacy_essentials.txt"
+        #   ];
+        # in
         {
-          ExtensionSettings = {
-            "uBlock0@raymondhill.net" = {
-              default_area = "menupanel";
-              install_url = moz "ublock-origin";
-              installation_mode = "force_installed";
-              private_browsing = true;
-              updates_disabled = true;
-            };
-            "{446900e4-71c2-419f-a6a7-df9c091e268b}" = {
-              default_area = "menupanel";
-              install_url = moz "bitwarden-password-manager";
-              installation_mode = "force_installed";
-              private_browsing = false;
-              updates_disabled = true;
-            };
-            "{d7742d87-e61d-4b78-b8a1-b469842139fa}" = {
-              default_area = "navbar";
-              install_url = moz "vimium-ff";
-              installation_mode = "force_installed";
-              private_browsing = true;
-              updates_disabled = true;
-            };
-          };
-          "3rdparty".Extensions = {
-            "uBlock0@raymondhill.net".adminSettings = {
-              userSettings = rec {
-                uiTheme = "dark";
-                uiAccentCustom = true;
-                uiAccentCustom0 = "#8300ff";
-                cloudStorageEnabled = true;
-                importedLists = customLists;
-                externalLists = lib.concatStringsSep "\n" importedLists;
-              };
-              selectedFilterLists = [
-                "ublock-filters"
-                "ublock-badware"
-                "ublock-privacy"
-                "ublock-quick-fixes"
-                "ublock-unbreak"
-                "easylist"
-                "easyprivacy"
-                "adguard-spyware-url"
-                "urlhaus-1"
-                "plowe-0"
-                "fanboy-cookiemonster"
-                "ublock-cookies-easylist"
-                "fanboy-social"
-                "fanboy-ai-suggestions"
-                "easylist-chat"
-                "easylist-newsletters"
-                "easylist-notifications"
-                "easylist-annoyances"
-                "ublock-annoyances"
-                "FIN-0"
-                "RUS-0"
-                "RUS-1"
-              ]
-              ++ customLists;
-            };
-          };
+          # ExtensionSettings = {
+          #   "uBlock0@raymondhill.net" = {
+          #     default_area = "menupanel";
+          #     install_url = moz "ublock-origin";
+          #     installation_mode = "force_installed";
+          #     private_browsing = true;
+          #     updates_disabled = true;
+          #   };
+          #   "{446900e4-71c2-419f-a6a7-df9c091e268b}" = {
+          #     default_area = "menupanel";
+          #     install_url = moz "bitwarden-password-manager";
+          #     installation_mode = "force_installed";
+          #     private_browsing = false;
+          #     updates_disabled = true;
+          #   };
+          #   "{d7742d87-e61d-4b78-b8a1-b469842139fa}" = {
+          #     default_area = "navbar";
+          #     install_url = moz "vimium-ff";
+          #     installation_mode = "force_installed";
+          #     private_browsing = true;
+          #     updates_disabled = true;
+          #   };
+          # };
+          # "3rdparty".Extensions = {
+          #   "uBlock0@raymondhill.net".adminSettings = {
+          #     userSettings = rec {
+          #       uiTheme = "dark";
+          #       uiAccentCustom = true;
+          #       uiAccentCustom0 = "#8300ff";
+          #       cloudStorageEnabled = true;
+          #       importedLists = customLists;
+          #       externalLists = lib.concatStringsSep "\n" importedLists;
+          #     };
+          #     selectedFilterLists = [
+          #       "ublock-filters"
+          #       "ublock-badware"
+          #       "ublock-privacy"
+          #       "ublock-quick-fixes"
+          #       "ublock-unbreak"
+          #       "easylist"
+          #       "easyprivacy"
+          #       "adguard-spyware-url"
+          #       "urlhaus-1"
+          #       "plowe-0"
+          #       "fanboy-cookiemonster"
+          #       "ublock-cookies-easylist"
+          #       "fanboy-social"
+          #       "fanboy-ai-suggestions"
+          #       "easylist-chat"
+          #       "easylist-newsletters"
+          #       "easylist-notifications"
+          #       "easylist-annoyances"
+          #       "ublock-annoyances"
+          #       "FIN-0"
+          #       "RUS-0"
+          #       "RUS-1"
+          #     ]
+          #     ++ customLists;
+          #   };
+          # };
           DontCheckDefaultBrowser = true;
           DisableTelemetry = true;
           DisableFirefoxStudies = true;
