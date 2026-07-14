@@ -112,6 +112,9 @@
           DisplayBookmarksToolbar = "always";
           TranslateEnabled = true;
 
+          # https://mozilla.github.io/policy-templates/#promptfordownloadlocation
+          PromptForDownloadLocation = true;
+
           # https://mozilla.github.io/policy-templates/#usermessaging
           UserMessaging = {
             ExtensionRecommendations = false;

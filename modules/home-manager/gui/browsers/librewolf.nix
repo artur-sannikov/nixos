@@ -52,6 +52,9 @@
 
             # https://mozilla.github.io/policy-templates/#translateenabled
             TranslateEnabled = true;
+
+            # https://mozilla.github.io/policy-templates/#promptfordownloadlocation
+            PromptForDownloadLocation = true;
           };
         };
       };
