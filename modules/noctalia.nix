@@ -22,8 +22,11 @@
                 "cpu"
                 "battery"
               ];
-              end = [
+              center = [
+                "clock"
                 "media"
+              ];
+              end = [
                 "tray"
                 "notifications"
                 "volume"
