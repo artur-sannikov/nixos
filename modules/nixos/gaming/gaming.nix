@@ -3,6 +3,7 @@
   flake.modules.nixos.gaming = {
     imports = with config.flake.modules.nixos; [
       inputs.nix-gaming.nixosModules.pipewireLowLatency
+      inputs.nix-gaming.nixosModules.platformOptimizations
       gaming-packages
       steam
     ];
