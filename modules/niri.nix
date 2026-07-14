@@ -1,24 +1,45 @@
 { inputs, ... }:
 {
   flake.modules = {
-    nixos.niri = {
-      imports = [ inputs.niri.nixosModules.niri ];
-      services = {
-        gnome = {
-          gnome-keyring = {
+    nixos.niri =
+      { pkgs, ... }:
+      {
+        imports = [ inputs.niri.nixosModules.niri ];
+        # Required for Niri
+        xdg = {
+          portal = {
+            enable = true;
+            extraPortals = with pkgs; [
+              xdg-desktop-portal-gtk
+              xdg-desktop-portal-gnome
+            ];
+            config = {
+              niri = {
+                default = [
+                  "gtk"
+                  "gnome"
+                ];
+              };
+            };
+            xdgOpenUsePortal = true;
+          };
+        };
+        services = {
+          gnome = {
+            gnome-keyring = {
+              enable = true;
+            };
+          };
+        };
+        programs = {
+          nm-applet = {
+            enable = true;
+          };
+          niri = {
             enable = true;
           };
         };
       };
-      programs = {
-        nm-applet = {
-          enable = true;
-        };
-        niri = {
-          enable = true;
-        };
-      };
-    };
 
     homeManager.niri =
       {
