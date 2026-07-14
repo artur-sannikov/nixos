@@ -23,9 +23,6 @@
         gamescope = {
           enable = true;
         };
-        gamemode = {
-          enable = true;
-        };
       };
       environment = {
         sessionVariables = {
