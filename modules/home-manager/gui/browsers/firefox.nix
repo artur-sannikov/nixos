@@ -11,9 +11,11 @@
               "extensions.autoDisableScopes" = 0; # Automatically enable extensions
             };
             extensions = {
+              force = true;
               packages = with pkgs.nur.repos.rycee.firefox-addons; [
                 bitwarden
                 ublock-origin
+                vimium
               ];
               settings = {
                 "uBlock0@raymondhill.net" =
@@ -30,7 +32,6 @@
                     ];
                   in
                   {
-                    force = true;
                     settings = {
                       importedLists = customLists;
                       selectedFilterLists = [
@@ -62,6 +63,14 @@
                       advancedUserEnabled = true;
                     };
                   };
+                "{d7742d87-e61d-4b78-b8a1-b469842139fa}" = {
+                  force = true;
+                  settings = {
+                    keyMappings = ''
+                      map q scrollDown
+                    '';
+                  };
+                };
               };
             };
             search = {
