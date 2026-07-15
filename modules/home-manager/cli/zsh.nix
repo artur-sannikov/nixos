@@ -76,6 +76,11 @@
         };
       };
     nixos.cli = {
+      programs = {
+        zsh = {
+          enable = true; # Required to set user's shell
+        };
+      };
       environment = {
         # Required by programs.zsh.enableCompletion
         # See https://home-manager-options.extranix.com/?query=pathsToLink&release=master
