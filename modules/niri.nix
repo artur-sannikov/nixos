@@ -79,7 +79,10 @@
 
               binds = {
                 "Mod+Return".action.spawn = [ "kitty" ];
-                "Mod+Q".action.close-window = [ ];
+                # Note for future me:
+                # D is more natural for me because that's how I also close
+                # terminal windows
+                "Mod+D".action.close-window = [ ];
 
                 ### Focus ###
 
