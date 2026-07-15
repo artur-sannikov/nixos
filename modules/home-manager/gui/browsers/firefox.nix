@@ -63,14 +63,15 @@
                       advancedUserEnabled = true;
                     };
                   };
-                "{d7742d87-e61d-4b78-b8a1-b469842139fa}" = {
-                  force = true;
-                  settings = {
-                    keyMappings = ''
-                      map q scrollDown
-                    '';
-                  };
-                };
+                # TODO: hopefully one day it'll work
+                # "{d7742d87-e61d-4b78-b8a1-b469842139fa}" = {
+                #   force = true;
+                #   settings = {
+                #     keyMappings = ''
+                #       unmap j
+                #     '';
+                #   };
+                # };
               };
             };
             search = {
