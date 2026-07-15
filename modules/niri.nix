@@ -162,6 +162,21 @@
                   place-within-backdrop = true;
                 }
               ];
+              animations =
+                let
+                  animationSettings = {
+                    damping-ratio = 0.85;
+                    epsilon = 0.01;
+                    stiffness = 500;
+                  };
+                in
+                {
+                  window-open.kind.spring = animationSettings;
+                  window-close.kind.spring = animationSettings;
+                  window-movement.kind.spring = animationSettings;
+                  overview-open-close.kind.spring = animationSettings;
+                  horizontal-view-movement.kind.spring = animationSettings;
+                };
             };
           };
         };
