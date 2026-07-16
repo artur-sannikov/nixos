@@ -11,7 +11,7 @@
       }
       {
         mode = "n";
-        key = "<leader>b";
+        key = "<leader>,";
         action = "<cmd>:lua Snacks.picker.buffers()<CR>";
         options = {
           desc = "Search buffers";
@@ -72,7 +72,7 @@
       {
         key = "<leader>gp";
         mode = [ "n" ];
-        action = "<cmd>:lua Snacks.picker.gh_pr()<CR>";
+        action = "<cmd>lua Snacks.picker.gh_pr()<CR>";
         options = {
           desc = "GitHub Pull Requests (open)";
         };
@@ -80,12 +80,40 @@
       {
         key = "<leader>gP";
         mode = [ "n" ];
-        action = "<cmd>:lua Snacks.picker.gh_pr({ state = 'all' })<CR>";
+        action = "<cmd>lua Snacks.picker.gh_pr({ state = 'all' })<CR>";
         options = {
           desc = "GitHub Pull Requests (all)";
         };
       }
+
+      # Buffers
+      {
+        mode = "n";
+        key = "<leader>bd";
+        action = "<cmd>:lua Snacks.bufdelete.delete()<CR>";
+        options = {
+          silent = true;
+          desc = "Buffer delete";
+        };
+      }
+      {
+        mode = "n";
+        key = "<leader>ba";
+        action = "<cmd>lua Snacks.bufdelete.all()<CR>";
+        options = {
+          silent = true;
+          desc = "Buffer delete all";
+        };
+      }
+      {
+        mode = "n";
+        key = "<leader>bo";
+        action = "<cmd>:lua Snacks.bufdelete.other()<CR>";
+        options = {
+          silent = true;
+          desc = "Buffer delete other";
+        };
+      }
     ];
   };
-
 }
