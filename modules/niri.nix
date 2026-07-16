@@ -115,6 +115,7 @@
                 "Mod+Equal".action.set-column-width = "+10%";
 
                 "Mod+F".action.maximize-column = [ ];
+                "Mod+C".action.center-column = [ ];
 
                 # Floating window
                 "Mod+V".action.toggle-window-floating = [ ];
