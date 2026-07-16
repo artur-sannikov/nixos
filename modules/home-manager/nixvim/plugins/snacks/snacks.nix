@@ -6,6 +6,7 @@
         settings = {
           lazygit.enabled = false;
           bigfile.enabled = true;
+          image.enabled = true;
           dashboard = {
             enabled = true;
             preset = {
