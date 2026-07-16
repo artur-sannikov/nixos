@@ -10,6 +10,9 @@
 
       # Enable Wayland for Qt apps
       QT_QPA_PLATFORM = "wayland";
+
+      # For nice terminals
+      TERM = "xterm-256color";
     };
   };
 }

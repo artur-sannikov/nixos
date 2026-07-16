@@ -39,10 +39,6 @@
               chz-harper = "chezmoi re-add ~/.config/harper-ls/dictionary.txt";
 
             };
-            sessionVariables = {
-              LC_ALL = "en_US.UTF-8";
-              TERM = "xterm-256color";
-            };
             initContent = ''
                 # Disable underline
                 # See https://github.com/zsh-users/zsh-syntax-highlighting/issues/573
