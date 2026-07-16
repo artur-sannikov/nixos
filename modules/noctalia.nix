@@ -115,8 +115,11 @@
           };
           nightlight = {
             enabled = true;
-            start_time = "20:30";
-            stop_time = "07:00";
+            temperature_night = 4500;
+          };
+          location = {
+            sunrise = "07:30";
+            sunset = "21:00";
           };
           idle = {
             behavior = {
@@ -134,6 +137,7 @@
           };
           dock = {
             enabled = false;
+            show_instance_count = false;
           };
         };
       };
