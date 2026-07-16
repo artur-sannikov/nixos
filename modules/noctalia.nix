@@ -13,19 +13,47 @@
             enabled = true;
           };
           bar = {
+            # See default settings https://docs.noctalia.dev/v5/bar/#_top
+            # I force them to be this way
             main = {
-              enabled = true;
               position = "top";
+              enabled = true;
+              auto_hide = false;
+              smart_auto_hide = false;
+              show_on_workspace_switch = true;
+              reserve_space = true;
+              layer = "top";
+
+              thickness = 50;
               background_opacity = 0.75;
-              capsule_fill = "hover";
-              capsule_opacity = 0.75;
-              capsule_thickness = 0.7;
-              font_weight = 600;
+              border = "outline";
+              border_width = 0.0;
+              shadow = true;
+              contact_shadow = false;
+              panel_overlap = 1;
               radius = 68;
-              radius_bottom_right = 16;
-              scale = 1.2;
-              thickness = 35;
+              radius_top_left = 12;
+              radius_top_right = 12;
+              radius_bottom_left = 12;
+              radius_bottom_right = 12;
+              concave_edge_corners = true;
+              margin_ends = 100;
+              margin_edge = 0;
+              margin_opposite_edge = 0;
+              padding = 14;
               widget_spacing = 8;
+              hover_highlight = true;
+              scale = 1.35;
+              font_weight = 600;
+              font_family = "";
+
+              # Default capsule style for all widgets on this bar (see Widget Capsule section)
+              capsule = false;
+              capsule_fill = "surface_variant";
+              capsule_thickness = 0.76; # capsule size across the bar as a fraction of bar thickness (1.0 fills the bar)
+              capsule_radius = 8.0; # omit for automatic pill radius
+              capsule_opacity = 1.0;
+
               start = [
                 "ram"
                 "cpu"
