@@ -121,6 +121,7 @@
             sunrise = "07:30";
             sunset = "21:00";
           };
+          weather.enabled = false;
           idle = {
             behavior = {
               screen-off = {
