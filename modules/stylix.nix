@@ -18,8 +18,8 @@
           };
           fonts = rec {
             sizes = {
-              applications = 14;
-              terminal = 14;
+              applications = 16;
+              terminal = 16;
             };
             serif = {
               name = "UbuntuSans Nerd Font";
