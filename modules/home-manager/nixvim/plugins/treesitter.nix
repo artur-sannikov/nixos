@@ -14,10 +14,10 @@
             csv
             desktop
             dockerfile
-            git_config
-            git_rebase
             gitcommit
+            git_config
             gitignore
+            git_rebase
             hcl
             helm
             hjson
@@ -36,6 +36,7 @@
             nix
             passwd
             python
+            qmljs
             r
             readline
             regex
