@@ -6,7 +6,7 @@
     {
       plugins = {
         telescope = {
-          enable = true;
+          enable = false;
           extensions = {
             # https://github.com/nvim-telescope/telescope-fzf-native.nvim
             fzf-native = {
@@ -49,42 +49,33 @@
           };
         };
       };
-
-      keymaps = [
-        {
-          key = "<leader>fd";
-          mode = [ "n" ];
-          action = "<cmd>Telescope find_files<cr>";
-          options = {
-            desc = "Search files by name";
-          };
-        }
-        {
-          key = "<leader>fg";
-          mode = [ "n" ];
-          action = "<cmd>Telescope live_grep<cr>";
-          options = {
-            desc = "Search in files in cwd";
-          };
-        }
-        {
-          mode = "n";
-          key = "<leader>b";
-          action = "<cmd>Telescope buffers<cr>";
-          options = {
-            silent = true;
-            desc = "Telescope list buffers";
-          };
-        }
-        {
-          mode = "n";
-          key = "<leader>gc";
-          action = "<cmd>Telescope git_commits<cr>";
-          options = {
-            silent = true;
-            desc = "Telescope search commits";
-          };
-        }
-      ];
+      # keymaps = [
+      #   {
+      #     key = "<leader>fg";
+      #     mode = [ "n" ];
+      #     action = "<cmd>Telescope live_grep<cr>";
+      #     options = {
+      #       desc = "Search in files in cwd";
+      #     };
+      #   }
+      #   {
+      #     mode = "n";
+      #     key = "<leader>b";
+      #     action = "<cmd>Telescope buffers<cr>";
+      #     options = {
+      #       silent = true;
+      #       desc = "Telescope list buffers";
+      #     };
+      #   }
+      #   {
+      #     mode = "n";
+      #     key = "<leader>gc";
+      #     action = "<cmd>Telescope git_commits<cr>";
+      #     options = {
+      #       silent = true;
+      #       desc = "Telescope search commits";
+      #     };
+      #   }
+      # ];
     };
 }

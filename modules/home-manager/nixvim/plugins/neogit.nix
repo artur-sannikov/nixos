@@ -11,7 +11,7 @@
 
           integrations = {
             diffview = true;
-            telescope = true;
+            snacks = true;
           };
         };
       };

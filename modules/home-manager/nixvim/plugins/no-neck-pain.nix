@@ -6,10 +6,17 @@
         settings = {
           width = 150;
           autocmds = {
-            enableOnVimEnter = true;
+            # Not really needed on Niri since I can center the current column
+            enableOnVimEnter = false; # It enter when I open a buffer
             enableOnTabEnter = true;
             skipEnteringNoNeckPainBuffer = true;
           };
+          mappings = {
+            enabled = true;
+          };
+          # Integrate with snacks
+          # Supported dashboards here:
+          integrations.dashboard.enabled = true;
         };
       };
     };
