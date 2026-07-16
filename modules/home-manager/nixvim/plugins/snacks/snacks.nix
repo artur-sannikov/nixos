@@ -5,9 +5,11 @@
         enable = true;
         settings = {
           lazygit.enabled = false;
+          bigfile.enabled = true;
           dashboard = {
             enabled = true;
             preset = {
+              width = 40;
               keys = [
                 {
                   icon = "󱪞 ";
