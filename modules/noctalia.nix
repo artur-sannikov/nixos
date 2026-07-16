@@ -118,6 +118,7 @@
             temperature_night = 4500;
           };
           location = {
+            custom_schedule = true;
             sunrise = "07:30";
             sunset = "21:00";
           };
