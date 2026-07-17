@@ -19,6 +19,13 @@
         self.modules.nixos.amdgpu # Enables overclocking
         inputs.disko.nixosModules.disko
         inputs.lanzaboote.nixosModules.lanzaboote
+      ]
+      ++ [
+        {
+          home-manager.sharedModules = with inputs.self.modules.homeManager; [
+            desktop
+          ];
+        }
       ];
     };
   };
