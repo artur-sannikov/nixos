@@ -76,6 +76,10 @@
               ];
             };
           };
+          accessibility = {
+            ui_scale = 1.35; # content scale for panels and non-bar shell UI
+            high_contrast = false; # enable high contrast mode for visually impaired
+          };
           widget = {
             # For reference colors see https://catppuccin.com/palette/
             cpu = {
