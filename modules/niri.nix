@@ -75,6 +75,12 @@
               };
               layout = {
                 gaps = 5;
+                preset-column-widths = [
+                  { proportion = 1. / 3.; }
+                  { proportion = 1. / 2.; }
+                  { proportion = 2. / 3.; }
+                  { proportion = 3. / 3.; }
+                ];
               };
 
               binds = {
@@ -110,6 +116,8 @@
                 "Mod+2".action.set-column-width = "50%";
                 "Mod+3".action.set-column-width = "75%";
                 "Mod+4".action.set-column-width = "100%";
+
+                "Mod+R".action.switch-preset-column-width = [ ];
 
                 "Mod+Minus".action.set-column-width = "-10%";
                 "Mod+Equal".action.set-column-width = "+10%";
