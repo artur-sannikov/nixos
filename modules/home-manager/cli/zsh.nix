@@ -24,6 +24,7 @@
               ll = "exa -lbF --git --icons";
               cat = "bat";
               c = "clear";
+              cd = "z"; # Use zoxide instead of cd
               "tmux" = "direnv exec / tmux"; # Integration with direnv
               edit = "$EDITOR $(fzf)";
               rpw = "rbwpw"; # Copy password to clipboard
