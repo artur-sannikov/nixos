@@ -2,6 +2,12 @@
   flake.modules.nixvim.default = { lib, ... }: {
     plugins.snacks = {
       settings.picker = {
+        # What a weird bug
+        # Need to set this explicitly so that the picker opens the buffer
+        # in the current window EVEN if it's a terminal
+        # Without it the terminal remains fixed, and it opens in the other
+        # window
+        main.current = true;
         layout = "telescope";
         layouts.telescope = {
           reverse = false;
