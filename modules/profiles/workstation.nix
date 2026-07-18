@@ -26,6 +26,7 @@
       zramswap
       plasma-de # Plasma 6
       niri
+      dms
       networkmanager
       nix
 
@@ -53,8 +54,9 @@
       sops
       stylix
       niri
-      noctalia
+      # noctalia
       duplicacy-web
+      swaylock
     ];
   };
 }

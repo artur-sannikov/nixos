@@ -58,7 +58,7 @@
                 path = lib.getExe pkgs.xwayland-satellite;
               };
               spawn-at-startup = [
-                { command = [ "noctalia" ]; }
+                # { command = [ "noctalia" ]; }
                 {
                   command = [
                     "nm-applet" # Save wifi passwords between sessions
