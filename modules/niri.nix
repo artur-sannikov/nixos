@@ -57,15 +57,6 @@
                 enable = true;
                 path = lib.getExe pkgs.xwayland-satellite;
               };
-              spawn-at-startup = [
-                # { command = [ "noctalia" ]; }
-                {
-                  command = [
-                    "nm-applet" # Save wifi passwords between sessions
-                    "--indicator"
-                  ];
-                }
-              ];
               input = {
                 keyboard = {
                   xkb = {
@@ -131,16 +122,18 @@
 
                 # Noctalia bindings
                 "Mod+Space".action.spawn = [
-                  "noctalia"
-                  "msg"
-                  "panel-toggle"
-                  "launcher"
+                  "dms"
+                  "ipc"
+                  "call"
+                  "spotlight"
+                  "toggle"
                 ];
 
                 "Mod+S".action.spawn = [
-                  "noctalia"
-                  "msg"
-                  "settings-toggle"
+                  "dms"
+                  "ipc"
+                  "settings"
+                  "focusOrToggle"
                 ];
               };
 
@@ -166,14 +159,6 @@
                   matches = [ { app-id = "firefox"; } ];
                   open-maximized = true;
                 }
-              ];
-              layer-rules = [
-                {
-                  # Blurred wallpaper in the overview
-                  matches = [ { namespace = "^noctalia-backdrop"; } ];
-                  place-within-backdrop = true;
-                }
-
               ];
               animations = {
                 slowdown = 2.0; # Adjust the speed of the animation
