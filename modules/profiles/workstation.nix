@@ -50,6 +50,7 @@
       base
       cli
       contact
+      dms
       email
       sops
       stylix
