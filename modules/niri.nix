@@ -51,6 +51,7 @@
         programs = {
           niri = {
             settings = {
+              debug.honor-xdg-activation-with-invalid-serial = [ ];
               prefer-no-csd = true;
               # Xwayland
               xwayland-satellite = {
@@ -157,16 +158,23 @@
 
                   # Rounded corners
                   geometry-corner-radius = {
-                    top-left = 5.0;
-                    top-right = 5.0;
-                    bottom-right = 5.0;
-                    bottom-left = 5.0;
+                    top-left = 20.0;
+                    top-right = 20.0;
+                    bottom-right = 20.0;
+                    bottom-left = 20.0;
                   };
                   clip-to-geometry = true;
                 }
                 {
                   matches = [ { app-id = "librewolf"; } ];
                   open-maximized = true;
+                }
+                {
+                  # Floating Noctalia settings panel
+                  matches = [ { app-id = "dev.noctalia.Noctalia"; } ];
+                  open-floating = true;
+                  default-column-width.fixed = 1080;
+                  default-window-height.fixed = 920;
                 }
                 {
                   matches = [ { app-id = "firefox"; } ];
