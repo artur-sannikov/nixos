@@ -85,6 +85,31 @@
               };
 
               binds = {
+                "XF86AudioRaiseVolume".action.spawn = [
+                  "noctalia"
+                  "msg"
+                  "volume-up"
+                ];
+                "XF86AudioLowerVolume".action.spawn = [
+                  "noctalia"
+                  "msg"
+                  "volume-down"
+                ];
+                "XF86AudioMute".action.spawn = [
+                  "noctalia"
+                  "msg"
+                  "volume-mute"
+                ];
+                "XF86MonBrightnessUp".action.spawn = [
+                  "noctalia"
+                  "msg"
+                  "brightness-up"
+                ];
+                "XF86MonBrightnessDown".action.spawn = [
+                  "noctalia"
+                  "msg"
+                  "brightness-down"
+                ];
                 "Mod+Return".action.spawn = [ "kitty" ];
                 # Note for future me:
                 # D is more natural for me because that's how I also close
