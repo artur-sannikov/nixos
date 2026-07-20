@@ -12,6 +12,7 @@
           cabextract
           clinfo
           cyrus-sasl-xoauth2 # Required for mbsync email sync for outlook
+          ddcutil # To manage external displays
           dig
           dmidecode
           exfat
