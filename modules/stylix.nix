@@ -18,7 +18,7 @@
           };
           fonts = rec {
             sizes = {
-              applications = 16;
+              applications = 18;
               terminal = 16;
             };
             serif = {
