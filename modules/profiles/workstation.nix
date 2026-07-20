@@ -57,7 +57,6 @@
       niri
       # noctalia
       duplicacy-web
-      swaylock
     ];
   };
 }
