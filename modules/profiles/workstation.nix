@@ -26,7 +26,7 @@
       zramswap
       plasma-de # Plasma 6
       niri
-      dms
+      # dms
       networkmanager
       nix
 
@@ -50,12 +50,12 @@
       base
       cli
       contact
-      dms
+      # dms
       email
       sops
       stylix
       niri
-      # noctalia
+      noctalia
       duplicacy-web
     ];
   };

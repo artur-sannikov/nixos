@@ -57,6 +57,15 @@
                 enable = true;
                 path = lib.getExe pkgs.xwayland-satellite;
               };
+              spawn-at-startup = [
+                { command = [ "noctalia" ]; }
+                {
+                  command = [
+                    "nm-applet" # Save wifi passwords between sessions
+                    "--indicator"
+                  ];
+                }
+              ];
               input = {
                 keyboard = {
                   xkb = {
@@ -122,21 +131,25 @@
 
                 # Noctalia bindings
                 "Mod+Space".action.spawn = [
-                  "dms"
-                  "ipc"
-                  "call"
-                  "spotlight"
-                  "toggle"
+                  "noctalia"
+                  "msg"
+                  "panel-toggle"
+                  "launcher"
                 ];
 
                 "Mod+S".action.spawn = [
-                  "dms"
-                  "ipc"
-                  "settings"
-                  "focusOrToggle"
+                  "noctalia"
+                  "msg"
+                  "settings-toggle"
                 ];
               };
-
+              layer-rules = [
+                {
+                  # Blurred wallpaper in the overview
+                  matches = [ { namespace = "^noctalia-backdrop"; } ];
+                  place-within-backdrop = true;
+                }
+              ];
               window-rules = [
                 {
                   # Fix tinted background when using stylix
