@@ -25,12 +25,6 @@
                   # Move from Telescope???
                   action = ":lua Snacks.picker.files()";
                 }
-                # {
-                #   icon = "󰱽 ";
-                #   key = "f";
-                #   desc = "Find File";
-                #   action = "<cmd>Telescope find_files<CR>";
-                # }
                 {
                   icon = " ";
                   key = "p";
