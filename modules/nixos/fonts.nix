@@ -9,6 +9,7 @@
         corefonts
         dejavu_fonts
         font-awesome
+        dancing-script
         liberation_ttf
         nerd-fonts.iosevka
         nerd-fonts.iosevka-term
