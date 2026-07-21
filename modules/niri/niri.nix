@@ -47,6 +47,11 @@
         lib,
         ...
       }:
+      let
+        create-screenshot = pkgs.writeShellScript "create-screenshot" ''
+          ${pkgs.grim}/bin/grim -g "$(${pkgs.slurp}/bin/slurp -c '#ff0000ff')" - | ${pkgs.satty}/bin/satty --filename - --fullscreen --output-filename ~/Pictures/Screenshots/satty-$(date '+%Y%m%d-%H:%M:%S').png
+        '';
+      in
       {
         programs = {
           niri = {
@@ -164,9 +169,7 @@
                 ];
 
                 "Mod+S".action.spawn = [
-                  "noctalia"
-                  "msg"
-                  "settings-toggle"
+                  "${create-screenshot}"
                 ];
               };
               layer-rules = [

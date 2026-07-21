@@ -16,7 +16,7 @@
               {
                 box = "vertical",
                 backdrop = false,
-                width = 0.4,
+                width = 0.8,
                 height = 0.8,
                 border = "none",
               {
