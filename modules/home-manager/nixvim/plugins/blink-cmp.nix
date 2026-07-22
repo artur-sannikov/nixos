@@ -11,6 +11,17 @@
                 return not vim.tbl_contains({ "yaml.ansible" }, vim.bo.filetype)
               end
             '';
+            sources = {
+              providers = {
+                latex-symbols = {
+                  module = "blink-cmp-latex";
+                  name = "Latex";
+                  opts = {
+                    insert_command = false;
+                  };
+                };
+              };
+            };
             completion = {
               ghost_text = {
                 enabled = true;

@@ -105,6 +105,11 @@
           harper_ls = {
             enable = true;
           };
+
+          # LaTeX
+          texlab = {
+            enable = true;
+          };
         };
       };
     };
