@@ -11,7 +11,14 @@
                 return not vim.tbl_contains({ "yaml.ansible" }, vim.bo.filetype)
               end
             '';
+            snippets.preset = "luasnip"; # See luasnip plugin
             sources = {
+              default = [
+                "lsp"
+                "path"
+                "snippets"
+                "buffer"
+              ];
               providers = {
                 latex-symbols = {
                   module = "blink-cmp-latex";
