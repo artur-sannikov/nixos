@@ -1,11 +1,11 @@
 {
   flake.modules.nixvim.default =
-    { pkgs, ... }:
+    { config, ... }:
     {
       plugins = {
         treesitter = {
           enable = true;
-          grammarPackages = with pkgs.vimPlugins.nvim-treesitter.builtGrammars; [
+          grammarPackages = with config.plugins.treesitter.package.builtGrammars; [
             bash
             bibtex
             caddy
