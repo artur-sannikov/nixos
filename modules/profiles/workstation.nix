@@ -57,6 +57,7 @@
       niri
       noctalia
       duplicacy-web
+      virtualization
     ];
   };
 }
