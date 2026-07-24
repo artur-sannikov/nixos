@@ -33,6 +33,8 @@
       podman-auto-update
       metube
 
+      mimetypes
+
       # User
       users-artur
     ];
@@ -58,6 +60,7 @@
       noctalia
       duplicacy-web
       virtualization
+      mimetypes
     ];
   };
 }
