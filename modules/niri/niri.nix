@@ -129,6 +129,10 @@
                 "Mod+K".action.focus-window-or-workspace-up = [ ];
                 "Mod+J".action.focus-window-or-workspace-down = [ ];
 
+                # Monitors
+                "Mod+Ctrl+H".action.focus-monitor-left = [ ];
+                "Mod+Ctrl+L".action.focus-monitor-right = [ ];
+
                 # Overview
                 "Mod+O" = {
                   repeat = false;
