@@ -154,6 +154,9 @@
             sunrise = "07:30";
             sunset = "21:00";
           };
+          brightness = {
+            enable_ddcutil = true; # Control brightness with ddcutil
+          };
           weather.enabled = false;
           idle = {
             behavior = {
