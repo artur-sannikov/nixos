@@ -15,6 +15,13 @@
         self.modules.nixos.workstation-work
         self.modules.nixos.laptop
         inputs.lanzaboote.nixosModules.lanzaboote
+      ]
+      ++ [
+        {
+          home-manager.sharedModules = with inputs.self.modules.homeManager; [
+            workstation-work
+          ];
+        }
       ];
     };
   };
