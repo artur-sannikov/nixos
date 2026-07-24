@@ -157,6 +157,12 @@
           brightness = {
             enable_ddcutil = true; # Control brightness with ddcutil
           };
+          control_center = {
+            hidden_tabs = [
+              "weather"
+              "screen-time"
+            ];
+          };
           weather.enabled = false;
           idle = {
             behavior = {
