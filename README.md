@@ -108,6 +108,17 @@ rm /tmp/id_ed25519*
 
 ```
 
+After loading the minimal NixOS ISO, run the commands:
+
+```shell
+sudo su
+passwd
+# insert root password
+```
+
+During the installation you will be promoted to insert the root password
+several types.
+
 ## Configuration Mirrors
 
 This configuration is available on my own [Forgejo
