@@ -45,3 +45,14 @@ deploy host:
     else
         nix run github:serokell/deploy-rs .#{{ host }}
     fi
+
+boot-deploy host:
+    #!/usr/bin/env bash
+    if [ "{{ host }}" = "homelab-nixos" ]; then
+        ssh -t pve2 'qm snapshot 108 update_$(date -d "today" +"%Y%m%d%H%M")'
+        nix run github:serokell/deploy-rs .#{{ host }} -- --boot && \
+        ssh -t {{ host }} 'sudo reboot now'
+    else
+        nix run github:serokell/deploy-rs .#{{ host }} -- --boot && \
+        ssh -t {{ host }} 'sudo reboot now'
+    fi
