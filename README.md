@@ -90,7 +90,7 @@ machine and add it to `pass`.
 
 ```shell
 cd /tmp
-ssh-keygen ./id_ed25519
+ssh-keygen -f ./id_ed25519
 # This will overwrite the entry
 pass insert --multiline --force nixos_anywhere_ed25519_hostkey < /tmp/id_ed25519
 nix-shell -p ssh-to-age --run 'cat /tmp/id_ed25519.pub | ssh-to-age'
