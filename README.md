@@ -95,7 +95,7 @@ ssh-keygen -f ./id_ed25519
 pass insert --multiline --force nixos_anywhere_ed25519_hostkey < /tmp/id_ed25519
 nix-shell -p ssh-to-age --run 'cat /tmp/id_ed25519.pub | ssh-to-age'
 
-# Add the generate age key to sops.yaml
+# Add the generate age key to .sops.yaml
 
 Then update the key
 sops --config ../nix-secrets/.sops.yaml updatekeys ../nix-secrets/secrets.yaml
