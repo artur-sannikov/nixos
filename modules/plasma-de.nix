@@ -1,4 +1,4 @@
-{ lib, ... }:
+{ lib, inputs, ... }:
 {
   flake.modules.nixos.plasma-de =
     { pkgs, ... }:
@@ -29,4 +29,9 @@
         };
       };
     };
+  flake.modules.homeManager.plasma-de = {
+    imports = [
+      inputs.plasma-manager.homeModules.plasma-manager
+    ];
+  };
 }
