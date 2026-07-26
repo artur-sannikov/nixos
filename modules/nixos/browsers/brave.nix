@@ -103,6 +103,9 @@ in
           BraveWebDiscoveryEnabled = false;
           TorDisabled = true;
           BravePlaylistEnabled = false;
+
+          # https://chromeenterprise.google/policies/#PromptForDownloadLocation
+          PromptForDownloadLocation = false;
         };
       };
     };

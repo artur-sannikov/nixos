@@ -14,6 +14,12 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    plasma-manager = {
+      url = "github:nix-community/plasma-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.home-manager.follows = "home-manager";
+    };
+
     # Some hardware configurations
     # https://github.com/NixOS/nixos-hardware
     nixos-hardware = {
@@ -54,9 +60,7 @@
 
     # Nice editor
     # https://nix-community.github.io/nixvim/
-    nixvim = {
-      url = "git+https://git.asannikov.com/artur/nixvim.git";
-    };
+    nixvim.url = "github:nix-community/nixvim";
 
     # Remap keyboard keys
     # https://github.com/xremap/nix-flake
@@ -80,6 +84,26 @@
 
     import-tree = {
       url = "github:vic/import-tree";
+    };
+
+    noctalia = {
+      url = "github:noctalia-dev/noctalia";
+    };
+
+    niri = {
+      # url = "github:sodiboo/niri-flake";
+      url = "github:epireyn/niri-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    nur = {
+      url = "github:nix-community/NUR";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    dms = {
+      url = "github:AvengeMedia/DankMaterialShell/stable";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 

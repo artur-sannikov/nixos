@@ -24,11 +24,13 @@
               ll = "exa -lbF --git --icons";
               cat = "bat";
               c = "clear";
+              cd = "z"; # Use zoxide instead of cd
               "tmux" = "direnv exec / tmux"; # Integration with direnv
               edit = "$EDITOR $(fzf)";
               rpw = "rbwpw"; # Copy password to clipboard
               # See issue here https://sw.kovidgoyal.net/kitty/faq/#i-get-errors-about-the-terminal-being-unknown-or-opening-the-terminal-failing-or-functional-keys-like-arrow-keys-don-t-work
               s = "kitten ssh";
+              meteo = "curl https://fi.wttr.in/Turku";
 
               # Chezmoi re-add dictionary
               # I add new words to ~/.config/harper-ls/dictionary.txt from Neovim
@@ -38,10 +40,6 @@
               # It's also possible to run a timer that would re-add it periodically
               chz-harper = "chezmoi re-add ~/.config/harper-ls/dictionary.txt";
 
-            };
-            sessionVariables = {
-              LC_ALL = "en_US.UTF-8";
-              TERM = "xterm-256color";
             };
             initContent = ''
                 # Disable underline
@@ -76,6 +74,11 @@
         };
       };
     nixos.cli = {
+      programs = {
+        zsh = {
+          enable = true; # Required to set user's shell
+        };
+      };
       environment = {
         # Required by programs.zsh.enableCompletion
         # See https://home-manager-options.extranix.com/?query=pathsToLink&release=master

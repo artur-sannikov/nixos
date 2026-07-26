@@ -1,10 +1,14 @@
 {
   flake.modules.homeManager.gui =
-    { pkgs, ... }:
+    { config, pkgs, ... }:
     let
       settings = {
         # Enable Firefox sync
         "identity.fxaccounts.enabled" = true;
+
+        # Enable backup
+        "browser.backup.scheduled.enabled" = true;
+        "browser.backup.location" = "${config.xdg.userDirs.documents}/Restore Firefox";
 
         # Disable menu pop-up at alt press
         "ui.key.menuAccessKeyFocuses" = false;
@@ -52,6 +56,17 @@
 
             # https://mozilla.github.io/policy-templates/#translateenabled
             TranslateEnabled = true;
+
+            # https://mozilla.github.io/policy-templates/#promptfordownloadlocation
+            PromptForDownloadLocation = true;
+
+            # Disable password save offer
+            OfferToSaveLogins = false;
+
+            Preferences = {
+              "browser.download.deletePrivate" = true; # Delete private window downloads on close
+              "browser.download.deletePrivate.chosen" = true;
+            };
           };
         };
       };

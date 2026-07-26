@@ -4,6 +4,15 @@
     home.sessionVariables = {
       EDITOR = "nvim";
       MANPAGER = "nvim +Man!";
+
+      # Enable Wayland for Electron apps
+      NIXOS_OZONE_WL = "1";
+
+      # Enable Wayland for Qt apps
+      QT_QPA_PLATFORM = "wayland";
+
+      # For nice terminals
+      TERM = "xterm-256color";
     };
   };
 }

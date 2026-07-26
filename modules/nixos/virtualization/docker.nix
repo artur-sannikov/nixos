@@ -14,4 +14,16 @@
       };
     };
   };
+  flake.modules.homeManager.virtualization = { pkgs, ... }: {
+    home.packages = with pkgs; [ docker-credential-helpers ];
+    programs.docker-cli = {
+      enable = true;
+      settings = {
+        credsStore = "pass";
+        credHelpers = {
+          "ghcr.io" = "pass";
+        };
+      };
+    };
+  };
 }

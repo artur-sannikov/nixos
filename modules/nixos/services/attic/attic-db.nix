@@ -5,7 +5,7 @@
         enable = true;
         enableJIT = true;
         enableTCPIP = false;
-        package = pkgs.postgresql_17_jit;
+        package = pkgs.postgresql_18_jit;
         settings = {
           port = 5432;
           max_connections = 100;

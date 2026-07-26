@@ -12,6 +12,7 @@
           cabextract
           clinfo
           cyrus-sasl-xoauth2 # Required for mbsync email sync for outlook
+          ddcutil # To manage external displays
           dig
           dmidecode
           exfat
@@ -19,8 +20,6 @@
           gcc
           gparted
           inxi
-          # kdePackages.isoimagewriter
-          # koboldcpp
           libva-utils
           lm_sensors
           mesa-demos

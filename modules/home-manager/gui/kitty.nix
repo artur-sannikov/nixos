@@ -29,7 +29,8 @@
         };
         keybindings = {
           # Scrollback in Neovim
-          "ctrl+s" = "show_scrollback";
+          # ctrl+s conflicts with neovim gh snacks plugin
+          "ctrl+shift+s" = "show_scrollback";
           "ctrl+f>c" = "new_tab";
           "ctrl+[" = "next_window";
           "ctrl+]" = "previous_window";

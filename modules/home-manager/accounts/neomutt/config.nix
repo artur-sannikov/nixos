@@ -25,6 +25,7 @@
             mailcap_path = "${mailcap_file}";
             query_command = ''"${pkgs.khard}/bin/khard email --parsable %s"'';
             pager_index_lines = "10"; # threaded style in index
+            sidebar_width = "15";
           };
           extraConfig = ''
             # settings
@@ -109,75 +110,58 @@
             # sidebar
             set sidebar_folder_indent
             set mail_check_stats
-            set sidebar_width = 15                        # width in screen columns
 
-            # See https://seniormars.com/posts/neomutt/
-            # Default index colors:
-            color index yellow default '.*'
-            color index_author green default '.*'
-            color index_number blue default
-            color index_subject white default '.*'
+            ### Color scheme ###
 
-            # For new mail:
-            color index brightyellow black "~N"
-            color index_author brightgreen black "~N"
-            color index_subject brightwhite black "~N"
+            # https://github.com/catppuccin/neomutt/blob/main/neomuttrc
+            # Catppuccin Mocha (Modified)
+            color normal		  default default         # Text is "Text"
+            color index		    color2 default ~N       # New Messages are Green
+            color index		    color1 default ~F       # Flagged messages are Red
+            color index		    color13 default ~T      # Tagged Messages are Red
+            color index		    color1 default ~D       # Messages to delete are Red
+            color attachment	color5 default          # Attachments are Pink
+            color signature	  color8 default          # Signatures are Surface 2
+            color search		  color4 default          # Highlighted results are Blue
+
+            color indicator		default color8          # currently highlighted message Surface 2=Background Text=Foreground
+            color error		    color1 default          # error messages are Red
+            color status		  color15 default         # status line "Subtext 0"
+            color tree        color15 default         # thread tree arrows Subtext 0
+            color tilde       color15 default         # blank line padding Subtext 0
 
             # Header colors:
-            color header blue default ".*"
-            color header brightmagenta default "^(From)"
-            color header brightwhite default "^(Subject)"
-            color header brightcyan default "^(CC|BCC)"
+            color header		  color13 default "^Date:" # Pink
+            color header		  color1 default "^From:" # Red
+            color header		  color13 default "^To:" # Pink
+            color header	 	  color14 default "^Subject:" # Bright Teal
+            color header      color15 default "^(CC|BCC)" # White
 
+            color quoted		  color15 default         # Subtext 0
+            color quoted1		  color7 default          # Subtext 1
+            color quoted2		  color8 default          # Surface 2
+            color quoted3		  color0 default          # Surface 1
+            color quoted4		  color0 default
+            color quoted5		  color0 default
+
+            color body		color2 default		[\-\.+_a-zA-Z0-9]+@[\-\.a-zA-Z0-9]+               # email addresses Green
+            color body	  color2 default		(https?|ftp)://[\-\.,/%~_:?&=\#a-zA-Z0-9]+        # URLs Green
+            color body		color4 default		(^|[[:space:]])\\*[^[:space:]]+\\*([[:space:]]|$) # *bold* text Blue
+            color body		color4 default		(^|[[:space:]])_[^[:space:]]+_([[:space:]]|$)     # _underlined_ text Blue
+            color body		color4 default		(^|[[:space:]])/[^[:space:]]+/([[:space:]]|$)     # /italic/ text Blue
+
+            color sidebar_flagged   color1 default    # Mailboxes with flagged mails are Red
+            color sidebar_new       color10 default   # Mailboxes with new mail are Green
+
+            # Other aesthetics
+            # Taken from https://seniormars.com/posts/neomutt/
+            # https://github.com/SeniorMars/dotfiles/blob/main/.config/mutt/colors.muttrc
             mono bold bold
             mono underline underline
             mono indicator reverse
             mono error bold
-            color normal default default
-            color indicator brightblack white
-            color sidebar_highlight red default
-            color sidebar_divider brightblack black
-            color sidebar_flagged red black
-            color sidebar_new green black
-            color normal brightyellow default
-            color error red default
-            color tilde black default
-            color message cyan default
-            color markers red white
-            color attachment white default
-            color search brightmagenta default
-            color status brightyellow black
-            color hdrdefault brightgreen default
-            color quoted green default
-            color quoted1 blue default
-            color quoted2 cyan default
-            color quoted3 yellow default
-            color quoted4 red default
-            color quoted5 brightred default
-            color signature brightgreen default
-            color bold black default
-            color underline black default
-            color normal default default
-
-            color body brightcyan default "[\-\.+_a-zA-Z0-9]+@[\-\.a-zA-Z0-9]+" # Email addresses
-            color body brightblue default "(https?|ftp)://[\-\.,/%~_:?&=\#a-zA-Z0-9]+" # URL
-            color body green default "\`[^\`]*\`" # Green text between ` and `
-            color body brightblue default "^# \.*" # Headings as bold blue
-            color body brightcyan default "^## \.*" # Subheadings as bold cyan
-            color body brightgreen default "^### \.*" # Subsubheadings as bold green
-            color body yellow default "^(\t| )*(-|\\*) \.*" # List items as yellow
-            color body brightcyan default "[;:][-o][)/(|]" # emoticons
-            color body brightcyan default "[;:][)(|]" # emoticons
-            color body brightcyan default "[ ][*][^*]*[*][ ]?" # more emoticon?
-            color body brightcyan default "[ ]?[*][^*]*[*][ ]" # more emoticon?
-            color body red default "(BAD signature)"
-            color body cyan default "(Good signature)"
-            color body brightblack default "^gpg: Good signature .*"
-            color body brightyellow default "^gpg: "
-            color body brightyellow red "^gpg: BAD signature from.*"
             mono body bold "^gpg: Good signature"
             mono body bold "^gpg: BAD signature from.*"
-            color body red default "([a-z][a-z0-9+-]*://(((([a-z0-9_.!~*'();:&=+$,-]|%[0-9a-f][0-9a-f])*@)?((([a-z0-9]([a-z0-9-]*[a-z0-9])?)\\.)*([a-z]([a-z0-9-]*[a-z0-9])?)\\.?|[0-9]+\\.[0-9]+\\.[0-9]+\\.[0-9]+)(:[0-9]+)?)|([a-z0-9_.!~*'()$,;:@&=+-]|%[0-9a-f][0-9a-f])+)(/([a-z0-9_.!~*'():@&=+$,-]|%[0-9a-f][0-9a-f])*(;([a-z0-9_.!~*'():@&=+$,-]|%[0-9a-f][0-9a-f])*)*(/([a-z0-9_.!~*'():@&=+$,-]|%[0-9a-f][0-9a-f])*(;([a-z0-9_.!~*'():@&=+$,-]|%[0-9a-f][0-9a-f])*)*)*)?(\\?([a-z0-9_.!~*'();/?:@&=+$,-]|%[0-9a-f][0-9a-f])*)?(#([a-z0-9_.!~*'();/?:@&=+$,-]|%[0-9a-f][0-9a-f])*)?|(www|ftp)\\.(([a-z0-9]([a-z0-9-]*[a-z0-9])?)\\.)*([a-z]([a-z0-9-]*[a-z0-9])?)\\.?(:[0-9]+)?(/([-a-z0-9_.!~*'():@&=+$,]|%[0-9a-f][0-9a-f])*(;([-a-z0-9_.!~*'():@&=+$,]|%[0-9a-f][0-9a-f])*)*(/([-a-z0-9_.!~*'():@&=+$,]|%[0-9a-f][0-9a-f])*(;([-a-z0-9_.!~*'():@&=+$,]|%[0-9a-f][0-9a-f])*)*)*)?(\\?([-a-z0-9_.!~*'();/?:@&=+$,]|%[0-9a-f][0-9a-f])*)?(#([-a-z0-9_.!~*'();/?:@&=+$,]|%[0-9a-f][0-9a-f])*)?)[^].,:;!)? \t\r\n<>\"]"
           '';
         };
       };

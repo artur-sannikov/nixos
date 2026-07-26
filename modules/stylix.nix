@@ -6,6 +6,10 @@
         imports = [ inputs.stylix.nixosModules.stylix ];
         stylix = {
           enable = true;
+          image = pkgs.fetchurl {
+            url = "https://raw.githubusercontent.com/zhichaoh/catppuccin-wallpapers/refs/heads/main/landscapes/Cloudsday.jpg";
+            hash = "sha256-+EkcQlbWPGud6dvRNqB+yRe8T1UsNAenwrLgFLy3G2A=";
+          };
           targets = {
             # Explicitly enable fonts
             fontconfig = {
@@ -14,8 +18,8 @@
           };
           fonts = rec {
             sizes = {
-              applications = 14;
-              terminal = 14;
+              applications = 18;
+              terminal = 16;
             };
             serif = {
               name = "UbuntuSans Nerd Font";
@@ -44,8 +48,8 @@
             size = 32;
           };
           opacity = {
-            terminal = 0.95;
-            desktop = 0.95;
+            terminal = 0.85;
+            desktop = 0.85;
           };
         };
       };
@@ -55,6 +59,11 @@
             nixvim = {
               enable = false;
             };
+          };
+        };
+        home = {
+          pointerCursor = {
+            enable = true;
           };
         };
       };

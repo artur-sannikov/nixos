@@ -10,18 +10,24 @@
         # List of binary cache URLs that non-root users can use
         trusted-substituters = [
           "https://rstats-on-nix.cachix.org"
+          "noctalia.cachix.org-1:pCOR47nnMEo5thcxNDtzWpOxNFQsBRglJzxWPp3dkU4="
         ];
         trusted-public-keys = [
           "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
           "numtide.cachix.org-1:2ps1kLBUWjxIneOy1Ik6cQjb41X0iXVXeHigGmycPPE="
           "rstats-on-nix.cachix.org-1:vdiiVgocg6WeJrODIqdprZRUrhi1JzhBnXv7aWI6+F0="
-          "main:qry3jdoFrVZ1PwPUhJaZix3S2LBLE6fRMXoxk/yNvvQ="
+          "main:Jn9sx6cavlFxmR9YrBjRomNlCpATM2fnzbsUSRGS/S4="
+          "niri-epireyn.cachix.org-1:tlVyFN7CtsDT+ZcLPS+ekFWeT1X6X4OqvWqbBMyIzFA="
+          "noctalia.cachix.org-1:pCOR47nnMEo5thcxNDtzWpOxNFQsBRglJzxWPp3dkU4="
         ];
         # Only used by Nix
         substituters = [
           "https://nix-community.cachix.org"
           "https://numtide.cachix.org"
           "https://cache.asannikov.com/main"
+          # "https://niri.cachix.org"
+          "https://niri-epireyn.cachix.org" # From this fork https://github.com/epireyn/niri-flake
+          "https://noctalia.cachix.org"
         ];
         experimental-features = [
           "nix-command"

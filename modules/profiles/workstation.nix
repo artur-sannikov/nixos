@@ -12,6 +12,7 @@
       email
       fwupd
       nvme-rs
+      nur
       qmk
       gui # zoom and browsers
       cli
@@ -24,11 +25,15 @@
       locale
       zramswap
       plasma-de # Plasma 6
+      niri
+      # dms
       networkmanager
       nix
 
       podman-auto-update
       metube
+
+      mimetypes
 
       # User
       users-artur
@@ -47,10 +52,15 @@
       base
       cli
       contact
+      # dms
       email
       sops
       stylix
+      niri
+      noctalia
       duplicacy-web
+      virtualization
+      mimetypes
     ];
   };
 }

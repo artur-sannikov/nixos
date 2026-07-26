@@ -1,0 +1,49 @@
+{
+  flake.modules.nixvim.default = { lib, ... }: {
+    plugins.snacks = {
+      settings.picker = {
+        # What a weird bug
+        # Need to set this explicitly so that the picker opens the buffer
+        # in the current window EVEN if it's a terminal
+        # Without it the terminal remains fixed, and it opens in the other
+        # window
+        main.current = true;
+        layout = "telescope";
+        layouts.telescope = {
+          reverse = false;
+          # Way to make it nix-native?
+          layout = lib.generators.mkLuaInline ''
+              {
+                box = "vertical",
+                backdrop = false,
+                width = 0.8,
+                height = 0.8,
+                border = "none",
+              {
+                win = "preview",
+                title = "{preview:Preview}",
+                height = 0.45,
+                border = true,
+                title_pos = "center",
+              },
+              {
+                win = "input",
+                height = 1,
+                border = true,
+                title = "{title} {live} {flags}",
+                title_pos = "center",
+              },
+              {
+                win = "list",
+                title = " Results ",
+                height = 0.45,
+                title_pos = "center",
+                border = true,
+              },
+            }
+          '';
+        };
+      };
+    };
+  };
+}

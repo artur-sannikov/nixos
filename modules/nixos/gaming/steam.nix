@@ -8,6 +8,10 @@
     {
       programs = {
         steam = {
+          # From https://github.com/fufexan/nix-gaming
+          platformOptimizations = {
+            enable = true;
+          };
           enable = true;
           protontricks = {
             enable = true;
@@ -15,18 +19,8 @@
           extraCompatPackages = with pkgs; [
             proton-ge-bin
           ];
-          # gamescopeSession = {
-          #   enable = true;
-          #   env = {
-          #     DXVK_HDR = "1";
-          #     ENABLE_GAMESCOPE_WSI = "1";
-          #   };
-          # };
         };
         gamescope = {
-          enable = true;
-        };
-        gamemode = {
           enable = true;
         };
       };

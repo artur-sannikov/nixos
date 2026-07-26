@@ -1,5 +1,5 @@
 {
-  flake.modules.nixos.users-artur = { config, ... }: {
+  flake.modules.nixos.users-artur = { config, pkgs, ... }: {
     sops = {
       secrets = {
         artur_passwd = {
@@ -12,6 +12,7 @@
         artur = {
           isNormalUser = true;
           hashedPasswordFile = config.sops.secrets.artur_passwd.path;
+          shell = pkgs.zsh;
           extraGroups = [
             "wheel"
           ];

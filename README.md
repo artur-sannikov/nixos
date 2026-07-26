@@ -44,8 +44,17 @@ this.
 
 ## Nixvim
 
-My Nixvim configuration is standalone and can be found
-[here](https://git.asannikov.com/artur/nixvim).
+Nixvim is available as a flake output from this repo. To start it, run
+
+```shell
+nix run "git+https://codeberg.org/arsann/nixos#nvim"
+```
+
+Or if you want to use the `devel` branch:
+
+```shell
+nix run "git+https://codeberg.org/arsann/nixos?ref=devel#nvim"
+```
 
 ## Stuff to Do Manually
 
@@ -81,12 +90,12 @@ machine and add it to `pass`.
 
 ```shell
 cd /tmp
-ssh-keygen ./id_ed25519
+ssh-keygen -f ./id_ed25519
 # This will overwrite the entry
 pass insert --multiline --force nixos_anywhere_ed25519_hostkey < /tmp/id_ed25519
 nix-shell -p ssh-to-age --run 'cat /tmp/id_ed25519.pub | ssh-to-age'
 
-# Add the generate age key to sops.yaml
+# Add the generate age key to .sops.yaml
 
 Then update the key
 sops --config ../nix-secrets/.sops.yaml updatekeys ../nix-secrets/secrets.yaml
@@ -98,6 +107,17 @@ nix flake update nix-secrets
 rm /tmp/id_ed25519*
 
 ```
+
+After loading the minimal NixOS ISO, run the commands:
+
+```shell
+sudo su
+passwd
+# insert root password
+```
+
+During the installation you will be promoted to insert the root password
+several types.
 
 ## Configuration Mirrors
 
