@@ -63,6 +63,9 @@
           };
           setupLspCapabilities = true;
         };
+        blink-cmp-latex = {
+          enable = true;
+        };
       };
     };
 }
