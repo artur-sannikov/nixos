@@ -60,6 +60,10 @@
               { section = "keys"; }
             ];
           };
+          notifier = {
+            enabled = true;
+            timeout = 10000; # 10 sec
+          };
         };
       };
     };
