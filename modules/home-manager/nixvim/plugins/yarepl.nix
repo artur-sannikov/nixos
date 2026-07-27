@@ -15,32 +15,32 @@
         })
       ];
       extraConfigLua = builtins.readFile ./yarepl.lua;
-      keymaps = [
-        {
-          mode = "n";
-          key = "<leader>rs";
-          action = "<Plug>(yarepl-start)";
-        }
-        {
-          mode = "n";
-          key = "<leader>rc";
-          action = "<Plug>(yarepl-close)";
-        }
-        {
-          mode = "n";
-          key = "<leader>rr";
-          action = "<Plug>(yarepl-send-line)j";
-        }
-        {
-          mode = "v";
-          key = "<leader>rr";
-          action = "<Plug>(yarepl-source-visual)";
-        }
-        {
-          mode = "n";
-          key = "<leader>rf";
-          action = "<Plug>(yarepl-focus)";
-        }
-      ];
+      # keymaps = [
+      #   {
+      #     mode = "n";
+      #     key = "<leader>rs";
+      #     action = "<Plug>(yarepl-start)";
+      #   }
+      #   {
+      #     mode = "n";
+      #     key = "<leader>rc";
+      #     action = "<Plug>(yarepl-close)";
+      #   }
+      #   {
+      #     mode = "n";
+      #     key = "<leader>rr";
+      #     action = "<Plug>(yarepl-send-line)j";
+      #   }
+      #   {
+      #     mode = "v";
+      #     key = "<leader>rr";
+      #     action = "<Plug>(yarepl-source-visual)";
+      #   }
+      #   {
+      #     mode = "n";
+      #     key = "<leader>rf";
+      #     action = "<Plug>(yarepl-focus)";
+      #   }
+      # ];
     };
 }

@@ -9,12 +9,13 @@
             languages = [
               "r"
               "python"
+              "html"
             ];
             chunks = "curly";
           };
           codeRunner = {
-            enabled = true;
-            default_method = "molten";
+            # Use iron.nvim
+            enabled = false;
           };
         };
       };
