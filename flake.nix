@@ -8,6 +8,9 @@
     nixpkgs-stable = {
       url = "github:nixos/nixpkgs/nixos-26.05";
     };
+    nixpkgs-master = {
+      url = "github:NixOS/nixpkgs/master";
+    };
 
     home-manager = {
       url = "github:nix-community/home-manager";

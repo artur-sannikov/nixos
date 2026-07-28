@@ -1,12 +1,14 @@
 { inputs, self, ... }:
 let
   unfreePackages = [
+    "corefonts" # Microsoft fonts
     "duplicacy-web"
     "obsidian"
     "slack"
     "steam"
     "steam-unwrapped"
     "via"
+    "vista-fonts"
     "wezterm.nvim"
     "zoom"
   ];
@@ -19,7 +21,11 @@ let
     (final: _: {
       stable = import inputs.nixpkgs-stable {
         inherit (final.stdenv.hostPlatform) system;
-        config.allowUnfree = true;
+        config = nixpkgsConfig;
+      };
+      master = import inputs.nixpkgs-master {
+        inherit (final.stdenv.hostPlatform) system;
+        config = nixpkgsConfig;
       };
     })
   ]
