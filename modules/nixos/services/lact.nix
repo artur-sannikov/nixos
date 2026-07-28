@@ -1,9 +1,12 @@
 {
-  flake.modules.nixos.lact = {
-    services = {
-      lact = {
-        enable = true;
+  flake.modules.nixos.lact =
+    { pkgs, ... }:
+    {
+      services = {
+        lact = {
+          package = pkgs.stable.lact;
+          enable = true;
+        };
       };
     };
-  };
 }
