@@ -37,6 +37,10 @@
           };
           niri = {
             enable = true;
+            package = pkgs.niri.override {
+              # See fix here https://github.com/NixOS/nixpkgs/pull/546004
+              libdisplay-info = pkgs.master.libdisplay-info_0_3;
+            };
           };
         };
       };
