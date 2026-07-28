@@ -6,5 +6,6 @@
         package = pkgs.llama-cpp-rocm;
       };
     };
+    environment.systemPackages = [ pkgs.llama-cpp-rocm ];
   };
 }
