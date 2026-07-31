@@ -1,247 +1,155 @@
-{ inputs, ... }:
 {
   flake.modules = {
-    nixos.niri =
-      { pkgs, ... }:
-      {
-        imports = [ inputs.niri.nixosModules.niri ];
-        # Required for Niri
-        xdg = {
-          portal = {
-            enable = true;
-            extraPortals = with pkgs; [
-              xdg-desktop-portal-gtk
-              xdg-desktop-portal-gnome
-            ];
-            config = {
-              niri = {
-                default = [
-                  "gtk"
-                  "gnome"
-                ];
-              };
-            };
-            xdgOpenUsePortal = true;
-          };
+    nixos.niri = {
+      programs = {
+        niri = {
+          enable = true;
         };
-        services = {
-          gnome = {
-            gnome-keyring = {
-              enable = true;
-            };
-          };
-        };
-        programs = {
-          nm-applet = {
+      };
+      services = {
+        gnome = {
+          gnome-keyring = {
             enable = true;
-          };
-          niri = {
-            enable = true;
-            package = pkgs.niri.override {
-              # See fix here https://github.com/NixOS/nixpkgs/pull/546004
-              libdisplay-info = pkgs.master.libdisplay-info_0_3;
-            };
           };
         };
       };
+      programs = {
+        nm-applet = {
+          enable = true;
+        };
+      };
+    };
 
     homeManager.niri =
-      {
-        pkgs,
-        lib,
-        ...
-      }:
+      { pkgs, ... }:
       let
         create-screenshot = pkgs.writeShellScript "create-screenshot" ''
           ${pkgs.grim}/bin/grim -g "$(${pkgs.slurp}/bin/slurp -c '#ff0000ff')" - | ${pkgs.satty}/bin/satty --filename - --fullscreen --output-filename ~/Pictures/Screenshots/satty-$(date '+%Y%m%d-%H:%M:%S').png
         '';
       in
       {
-        programs = {
+        wayland.windowManager = {
           niri = {
+            enable = true;
             settings = {
-              debug.honor-xdg-activation-with-invalid-serial = [ ];
+              debug.honor-xdg-activation-with-invalid-serial = { };
+
               prefer-no-csd = true;
-              # Xwayland
-              xwayland-satellite = {
-                enable = true;
-                path = lib.getExe pkgs.xwayland-satellite;
-              };
-              spawn-at-startup = [
-                { command = [ "noctalia" ]; }
-                {
-                  command = [
-                    "nm-applet" # Save wifi passwords between sessions
-                    "--indicator"
-                  ];
-                }
-              ];
-              input = {
-                keyboard = {
-                  xkb = {
-                    layout = "us,ru,fi";
-                  };
-                };
-              };
+
+              input.keyboard.xkb.layout = "us,ru,fi";
+
               layout = {
                 gaps = 5;
-                preset-column-widths = [
-                  { proportion = 1. / 3.; }
-                  { proportion = 1. / 2.; }
-                  { proportion = 2. / 3.; }
-                  { proportion = 3. / 3.; }
+
+                preset-column-widths._children = [
+                  { proportion = 1.0 / 3.0; }
+                  { proportion = 1.0 / 2.0; }
+                  { proportion = 2.0 / 3.0; }
+                  { proportion = 3.0 / 3.0; }
                 ];
               };
 
               binds = {
-                "XF86AudioRaiseVolume".action.spawn = [
+                "XF86AudioRaiseVolume".spawn = [
                   "noctalia"
                   "msg"
                   "volume-up"
                 ];
-                "XF86AudioLowerVolume".action.spawn = [
+
+                "XF86AudioLowerVolume".spawn = [
                   "noctalia"
                   "msg"
                   "volume-down"
                 ];
-                "XF86AudioMute".action.spawn = [
+
+                "XF86AudioMute".spawn = [
                   "noctalia"
                   "msg"
                   "volume-mute"
                 ];
-                "XF86MonBrightnessUp".action.spawn = [
+
+                "XF86MonBrightnessUp".spawn = [
                   "noctalia"
                   "msg"
                   "brightness-up"
                 ];
-                "XF86MonBrightnessDown".action.spawn = [
+
+                "XF86MonBrightnessDown".spawn = [
                   "noctalia"
                   "msg"
                   "brightness-down"
                 ];
-                "Mod+Return".action.spawn = [ "kitty" ];
-                # Note for future me:
-                # D is more natural for me because that's how I also close
-                # terminal windows
-                "Mod+D".action.close-window = [ ];
 
-                ### Focus ###
+                "Mod+Return".spawn = [ "kitty" ];
 
-                # Windows
-                "Mod+H".action.focus-column-left = [ ];
-                "Mod+L".action.focus-column-right = [ ];
-                "Mod+K".action.focus-window-or-workspace-up = [ ];
-                "Mod+J".action.focus-window-or-workspace-down = [ ];
+                "Mod+D".close-window = { };
 
-                # Monitors
-                "Mod+Ctrl+H".action.focus-monitor-left = [ ];
-                "Mod+Ctrl+L".action.focus-monitor-right = [ ];
+                # Focus: windows
+                "Mod+H".focus-column-left = { };
+                "Mod+L".focus-column-right = { };
+                "Mod+K".focus-window-or-workspace-up = { };
+                "Mod+J".focus-window-or-workspace-down = { };
+
+                # Focus: monitors
+                "Mod+Ctrl+H".focus-monitor-left = { };
+                "Mod+Ctrl+L".focus-monitor-right = { };
 
                 # Overview
                 "Mod+O" = {
-                  repeat = false;
-                  action.toggle-overview = [ ];
+                  _props.repeat = false;
+                  toggle-overview = { };
                 };
 
                 # Move
-                "Mod+Shift+H".action.move-column-left = [ ];
-                "Mod+Shift+L".action.move-column-right = [ ];
-                "Mod+Shift+K".action.move-column-to-workspace-up = [ ];
-                "Mod+Shift+J".action.move-column-to-workspace-down = [ ];
+                "Mod+Shift+H".move-column-left = { };
+                "Mod+Shift+L".move-column-right = { };
+                "Mod+Shift+K".move-column-to-workspace-up = { };
+                "Mod+Shift+J".move-column-to-workspace-down = { };
 
-                # Width of columns
-                "Mod+Shift+F".action.fullscreen-window = [ ];
-                "Mod+1".action.set-column-width = "25%";
-                "Mod+2".action.set-column-width = "50%";
-                "Mod+3".action.set-column-width = "75%";
-                "Mod+4".action.set-column-width = "100%";
+                # Column widths
+                "Mod+Shift+F".fullscreen-window = { };
 
-                "Mod+R".action.switch-preset-column-width = [ ];
+                "Mod+1".set-column-width = "25%";
+                "Mod+2".set-column-width = "50%";
+                "Mod+3".set-column-width = "75%";
+                "Mod+4".set-column-width = "100%";
 
-                "Mod+Minus".action.set-column-width = "-10%";
-                "Mod+Equal".action.set-column-width = "+10%";
+                "Mod+R".switch-preset-column-width = { };
 
-                "Mod+F".action.maximize-column = [ ];
-                "Mod+C".action.center-column = [ ];
+                "Mod+Minus".set-column-width = "-10%";
+                "Mod+Equal".set-column-width = "+10%";
 
-                # Floating window
-                "Mod+V".action.toggle-window-floating = [ ];
-                "Mod+Shift+V".action.switch-focus-between-floating-and-tiling = [ ];
+                "Mod+F".maximize-column = { };
+                "Mod+C".center-column = { };
 
-                # Noctalia bindings
-                "Mod+Space".action.spawn = [
+                # Floating windows
+                "Mod+V".toggle-window-floating = { };
+                "Mod+Shift+V".switch-focus-between-floating-and-tiling = { };
+
+                # Noctalia
+                "Mod+Space".spawn = [
                   "noctalia"
                   "msg"
                   "panel-toggle"
                   "launcher"
                 ];
 
-                "Mod+S".action.spawn = [
-                  "${create-screenshot}"
-                ];
+                "Mod+S".spawn = [ "${create-screenshot}" ];
               };
-              layer-rules = [
-                {
-                  # Blurred wallpaper in the overview
-                  matches = [ { namespace = "^noctalia-backdrop"; } ];
-                  place-within-backdrop = true;
-                }
-              ];
-              window-rules = [
-                {
-                  # Fix tinted background when using stylix
-                  draw-border-with-background = false;
 
-                  # Rounded corners
-                  geometry-corner-radius = {
-                    top-left = 5.0;
-                    top-right = 5.0;
-                    bottom-right = 5.0;
-                    bottom-left = 5.0;
-                  };
-                  clip-to-geometry = true;
-                }
-                {
-                  matches = [ { app-id = "librewolf"; } ];
-                  open-maximized = true;
-                }
-                {
-                  # Floating Noctalia settings panel
-                  matches = [ { app-id = "dev.noctalia.Noctalia"; } ];
-                  open-floating = true;
-                  default-column-width.fixed = 1080;
-                  default-window-height.fixed = 920;
-                }
-                {
-                  matches = [ { app-id = "firefox"; } ];
-                  open-maximized = true;
-                }
-              ];
               animations = {
-                slowdown = 2.0; # Adjust the speed of the animation
-                # Credits to https://github.com/jgarza9788/niri-animation-collection
-                /*
-                  Title: glide
-                  Authors: Justin Garza <JGarza9788@gmail.com>
-                  Desc: a softer Apple-like glide preset for niri.
-                  Demo: ./demos/glide.gif
-                  Notes:
-                  - Smooth, polished, low-bounce motion.
-                  - Open is slightly more luxurious than close.
-                  - Uses custom shaders where niri supports them.
-                */
+                slowdown = 2.0;
 
                 window-open = {
-                  kind.easing = {
-                    duration-ms = 260;
-                    curve = "cubic-bezier";
-                    curve-args = [
-                      0.22
-                      1.0
-                      0.36
-                      1.0
-                    ];
-                  };
+                  duration-ms = 260;
+
+                  curve._args = [
+                    "cubic-bezier"
+                    0.22
+                    1.0
+                    0.36
+                    1.0
+                  ];
 
                   custom-shader = ''
                     vec4 open_color(vec3 coords_geo, vec3 size_geo) {
@@ -273,19 +181,18 @@
                 };
 
                 window-close = {
-                  kind.easing = {
-                    duration-ms = 180;
-                    curve = "cubic-bezier";
-                    curve-args = [
-                      0.32
-                      0.0
-                      0.67
-                      0.0
-                    ];
-                  };
+                  duration-ms = 260;
+
+                  curve._args = [
+                    "cubic-bezier"
+                    0.32
+                    0.0
+                    0.67
+                    0.0
+                  ];
 
                   custom-shader = ''
-                    vec4 close_color(vec3 coords_geo, vec3 size_geo) {
+                        vec4 close_color(vec3 coords_geo, vec3 size_geo) {
                         float p = niri_clamped_progress;
                         float inv = 1.0 - p;
 
@@ -313,14 +220,16 @@
                 };
 
                 window-resize = {
-                  kind.spring = {
+                  spring._props = {
                     damping-ratio = 1.0;
                     stiffness = 720;
                     epsilon = 0.0001;
                   };
 
                   custom-shader = ''
-                    vec4 resize_color(vec3 coords_curr_geo, vec3 size_curr_geo) {
+                        vec4 resize_color(vec3 coords_curr_geo, vec3 size_curr_geo) {
+                        // Show the next texture, but with a very mild softening
+                        // toward the edges during motion for a less harsh resize feel.
                         vec3 coords_tex_next = niri_geo_to_tex_next * coords_curr_geo;
                         vec4 color = texture2D(niri_tex_next, coords_tex_next.st);
 
@@ -336,60 +245,147 @@
                   '';
                 };
 
-                workspace-switch.kind.spring = {
+                workspace-switch.spring._props = {
                   damping-ratio = 1.0;
                   stiffness = 760;
                   epsilon = 0.0001;
                 };
 
-                horizontal-view-movement.kind.spring = {
+                horizontal-view-movement.spring._props = {
                   damping-ratio = 1.0;
                   stiffness = 640;
                   epsilon = 0.0001;
                 };
 
-                window-movement.kind.spring = {
+                window-movement.spring._props = {
                   damping-ratio = 1.0;
                   stiffness = 700;
                   epsilon = 0.0001;
                 };
 
-                config-notification-open-close.kind.spring = {
+                config-notification-open-close.spring._props = {
                   damping-ratio = 1.0;
                   stiffness = 820;
                   epsilon = 0.001;
                 };
 
-                exit-confirmation-open-close.kind.spring = {
+                exit-confirmation-open-close.spring._props = {
                   damping-ratio = 1.0;
                   stiffness = 560;
                   epsilon = 0.01;
                 };
 
-                screenshot-ui-open.kind.easing = {
+                screenshot-ui-open = {
                   duration-ms = 220;
-                  curve = "cubic-bezier";
-                  curve-args = [
-                    0.22
-                    1.0
-                    0.36
-                    1.0
+
+                  curve._args = [
+                    "cubic-bezier"
+                    0.32
+                    0.0
+                    0.67
+                    0.0
                   ];
                 };
 
-                overview-open-close.kind.spring = {
+                overview-open-close.spring._props = {
                   damping-ratio = 1.0;
                   stiffness = 620;
                   epsilon = 0.0001;
                 };
 
-                # not implemented yet
-                # recent-windows-close.kind.spring = {
-                #   damping-ratio = 1.0;
-                #   stiffness = 680;
-                #   epsilon = 0.001;
-                # };
+                recent-windows-close.spring._props = {
+                  damping-ratio = 1.0;
+                  stiffness = 680;
+                  epsilon = 0.001;
+                };
               };
+
+              _children = [
+                {
+                  spawn-at-startup._args = [ "noctalia" ];
+                }
+                {
+                  spawn-at-startup._args = [
+                    "nm-applet"
+                    "--indicator"
+                  ];
+                }
+
+                {
+                  layer-rule._children = [
+                    {
+                      match._props.namespace = "^noctalia-backdrop";
+                    }
+                    {
+                      place-within-backdrop = true;
+                    }
+                  ];
+                }
+
+                {
+                  window-rule._children = [
+                    {
+                      draw-border-with-background = false;
+                    }
+                    {
+                      geometry-corner-radius = 5.0;
+                    }
+                    {
+                      clip-to-geometry = true;
+                    }
+                  ];
+                }
+
+                {
+                  window-rule._children = [
+                    {
+                      match._props.app-id = "dev.noctalia.Noctalia";
+                    }
+                    {
+                      open-floating = true;
+                    }
+                    {
+                      default-column-width.fixed = 1080;
+                    }
+                    {
+                      default-window-height.fixed = 920;
+                    }
+                  ];
+                }
+
+                {
+                  window-rule._children = [
+                    {
+                      match._props.app-id = "librewolf";
+                    }
+                    {
+                      open-maximized = true;
+                    }
+                  ];
+                }
+
+                {
+                  window-rule._children = [
+                    {
+                      match._props.app-id = "firefox";
+                    }
+                    {
+                      open-maximized = true;
+                    }
+                  ];
+                }
+
+                {
+                  window-rule._children = [
+                    {
+                      match._props.app-id = "brave-browser";
+                    }
+                    {
+                      open-maximized = true;
+                    }
+                  ];
+                }
+              ];
             };
           };
         };
