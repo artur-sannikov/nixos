@@ -6,6 +6,7 @@
       gaming
       xremap
       sillytavern
+      mullvad-vpn
     ];
     users = {
       users = {
