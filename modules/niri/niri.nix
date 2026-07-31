@@ -36,7 +36,14 @@
 
               prefer-no-csd = true;
 
-              input.keyboard.xkb.layout = "us,ru,fi";
+              input = {
+                touchpad = {
+                  tap = { };
+                  dwt = { }; # Disable while typing
+                  natural-scroll = { };
+                };
+                keyboard.xkb.layout = "us,ru,fi";
+              };
 
               layout = {
                 gaps = 5;
