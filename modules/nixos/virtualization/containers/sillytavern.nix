@@ -16,6 +16,7 @@
             volumes = [
               "/home/${username}/podman/sillytavern/config:/home/node/app/config"
               "/home/${username}/podman/sillytavern/data:/home/node/app/data"
+              "/home/${username}/podman/sillytavern/plugins:/home/node/app/plugins"
             ];
           };
         };
