@@ -11,41 +11,46 @@
     ];
   };
   flake.modules.homeManager.workstation-work = {
-    programs.niri.settings = {
-      outputs = {
-        "eDP-1" = {
-          scale = 1.25;
-          mode = {
-            width = 1920;
-            height = 1080;
-            refresh = 60.002;
-          };
-          position = {
-            x = 0;
-            y = 0;
-          };
-        };
-        "HDMI-A-1" = {
-          mode = {
-            width = 1920;
-            height = 1080;
-            refresh = 74.973;
-          };
-          position = {
-            x = 1536; # Logical pixels 1920 / 1.25 (scale of eDP-1)
-            y = 0;
-          };
-        };
-        "DP-5" = {
-          mode = {
-            width = 1920;
-            height = 1080;
-            refresh = 74.973;
-          };
-          position = {
-            x = 3456; # 1536 + 1920
-            y = 0;
-          };
+    wayland.windowManager = {
+      niri = {
+        settings = {
+          _children = [
+            {
+              output = {
+                _args = [ "ePD1" ];
+                mode = "1920x1080@60.002";
+                scale = 1.25;
+                position._props = {
+                  x = 0;
+                  y = 0;
+                };
+              };
+            }
+            {
+              output = {
+                _args = [ "HDMI-A-1" ];
+
+                mode = "1920x1080@74.973";
+
+                position._props = {
+                  x = 1536; # Logical pixels: 1920 / 1.25
+                  y = 0;
+                };
+              };
+            }
+            {
+              output = {
+                _args = [ "DP-5" ];
+
+                mode = "1920x1080@74.973";
+
+                position._props = {
+                  x = 3456; # 1536 + 1920
+                  y = 0;
+                };
+              };
+            }
+          ];
         };
       };
     };
