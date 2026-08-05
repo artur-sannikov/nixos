@@ -1,24 +1,27 @@
 {
   flake.modules = {
-    nixos.niri = {
-      programs = {
-        niri = {
-          enable = true;
+    nixos.niri =
+      { lib, ... }:
+      {
+        services.displayManager.defaultSession = lib.mkForce "niri";
+        programs = {
+          niri = {
+            enable = true;
+          };
         };
-      };
-      services = {
-        gnome = {
-          gnome-keyring = {
+        services = {
+          gnome = {
+            gnome-keyring = {
+              enable = true;
+            };
+          };
+        };
+        programs = {
+          nm-applet = {
             enable = true;
           };
         };
       };
-      programs = {
-        nm-applet = {
-          enable = true;
-        };
-      };
-    };
 
     homeManager.niri =
       { pkgs, ... }:
