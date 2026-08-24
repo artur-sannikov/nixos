@@ -17,7 +17,7 @@
           _children = [
             {
               output = {
-                _args = [ "ePD1" ];
+                _args = [ "eDP-1" ];
                 mode = "1920x1080@60.002";
                 scale = 1.25;
                 position._props = {
