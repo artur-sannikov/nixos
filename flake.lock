@@ -446,11 +446,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1787797243,
-        "narHash": "sha256-8+Q7NOB7RPajRjA4pbCDLzqH+MTjnG9x6LUPLfL2joA=",
+        "lastModified": 1788199093,
+        "narHash": "sha256-gh09zTgEsbnoWwrNPzIDajc/HoE446Sc3yKDCPFa7Xs=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "99c9ec63390f1d8c14d95d9e8b17cc29cfbd4e11",
+        "rev": "f772b7f968365e7b2b70a860c509d214639556fe",
         "type": "github"
       },
       "original": {
@@ -461,11 +461,11 @@
     },
     "import-tree": {
       "locked": {
-        "lastModified": 1784254960,
-        "narHash": "sha256-iI88R3wHz8wTKQb5orvpc51L/Xr64AJyxid/0MKa/b8=",
+        "lastModified": 1788210572,
+        "narHash": "sha256-iDArQutSbrjtMQLUIc32iSb6tFqjl6IJU3cA8p8isuM=",
         "owner": "vic",
         "repo": "import-tree",
-        "rev": "4ebb10ae17d5f1ad366e7aef5b92cb8eecf24f69",
+        "rev": "8961e2418a12a71e08943c9f3d8cf6dbbc3cd172",
         "type": "github"
       },
       "original": {
@@ -510,11 +510,11 @@
         "xwayland-satellite-unstable": "xwayland-satellite-unstable"
       },
       "locked": {
-        "lastModified": 1788119116,
-        "narHash": "sha256-LvuLRFljwbOpaQ+X6sWAD/penYTCqHEVf6AxQcBHDlo=",
+        "lastModified": 1788213334,
+        "narHash": "sha256-6PRmrhsaXmlvTZwmDWCYhY9imieGmXV+5nV+J/fIsP0=",
         "owner": "epireyn",
         "repo": "niri-flake",
-        "rev": "8c4cf2a8d3e42ca2db41b884eef333e674ecc09f",
+        "rev": "ba85e0972a0917588cfd0322827433d4a449f4ef",
         "type": "github"
       },
       "original": {
@@ -676,11 +676,11 @@
     },
     "nixpkgs-master": {
       "locked": {
-        "lastModified": 1788138364,
-        "narHash": "sha256-E5yRmjfjWFXS3oS6xu4QYE4e4OTdJbav+UXkGIZhDpg=",
+        "lastModified": 1788224772,
+        "narHash": "sha256-yz1jfzHPZYEIso87jKC4b+nAE3av41Xg6KKEt6RSiJs=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "4f9b802c865f1ad2bd54c0b93a8314913c1f027b",
+        "rev": "bfad2537c0807306d956c067db06b6e5885289af",
         "type": "github"
       },
       "original": {
@@ -753,11 +753,11 @@
     },
     "nixpkgs_4": {
       "locked": {
-        "lastModified": 1788039129,
-        "narHash": "sha256-pa4Q0qErvCvzCaaUph7Sm37RhR4xvPrYI8Lgz6k85+A=",
+        "lastModified": 1788179007,
+        "narHash": "sha256-hn1oU2rue2SYK8dAr8+WNZWtbsz1S2W5mnHlSEuh3bo=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "d2f67949798825fe853f7c5d0492b8bf016d3f88",
+        "rev": "34ab99075ac4f7e40cf037eef32cb1c360bb85e9",
         "type": "github"
       },
       "original": {
@@ -819,11 +819,11 @@
         "systems": "systems_2"
       },
       "locked": {
-        "lastModified": 1787862710,
-        "narHash": "sha256-dL1Tv7LekaTWUJxHRckjbupWczDdc3QOgRuVCM+WAvQ=",
+        "lastModified": 1788190018,
+        "narHash": "sha256-59BAfH0txPAZrPBF4QJqwvUWppD+ICrcjA1LZAmPnrQ=",
         "owner": "nix-community",
         "repo": "nixvim",
-        "rev": "8c096abcf376137527c134da4ee210332b08ccc0",
+        "rev": "41844750e55f17b1385d5b09ca7ade5f11f49506",
         "type": "github"
       },
       "original": {
@@ -837,11 +837,11 @@
         "nixpkgs": "nixpkgs_6"
       },
       "locked": {
-        "lastModified": 1788125858,
-        "narHash": "sha256-CIAwVQWtDSFiGulRQlLALXfdoJDUrtXBEtctSxXuCXQ=",
+        "lastModified": 1788210390,
+        "narHash": "sha256-5M/5G9LuA1S2TXTL0JzTCc1aCxQbWma3wIUYtu00x/Y=",
         "owner": "noctalia-dev",
         "repo": "noctalia",
-        "rev": "da34acc58d6c3c5733ebe95caaeb6086cc96d7de",
+        "rev": "15151333352501ee6483fce94520e6ae1875f48a",
         "type": "github"
       },
       "original": {
@@ -858,11 +858,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1788137285,
-        "narHash": "sha256-5s8qnkQKG3Oaer0RxI90TRuHyOgaFfxMXsxYQbSvONI=",
+        "lastModified": 1788225505,
+        "narHash": "sha256-n24Sc338VK2uikkGx2u02dV8JvvdY5Sa8BkV7zfZ0Lw=",
         "owner": "nix-community",
         "repo": "NUR",
-        "rev": "707c16e677418b03d235a4f15c9580e37daa7512",
+        "rev": "0c16ad562f9dcb95c169663074f9aea8674524fe",
         "type": "github"
       },
       "original": {
