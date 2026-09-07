@@ -26,10 +26,6 @@
             name = "Artur Sannikov";
             email = "git-sign@asannikov.com";
           };
-          core = {
-            # Does not work if not explicitly set?
-            excludesFile = "${config.xdg.configHome}/git/ignore";
-          };
           init = {
             defaultBranch = "main";
           };
