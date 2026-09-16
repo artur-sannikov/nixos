@@ -17,7 +17,6 @@
       options = [
         "nofail"
         "noauto"
-        "_netdev"
         "user"
       ];
     };
