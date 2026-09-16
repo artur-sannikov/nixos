@@ -1,10 +1,5 @@
 {
   flake.modules.nixos.gui = { pkgs, ... }: {
-    # Workaround from https://github.com/NixOS/nixpkgs/issues/546204
-    environment.sessionVariables.XDG_DATA_DIRS = [
-      "${pkgs.gsettings-desktop-schemas}/share/gsettings-schemas/${pkgs.gsettings-desktop-schemas.name}"
-      "${pkgs.gtk3}/share/gsettings-schemas/${pkgs.gtk3.name}"
-    ];
     programs.firefox = {
       enable = true;
       # Use arkenfox hardening
