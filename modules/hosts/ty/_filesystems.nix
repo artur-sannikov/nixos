@@ -11,8 +11,8 @@
       ];
     };
     "/mnt/my-passport-newton" = {
-      device = "/dev/disk/by-uuid/eb48c10f-643b-4c05-8b40-2341664535c2";
-      fsType = "btrfs";
+      device = "/dev/disk/by-uuid/c98b96a0-c640-4c02-8a36-90b36d8425f0";
+      fsType = "ext4";
       options = [
         "nofail"
         "noauto"
