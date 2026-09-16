@@ -1,3 +1,4 @@
+{ username, ... }:
 {
   fileSystems = {
     "/mnt/nas/backup" = {
@@ -20,6 +21,9 @@
         "user"
       ];
     };
-
   };
+
+  systemd.tmpfiles.rules = [
+    "d /mnt/my-passport-newton 0775 ${username} users -"
+  ];
 }
