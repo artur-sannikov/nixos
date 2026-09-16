@@ -14,13 +14,13 @@
         monero-gui
         picard
         signal-desktop
+        rustdesk-flutter
         telegram-desktop
         tor-browser
       ]
       ++ (with pkgs.stable; [
         calibre
         flacon
-        rustdesk-flutter
       ]);
   };
 }
