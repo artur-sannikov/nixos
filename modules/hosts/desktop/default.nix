@@ -17,6 +17,7 @@
         self.modules.nixos.workstation-personal
         self.modules.nixos.desktop
         self.modules.nixos.amdgpu # Enables overclocking
+        self.modules.nixos.borg-backup-desktop
         inputs.disko.nixosModules.disko
         inputs.lanzaboote.nixosModules.lanzaboote
       ]
