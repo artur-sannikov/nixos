@@ -14,6 +14,7 @@
         ./_filesystems.nix
         self.modules.nixos.workstation-work
         self.modules.nixos.laptop
+        self.modules.nixos.borg-backup-ty
         inputs.lanzaboote.nixosModules.lanzaboote
       ]
       ++ [
