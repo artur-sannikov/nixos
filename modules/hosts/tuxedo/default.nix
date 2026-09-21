@@ -16,6 +16,7 @@
         ./_filesystems.nix
         self.modules.nixos.workstation-personal
         self.modules.nixos.laptop
+        self.modules.nixos.borg-backup-tuxedo
         self.modules.nixos.tuxedo-drivers # This is tuxedo machine
         inputs.nixos-hardware.nixosModules.tuxedo-infinitybook-pro14-gen9-amd
         self.modules.nixos.zfs
