@@ -2,6 +2,7 @@
   flake.modules.nixos.borg-backup-tuxedo =
     {
       config,
+      lib,
       pkgs,
       username,
       ...
@@ -16,10 +17,16 @@
         };
       };
       # Load ntfy topic and access token as systemd credential
-      systemd.services.borgmatic.serviceConfig = {
-        LoadCredential = [
-          "borgmatic_ntfy_token:${config.sops.secrets."borg/borgmatic-ntfy-token".path}"
-        ];
+      systemd = {
+        timers.borgmatic.timerConfig = {
+          OnCalendar = lib.mkForce "*-*-* */4:00:00";
+          Persistent = true;
+        };
+        services.borgmatic.serviceConfig = {
+          LoadCredential = [
+            "borgmatic_ntfy_token:${config.sops.secrets."borg/borgmatic-ntfy-token".path}"
+          ];
+        };
       };
       services.borgmatic = {
         enable = true;
