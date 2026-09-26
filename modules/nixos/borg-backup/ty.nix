@@ -17,7 +17,7 @@
         };
       };
       systemd = {
-        temd.timers.borgmatic.timerConfig = {
+        timers.borgmatic.timerConfig = {
           OnCalendar = lib.mkForce "*-*-* */4:00:00";
           Persistent = true;
         };
