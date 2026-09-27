@@ -1,7 +1,12 @@
 { self, inputs, ... }:
 {
   flake.modules.nixos.forgejo-private =
-    { config, pkgs, ... }:
+    {
+      config,
+      lib,
+      pkgs,
+      ...
+    }:
     let
       forgejoRootUrl = "https://forgejo.${inputs.nix-secrets.domain}";
       forgejoDomain = "git.${inputs.nix-secrets.domain}";
@@ -54,38 +59,65 @@
             };
           };
         };
-        gitea-actions-runner = {
-          package = pkgs.forgejo-runner;
+        forgejo-runner = {
           instances = {
-            default = {
+            renovate = {
               enable = true;
-              name = "renovate";
-              url = forgejoRootUrl;
-              tokenFile = config.sops.secrets."forgejo/private/forgejo-runner-token".path;
-              labels = [
-                "debian-latest:docker://node:24-trixie"
-              ];
+              settings = {
+                runner = {
+                  capacity = 1;
+                  labels = [
+                    "debian-latest:docker://node:24-trixie"
+                  ];
+                };
+                server.connections.default = {
+                  url = forgejoRootUrl;
+                  uuid = "7f57fb1e-2e87-4b0b-b077-d323f6e2a9bb";
+                  token_url = "file:$CREDENTIALS_DIRECTORY/forgejo-runner-renovate-token";
+                };
+              };
             };
             main = {
               enable = true;
-              name = "main";
-              url = forgejoRootUrl;
-              tokenFile = config.sops.secrets."forgejo/private/forgejo-runner-main-token".path;
-              labels = [
-                "debian-latest:docker://node:24-trixie"
-              ];
+              settings = {
+                runner = {
+                  capacity = 1;
+                  labels = [
+                    "debian-latest:docker://node:24-trixie"
+                  ];
+                };
+                server.connections.default = {
+                  url = forgejoRootUrl;
+                  uuid = "9550eee9-e735-46cf-9d71-9bb2c5c93513";
+                  token_url = "file:$CREDENTIALS_DIRECTORY/forgejo-runner-main-token";
+                };
+              };
             };
           };
         };
       };
 
       systemd = {
-        # systemd timer to delete old Forgejo action containers
-        # Forgejo action containers are updated and pulled automatically
-        # They are not deleted automatically and occupy a lot of space.
-        # That's the only way I found to delete the old images
-        # I use binaries from pkgs as the safest approach of running programs
         services = {
+          forgejo-runner-renovate.serviceConfig = {
+            ExecStartPre = lib.mkForce [ ];
+            LoadCredential = "forgejo-runner-renovate-token:${
+              config.sops.secrets."forgejo/private/forgejo-runner-token".path
+            }";
+          };
+
+          forgejo-runner-main.serviceConfig = {
+            ExecStartPre = lib.mkForce [ ];
+            LoadCredential = "forgejo-runner-main-token:${
+              config.sops.secrets."forgejo/private/forgejo-runner-main-token".path
+            }";
+          };
+
+          # systemd timer to delete old Forgejo action containers
+          # Forgejo action containers are updated and pulled automatically
+          # They are not deleted automatically and occupy a lot of space.
+          # That's the only way I found to delete the old images
+          # I use binaries from pkgs as the safest approach of running programs
           podman-cleanup = {
             description = "Clean up renovate images";
             serviceConfig = {
