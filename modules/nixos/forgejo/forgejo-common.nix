@@ -42,6 +42,7 @@
       };
       virtualisation = {
         podman = {
+          package = pkgs.podman-old.podman;
           enable = true;
         };
       };

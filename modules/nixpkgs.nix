@@ -27,6 +27,9 @@ let
         inherit (final.stdenv.hostPlatform) system;
         config = nixpkgsConfig;
       };
+      podman-old = import inputs.nixpkgs-podman {
+        inherit (final.stdenv.hostPlatform) system;
+      };
     })
   ]
   ++ builtins.attrValues self.overlays;
