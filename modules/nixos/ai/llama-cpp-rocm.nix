@@ -3,9 +3,9 @@
     services = {
       llama-cpp = {
         enable = true;
-        package = pkgs.stable.llama-cpp-rocm;
+        package = pkgs.llama-cpp-rocm;
       };
     };
-    environment.systemPackages = [ pkgs.stable.llama-cpp-rocm ];
+    environment.systemPackages = [ pkgs.llama-cpp-rocm ];
   };
 }

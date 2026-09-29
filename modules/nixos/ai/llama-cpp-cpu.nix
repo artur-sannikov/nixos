@@ -3,7 +3,7 @@
     services = {
       llama-cpp = {
         enable = true;
-        package = pkgs.stable.llama-cpp;
+        package = pkgs.llama-cpp;
         settings = {
           models-preset = (pkgs.formats.ini { }).generate "models-preset.ini" {
             "gemma-4-E2B" = {
