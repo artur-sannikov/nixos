@@ -110,11 +110,15 @@
                   toggle-overview = { };
                 };
 
-                # Move
+                # Move: workspaces
                 "Mod+Shift+H".move-column-left = { };
                 "Mod+Shift+L".move-column-right = { };
                 "Mod+Shift+K".move-column-to-workspace-up = { };
                 "Mod+Shift+J".move-column-to-workspace-down = { };
+
+                # Move: monitors
+                "Mod+Ctrl+Shift+H".move-workspace-to-monitor-left = { };
+                "Mod+Ctrl+Shift+L".move-workspace-to-monitor-right = { };
 
                 # Column widths
                 "Mod+Shift+F".fullscreen-window = { };
