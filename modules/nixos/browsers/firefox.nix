@@ -75,14 +75,6 @@
         # Disable password save offer
         OfferToSaveLogins = false;
 
-        # https://mozilla.github.io/policy-templates/#dnsoverhttps
-        DNSOverHTTPS = {
-          Enabled = true;
-          ProviderURL = "https://base.dns.mullvad.net/dns-query";
-          Locked = true;
-          FallBack = true;
-        };
-
         # Disable all AI features
         GenerativeAI = {
           Enabled = false;
