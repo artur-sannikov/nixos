@@ -108,6 +108,8 @@
       url = "github:AvengeMedia/DankMaterialShell/stable";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    nixpkgs-podman.url = "github:NixOS/nixpkgs/b153953686370a8dc14231db115b058b137644de";
   };
 
   outputs = inputs: inputs.flake-parts.lib.mkFlake { inherit inputs; } (inputs.import-tree ./modules);
