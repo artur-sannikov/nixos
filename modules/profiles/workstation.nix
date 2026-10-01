@@ -26,7 +26,6 @@
       zramswap
       plasma-de # Plasma 6
       niri
-      # dms
       networkmanager
       nix
 
@@ -52,7 +51,6 @@
       base
       cli
       contact
-      # dms
       email
       sops
       stylix
