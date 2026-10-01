@@ -28,6 +28,7 @@
       niri
       networkmanager
       nix
+      udiskie
 
       podman-auto-update
       metube
@@ -59,6 +60,7 @@
       duplicacy-web
       virtualization
       mimetypes
+      udiskie
     ];
   };
 }
