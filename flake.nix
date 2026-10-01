@@ -89,10 +89,6 @@
       url = "github:vic/import-tree";
     };
 
-    noctalia = {
-      url = "github:noctalia-dev/noctalia";
-    };
-
     niri = {
       # url = "github:sodiboo/niri-flake";
       url = "github:epireyn/niri-flake";
