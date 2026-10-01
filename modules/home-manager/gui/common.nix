@@ -16,6 +16,7 @@
           kdePackages.kcalc
           kdePackages.okular
           libreoffice-qt-fresh
+          zotero
         ])
         ++ (with pkgs; [
           mattermost-desktop
@@ -25,7 +26,6 @@
           seafile-client
           texstudio
           vlc
-          zotero
         ]);
     };
 }
